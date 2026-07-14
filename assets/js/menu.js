@@ -26,10 +26,15 @@ const categorySlugMap = {
   'Secret Menu': 'secret-menu'
 };
 
-document.addEventListener('DOMContentLoaded', () => {
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', () => {
+    fetchMenu();
+    setupEventListeners();
+  });
+} else {
   fetchMenu();
   setupEventListeners();
-});
+}
 
 // Fetch menu from JSON database
 async function fetchMenu() {

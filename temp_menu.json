@@ -1,0 +1,1790 @@
+﻿[
+    {
+        "name":  "Blondie",
+        "category":  "7 Originals",
+        "description":  "Our famous caramel and vanilla breve. Rich, creamy, and perfectly sweet.",
+        "ingredients":  [
+                            "Espresso",
+                            "Caramel Sauce",
+                            "Vanilla Syrup",
+                            "Breve Mix (Half \u0026 Half)"
+                        ],
+        "image":  "assets/images/blondie.webp",
+        "sizes":  {
+                      "small":  {
+                                    "price":  4.99,
+                                    "calories":  320
+                                },
+                      "medium":  {
+                                     "price":  5.49,
+                                     "calories":  460
+                                 },
+                      "large":  {
+                                    "price":  5.99,
+                                    "calories":  610
+                                }
+                  },
+        "caffeine":  "150mg",
+        "sugar":  "36g"
+    },
+    {
+        "name":  "Brunette",
+        "category":  "7 Originals",
+        "description":  "A delicious hazelnut and caramel mocha. Decadently sweet and bold.",
+        "ingredients":  [
+                            "Espresso",
+                            "Hazelnut Syrup",
+                            "Caramel Sauce",
+                            "Chocolate Milk"
+                        ],
+        "image":  "assets/images/brunette.webp",
+        "sizes":  {
+                      "small":  {
+                                    "price":  4.99,
+                                    "calories":  340
+                                },
+                      "medium":  {
+                                     "price":  5.49,
+                                     "calories":  490
+                                 },
+                      "large":  {
+                                    "price":  5.99,
+                                    "calories":  640
+                                }
+                  },
+        "caffeine":  "150mg",
+        "sugar":  "42g"
+    },
+    {
+        "name":  "Smooth 7",
+        "category":  "7 Originals",
+        "description":  "Irish cream and white chocolate breve. The ultimate smooth pick-me-up.",
+        "ingredients":  [
+                            "Espresso",
+                            "Irish Cream Syrup",
+                            "White Chocolate Sauce",
+                            "Breve Mix (Half \u0026 Half)"
+                        ],
+        "image":  "assets/images/smooth-7.webp",
+        "sizes":  {
+                      "small":  {
+                                    "price":  5.15,
+                                    "calories":  330
+                                },
+                      "medium":  {
+                                     "price":  5.65,
+                                     "calories":  470
+                                 },
+                      "large":  {
+                                    "price":  6.15,
+                                    "calories":  620
+                                }
+                  },
+        "caffeine":  "150mg",
+        "sugar":  "38g"
+    },
+    {
+        "name":  "Cinnamon Roll",
+        "category":  "7 Originals",
+        "description":  "Brown sugar cinnamon and white chocolate breve. Tastes just like a fresh pastry.",
+        "ingredients":  [
+                            "Espresso",
+                            "Brown Sugar Cinnamon Syrup",
+                            "White Chocolate Sauce",
+                            "Breve Mix"
+                        ],
+        "image":  "assets/images/cinnamon-roll.webp",
+        "sizes":  {
+                      "small":  {
+                                    "price":  4.99,
+                                    "calories":  310
+                                },
+                      "medium":  {
+                                     "price":  5.49,
+                                     "calories":  450
+                                 },
+                      "large":  {
+                                    "price":  5.99,
+                                    "calories":  600
+                                }
+                  },
+        "caffeine":  "150mg",
+        "sugar":  "35g"
+    },
+    {
+        "name":  "White Mac",
+        "category":  "7 Originals",
+        "description":  "White chocolate and macadamia nut breve. Nutty, sweet, and velvety.",
+        "ingredients":  [
+                            "Espresso",
+                            "White Chocolate Sauce",
+                            "Macadamia Nut Syrup",
+                            "Breve Mix"
+                        ],
+        "image":  "assets/images/white-mac.webp",
+        "sizes":  {
+                      "small":  {
+                                    "price":  4.99,
+                                    "calories":  325
+                                },
+                      "medium":  {
+                                     "price":  5.49,
+                                     "calories":  465
+                                 },
+                      "large":  {
+                                    "price":  5.99,
+                                    "calories":  615
+                                }
+                  },
+        "caffeine":  "150mg",
+        "sugar":  "34g"
+    },
+    {
+        "name":  "German Chocolate",
+        "category":  "7 Originals",
+        "description":  "Coconut and caramel mocha. A rich dessert-like coffee experience.",
+        "ingredients":  [
+                            "Espresso",
+                            "Coconut Syrup",
+                            "Caramel Sauce",
+                            "Chocolate Milk"
+                        ],
+        "image":  "assets/images/german-chocolate.webp",
+        "sizes":  {
+                      "small":  {
+                                    "price":  5.25,
+                                    "calories":  350
+                                },
+                      "medium":  {
+                                     "price":  5.75,
+                                     "calories":  500
+                                 },
+                      "large":  {
+                                    "price":  6.25,
+                                    "calories":  660
+                                }
+                  },
+        "caffeine":  "150mg",
+        "sugar":  "45g"
+    },
+    {
+        "name":  "Snickerz",
+        "category":  "7 Originals",
+        "description":  "An official 7 Original mocha flavored with hazelnut and caramel, finished with caramel drizzle.",
+        "ingredients":  [
+                            "Espresso",
+                            "Hazelnut Syrup",
+                            "Caramel Syrup",
+                            "Chocolate Milk",
+                            "Caramel Drizzle"
+                        ],
+        "image":  "assets/images/snickerz.webp",
+        "sizes":  {
+                      "small":  {
+                                    "price":  5.25,
+                                    "calories":  250
+                                },
+                      "medium":  {
+                                     "price":  5.95,
+                                     "calories":  390
+                                 },
+                      "large":  {
+                                    "price":  6.95,
+                                    "calories":  520
+                                }
+                  },
+        "caffeine":  "150mg",
+        "sugar":  "40g"
+    },
+    {
+        "name":  "Triple Seven",
+        "category":  "7 Originals",
+        "description":  "Our classic Blondie recipe but with an extra shot of espresso to kickstart your day.",
+        "ingredients":  [
+                            "3x Espresso Shots",
+                            "Caramel Sauce",
+                            "Vanilla Syrup",
+                            "Breve Mix"
+                        ],
+        "image":  "assets/images/triple_seven.jpg",
+        "sizes":  {
+                      "small":  {
+                                    "price":  5.99,
+                                    "calories":  330
+                                },
+                      "medium":  {
+                                     "price":  6.49,
+                                     "calories":  470
+                                 },
+                      "large":  {
+                                    "price":  6.99,
+                                    "calories":  620
+                                }
+                  },
+        "caffeine":  "225mg",
+        "sugar":  "36g"
+    },
+    {
+        "name":  "Classic Latte",
+        "category":  "7 Classics",
+        "description":  "Rich espresso combined with steamed milk and a light layer of foam.",
+        "ingredients":  [
+                            "Espresso Shots",
+                            "Steamed Whole Milk",
+                            "Foam"
+                        ],
+        "image":  "assets/images/latte.jpg",
+        "sizes":  {
+                      "small":  {
+                                    "price":  3.75,
+                                    "calories":  150
+                                },
+                      "medium":  {
+                                     "price":  4.75,
+                                     "calories":  220
+                                 },
+                      "large":  {
+                                    "price":  5.75,
+                                    "calories":  290
+                                }
+                  },
+        "caffeine":  "150mg",
+        "sugar":  "12g"
+    },
+    {
+        "name":  "Classic Mocha",
+        "category":  "7 Classics",
+        "description":  "Rich espresso shots combined with sweet chocolate milk.",
+        "ingredients":  [
+                            "Espresso Shots",
+                            "Steamed Chocolate Milk"
+                        ],
+        "image":  "https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80\u0026w=600\u0026auto=format\u0026fit=crop",
+        "sizes":  {
+                      "small":  {
+                                    "price":  3.99,
+                                    "calories":  280
+                                },
+                      "medium":  {
+                                     "price":  4.99,
+                                     "calories":  380
+                                 },
+                      "large":  {
+                                    "price":  5.99,
+                                    "calories":  490
+                                }
+                  },
+        "caffeine":  "150mg",
+        "sugar":  "36g"
+    },
+    {
+        "name":  "Classic Macchiato",
+        "category":  "7 Classics",
+        "description":  "Delicious layered espresso over milk with a sweet caramel drizzle.",
+        "ingredients":  [
+                            "Espresso Shots",
+                            "Steamed Milk",
+                            "Caramel Drizzle",
+                            "Vanilla Syrup"
+                        ],
+        "image":  "https://images.unsplash.com/photo-1578314675249-a6910f80cc4e?q=80\u0026w=600\u0026auto=format\u0026fit=crop",
+        "sizes":  {
+                      "small":  {
+                                    "price":  3.99,
+                                    "calories":  240
+                                },
+                      "medium":  {
+                                     "price":  4.99,
+                                     "calories":  320
+                                 },
+                      "large":  {
+                                    "price":  5.99,
+                                    "calories":  410
+                                }
+                  },
+        "caffeine":  "150mg",
+        "sugar":  "28g"
+    },
+    {
+        "name":  "Classic Breve",
+        "category":  "7 Classics",
+        "description":  "Traditional espresso coffee crafted with steamed half-and-half.",
+        "ingredients":  [
+                            "Espresso Shots",
+                            "Steamed Half \u0026 Half Cream"
+                        ],
+        "image":  "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?q=80\u0026w=600\u0026auto=format\u0026fit=crop",
+        "sizes":  {
+                      "small":  {
+                                    "price":  3.99,
+                                    "calories":  290
+                                },
+                      "medium":  {
+                                     "price":  4.99,
+                                     "calories":  410
+                                 },
+                      "large":  {
+                                    "price":  5.99,
+                                    "calories":  540
+                                }
+                  },
+        "caffeine":  "150mg",
+        "sugar":  "14g"
+    },
+    {
+        "name":  "Classic Cappuccino",
+        "category":  "7 Classics",
+        "description":  "Espresso with equal parts steamed milk and deep velvety milk foam.",
+        "ingredients":  [
+                            "Espresso Shots",
+                            "Steamed Milk",
+                            "Extra Thick Foam"
+                        ],
+        "image":  "https://images.unsplash.com/photo-1572442388796-11668a67e53d?q=80\u0026w=600\u0026auto=format\u0026fit=crop",
+        "sizes":  {
+                      "small":  {
+                                    "price":  3.75,
+                                    "calories":  110
+                                },
+                      "medium":  {
+                                     "price":  4.75,
+                                     "calories":  160
+                                 },
+                      "large":  {
+                                    "price":  5.75,
+                                    "calories":  210
+                                }
+                  },
+        "caffeine":  "150mg",
+        "sugar":  "8g"
+    },
+    {
+        "name":  "Classic Americano",
+        "category":  "7 Classics",
+        "description":  "Espresso shots combined with hot water for a bold drip-style alternative.",
+        "ingredients":  [
+                            "Espresso Shots",
+                            "Hot Water"
+                        ],
+        "image":  "https://images.unsplash.com/photo-1551030173-122aabc4489c?q=80\u0026w=600\u0026auto=format\u0026fit=crop",
+        "sizes":  {
+                      "small":  {
+                                    "price":  3.50,
+                                    "calories":  5
+                                },
+                      "medium":  {
+                                     "price":  4.00,
+                                     "calories":  10
+                                 },
+                      "large":  {
+                                    "price":  4.50,
+                                    "calories":  15
+                                }
+                  },
+        "caffeine":  "180mg",
+        "sugar":  "0g"
+    },
+    {
+        "name":  "Classic Cold Brew",
+        "category":  "7 Classics",
+        "description":  "Steeped slowly for 20 hours, creating an incredibly smooth and low-acid iced coffee.",
+        "ingredients":  [
+                            "Cold Brewed Coffee Extract",
+                            "Water",
+                            "Ice"
+                        ],
+        "image":  "https://images.unsplash.com/photo-1517701604599-bb29b565090c?q=80\u0026w=600\u0026auto=format\u0026fit=crop",
+        "sizes":  {
+                      "small":  {
+                                    "price":  4.25,
+                                    "calories":  5
+                                },
+                      "medium":  {
+                                     "price":  5.25,
+                                     "calories":  10
+                                 },
+                      "large":  {
+                                    "price":  6.25,
+                                    "calories":  15
+                                }
+                  },
+        "caffeine":  "200mg",
+        "sugar":  "0g"
+    },
+    {
+        "name":  "Pumpkin Spice Dream",
+        "category":  "Featured Drinks",
+        "description":  "Cozy pumpkin spice combined with vanilla and white chocolate mocha.",
+        "ingredients":  [
+                            "Espresso",
+                            "Pumpkin Spice Syrup",
+                            "White Chocolate Sauce",
+                            "Vanilla",
+                            "Chocolate Milk"
+                        ],
+        "image":  "https://images.unsplash.com/photo-1570968915860-54d5c301fc9f?q=80\u0026w=600\u0026auto=format\u0026fit=crop",
+        "sizes":  {
+                      "small":  {
+                                    "price":  5.25,
+                                    "calories":  360
+                                },
+                      "medium":  {
+                                     "price":  5.75,
+                                     "calories":  510
+                                 },
+                      "large":  {
+                                    "price":  6.25,
+                                    "calories":  670
+                                }
+                  },
+        "caffeine":  "150mg",
+        "sugar":  "48g"
+    },
+    {
+        "name":  "Crandaddy Energy",
+        "category":  "Featured Drinks",
+        "description":  "A carbonated holiday energy mixer combining tart cranberry and sweet pomegranate syrups.",
+        "ingredients":  [
+                            "7 Brew Energy Base",
+                            "Cranberry Syrup",
+                            "Pomegranate Syrup",
+                            "Ice"
+                        ],
+        "image":  "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?q=80\u0026w=600\u0026auto=format\u0026fit=crop",
+        "sizes":  {
+                      "small":  {
+                                    "price":  3.99,
+                                    "calories":  170
+                                },
+                      "medium":  {
+                                     "price":  4.99,
+                                     "calories":  240
+                                 },
+                      "large":  {
+                                    "price":  5.99,
+                                    "calories":  320
+                                }
+                  },
+        "caffeine":  "160mg",
+        "sugar":  "38g"
+    },
+    {
+        "name":  "Campfire Cocoa Mocha",
+        "category":  "Featured Drinks",
+        "description":  "Cozy toasted marshmallow flavor combined with rich, hot chocolate milk and espresso.",
+        "ingredients":  [
+                            "Espresso",
+                            "Toasted Marshmallow Syrup",
+                            "Steamed Chocolate Milk"
+                        ],
+        "image":  "https://images.unsplash.com/photo-1544787219-7f47ccb76574?q=80\u0026w=600\u0026auto=format\u0026fit=crop",
+        "sizes":  {
+                      "small":  {
+                                    "price":  5.25,
+                                    "calories":  380
+                                },
+                      "medium":  {
+                                     "price":  5.75,
+                                     "calories":  520
+                                 },
+                      "large":  {
+                                    "price":  6.25,
+                                    "calories":  690
+                                }
+                  },
+        "caffeine":  "150mg",
+        "sugar":  "44g"
+    },
+    {
+        "name":  "Cinnamon Roll Chiller",
+        "category":  "Featured Drinks",
+        "description":  "Double-blended chiller with sweet brown sugar cinnamon and white chocolate.",
+        "ingredients":  [
+                            "Chiller Espresso Base",
+                            "Brown Sugar Cinnamon Syrup",
+                            "White Chocolate Sauce",
+                            "Whipped Cream"
+                        ],
+        "image":  "https://images.unsplash.com/photo-1572490122747-3968b75cc699?q=80\u0026w=600\u0026auto=format\u0026fit=crop",
+        "sizes":  {
+                      "small":  {
+                                    "price":  5.49,
+                                    "calories":  440
+                                },
+                      "medium":  {
+                                     "price":  5.99,
+                                     "calories":  590
+                                 },
+                      "large":  {
+                                    "price":  6.49,
+                                    "calories":  760
+                                }
+                  },
+        "caffeine":  "120mg",
+        "sugar":  "58g"
+    },
+    {
+        "name":  "Cherry Blossom Fizz",
+        "category":  "Featured Drinks",
+        "description":  "Sparkling soda with a refreshing blend of wild cherry and sweet peach syrups.",
+        "ingredients":  [
+                            "Sparkling Soda Base",
+                            "Cherry Syrup",
+                            "Peach Syrup",
+                            "Ice"
+                        ],
+        "image":  "https://images.unsplash.com/photo-1497515114629-f71d768fd07c?q=80\u0026w=600\u0026auto=format\u0026fit=crop",
+        "sizes":  {
+                      "small":  {
+                                    "price":  3.25,
+                                    "calories":  110
+                                },
+                      "medium":  {
+                                     "price":  4.25,
+                                     "calories":  160
+                                 },
+                      "large":  {
+                                    "price":  5.25,
+                                    "calories":  220
+                                }
+                  },
+        "caffeine":  "0mg",
+        "sugar":  "26g"
+    },
+    {
+        "name":  "Ocean Breeze",
+        "category":  "7 Energy",
+        "description":  "Blue raspberry and coconut syrups mixed with our signature 7 Energy base.",
+        "ingredients":  [
+                            "7 Energy Base",
+                            "Blue Raspberry Syrup",
+                            "Coconut Syrup"
+                        ],
+        "image":  "assets/images/ocean-breeze.webp",
+        "sizes":  {
+                      "small":  {
+                                    "price":  5.85,
+                                    "calories":  100
+                                },
+                      "medium":  {
+                                     "price":  6.55,
+                                     "calories":  260
+                                 },
+                      "large":  {
+                                    "price":  7.65,
+                                    "calories":  450
+                                }
+                  },
+        "caffeine":  "160mg",
+        "sugar":  "35g"
+    },
+    {
+        "name":  "Tropic Thunder",
+        "category":  "7 Energy",
+        "description":  "Sweet mango and pineapple syrups mixed with our signature 7 Energy base.",
+        "ingredients":  [
+                            "7 Energy Base",
+                            "Mango Syrup",
+                            "Pineapple Syrup"
+                        ],
+        "image":  "assets/images/tropic-thunder.webp",
+        "sizes":  {
+                      "small":  {
+                                    "price":  5.85,
+                                    "calories":  100
+                                },
+                      "medium":  {
+                                     "price":  6.55,
+                                     "calories":  260
+                                 },
+                      "large":  {
+                                    "price":  7.65,
+                                    "calories":  450
+                                }
+                  },
+        "caffeine":  "160mg",
+        "sugar":  "35g"
+    },
+    {
+        "name":  "Sunrise",
+        "category":  "7 Energy",
+        "description":  "Sweet peach and raspberry syrups mixed with our signature 7 Energy base.",
+        "ingredients":  [
+                            "7 Energy Base",
+                            "Peach Syrup",
+                            "Raspberry Syrup"
+                        ],
+        "image":  "assets/images/sunrise.webp",
+        "sizes":  {
+                      "small":  {
+                                    "price":  5.85,
+                                    "calories":  100
+                                },
+                      "medium":  {
+                                     "price":  6.55,
+                                     "calories":  260
+                                 },
+                      "large":  {
+                                    "price":  7.65,
+                                    "calories":  450
+                                }
+                  },
+        "caffeine":  "160mg",
+        "sugar":  "35g"
+    },
+    {
+        "name":  "Seven Energy Blue Punch",
+        "category":  "7 Energy",
+        "description":  "Blue raspberry, peach, and raspberry syrup blended into our signature Energy Drink.",
+        "ingredients":  [
+                            "7 Brew Energy Base",
+                            "Blue Raspberry Syrup",
+                            "Peach Syrup",
+                            "Raspberry Syrup"
+                        ],
+        "image":  "assets/images/energy_blue.jpg",
+        "sizes":  {
+                      "small":  {
+                                    "price":  3.99,
+                                    "calories":  180
+                                },
+                      "medium":  {
+                                     "price":  4.99,
+                                     "calories":  260
+                                 },
+                      "large":  {
+                                    "price":  5.99,
+                                    "calories":  340
+                                }
+                  },
+        "caffeine":  "160mg",
+        "sugar":  "44g"
+    },
+    {
+        "name":  "Dragon\u0027s Blood",
+        "category":  "7 Energy",
+        "description":  "A popular blend of cherry and raspberry syrups mixed with 7 Energy and topped with fresh cream.",
+        "ingredients":  [
+                            "7 Energy Base",
+                            "Cherry Syrup",
+                            "Raspberry Syrup",
+                            "Drizzle of Cream",
+                            "Ice"
+                        ],
+        "image":  "https://images.unsplash.com/photo-1497515114629-f71d768fd07c?q=80\u0026w=600\u0026auto=format\u0026fit=crop",
+        "sizes":  {
+                      "small":  {
+                                    "price":  3.99,
+                                    "calories":  180
+                                },
+                      "medium":  {
+                                     "price":  4.99,
+                                     "calories":  260
+                                 },
+                      "large":  {
+                                    "price":  5.99,
+                                    "calories":  340
+                                }
+                  },
+        "caffeine":  "160mg",
+        "sugar":  "42g"
+    },
+    {
+        "name":  "Tiger\u0027s Blood",
+        "category":  "7 Energy",
+        "description":  "Vibrant energy blend combining coconut and sweet strawberry syrups.",
+        "ingredients":  [
+                            "7 Energy Base",
+                            "Coconut Syrup",
+                            "Strawberry Syrup",
+                            "Ice"
+                        ],
+        "image":  "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?q=80\u0026w=600\u0026auto=format\u0026fit=crop",
+        "sizes":  {
+                      "small":  {
+                                    "price":  3.99,
+                                    "calories":  190
+                                },
+                      "medium":  {
+                                     "price":  4.99,
+                                     "calories":  270
+                                 },
+                      "large":  {
+                                    "price":  5.99,
+                                    "calories":  350
+                                }
+                  },
+        "caffeine":  "160mg",
+        "sugar":  "45g"
+    },
+    {
+        "name":  "Georgia Peach",
+        "category":  "7 Energy",
+        "description":  "Sweet southern-style peach syrup mixed with fresh strawberry syrup and energy.",
+        "ingredients":  [
+                            "7 Energy Base",
+                            "Peach Syrup",
+                            "Strawberry Syrup",
+                            "Ice"
+                        ],
+        "image":  "https://images.unsplash.com/photo-1553530979-7ee52a2670c4?q=80\u0026w=600\u0026auto=format\u0026fit=crop",
+        "sizes":  {
+                      "small":  {
+                                    "price":  3.99,
+                                    "calories":  180
+                                },
+                      "medium":  {
+                                     "price":  4.99,
+                                     "calories":  255
+                                 },
+                      "large":  {
+                                    "price":  5.99,
+                                    "calories":  335
+                                }
+                  },
+        "caffeine":  "160mg",
+        "sugar":  "41g"
+    },
+    {
+        "name":  "Orange Sherbet",
+        "category":  "7 Energy",
+        "description":  "A dessert-inspired energy refresher combining orange, strawberry, and smooth vanilla syrups.",
+        "ingredients":  [
+                            "7 Energy Base",
+                            "Orange Syrup",
+                            "Strawberry Syrup",
+                            "Vanilla Syrup",
+                            "Ice"
+                        ],
+        "image":  "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?q=80\u0026w=600\u0026auto=format\u0026fit=crop",
+        "sizes":  {
+                      "small":  {
+                                    "price":  3.99,
+                                    "calories":  195
+                                },
+                      "medium":  {
+                                     "price":  4.99,
+                                     "calories":  275
+                                 },
+                      "large":  {
+                                    "price":  5.99,
+                                    "calories":  355
+                                }
+                  },
+        "caffeine":  "160mg",
+        "sugar":  "44g"
+    },
+    {
+        "name":  "Pink Mermaid Fizz",
+        "category":  "7 Fizz",
+        "description":  "Sparkling water paired with sweet strawberry, watermelon, and tropical coconut syrups.",
+        "ingredients":  [
+                            "Sparkling Water",
+                            "Strawberry Syrup",
+                            "Watermelon Syrup",
+                            "Coconut Syrup",
+                            "Ice"
+                        ],
+        "image":  "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?q=80\u0026w=600\u0026auto=format\u0026fit=crop",
+        "sizes":  {
+                      "small":  {
+                                    "price":  3.25,
+                                    "calories":  110
+                                },
+                      "medium":  {
+                                     "price":  4.25,
+                                     "calories":  160
+                                 },
+                      "large":  {
+                                    "price":  5.25,
+                                    "calories":  210
+                                }
+                  },
+        "caffeine":  "0mg",
+        "sugar":  "25g"
+    },
+    {
+        "name":  "Black Mamba Fizz",
+        "category":  "7 Fizz",
+        "description":  "A dark carbonated delight combining strawberry, passion fruit, and blue raspberry.",
+        "ingredients":  [
+                            "Sparkling Water",
+                            "Strawberry Syrup",
+                            "Passion Fruit",
+                            "Blue Raspberry",
+                            "Ice"
+                        ],
+        "image":  "https://images.unsplash.com/photo-1551024709-8f23befc6f87?q=80\u0026w=600\u0026auto=format\u0026fit=crop",
+        "sizes":  {
+                      "small":  {
+                                    "price":  3.25,
+                                    "calories":  120
+                                },
+                      "medium":  {
+                                     "price":  4.25,
+                                     "calories":  170
+                                 },
+                      "large":  {
+                                    "price":  5.25,
+                                    "calories":  230
+                                }
+                  },
+        "caffeine":  "0mg",
+        "sugar":  "28g"
+    },
+    {
+        "name":  "Hawaiian Punch Fizz",
+        "category":  "7 Fizz",
+        "description":  "A carbonated tropical wave combining passion fruit, fresh orange, and pomegranate.",
+        "ingredients":  [
+                            "Sparkling Water",
+                            "Passion Fruit",
+                            "Orange Syrup",
+                            "Pomegranate Syrup",
+                            "Ice"
+                        ],
+        "image":  "https://images.unsplash.com/photo-1497515114629-f71d768fd07c?q=80\u0026w=600\u0026auto=format\u0026fit=crop",
+        "sizes":  {
+                      "small":  {
+                                    "price":  3.25,
+                                    "calories":  115
+                                },
+                      "medium":  {
+                                     "price":  4.25,
+                                     "calories":  165
+                                 },
+                      "large":  {
+                                    "price":  5.25,
+                                    "calories":  220
+                                }
+                  },
+        "caffeine":  "0mg",
+        "sugar":  "26g"
+    },
+    {
+        "name":  "Firecracker Fizz",
+        "category":  "7 Fizz",
+        "description":  "An explosive carbonated citrus refresher combining orange, pomegranate, and red raspberry.",
+        "ingredients":  [
+                            "Sparkling Water",
+                            "Orange Syrup",
+                            "Pomegranate Syrup",
+                            "Raspberry Syrup",
+                            "Ice"
+                        ],
+        "image":  "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?q=80\u0026w=600\u0026auto=format\u0026fit=crop",
+        "sizes":  {
+                      "small":  {
+                                    "price":  3.25,
+                                    "calories":  120
+                                },
+                      "medium":  {
+                                     "price":  4.25,
+                                     "calories":  170
+                                 },
+                      "large":  {
+                                    "price":  5.25,
+                                    "calories":  230
+                                }
+                  },
+        "caffeine":  "0mg",
+        "sugar":  "28g"
+    },
+    {
+        "name":  "Sunny 7 Fizz",
+        "category":  "7 Fizz",
+        "description":  "Sweet peach syrup paired with tropical passion fruit and carbonated water.",
+        "ingredients":  [
+                            "Sparkling Water",
+                            "Peach Syrup",
+                            "Passion Fruit Syrup",
+                            "Ice"
+                        ],
+        "image":  "https://images.unsplash.com/photo-1556679343-c7306c1976bc?q=80\u0026w=600\u0026auto=format\u0026fit=crop",
+        "sizes":  {
+                      "small":  {
+                                    "price":  3.25,
+                                    "calories":  105
+                                },
+                      "medium":  {
+                                     "price":  4.25,
+                                     "calories":  145
+                                 },
+                      "large":  {
+                                    "price":  5.25,
+                                    "calories":  195
+                                }
+                  },
+        "caffeine":  "0mg",
+        "sugar":  "23g"
+    },
+    {
+        "name":  "Georgia Peach Tea",
+        "category":  "Teas, Chai \u0026 Matcha",
+        "description":  "Sweet southern peach and fresh strawberry syrup mixed with organic iced black tea.",
+        "ingredients":  [
+                            "Brewed Black Tea",
+                            "Peach Syrup",
+                            "Strawberry Syrup",
+                            "Ice"
+                        ],
+        "image":  "https://images.unsplash.com/photo-1556679343-c7306c1976bc?q=80\u0026w=600\u0026auto=format\u0026fit=crop",
+        "sizes":  {
+                      "small":  {
+                                    "price":  2.99,
+                                    "calories":  90
+                                },
+                      "medium":  {
+                                     "price":  3.99,
+                                     "calories":  130
+                                 },
+                      "large":  {
+                                    "price":  4.99,
+                                    "calories":  180
+                                }
+                  },
+        "caffeine":  "45mg",
+        "sugar":  "22g"
+    },
+    {
+        "name":  "Hula Tea",
+        "category":  "Teas, Chai \u0026 Matcha",
+        "description":  "A tropical iced green tea blend with pineapple and sweet peach syrups.",
+        "ingredients":  [
+                            "Brewed Green Tea",
+                            "Pineapple Syrup",
+                            "Peach Syrup",
+                            "Ice"
+                        ],
+        "image":  "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?q=80\u0026w=600\u0026auto=format\u0026fit=crop",
+        "sizes":  {
+                      "small":  {
+                                    "price":  2.99,
+                                    "calories":  95
+                                },
+                      "medium":  {
+                                     "price":  3.99,
+                                     "calories":  135
+                                 },
+                      "large":  {
+                                    "price":  4.99,
+                                    "calories":  185
+                                }
+                  },
+        "caffeine":  "35mg",
+        "sugar":  "24g"
+    },
+    {
+        "name":  "Brewchata Chai",
+        "category":  "Teas, Chai \u0026 Matcha",
+        "description":  "Sweet, spiced Chai tea combined with cinnamon syrup and creamy breve mix.",
+        "ingredients":  [
+                            "Chai Tea Extract",
+                            "Cinnamon Syrup",
+                            "Breve Cream Mix",
+                            "Steamed Milk"
+                        ],
+        "image":  "https://images.unsplash.com/photo-1576092768241-dec231879fc3?q=80\u0026w=600\u0026auto=format\u0026fit=crop",
+        "sizes":  {
+                      "small":  {
+                                    "price":  3.99,
+                                    "calories":  260
+                                },
+                      "medium":  {
+                                     "price":  4.49,
+                                     "calories":  380
+                                 },
+                      "large":  {
+                                    "price":  4.99,
+                                    "calories":  490
+                                }
+                  },
+        "caffeine":  "60mg",
+        "sugar":  "38g"
+    },
+    {
+        "name":  "Strawberry Matcha",
+        "category":  "Teas, Chai \u0026 Matcha",
+        "description":  "Vibrant Japanese matcha layered with milk and sweetened real strawberry syrup.",
+        "ingredients":  [
+                            "Matcha Powder",
+                            "Whole Milk",
+                            "Strawberry Syrup",
+                            "Ice"
+                        ],
+        "image":  "assets/images/matcha.jpg",
+        "sizes":  {
+                      "small":  {
+                                    "price":  4.25,
+                                    "calories":  240
+                                },
+                      "medium":  {
+                                     "price":  4.75,
+                                     "calories":  330
+                                 },
+                      "large":  {
+                                    "price":  5.25,
+                                    "calories":  420
+                                }
+                  },
+        "caffeine":  "70mg",
+        "sugar":  "32g"
+    },
+    {
+        "name":  "Cereal Milk Matcha",
+        "category":  "Teas, Chai \u0026 Matcha",
+        "description":  "Vibrant matcha green tea mixed with sweet vanilla and toasted marshmallow.",
+        "ingredients":  [
+                            "Matcha Powder",
+                            "Toasted Marshmallow Syrup",
+                            "Vanilla Syrup",
+                            "Whole Milk"
+                        ],
+        "image":  "assets/images/matcha.jpg",
+        "sizes":  {
+                      "small":  {
+                                    "price":  4.25,
+                                    "calories":  250
+                                },
+                      "medium":  {
+                                     "price":  4.75,
+                                     "calories":  340
+                                 },
+                      "large":  {
+                                    "price":  5.25,
+                                    "calories":  435
+                                }
+                  },
+        "caffeine":  "70mg",
+        "sugar":  "34g"
+    },
+    {
+        "name":  "Electric Berry Lemonade",
+        "category":  "Lemonades",
+        "description":  "Tart lemonade mixed with blue raspberry and wildberry syrups.",
+        "ingredients":  [
+                            "Premium Lemonade Base",
+                            "Blue Raspberry Syrup",
+                            "Wildberry Syrup",
+                            "Ice"
+                        ],
+        "image":  "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?q=80\u0026w=600\u0026auto=format\u0026fit=crop",
+        "sizes":  {
+                      "small":  {
+                                    "price":  3.25,
+                                    "calories":  140
+                                },
+                      "medium":  {
+                                     "price":  4.25,
+                                     "calories":  200
+                                 },
+                      "large":  {
+                                    "price":  5.25,
+                                    "calories":  270
+                                }
+                  },
+        "caffeine":  "0mg",
+        "sugar":  "34g"
+    },
+    {
+        "name":  "Pink Paradise Lemonade",
+        "category":  "Lemonades",
+        "description":  "Tart fresh lemonade blended with sweet strawberry syrup and creamy coconut milk.",
+        "ingredients":  [
+                            "Premium Lemonade Base",
+                            "Strawberry Syrup",
+                            "Coconut Milk",
+                            "Ice"
+                        ],
+        "image":  "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?q=80\u0026w=600\u0026auto=format\u0026fit=crop",
+        "sizes":  {
+                      "small":  {
+                                    "price":  3.25,
+                                    "calories":  150
+                                },
+                      "medium":  {
+                                     "price":  4.25,
+                                     "calories":  210
+                                 },
+                      "large":  {
+                                    "price":  5.25,
+                                    "calories":  280
+                                }
+                  },
+        "caffeine":  "0mg",
+        "sugar":  "32g"
+    },
+    {
+        "name":  "Blackberry Cobbler Lemonade",
+        "category":  "Lemonades",
+        "description":  "Sweet wild blackberry syrup combined with gourmet white chocolate and tart lemonade.",
+        "ingredients":  [
+                            "Premium Lemonade Base",
+                            "Blackberry Syrup",
+                            "White Chocolate Sauce",
+                            "Ice"
+                        ],
+        "image":  "https://images.unsplash.com/photo-1556679343-c7306c1976bc?q=80\u0026w=600\u0026auto=format\u0026fit=crop",
+        "sizes":  {
+                      "small":  {
+                                    "price":  3.25,
+                                    "calories":  160
+                                },
+                      "medium":  {
+                                     "price":  4.25,
+                                     "calories":  220
+                                 },
+                      "large":  {
+                                    "price":  5.25,
+                                    "calories":  295
+                                }
+                  },
+        "caffeine":  "0mg",
+        "sugar":  "36g"
+    },
+    {
+        "name":  "Thunder Lemonade",
+        "category":  "Lemonades",
+        "description":  "An intense, electrifying combination of double blue raspberry and sweet pomegranate.",
+        "ingredients":  [
+                            "Premium Lemonade Base",
+                            "Double Blue Raspberry Syrup",
+                            "Pomegranate Syrup",
+                            "Ice"
+                        ],
+        "image":  "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?q=80\u0026w=600\u0026auto=format\u0026fit=crop",
+        "sizes":  {
+                      "small":  {
+                                    "price":  3.25,
+                                    "calories":  145
+                                },
+                      "medium":  {
+                                     "price":  4.25,
+                                     "calories":  205
+                                 },
+                      "large":  {
+                                    "price":  5.25,
+                                    "calories":  275
+                                }
+                  },
+        "caffeine":  "0mg",
+        "sugar":  "33g"
+    },
+    {
+        "name":  "Brew Lagoon Lemonade",
+        "category":  "Lemonades",
+        "description":  "Our signature tropical blend of blue raspberry, coconut, and fresh key lime juice.",
+        "ingredients":  [
+                            "Premium Lemonade Base",
+                            "Blue Raspberry Syrup",
+                            "Coconut Syrup",
+                            "Key Lime Juice",
+                            "Ice"
+                        ],
+        "image":  "https://images.unsplash.com/photo-1497515114629-f71d768fd07c?q=80\u0026w=600\u0026auto=format\u0026fit=crop",
+        "sizes":  {
+                      "small":  {
+                                    "price":  3.25,
+                                    "calories":  130
+                                },
+                      "medium":  {
+                                     "price":  4.25,
+                                     "calories":  185
+                                 },
+                      "large":  {
+                                    "price":  5.25,
+                                    "calories":  250
+                                }
+                  },
+        "caffeine":  "0mg",
+        "sugar":  "30g"
+    },
+    {
+        "name":  "Strawberry Smoothie",
+        "category":  "Smoothies",
+        "description":  "Thick, icy blend made with real strawberry fruit purees.",
+        "ingredients":  [
+                            "Strawberry Puree",
+                            "Ice Cream Blend Mix",
+                            "Ice"
+                        ],
+        "image":  "https://images.unsplash.com/photo-1553530979-7ee52a2670c4?q=80\u0026w=600\u0026auto=format\u0026fit=crop",
+        "sizes":  {
+                      "small":  {
+                                    "price":  4.99,
+                                    "calories":  280
+                                },
+                      "medium":  {
+                                     "price":  5.99,
+                                     "calories":  400
+                                 },
+                      "large":  {
+                                    "price":  6.99,
+                                    "calories":  520
+                                }
+                  },
+        "caffeine":  "0mg",
+        "sugar":  "52g"
+    },
+    {
+        "name":  "Mango Smoothie",
+        "category":  "Smoothies",
+        "description":  "Deliciously sweet blended smoothie made with real tropical mango puree.",
+        "ingredients":  [
+                            "Mango Puree Base",
+                            "Ice Cream Blend Mix",
+                            "Ice"
+                        ],
+        "image":  "https://images.unsplash.com/photo-1553530979-7ee52a2670c4?q=80\u0026w=600\u0026auto=format\u0026fit=crop",
+        "sizes":  {
+                      "small":  {
+                                    "price":  4.99,
+                                    "calories":  290
+                                },
+                      "medium":  {
+                                     "price":  5.99,
+                                     "calories":  410
+                                 },
+                      "large":  {
+                                    "price":  6.99,
+                                    "calories":  530
+                                }
+                  },
+        "caffeine":  "0mg",
+        "sugar":  "56g"
+    },
+    {
+        "name":  "Peach Smoothie",
+        "category":  "Smoothies",
+        "description":  "A thick, refreshing sweet peach puree blended to icy perfection.",
+        "ingredients":  [
+                            "Georgia Peach Puree",
+                            "Ice Cream Blend Mix",
+                            "Ice"
+                        ],
+        "image":  "https://images.unsplash.com/photo-1553530979-7ee52a2670c4?q=80\u0026w=600\u0026auto=format\u0026fit=crop",
+        "sizes":  {
+                      "small":  {
+                                    "price":  4.99,
+                                    "calories":  270
+                                },
+                      "medium":  {
+                                     "price":  5.99,
+                                     "calories":  390
+                                 },
+                      "large":  {
+                                    "price":  6.99,
+                                    "calories":  510
+                                }
+                  },
+        "caffeine":  "0mg",
+        "sugar":  "48g"
+    },
+    {
+        "name":  "Wildberry Smoothie",
+        "category":  "Smoothies",
+        "description":  "A delicious berry blast blending real raspberry, blackberry, and blueberry purees.",
+        "ingredients":  [
+                            "Wildberry Puree Base",
+                            "Ice Cream Blend Mix",
+                            "Ice"
+                        ],
+        "image":  "https://images.unsplash.com/photo-1553530979-7ee52a2670c4?q=80\u0026w=600\u0026auto=format\u0026fit=crop",
+        "sizes":  {
+                      "small":  {
+                                    "price":  4.99,
+                                    "calories":  295
+                                },
+                      "medium":  {
+                                     "price":  5.99,
+                                     "calories":  415
+                                 },
+                      "large":  {
+                                    "price":  6.99,
+                                    "calories":  535
+                                }
+                  },
+        "caffeine":  "0mg",
+        "sugar":  "58g"
+    },
+    {
+        "name":  "Green Apple Smoothie",
+        "category":  "Smoothies",
+        "description":  "A sweet and tart blended chiller made with real green apple puree.",
+        "ingredients":  [
+                            "Green Apple Puree Base",
+                            "Ice Cream Blend Mix",
+                            "Ice"
+                        ],
+        "image":  "https://images.unsplash.com/photo-1553530979-7ee52a2670c4?q=80\u0026w=600\u0026auto=format\u0026fit=crop",
+        "sizes":  {
+                      "small":  {
+                                    "price":  4.99,
+                                    "calories":  260
+                                },
+                      "medium":  {
+                                     "price":  5.99,
+                                     "calories":  380
+                                 },
+                      "large":  {
+                                    "price":  6.99,
+                                    "calories":  500
+                                }
+                  },
+        "caffeine":  "0mg",
+        "sugar":  "46g"
+    },
+    {
+        "name":  "Strawberry Cake Shake",
+        "category":  "Shakes",
+        "description":  "Creamy strawberry milkshake blended with rich vanilla bean cake flavor.",
+        "ingredients":  [
+                            "Strawberry Flavor",
+                            "Cupcake Syrup",
+                            "Milkshake Base",
+                            "Whipped Cream"
+                        ],
+        "image":  "https://images.unsplash.com/photo-1579954115545-a95591f28bfc?q=80\u0026w=600\u0026auto=format\u0026fit=crop",
+        "sizes":  {
+                      "small":  {
+                                    "price":  4.99,
+                                    "calories":  360
+                                },
+                      "medium":  {
+                                     "price":  5.99,
+                                     "calories":  490
+                                 },
+                      "large":  {
+                                    "price":  6.99,
+                                    "calories":  620
+                                }
+                  },
+        "caffeine":  "0mg",
+        "sugar":  "46g"
+    },
+    {
+        "name":  "Cookies \u0026 Cream Shake",
+        "category":  "Shakes",
+        "description":  "Creamy, decadent vanilla shake loaded with blended cookie crumbles and dark chocolate sauce.",
+        "ingredients":  [
+                            "Vanilla Bean Base",
+                            "Chocolate Cookie Pieces",
+                            "Dark Chocolate Sauce",
+                            "Whipped Cream"
+                        ],
+        "image":  "https://images.unsplash.com/photo-1579954115545-a95591f28bfc?q=80\u0026w=600\u0026auto=format\u0026fit=crop",
+        "sizes":  {
+                      "small":  {
+                                    "price":  4.99,
+                                    "calories":  380
+                                },
+                      "medium":  {
+                                     "price":  5.99,
+                                     "calories":  520
+                                 },
+                      "large":  {
+                                    "price":  6.99,
+                                    "calories":  660
+                                }
+                  },
+        "caffeine":  "0mg",
+        "sugar":  "48g"
+    },
+    {
+        "name":  "Caramel Drizzle Shake",
+        "category":  "Shakes",
+        "description":  "Classic sweet vanilla shake base heavily loaded and layered with rich caramel sauce.",
+        "ingredients":  [
+                            "Vanilla Shake Base",
+                            "Gourmet Caramel Drizzle",
+                            "Whipped Cream"
+                        ],
+        "image":  "https://images.unsplash.com/photo-1579954115545-a95591f28bfc?q=80\u0026w=600\u0026auto=format\u0026fit=crop",
+        "sizes":  {
+                      "small":  {
+                                    "price":  4.99,
+                                    "calories":  350
+                                },
+                      "medium":  {
+                                     "price":  5.99,
+                                     "calories":  480
+                                 },
+                      "large":  {
+                                    "price":  6.99,
+                                    "calories":  610
+                                }
+                  },
+        "caffeine":  "0mg",
+        "sugar":  "42g"
+    },
+    {
+        "name":  "Chocolate Dream Shake",
+        "category":  "Shakes",
+        "description":  "Decadent dark chocolate shake hand-blended and topped with chocolate curls.",
+        "ingredients":  [
+                            "Premium Chocolate Base",
+                            "Chocolate Milk",
+                            "Chocolate Syrup",
+                            "Whipped Cream"
+                        ],
+        "image":  "https://images.unsplash.com/photo-1579954115545-a95591f28bfc?q=80\u0026w=600\u0026auto=format\u0026fit=crop",
+        "sizes":  {
+                      "small":  {
+                                    "price":  4.99,
+                                    "calories":  370
+                                },
+                      "medium":  {
+                                     "price":  5.99,
+                                     "calories":  510
+                                 },
+                      "large":  {
+                                    "price":  6.99,
+                                    "calories":  650
+                                }
+                  },
+        "caffeine":  "0mg",
+        "sugar":  "46g"
+    },
+    {
+        "name":  "Vanilla Bean Shake",
+        "category":  "Shakes",
+        "description":  "A classic, velvety-smooth shake featuring real vanilla bean seeds and whipped cream.",
+        "ingredients":  [
+                            "Vanilla Bean Base",
+                            "Fresh Milk",
+                            "Whipped Cream"
+                        ],
+        "image":  "https://images.unsplash.com/photo-1579954115545-a95591f28bfc?q=80\u0026w=600\u0026auto=format\u0026fit=crop",
+        "sizes":  {
+                      "small":  {
+                                    "price":  4.99,
+                                    "calories":  330
+                                },
+                      "medium":  {
+                                     "price":  5.99,
+                                     "calories":  460
+                                 },
+                      "large":  {
+                                    "price":  6.99,
+                                    "calories":  590
+                                }
+                  },
+        "caffeine":  "0mg",
+        "sugar":  "38g"
+    },
+    {
+        "name":  "Kids Cotton Candy Shake",
+        "category":  "Kids Drinks",
+        "description":  "A small sweet blend of cotton candy syrup and milk with whipped cream.",
+        "ingredients":  [
+                            "Cotton Candy Syrup",
+                            "Whole Milk",
+                            "Ice Cream Blend",
+                            "Whipped Cream"
+                        ],
+        "image":  "https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?q=80\u0026w=600\u0026auto=format\u0026fit=crop",
+        "sizes":  {
+                      "small":  {
+                                    "price":  2.99,
+                                    "calories":  190
+                                }
+                  },
+        "caffeine":  "0mg",
+        "sugar":  "26g"
+    },
+    {
+        "name":  "The Ninja",
+        "category":  "Secret Menu",
+        "description":  "White chocolate and creme de menthe breve. Minty-fresh and velvety-smooth.",
+        "ingredients":  [
+                            "Espresso",
+                            "Creme de Menthe Syrup",
+                            "White Chocolate Sauce",
+                            "Breve Mix"
+                        ],
+        "image":  "assets/images/ninja.jpg",
+        "sizes":  {
+                      "small":  {
+                                    "price":  5.15,
+                                    "calories":  320
+                                },
+                      "medium":  {
+                                     "price":  5.65,
+                                     "calories":  460
+                                 },
+                      "large":  {
+                                    "price":  6.15,
+                                    "calories":  610
+                                }
+                  },
+        "caffeine":  "150mg",
+        "sugar":  "36g"
+    },
+    {
+        "name":  "Biscoff Cookie Breve",
+        "category":  "Secret Menu",
+        "description":  "Spiced brown cookie breve with hazelnut, toasted marshmallow, and caramel, topped with cookie dust.",
+        "ingredients":  [
+                            "Espresso",
+                            "Hazelnut Syrup",
+                            "Toasted Marshmallow",
+                            "Caramel",
+                            "Breve Mix",
+                            "Cinnamon Powder"
+                        ],
+        "image":  "assets/images/biscoff.jpg",
+        "sizes":  {
+                      "small":  {
+                                    "price":  5.25,
+                                    "calories":  340
+                                },
+                      "medium":  {
+                                     "price":  5.75,
+                                     "calories":  480
+                                 },
+                      "large":  {
+                                    "price":  6.25,
+                                    "calories":  630
+                                }
+                  },
+        "caffeine":  "150mg",
+        "sugar":  "41g"
+    },
+    {
+        "name":  "Funnel Cake Chiller",
+        "category":  "Secret Menu",
+        "description":  "A blended iced drink that tastes exactly like carnival funnel cake. Sweets, cream, and bliss.",
+        "ingredients":  [
+                            "Chiller Espresso Base",
+                            "Salted Caramel Sauce",
+                            "Vanilla Syrup",
+                            "White Chocolate Sauce",
+                            "Whipped Cream"
+                        ],
+        "image":  "assets/images/funnel_cake.jpg",
+        "sizes":  {
+                      "small":  {
+                                    "price":  5.49,
+                                    "calories":  420
+                                },
+                      "medium":  {
+                                     "price":  5.99,
+                                     "calories":  580
+                                 },
+                      "large":  {
+                                    "price":  6.49,
+                                    "calories":  740
+                                }
+                  },
+        "caffeine":  "120mg",
+        "sugar":  "62g"
+    },
+    {
+        "name":  "Angel Food Chiller",
+        "category":  "Secret Menu",
+        "description":  "A heavenly, light vanilla-caramel blended espresso chiller.",
+        "ingredients":  [
+                            "Chiller Espresso Base",
+                            "Caramel Sauce",
+                            "Vanilla Syrup",
+                            "Half \u0026 Half"
+                        ],
+        "image":  "assets/images/angel_food.jpg",
+        "sizes":  {
+                      "small":  {
+                                    "price":  5.15,
+                                    "calories":  310
+                                },
+                      "medium":  {
+                                     "price":  5.65,
+                                     "calories":  440
+                                 },
+                      "large":  {
+                                    "price":  6.15,
+                                    "calories":  590
+                                }
+                  },
+        "caffeine":  "120mg",
+        "sugar":  "34g"
+    },
+    {
+        "name":  "Peaches N\u0027 Cream",
+        "category":  "Secret Menu",
+        "description":  "Sweet peach syrup mixed with smooth vanilla breve cream.",
+        "ingredients":  [
+                            "Peach Syrup",
+                            "Vanilla Syrup",
+                            "Breve Cream Mix",
+                            "Ice"
+                        ],
+        "image":  "assets/images/peaches_cream.jpg",
+        "sizes":  {
+                      "small":  {
+                                    "price":  5.15,
+                                    "calories":  320
+                                },
+                      "medium":  {
+                                     "price":  5.65,
+                                     "calories":  450
+                                 },
+                      "large":  {
+                                    "price":  6.15,
+                                    "calories":  600
+                                }
+                  },
+        "caffeine":  "0mg",
+        "sugar":  "44g"
+    },
+    {
+        "name":  "Brew Lagoon",
+        "category":  "Secret Menu",
+        "description":  "An electric tropical mixer blend of blue raspberry, coconut, and fresh lime.",
+        "ingredients":  [
+                            "7 Brew Energy Base",
+                            "Blue Raspberry",
+                            "Coconut",
+                            "Lime Juice",
+                            "Ice"
+                        ],
+        "image":  "assets/images/brew_lagoon.jpg",
+        "sizes":  {
+                      "small":  {
+                                    "price":  4.99,
+                                    "calories":  190
+                                },
+                      "medium":  {
+                                     "price":  5.49,
+                                     "calories":  270
+                                 },
+                      "large":  {
+                                    "price":  5.99,
+                                    "calories":  350
+                                }
+                  },
+        "caffeine":  "150mg",
+        "sugar":  "38g"
+    },
+    {
+        "name":  "Rocky Road",
+        "category":  "Secret Menu",
+        "description":  "A rich dessert mocha with toasted marshmallow, caramel, and hazelnut syrups.",
+        "ingredients":  [
+                            "Espresso",
+                            "Toasted Marshmallow",
+                            "Caramel",
+                            "Hazelnut",
+                            "Chocolate Milk"
+                        ],
+        "image":  "assets/images/rocky_road.jpg",
+        "sizes":  {
+                      "small":  {
+                                    "price":  5.25,
+                                    "calories":  355
+                                },
+                      "medium":  {
+                                     "price":  5.75,
+                                     "calories":  515
+                                 },
+                      "large":  {
+                                    "price":  6.25,
+                                    "bold":  true,
+                                    "calories":  680
+                                }
+                  },
+        "caffeine":  "150mg",
+        "sugar":  "46g"
+    },
+    {
+        "name":  "Birthday Cake",
+        "category":  "Secret Menu",
+        "description":  "Indulgent cupcake syrup blended with smooth white chocolate.",
+        "ingredients":  [
+                            "Espresso",
+                            "Cupcake Syrup",
+                            "White Chocolate Sauce",
+                            "Steamed Milk"
+                        ],
+        "image":  "assets/images/birthday_cake.jpg",
+        "sizes":  {
+                      "small":  {
+                                    "price":  5.15,
+                                    "calories":  360
+                                },
+                      "medium":  {
+                                     "price":  5.65,
+                                     "calories":  500
+                                 },
+                      "large":  {
+                                    "price":  6.15,
+                                    "calories":  650
+                                }
+                  },
+        "caffeine":  "150mg",
+        "sugar":  "48g"
+    },
+    {
+        "name":  "Key Lime Pie",
+        "category":  "Secret Menu",
+        "description":  "A tart citrus delight mixing lemon, lime, and white chocolate sauce.",
+        "ingredients":  [
+                            "Lemonade Base",
+                            "Lime Juice",
+                            "White Chocolate Sauce",
+                            "Whipped Cream"
+                        ],
+        "image":  "assets/images/key_lime_pie.jpg",
+        "sizes":  {
+                      "small":  {
+                                    "price":  5.15,
+                                    "calories":  280
+                                },
+                      "medium":  {
+                                     "price":  5.65,
+                                     "calories":  390
+                                 },
+                      "large":  {
+                                    "price":  6.15,
+                                    "calories":  510
+                                }
+                  },
+        "caffeine":  "0mg",
+        "sugar":  "42g"
+    },
+    {
+        "name":  "Premium Muffin Tops",
+        "category":  "Snacks / Food",
+        "description":  "Warm, soft, bakery fresh muffin tops. Available in Blueberry, Chocolate Chip, or Seasonal Pumpkin.",
+        "ingredients":  [
+                            "Enriched Flour",
+                            "Sugar",
+                            "Blueberries or Chocolate Chips",
+                            "Butter"
+                        ],
+        "image":  "https://images.unsplash.com/photo-1607958996333-41aef7caefaa?q=80\u0026w=600\u0026auto=format\u0026fit=crop",
+        "sizes":  {
+                      "small":  {
+                                    "price":  2.99,
+                                    "calories":  280
+                                }
+                  },
+        "caffeine":  "0mg",
+        "sugar":  "22g"
+    },
+    {
+        "name":  "Barista Pup Cup",
+        "category":  "Snacks / Food",
+        "description":  "A cup filled with our sweet, delicious whipped cream for your furry friends.",
+        "ingredients":  [
+                            "Sweetened Whipped Cream"
+                        ],
+        "image":  "https://images.unsplash.com/photo-1544787219-7f47ccb76574?q=80\u0026w=600\u0026auto=format\u0026fit=crop",
+        "sizes":  {
+                      "small":  {
+                                    "price":  0.99,
+                                    "calories":  60
+                                }
+                  },
+        "caffeine":  "0mg",
+        "sugar":  "4g"
+    }
+]

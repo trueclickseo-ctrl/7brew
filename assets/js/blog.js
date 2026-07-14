@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 async function fetchBlogData() {
   try {
-    const response = await fetch('data/blog.json?v=1.0.1');
+    const response = await fetch('/data/blog.json?v=1.0.1');
     if (!response.ok) throw new Error('Failed to load blog database.');
     blogArticles = await response.json();
     

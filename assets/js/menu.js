@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // Fetch menu from JSON database
 async function fetchMenu() {
   try {
-    const response = await fetch('data/menu.json');
+    const response = await fetch('/data/menu.json');
     if (!response.ok) throw new Error('Failed to load menu database.');
     menuData = await response.json();
     

@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 async function fetchCalculatorData() {
   try {
-    const response = await fetch('data/menu.json');
+    const response = await fetch('/data/menu.json');
     if (!response.ok) throw new Error('Failed to load menu database.');
     menuData = await response.json();
     populateCategories();

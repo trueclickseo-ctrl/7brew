@@ -36,7 +36,9 @@ async function fetchMenu() {
   try {
     const response = await fetch('data/menu.json');
     if (!response.ok) throw new Error('Failed to load menu database.');
-    menuData = await response.json();
+    const text = await response.text();
+    const cleanText = text.replace(/^\uFEFF/, '');
+    menuData = JSON.parse(cleanText);
     
     // Check for category filter in URL query, hash, or clean pathnames
     const params = new URLSearchParams(window.location.search);

@@ -95,14 +95,14 @@ function renderMenu(items) {
     const isFav = window.FavoritesManager.isFav(item.name);
     
     return `
-      <article class="drink-card" data-name="${item.name}">
+      <article class="drink-card" data-name="${item.name.replace(/"/g, '&quot;')}">
         <div class="drink-image-wrap">
-          <img src="${item.image}" alt="${item.name}" onerror="this.src='https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=600&auto=format&fit=crop';" loading="lazy">
-          <button class="favorite-btn ${isFav ? 'active' : ''}" aria-label="Favorite ${item.name}" onclick="event.stopPropagation(); toggleFavorite('${item.name}', this)">
+          <img src="${item.image}" alt="${item.name.replace(/"/g, '&quot;')}" onerror="this.src='https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=600&auto=format&fit=crop';" loading="lazy">
+          <button class="favorite-btn ${isFav ? 'active' : ''}" aria-label="Favorite" onclick="event.stopPropagation(); toggleFavorite(this.closest('.drink-card').getAttribute('data-name'), this)">
             &#9829;
           </button>
         </div>
-        <div class="drink-info" onclick="openDrinkModal('${item.name}')">
+        <div class="drink-info" onclick="openDrinkModal(this.closest('.drink-card').getAttribute('data-name'))">
           <span class="drink-category-label">${item.category}</span>
           <h3 class="drink-title">${item.name}</h3>
           <p class="drink-description">${item.description}</p>
@@ -130,7 +130,7 @@ window.toggleFavorite = function(name, btnElement) {
 window.openDrinkModal = function(name) {
   const slug = slugMap[name];
   if (slug) {
-    window.location.href = slug;
+    window.location.href = slug + '.html';
     return;
   }
   const item = menuData.find(d => d.name === name);

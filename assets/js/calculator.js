@@ -190,11 +190,77 @@ function calculateTotal() {
     baseSugar += ADD_ONS.toppings.extraDrizzle.sugar;
   }
 
-  // Update DOM elements
-  document.getElementById('res-calories').textContent = baseCalories;
+  // Update DOM elements with visual animations
+  animateCount('res-calories', baseCalories);
   document.getElementById('res-price').textContent = `$${basePrice.toFixed(2)}`;
   document.getElementById('res-sugar').textContent = `${baseSugar}g`;
   document.getElementById('res-caffeine').textContent = `${baseCaffeine}mg`;
+
+  // Update Visual Cup
+  const cupLiquid = document.getElementById('cup-liquid');
+  if (cupLiquid) {
+    // 600 kcal represents a fully loaded drink
+    const heightPercentage = Math.min((baseCalories / 650) * 100, 100);
+    cupLiquid.style.height = `${heightPercentage}%`;
+    
+    // Dynamic color shifting based on calorie range
+    if (baseCalories < 120) {
+      cupLiquid.style.background = 'linear-gradient(to top, #00f2fe, #4facfe)'; // Light blue refresher
+    } else if (baseCalories < 320) {
+      cupLiquid.style.background = 'linear-gradient(to top, #f83600, #f9d423)'; // Orange energy
+    } else {
+      cupLiquid.style.background = 'linear-gradient(to top, #4b3621, #8b5a2b)'; // Rich chocolate mocha
+    }
+  }
+
+  // Update Health Gauge
+  const healthFill = document.getElementById('health-bar-fill');
+  const healthLabel = document.getElementById('health-label');
+  const healthPercent = document.getElementById('health-percent');
+  if (healthFill && healthLabel && healthPercent) {
+    const percent = Math.min(Math.round((baseCalories / 650) * 100), 100);
+    healthFill.style.width = `${percent}%`;
+    healthPercent.textContent = `${percent}% Indulgent`;
+    
+    if (percent < 20) {
+      healthLabel.textContent = 'Healthy Refresher 🍃';
+      healthLabel.style.color = '#00f2fe';
+      healthFill.style.background = '#00f2fe';
+    } else if (percent < 55) {
+      healthLabel.textContent = 'Balanced Energizer ⚡';
+      healthLabel.style.color = '#ff9900';
+      healthFill.style.background = '#ff9900';
+    } else {
+      healthLabel.textContent = 'Indulgent Treat 🍧';
+      healthLabel.style.color = '#ff007f';
+      healthFill.style.background = '#ff007f';
+    }
+  }
+}
+
+// Counting Tick Up Animation
+function animateCount(id, targetVal) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  const currentVal = parseInt(el.textContent) || 0;
+  if (currentVal === targetVal) return;
+  
+  let start = currentVal;
+  const duration = 400; // ms
+  const startTime = performance.now();
+  
+  function update(currentTime) {
+    const elapsed = currentTime - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+    const val = Math.round(start + (targetVal - start) * progress);
+    el.textContent = val;
+    if (progress < 1) {
+      requestAnimationFrame(update);
+    } else {
+      el.textContent = targetVal;
+    }
+  }
+  requestAnimationFrame(update);
 }
 
 function resetResults() {
@@ -202,4 +268,19 @@ function resetResults() {
   document.getElementById('res-price').textContent = '$0.00';
   document.getElementById('res-sugar').textContent = '0g';
   document.getElementById('res-caffeine').textContent = '0mg';
+
+  const cupLiquid = document.getElementById('cup-liquid');
+  if (cupLiquid) cupLiquid.style.height = '0%';
+
+  const healthFill = document.getElementById('health-bar-fill');
+  if (healthFill) healthFill.style.width = '0%';
+
+  const healthPercent = document.getElementById('health-percent');
+  if (healthPercent) healthPercent.textContent = '0% Indulgent';
+
+  const healthLabel = document.getElementById('health-label');
+  if (healthLabel) {
+    healthLabel.textContent = 'Healthy Refresher 🍃';
+    healthLabel.style.color = 'var(--color-primary)';
+  }
 }

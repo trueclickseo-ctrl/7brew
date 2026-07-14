@@ -1,4 +1,4 @@
-﻿[
+[
     {
         "name":  "Blondie",
         "category":  "7 Originals",
@@ -233,7 +233,7 @@
                             "Steamed Whole Milk",
                             "Foam"
                         ],
-        "image":  "assets/images/latte.jpg",
+        "image":  "assets/images/classic_latte.png",
         "sizes":  {
                       "small":  {
                                     "price":  3.75,
@@ -259,7 +259,7 @@
                             "Espresso Shots",
                             "Steamed Chocolate Milk"
                         ],
-        "image":  "https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80\u0026w=600\u0026auto=format\u0026fit=crop",
+        "image":  "assets/images/classic_mocha.png",
         "sizes":  {
                       "small":  {
                                     "price":  3.99,
@@ -393,7 +393,7 @@
                             "Water",
                             "Ice"
                         ],
-        "image":  "https://images.unsplash.com/photo-1517701604599-bb29b565090c?q=80\u0026w=600\u0026auto=format\u0026fit=crop",
+        "image":  "assets/images/classic_cold_brew.png",
         "sizes":  {
                       "small":  {
                                     "price":  4.25,
@@ -1235,7 +1235,7 @@
                             "Ice Cream Blend Mix",
                             "Ice"
                         ],
-        "image":  "https://images.unsplash.com/photo-1553530979-7ee52a2670c4?q=80\u0026w=600\u0026auto=format\u0026fit=crop",
+        "image":  "assets/images/mango_smoothie.png",
         "sizes":  {
                       "small":  {
                                     "price":  4.99,
@@ -1262,7 +1262,7 @@
                             "Ice Cream Blend Mix",
                             "Ice"
                         ],
-        "image":  "https://images.unsplash.com/photo-1553530979-7ee52a2670c4?q=80\u0026w=600\u0026auto=format\u0026fit=crop",
+        "image":  "assets/images/peach_smoothie.jpg",
         "sizes":  {
                       "small":  {
                                     "price":  4.99,
@@ -1289,7 +1289,7 @@
                             "Ice Cream Blend Mix",
                             "Ice"
                         ],
-        "image":  "https://images.unsplash.com/photo-1553530979-7ee52a2670c4?q=80\u0026w=600\u0026auto=format\u0026fit=crop",
+        "image":  "assets/images/wildberry_smoothie.png",
         "sizes":  {
                       "small":  {
                                     "price":  4.99,

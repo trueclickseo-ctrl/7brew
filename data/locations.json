@@ -1,0 +1,86 @@
+[
+  {
+    "id": 1,
+    "name": "Rogers - Pleasant Grove",
+    "address": "2100 W Pleasant Grove Rd, Rogers, AR 72758",
+    "state": "AR",
+    "phone": "(479) 555-0101",
+    "hours": {
+      "weekdays": "5:30 AM - 10:00 PM",
+      "weekends": "5:30 AM - 11:00 PM"
+    },
+    "driveThru": true,
+    "amenities": ["Double Drive-Thru Lane", "Walk-up Window", "Outdoor Seating"],
+    "coordinates": "36.2974,-94.1611"
+  },
+  {
+    "id": 2,
+    "name": "Springdale - Sunset",
+    "address": "3812 W Sunset Ave, Springdale, AR 72762",
+    "state": "AR",
+    "phone": "(479) 555-0102",
+    "hours": {
+      "weekdays": "5:30 AM - 10:00 PM",
+      "weekends": "5:30 AM - 11:00 PM"
+    },
+    "driveThru": true,
+    "amenities": ["Double Drive-Thru Lane", "Walk-up Window"],
+    "coordinates": "36.1867,-94.1878"
+  },
+  {
+    "id": 3,
+    "name": "Fayetteville - College Ave",
+    "address": "1620 N College Ave, Fayetteville, AR 72703",
+    "state": "AR",
+    "phone": "(479) 555-0103",
+    "hours": {
+      "weekdays": "5:30 AM - 10:00 PM",
+      "weekends": "5:30 AM - 11:00 PM"
+    },
+    "driveThru": true,
+    "amenities": ["Double Drive-Thru Lane", "Walk-up Window", "Bike Rack"],
+    "coordinates": "36.0842,-94.1565"
+  },
+  {
+    "id": 4,
+    "name": "Springfield - Glenstone",
+    "address": "1455 S Glenstone Ave, Springfield, MO 65804",
+    "state": "MO",
+    "phone": "(417) 555-0201",
+    "hours": {
+      "weekdays": "5:30 AM - 10:00 PM",
+      "weekends": "5:30 AM - 11:00 PM"
+    },
+    "driveThru": true,
+    "amenities": ["Double Drive-Thru Lane", "Outdoor Seating"],
+    "coordinates": "37.1824,-93.2625"
+  },
+  {
+    "id": 5,
+    "name": "Joplin - Range Line",
+    "address": "2002 S Range Line Rd, Joplin, MO 64804",
+    "state": "MO",
+    "phone": "(417) 555-0202",
+    "hours": {
+      "weekdays": "5:30 AM - 10:00 PM",
+      "weekends": "5:30 AM - 11:00 PM"
+    },
+    "driveThru": true,
+    "amenities": ["Double Drive-Thru Lane", "Walk-up Window"],
+    "coordinates": "37.0678,-94.4789"
+  },
+  {
+    "id": 6,
+    "name": "Tulsa - 71st St",
+    "address": "8220 E 71st St, Tulsa, OK 74133",
+    "state": "OK",
+    "phone": "(918) 555-0301",
+    "hours": {
+      "weekdays": "5:30 AM - 10:00 PM",
+      "weekends": "5:30 AM - 11:00 PM"
+    },
+    "driveThru": true,
+    "amenities": ["Double Drive-Thru Lane", "Walk-up Window", "Outdoor Seating"],
+    "coordinates": "36.0592,-95.8821"
+  }
+]

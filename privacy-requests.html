@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Requests | 7 Brew Inspired</title>
+  <meta name="description" content="Submit a personal data access, deletion, or portability request under privacy laws.">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- HEADER NAVIGATION -->
+  <header class="header">
+    <div class="container" style="display: flex; justify-content: space-between; align-items: center; height: 80px;">
+      <a href="/" style="font-family: var(--font-heading); font-weight: 700; font-size: 1.8rem; color: var(--text-white); text-decoration: none; display: flex; align-items: center; gap: 8px;">
+        <span style="color: var(--color-primary);">&#9889;</span> 7 Brew Inspired
+      </a>
+      <nav class="nav-menu" id="nav-menu">
+        <a href="/" class="nav-link">Home</a>
+        
+        <!-- Menu Dropdown -->
+        <div style="position: relative;" class="nav-dropdown-wrapper">
+          <a href="7brew-menu" class="nav-link">Menu &#9662;</a>
+          <div class="nav-dropdown-content" style="position: absolute; top: 100%; left: 0; background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); min-width: 160px; display: none; z-index: 100;">
+            <a href="7brew-menu" style="display: block; padding: 10px 16px; font-size: 0.9rem;">Full Menu</a>
+            <a href="7brew-secret-menu" style="display: block; padding: 10px 16px; font-size: 0.9rem;">Secret Menu</a>
+            <a href="7brew-recipe-maker" style="display: block; padding: 10px 16px; font-size: 0.9rem;">Recipe Maker</a>
+          </div>
+        </div>
+
+        <a href="7brew-locations" class="nav-link">Locations</a>
+
+        <a href="7brew-rewards" class="nav-link">Rewards</a>
+        <a href="7brew-deals" class="nav-link">Deals</a>
+        <a href="7brew-blog" class="nav-link">Blog</a>
+
+        <!-- More Dropdown -->
+        <div style="position: relative;" class="nav-dropdown-wrapper">
+          <a href="#" class="nav-link" onclick="event.preventDefault(); this.parentElement.classList.toggle('active');">More &#9662;</a>
+          <div class="nav-dropdown-content" style="position: absolute; top: 100%; right: 0; left: auto; background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); min-width: 160px; display: none; z-index: 100;">
+            <a href="7brew-calorie-calculator" style="display: block; padding: 10px 16px; font-size: 0.9rem;">Calorie Calculator</a>
+            <a href="7brew-careers" target="_blank" rel="noopener noreferrer" style="display: block; padding: 10px 16px; font-size: 0.9rem;">Careers</a>
+            <a href="7brew-gift-cards" style="display: block; padding: 10px 16px; font-size: 0.9rem;">Gift Cards</a>
+            <a href="7brew-franchise" style="display: block; padding: 10px 16px; font-size: 0.9rem;">Franchise</a>
+            <a href="7brew-merch-shop" style="display: block; padding: 10px 16px; font-size: 0.9rem;">Merch Shop</a>
+          </div>
+        </div>
+      </nav>
+      <div class="nav-toggle" id="nav-toggle" aria-label="Toggle Menu">&#9776;</div>
+    </div>
+  </header>
+
+  <!-- CONTENT -->
+  <main style="padding-top: 140px; padding-bottom: 80px;">
+    <div class="container" style="max-width: 800px;">
+      <h1 style="font-family: var(--font-heading); font-size: 2.8rem; margin-bottom: 16px;">Privacy Data Requests</h1>
+      <p style="color: var(--text-gray); margin-bottom: 40px; line-height: 1.6;">
+        Depending on where you reside, you may have legal rights to inspect, download, restrict, or request the deletion of any personal data compiled about your loyalty account or actions on our blog platform. Use the form below to submit your privacy request.
+      </p>
+
+      <section class="calc-panel" style="padding: 40px 32px;">
+        <form onsubmit="event.preventDefault(); alert('Your privacy data request has been logged successfully. We will review and verify your identity via email within 30 days.'); this.reset();">
+          
+          <div class="calc-group">
+            <label class="calc-label" for="req-name">Your Full Name</label>
+            <input type="text" id="req-name" class="calc-input" required placeholder="John Doe">
+          </div>
+
+          <div class="calc-group">
+            <label class="calc-label" for="req-email">Your Email Address</label>
+            <input type="email" id="req-email" class="calc-input" required placeholder="john@example.com">
+          </div>
+
+          <div class="calc-group">
+            <label class="calc-label" for="req-phone">Loyalty Phone Number (Optional)</label>
+            <input type="tel" id="req-phone" class="calc-input" placeholder="(555) 000-0000">
+          </div>
+
+          <div class="calc-group">
+            <label class="calc-label" for="req-type">Request Type</label>
+            <select id="req-type" class="calc-select" required>
+              <option value="access">Access My Personal Data Report</option>
+              <option value="delete">Delete/Opt-Out My Loyalty Account & Data</option>
+              <option value="restrict">Restrict Processing/Do Not Sell My Info</option>
+            </select>
+          </div>
+
+          <div class="calc-group">
+            <label class="calc-label" for="req-details">Additional Details or Proof of Residence</label>
+            <textarea id="req-details" class="calc-input" rows="4" style="resize: vertical; font-family: inherit;" placeholder="Please specify your request details or state of residence..."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 10px;">Submit Request</button>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <h3>&#9889; 7 Brew Inspired</h3>
+        <p>Changing drive-thru coffee and energy one custom recipe at a time. High-energy vibes, friendly teams, and speedy delivery.</p>
+      </div>
+      <div>
+        <h4 class="footer-links-title">Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="7brew-menu">Full Menu</a></li>
+          <li><a href="7brew-calorie-calculator">Calorie Calculator</a></li>
+          <li><a href="7brew-merch-shop">Merch Shop</a></li>
+          <li><a href="7brew-locations">Find Drive-Thrus</a></li>
+          <li><a href="7brew-blog">Read Our Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-links-title">Support</h4>
+        <ul class="footer-links">
+          <li><a href="contact">Contact Us</a></li>
+          <li><a href="contact#faqs">FAQ & Help</a></li>
+          <li><a href="7brew-careers" target="_blank" rel="noopener noreferrer">Careers</a></li>
+          <li><a href="7brew-gift-cards">Gift Cards</a></li>
+          <li><a href="7brew-franchise">Franchise Info</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-links-title">Legal</h4>
+        <ul class="footer-links">
+          <li><a href="privacy-policy">Privacy Policy</a></li>
+          <li><a href="privacy-requests">Privacy Requests</a></li>
+          <li><a href="terms">Terms & Conditions</a></li>
+          <li><a href="cookie-policy">Cookie Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>&copy; 2026 7 Brew Coffee Inspired Fan Site. All Rights Reserved. Crafted for high-energy coffee fans.</p>
+      <p>SSL Secured | Static Hosting Ready</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom Drive-Thru Recipe Card Maker | 7 Brew Inspired</title>
+  <meta name="description" content="Mix your favorite syrups, bases, and toppings to create a custom 7 Brew barista order ticket card to show your drive-thru server!">
+  <link rel="canonical" href="7brew-recipe-maker">
+  
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Secret Recipe Card Maker | 7 Brew Inspired">
+  <meta property="og:description" content="Generate a barista ticket for your custom coffee mix.">
+  <meta property="og:image" content="assets/images/og-menu.jpg">
+
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- Recipe Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Recipe",
+    "name": "7 Brew Blondie Copycat Recipe",
+    "image": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=600",
+    "description": "How to make the famous 7 Brew Blondie at home. A rich, sweet breve made with espresso, half-and-half, caramel, and vanilla syrups.",
+    "prepTime": "PT5M",
+    "cookTime": "PT0M",
+    "totalTime": "PT5M",
+    "recipeYield": "1 serving",
+    "recipeCategory": "Beverage",
+    "recipeCuisine": "American",
+    "recipeIngredients": [
+      "2 shots of espresso",
+      "1/2 oz Torani Caramel Syrup",
+      "1/2 oz Torani Vanilla Syrup",
+      "6 oz Half-and-Half (breve milk)",
+      "Ice"
+    ],
+    "recipeInstructions": [
+      {
+        "@type": "HowToStep",
+        "name": "Combine Flavors",
+        "text": "Add 1/2 oz caramel syrup and 1/2 oz vanilla syrup to a tall cup."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Add Espresso",
+        "text": "Brew 2 shots of fresh hot espresso and pour directly over the syrups. Stir to combine."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Add Ice and Milk",
+        "text": "Fill the cup with ice, then pour in 6 oz of cold half-and-half. Stir and serve."
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <!-- HEADER / NAVIGATION -->
+  <header class="header">
+    <div class="container nav-container">
+      <a href="/" class="logo" id="nav-logo">
+        <span class="logo-icon">&#9889;</span> 7 Brew Inspired
+      </a>
+      <nav class="nav-menu" id="nav-menu">
+        <a href="/" class="nav-link">Home</a>
+        
+        <!-- Menu Dropdown -->
+        <div style="position: relative;" class="nav-dropdown-wrapper">
+          <a href="7brew-menu" class="nav-link active">Menu &#9662;</a>
+          <div class="nav-dropdown-content" style="position: absolute; top: 100%; left: 0; background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); min-width: 160px; display: none; z-index: 100;">
+            <a href="7brew-menu" style="display: block; padding: 10px 16px; font-size: 0.9rem;">Full Menu</a>
+            <a href="7brew-secret-menu" style="display: block; padding: 10px 16px; font-size: 0.9rem;">Secret Menu</a>
+            <a href="7brew-recipe-maker" style="display: block; padding: 10px 16px; font-size: 0.9rem;">Recipe Maker</a>
+          </div>
+        </div>
+
+        <a href="7brew-locations" class="nav-link">Locations</a>
+
+        <a href="7brew-rewards" class="nav-link">Rewards</a>
+        <a href="7brew-deals" class="nav-link">Deals</a>
+        <a href="7brew-blog" class="nav-link">Blog</a>
+
+        <!-- More Dropdown -->
+        <div style="position: relative;" class="nav-dropdown-wrapper">
+          <a href="#" class="nav-link" onclick="event.preventDefault(); this.parentElement.classList.toggle('active');">More &#9662;</a>
+          <div class="nav-dropdown-content" style="position: absolute; top: 100%; right: 0; left: auto; background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); min-width: 160px; display: none; z-index: 100;">
+            <a href="7brew-calorie-calculator" style="display: block; padding: 10px 16px; font-size: 0.9rem;">Calorie Calculator</a>
+            <a href="7brew-careers" target="_blank" rel="noopener noreferrer" style="display: block; padding: 10px 16px; font-size: 0.9rem;">Careers</a>
+            <a href="7brew-gift-cards" style="display: block; padding: 10px 16px; font-size: 0.9rem;">Gift Cards</a>
+            <a href="7brew-franchise" style="display: block; padding: 10px 16px; font-size: 0.9rem;">Franchise</a>
+            <a href="7brew-merch-shop" style="display: block; padding: 10px 16px; font-size: 0.9rem;">Merch Shop</a>
+          </div>
+        </div>
+      </nav>
+      <div class="nav-toggle" id="nav-toggle" aria-label="Toggle Menu">&#9776;</div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main style="padding-top: 120px; min-height: 80vh; padding-bottom: 60px;">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 45px;">
+        <span style="color: var(--color-primary); font-weight: 700; text-transform: uppercase;">Barista Hacks</span>
+        <h1 style="font-size: 3rem; margin: 8px 0 12px 0; font-family: var(--font-heading);">Secret Recipe Card Maker</h1>
+        <p style="color: var(--text-gray); max-width: 600px; margin: 0 auto;">Build a custom drink mixture and generate an order summary card to show your barista at the drive-thru stand!</p>
+      </div>
+
+      <!-- Creator Panel -->
+      <section style="padding: 50px 40px; border-radius: var(--border-radius-lg); background: linear-gradient(135deg, var(--bg-secondary), var(--bg-card)); border: 2px dashed var(--color-primary); box-shadow: var(--shadow-neon);">
+        <div class="calc-layout" style="margin-top: 0;">
+          <!-- Creation inputs -->
+          <div style="display: flex; flex-direction: column; gap: 20px;">
+            <div class="calc-group">
+              <label class="calc-label" for="mix-name">Custom Drink Name</label>
+              <input type="text" id="mix-name" class="calc-input" placeholder="e.g. Midnight Mint Dream" style="background: var(--bg-primary);">
+            </div>
+            
+            <div class="calc-group">
+              <label class="calc-label" for="mix-base">Base Beverage Style</label>
+              <select id="mix-base" class="calc-select" style="background: var(--bg-primary);">
+                <option value="Breve Coffee">Iced Breve Coffee (Creamy Espresso)</option>
+                <option value="Mocha Coffee">Iced Mocha Coffee (Chocolate Espresso)</option>
+                <option value="Cold Brew">House Cold Brew</option>
+                <option value="Energy Mixer">Seven Energy Base</option>
+                <option value="Iced Tea">Fresh Brewed Iced Tea</option>
+                <option value="Lemonade">Premium Lemonade</option>
+              </select>
+            </div>
+
+            <!-- Mix-ins Checkboxes -->
+            <div class="calc-group">
+              <label class="calc-label">Mix-in Syrups (Select at least 1)</label>
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 6px; padding: 14px; background: var(--bg-primary); border-radius: var(--border-radius-sm); border: 1px solid var(--border-glass);">
+                <label style="display: flex; align-items: center; gap: 8px; font-size: 0.9rem; color: var(--text-gray);">
+                  <input type="checkbox" class="mix-syrup" value="Caramel Sauce"> Caramel Sauce
+                </label>
+                <label style="display: flex; align-items: center; gap: 8px; font-size: 0.9rem; color: var(--text-gray);">
+                  <input type="checkbox" class="mix-syrup" value="Vanilla Syrup"> Vanilla Syrup
+                </label>
+                <label style="display: flex; align-items: center; gap: 8px; font-size: 0.9rem; color: var(--text-gray);">
+                  <input type="checkbox" class="mix-syrup" value="Irish Cream"> Irish Cream
+                </label>
+                <label style="display: flex; align-items: center; gap: 8px; font-size: 0.9rem; color: var(--text-gray);">
+                  <input type="checkbox" class="mix-syrup" value="White Chocolate"> White Chocolate
+                </label>
+                <label style="display: flex; align-items: center; gap: 8px; font-size: 0.9rem; color: var(--text-gray);">
+                  <input type="checkbox" class="mix-syrup" value="Coconut Syrup"> Coconut Syrup
+                </label>
+                <label style="display: flex; align-items: center; gap: 8px; font-size: 0.9rem; color: var(--text-gray);">
+                  <input type="checkbox" class="mix-syrup" value="Hazelnut Syrup"> Hazelnut Syrup
+                </label>
+                <label style="display: flex; align-items: center; gap: 8px; font-size: 0.9rem; color: var(--text-gray);">
+                  <input type="checkbox" class="mix-syrup" value="Peppermint Syrup"> Peppermint Syrup
+                </label>
+                <label style="display: flex; align-items: center; gap: 8px; font-size: 0.9rem; color: var(--text-gray);">
+                  <input type="checkbox" class="mix-syrup" value="Raspberry Fruit Blend"> Raspberry Blend
+                </label>
+              </div>
+            </div>
+
+            <!-- Toppings Selection -->
+            <div class="calc-group">
+              <label class="calc-label" for="mix-top">Topping</label>
+              <select id="mix-top" class="calc-select" style="background: var(--bg-primary);">
+                <option value="None">None</option>
+                <option value="Whipped Cream">Whipped Cream</option>
+                <option value="Caramel Drizzle">Caramel Drizzle</option>
+                <option value="Chocolate Drizzle">Chocolate Drizzle</option>
+                <option value="Whipped Cream + Caramel Drizzle">Whipped Cream + Caramel Drizzle</option>
+                <option value="Whipped Cream + Chocolate Drizzle">Whipped Cream + Chocolate Drizzle</option>
+              </select>
+            </div>
+
+            <button class="btn btn-primary" onclick="generateSecretRecipe()" style="margin-top: 10px;">Generate Recipe Card</button>
+          </div>
+
+          <!-- Recipe Card Display -->
+          <div id="recipe-card-wrap">
+            <div id="recipe-card-display" style="background: var(--bg-primary); border: 2px solid var(--color-secondary); box-shadow: var(--shadow-neon-pink); border-radius: var(--border-radius-md); padding: 30px; text-align: center; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+              <span style="font-size: 3rem; margin-bottom: 12px;">☕</span>
+              <h3 style="font-family: var(--font-heading); margin-bottom: 8px; font-size: 1.5rem;">Your Ticket Will Appear Here</h3>
+              <p style="color: var(--text-gray); font-size: 0.9rem; max-width: 280px; margin: 0 auto;">Select your base, flavor syrups, and toppings, then click Generate to create your custom barista order script!</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <h3>&#9889; 7 Brew Inspired</h3>
+        <p>Changing drive-thru coffee and energy one custom recipe at a time. High-energy vibes, friendly teams, and speedy delivery.</p>
+      </div>
+      <div>
+        <h4 class="footer-links-title">Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="7brew-menu">Full Menu</a></li>
+          <li><a href="7brew-calorie-calculator">Calorie Calculator</a></li>
+          <li><a href="7brew-merch-shop">Merch Shop</a></li>
+          <li><a href="7brew-locations">Find Drive-Thrus</a></li>
+          <li><a href="7brew-blog">Read Our Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-links-title">Support</h4>
+        <ul class="footer-links">
+          <li><a href="contact">Contact Us</a></li>
+          <li><a href="contact#faqs">FAQ & Help</a></li>
+          <li><a href="7brew-careers" target="_blank" rel="noopener noreferrer">Careers</a></li>
+          <li><a href="7brew-gift-cards">Gift Cards</a></li>
+          <li><a href="7brew-franchise">Franchise Info</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-links-title">Legal</h4>
+        <ul class="footer-links">
+          <li><a href="privacy-policy">Privacy Policy</a></li>
+          <li><a href="privacy-requests">Privacy Requests</a></li>
+          <li><a href="terms">Terms & Conditions</a></li>
+          <li><a href="cookie-policy">Cookie Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>&copy; 2026 7 Brew Coffee Inspired Fan Site. All Rights Reserved. Crafted for high-energy coffee fans.</p>
+      <p>SSL Secured | Static Hosting Ready</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/js/main.js"></script>
+  <script>
+    window.generateSecretRecipe = function() {
+      const nameInput = document.getElementById('mix-name');
+      const baseSelect = document.getElementById('mix-base');
+      const topSelect = document.getElementById('mix-top');
+      const display = document.getElementById('recipe-card-display');
+
+      if (!nameInput || !baseSelect || !topSelect || !display) return;
+
+      const drinkName = nameInput.value.trim() || "Secret Drink Customizer";
+      const baseVal = baseSelect.value;
+      const topVal = topSelect.value;
+
+      // Gather checked syrups
+      const syrupNodes = document.querySelectorAll('.mix-syrup:checked');
+      const syrups = Array.from(syrupNodes).map(node => node.value);
+
+      if (syrups.length === 0) {
+        alert("Please select at least 1 Mix-in Syrup for your custom secret recipe!");
+        return;
+      }
+
+      // Construct Barista Readout
+      let syrupPart = syrups.join(' & ');
+      let toppingPart = topVal !== 'None' ? `, topped with ${topVal}` : '';
+      const orderScript = `I'd like a medium Iced ${baseVal} with ${syrupPart}${toppingPart}, please!`;
+
+      display.innerHTML = `
+        <div style="width: 100%; border: 2px dashed var(--color-primary); padding: 20px; border-radius: var(--border-radius-sm); text-align: left; background: var(--bg-card); height: 100%; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-glass); padding-bottom: 12px; margin-bottom: 16px;">
+              <span style="font-family: var(--font-heading); font-weight: 700; color: var(--color-primary); letter-spacing: 0.1em; text-transform: uppercase;">Barista Ticket</span>
+              <span style="color: var(--color-accent); font-size: 0.8rem;">#SECRET-MENU</span>
+            </div>
+            
+            <h4 style="font-size: 1.6rem; color: var(--text-white); font-family: var(--font-heading); margin-bottom: 8px;">${drinkName}</h4>
+            <p style="color: var(--color-secondary); font-weight: 600; font-size: 0.9rem; margin-bottom: 16px;">Base: ${baseVal}</p>
+            
+            <div style="background: var(--bg-primary); padding: 14px; border-radius: var(--border-radius-sm); border: 1px solid var(--border-glass); margin-bottom: 20px;">
+              <strong style="display: block; font-size: 0.8rem; text-transform: uppercase; color: var(--text-muted); margin-bottom: 6px;">How to Order:</strong>
+              <p style="color: var(--text-white); font-style: italic; line-height: 1.5; font-size: 0.95rem;">"${orderScript}"</p>
+            </div>
+          </div>
+
+          <div>
+            <div style="font-size: 0.8rem; color: var(--text-muted); display: flex; justify-content: space-between; border-top: 1px solid var(--border-glass); padding-top: 12px; margin-bottom: 16px;">
+              <span>Mix-ins: ${syrupPart}</span>
+              <span>Topping: ${topVal}</span>
+            </div>
+            <button class="btn btn-secondary" style="width: 100%; font-size: 0.75rem; padding: 6px 14px;" onclick="location.reload()">Clear Card</button>
+          </div>
+        </div>
+      `;
+    };
+  </script>
+</body>
+</html>
+
+
+
+
+
+

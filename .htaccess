@@ -1,0 +1,55 @@
+DirectoryIndex index.html
+
+RewriteEngine On
+
+# Permanent redirect for Careers to the official corporate page
+RewriteRule ^7brew-careers$ https://7brew.com/careers [R=301,L]
+RewriteRule ^careers$ https://7brew.com/careers [R=301,L]
+
+# Internal rewrites for clean section permalinks
+RewriteRule ^7brew-rewards$ rewards.html [L]
+RewriteRule ^rewards$ rewards.html [L]
+
+# Route clean 7brew- prefixed paths to actual html files
+RewriteRule ^7brew-menu$ menu.html [L]
+RewriteRule ^7brew-locations$ locations.html [L]
+RewriteRule ^7brew-blog$ blog.html [L]
+RewriteRule ^7brew-calorie-calculator$ calorie-calculator.html [L]
+
+# Route clean category slugs to menu.html
+RewriteRule ^7orignal$ menu.html [L]
+RewriteRule ^7classics$ menu.html [L]
+RewriteRule ^featured-drinks$ menu.html [L]
+RewriteRule ^7energy$ menu.html [L]
+RewriteRule ^7fizz$ menu.html [L]
+RewriteRule ^teas-chai-matcha$ menu.html [L]
+
+RewriteRule ^7brew-recipe-maker$ recipe-maker.html [L]
+RewriteRule ^recipe-maker$ recipe-maker.html [L]
+
+RewriteRule ^7brew-secret-menu$ secret-menu.html [L]
+RewriteRule ^secret-menu$ secret-menu.html [L]
+
+RewriteRule ^7brew-deals$ deals.html [L]
+RewriteRule ^deals$ deals.html [L]
+
+RewriteRule ^7brew-franchise$ franchise.html [L]
+RewriteRule ^franchise$ franchise.html [L]
+
+RewriteRule ^7brew-merch-shop$ merch-shop.html [L]
+RewriteRule ^merch-shop$ merch-shop.html [L]
+
+RewriteRule ^7brew-gift-cards$ gift-cards.html [L]
+RewriteRule ^gift-cards$ gift-cards.html [L]
+
+RewriteRule ^7brew-hours$ locations.html [L]
+RewriteRule ^hours$ locations.html [L]
+
+RewriteRule ^7brew-delivery$ locations.html [L]
+RewriteRule ^delivery$ locations.html [L]
+
+# Clean URLs: map /filename to filename.html
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^([^/]+)/?$ $1.html [L]

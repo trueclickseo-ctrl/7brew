@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Customer Support & FAQs | 7 Brew Inspired</title>
+  <meta name="description" content="Get in touch with the 7 Brew Inspired support team. Browse our frequently asked questions regarding nutritional facts, secret menu options, and franchises.">
+  <link rel="canonical" href="contact">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Contact Us & Frequently Asked Questions | 7 Brew Inspired">
+  <meta property="og:description" content="Reach out for help, franchise inquiries, or customer support. Responsive FAQ accordion for instant answers.">
+  <meta property="og:image" content="assets/images/og-contact.jpg">
+
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container nav-container">
+      <a href="/" class="logo" id="nav-logo">
+        <span class="logo-icon">&#9889;</span> 7 Brew Inspired
+      </a>
+      <nav class="nav-menu" id="nav-menu">
+        <a href="/" class="nav-link">Home</a>
+        
+        <!-- Menu Dropdown -->
+        <div style="position: relative;" class="nav-dropdown-wrapper">
+          <a href="7brew-menu" class="nav-link">Menu &#9662;</a>
+          <div class="nav-dropdown-content" style="position: absolute; top: 100%; left: 0; background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); min-width: 160px; display: none; z-index: 100;">
+            <a href="7brew-menu" style="display: block; padding: 10px 16px; font-size: 0.9rem;">Full Menu</a>
+            <a href="7brew-secret-menu" style="display: block; padding: 10px 16px; font-size: 0.9rem;">Secret Menu</a>
+            <a href="7brew-recipe-maker" style="display: block; padding: 10px 16px; font-size: 0.9rem;">Recipe Maker</a>
+          </div>
+        </div>
+
+        <a href="7brew-locations" class="nav-link">Locations</a>
+
+        <a href="7brew-rewards" class="nav-link">Rewards</a>
+        <a href="7brew-deals" class="nav-link">Deals</a>
+        <a href="7brew-blog" class="nav-link">Blog</a>
+
+        <!-- More Dropdown -->
+        <div style="position: relative;" class="nav-dropdown-wrapper">
+          <a href="#" class="nav-link" onclick="event.preventDefault(); this.parentElement.classList.toggle('active');">More &#9662;</a>
+          <div class="nav-dropdown-content" style="position: absolute; top: 100%; right: 0; left: auto; background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); min-width: 160px; display: none; z-index: 100;">
+            <a href="7brew-calorie-calculator" style="display: block; padding: 10px 16px; font-size: 0.9rem;">Calorie Calculator</a>
+            <a href="7brew-careers" target="_blank" rel="noopener noreferrer" style="display: block; padding: 10px 16px; font-size: 0.9rem;">Careers</a>
+            <a href="7brew-gift-cards" style="display: block; padding: 10px 16px; font-size: 0.9rem;">Gift Cards</a>
+            <a href="7brew-franchise" style="display: block; padding: 10px 16px; font-size: 0.9rem;">Franchise</a>
+            <a href="7brew-merch-shop" style="display: block; padding: 10px 16px; font-size: 0.9rem;">Merch Shop</a>
+          </div>
+        </div>
+      </nav>
+      <div class="nav-toggle" id="nav-toggle" aria-label="Toggle Menu">&#9776;</div>
+    </div>
+  </header>
+
+  <!-- CONTACT & FAQS -->
+  <main style="padding-top: 140px; padding-bottom: 80px;">
+    <div class="container">
+      <div class="section-header">
+        <h1 style="font-size: 3rem; margin-bottom: 12px; font-family: var(--font-heading);">Get in Touch</h1>
+        <p>We would love to hear from you! Send us your comments, franchise inquiries, or support requests.</p>
+      </div>
+
+      <div class="contact-grid">
+        <!-- Contact Form -->
+        <section class="contact-form-panel">
+          <h2 style="font-size: 1.8rem; margin-bottom: 24px; font-family: var(--font-heading);">Send a Message</h2>
+          <form onsubmit="event.preventDefault(); alert('Message successfully sent! Our team will contact you shortly.'); this.reset();">
+            
+            <div class="calc-group">
+              <label class="calc-label" for="contact-name">Full Name</label>
+              <input type="text" id="contact-name" class="calc-input" required placeholder="John Doe">
+            </div>
+
+            <div class="calc-group">
+              <label class="calc-label" for="contact-email">Email Address</label>
+              <input type="email" id="contact-email" class="calc-input" required placeholder="john@example.com">
+            </div>
+
+            <div class="calc-group">
+              <label class="calc-label" for="contact-subject">Inquiry Subject</label>
+              <select id="contact-subject" class="calc-select" required>
+                <option value="general">General Feedback</option>
+                <option value="franchise">Franchise Opportunities</option>
+                <option value="careers">Careers & Employment</option>
+                <option value="giftcard">Gift Cards Support</option>
+                <option value="merch">Merch Shop Inquiries</option>
+                <option value="nutrition">Nutritional / Calorie Questions</option>
+                <option value="support">Customer Support Help</option>
+              </select>
+            </div>
+
+            <div class="calc-group">
+              <label class="calc-label" for="contact-message">Your Message</label>
+              <textarea id="contact-message" class="calc-input" rows="5" required style="resize: vertical; font-family: inherit;" placeholder="Tell us how we can help..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 10px;">Submit Message</button>
+          </form>
+        </section>
+
+        <!-- FAQs Accordion -->
+        <section id="faqs">
+          <h2 style="font-size: 1.8rem; margin-bottom: 24px; font-family: var(--font-heading);">Frequently Asked Questions</h2>
+          <div class="faq-accordion">
+            
+            <div class="faq-item">
+              <div class="faq-question" onclick="toggleFaq(this)">
+                <span>What is the 7 Originals line?</span>
+                <span class="faq-arrow">&#9662;</span>
+              </div>
+              <div class="faq-answer">
+                <p>The 7 Originals are our signature line of breve and mocha beverages: Blondie, Brunette, Smooth 7, Cinnamon Roll, White Mac, German Chocolate, and Triple Seven. Each offers a unique blend of syrups and sauces.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-question" onclick="toggleFaq(this)">
+                <span>Do you offer sugar-free alternatives?</span>
+                <span class="faq-arrow">&#9662;</span>
+              </div>
+              <div class="faq-answer">
+                <p>Yes, absolutely! We offer sugar-free options for almost all of our signature syrups, including sugar-free vanilla, caramel, white chocolate, and more. Use our Calorie Calculator to view adjusted figures.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-question" onclick="toggleFaq(this)">
+                <span>What are the operating hours?</span>
+                <span class="faq-arrow">&#9662;</span>
+              </div>
+              <div class="faq-answer">
+                <p>Most of our locations open at 5:30 AM and close at 10:00 PM on weekdays, and 11:00 PM on Friday and Saturday nights. Check the Locations finder to confirm details for your closest stand.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-question" onclick="toggleFaq(this)">
+                <span>Can I open a franchise location?</span>
+                <span class="faq-arrow">&#9662;</span>
+              </div>
+              <div class="faq-answer">
+                <p>Yes! We are always looking for passionate partners to expand our high-energy coffee community. Please select "Franchise Opportunities" in the contact form to connect with our development leads.</p>
+              </div>
+            </div>
+
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <h3>&#9889; 7 Brew Inspired</h3>
+        <p>Changing drive-thru coffee and energy one custom recipe at a time. High-energy vibes, friendly teams, and speedy delivery.</p>
+      </div>
+      <div>
+        <h4 class="footer-links-title">Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="7brew-menu">Full Menu</a></li>
+          <li><a href="7brew-calorie-calculator">Calorie Calculator</a></li>
+          <li><a href="7brew-merch-shop">Merch Shop</a></li>
+          <li><a href="7brew-locations">Find Drive-Thrus</a></li>
+          <li><a href="7brew-blog">Read Our Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-links-title">Support</h4>
+        <ul class="footer-links">
+          <li><a href="contact">Contact Us</a></li>
+          <li><a href="contact#faqs">FAQ & Help</a></li>
+          <li><a href="7brew-careers" target="_blank" rel="noopener noreferrer">Careers</a></li>
+          <li><a href="7brew-gift-cards">Gift Cards</a></li>
+          <li><a href="7brew-franchise">Franchise Info</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-links-title">Legal</h4>
+        <ul class="footer-links">
+          <li><a href="privacy-policy">Privacy Policy</a></li>
+          <li><a href="privacy-requests">Privacy Requests</a></li>
+          <li><a href="terms">Terms & Conditions</a></li>
+          <li><a href="cookie-policy">Cookie Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>&copy; 2026 7 Brew Coffee Inspired Fan Site. All Rights Reserved. Crafted for high-energy coffee fans.</p>
+      <p>SSL Secured | Static Hosting Ready</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    function toggleFaq(header) {
+      const item = header.parentElement;
+      const wasActive = item.classList.contains('active');
+      
+      // Close all first
+      document.querySelectorAll('.faq-item').forEach(el => {
+        el.classList.remove('active');
+        el.querySelector('.faq-arrow').innerHTML = '&#9662;';
+      });
+
+      if (!wasActive) {
+        item.classList.add('active');
+        header.querySelector('.faq-arrow').innerHTML = '&#9652;';
+      }
+    }
+
+    // Auto-select Inquiry Subject based on query parameter or clean URL pathnames
+    document.addEventListener('DOMContentLoaded', () => {
+      const params = new URLSearchParams(window.location.search);
+      let subject = params.get('subject');
+      const path = window.location.pathname.toLowerCase().replace(/\/$/, '');
+      
+      if (!subject) {
+        if (path.endsWith('/7brew-careers') || path.endsWith('/careers')) {
+          subject = 'careers';
+        } else if (path.endsWith('/7brew-gift-cards') || path.endsWith('/gift-cards')) {
+          subject = 'giftcard';
+        } else if (path.endsWith('/7brew-franchise') || path.endsWith('/franchise')) {
+          subject = 'franchise';
+        } else if (path.endsWith('/7brew-merch-shop') || path.endsWith('/merch-shop')) {
+          subject = 'merch';
+        }
+      }
+      
+      if (subject) {
+        const select = document.getElementById('contact-subject');
+        if (select) {
+          select.value = subject;
+        }
+      }
+    });
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+

@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Coffee & Beverage Menu | 7 Brew Inspired</title>
+  <meta name="description" content="Browse our complete interactive menu of signature breves, custom energy mixes, real fruit smoothies, lemonades, and sparkling fizz drinks. Filter by calories, sugar, and caffeine.">
+  <link rel="canonical" href="menu.html">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Customize & Filter Our Complete Menu | 7 Brew Inspired">
+  <meta property="og:description" content="View ingredients, sizes, calories, caffeine metrics, and pricing for every beverage. Filter and find your favorite combination.">
+  <meta property="og:image" content="assets/images/og-menu.jpg">
+
+  <link rel="stylesheet" href="assets/css/style.css?v=1.0.1">
+
+  <!-- Menu Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Menu",
+    "@id": "https://www.7brewguide.com/7brew-menu#menu",
+    "name": "7 Brew Coffee Inspired Menu",
+    "description": "Complete interactive menu of custom coffee breves, mochas, customized energy drinks, shakes, and fizz.",
+    "hasMenuSection": [
+      {
+        "@type": "MenuSection",
+        "name": "The Original 7 Signature Breves & Mochas",
+        "hasMenuItem": [
+          {
+            "@type": "MenuItem",
+            "name": "The Blondie",
+            "description": "7 Brew's signature Caramel and Vanilla Breve (espresso and half-and-half).",
+            "offers": {
+              "@type": "Offer",
+              "price": "5.25",
+              "priceCurrency": "USD"
+            }
+          },
+          {
+            "@type": "MenuItem",
+            "name": "The Brunette",
+            "description": "Indulgent Hazelnut and Caramel Mocha.",
+            "offers": {
+              "@type": "Offer",
+              "price": "5.25",
+              "priceCurrency": "USD"
+            }
+          },
+          {
+            "@type": "MenuItem",
+            "name": "Smooth 7",
+            "description": "Creamy White Chocolate and Irish Cream Breve.",
+            "offers": {
+              "@type": "Offer",
+              "price": "5.25",
+              "priceCurrency": "USD"
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container nav-container">
+      <a href="index.html" class="logo" id="nav-logo">
+        <span class="logo-icon">&#9889;</span> 7 Brew Inspired
+      </a>
+      <nav class="nav-menu" id="nav-menu">
+        <a href="index.html" class="nav-link">Home</a>
+        
+        <!-- Menu Dropdown -->
+        <div style="position: relative;" class="nav-dropdown-wrapper">
+          <a href="menu.html" class="nav-link active">Menu &#9662;</a>
+          <div class="nav-dropdown-content" style="position: absolute; top: 100%; left: 0; background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); min-width: 160px; display: none; z-index: 100;">
+            <a href="menu.html" style="display: block; padding: 10px 16px; font-size: 0.9rem;">Full Menu</a>
+            <a href="menu.html" style="display: block; padding: 10px 16px; font-size: 0.9rem;">Secret Menu</a>
+            <a href="menu.html#recipes" style="display: block; padding: 10px 16px; font-size: 0.9rem;">Recipe Maker</a>
+          </div>
+        </div>
+
+        <a href="locations.html" class="nav-link">Locations</a>
+
+        <a href="index.html#rewards" class="nav-link">Rewards</a>
+        <a href="index.html#deals" class="nav-link">Deals</a>
+        <a href="blog.html" class="nav-link">Blog</a>
+
+        <!-- More Dropdown -->
+        <div style="position: relative;" class="nav-dropdown-wrapper">
+          <a href="#" class="nav-link" onclick="event.preventDefault(); this.parentElement.classList.toggle('active');">More &#9662;</a>
+          <div class="nav-dropdown-content" style="position: absolute; top: 100%; right: 0; left: auto; background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); min-width: 160px; display: none; z-index: 100;">
+            <a href="calorie-calculator.html" style="display: block; padding: 10px 16px; font-size: 0.9rem;">Sizes Calculator</a>
+            <a href="contact.html" style="display: block; padding: 10px 16px; font-size: 0.9rem;">Careers</a>
+            <a href="contact.html" style="display: block; padding: 10px 16px; font-size: 0.9rem;">Gift Cards</a>
+            <a href="contact.html" style="display: block; padding: 10px 16px; font-size: 0.9rem;">Franchise</a>
+            <a href="menu.html" style="display: block; padding: 10px 16px; font-size: 0.9rem;">Merch Shop</a>
+          </div>
+        </div>
+      </nav>
+      <div class="nav-toggle" id="nav-toggle" aria-label="Toggle Menu">&#9776;</div>
+    </div>
+  </header>
+
+  <!-- PAGE HERO -->
+  <main style="padding-top: 140px; padding-bottom: 80px;">
+    <div class="container">
+      <div class="section-header">
+        <h1 style="font-size: 3rem; margin-bottom: 12px; font-family: var(--font-heading);">Our Complete Menu</h1>
+        <p>Choose your base, pick your size, select your milk, and add custom syrups to create the perfect drink.</p>
+      </div>
+
+      <!-- CATEGORY SCROLL BUTTONS PANEL -->
+      <section class="category-panel-section" style="background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: var(--border-radius-lg); padding: 30px; margin-bottom: 45px; text-align: center; box-shadow: var(--shadow-neon-pink);">
+        <h2 style="font-size: 2.2rem; font-family: var(--font-heading); margin-bottom: 10px; color: var(--text-white);">7 Brew Menu Drinks Categories</h2>
+        <p style="color: var(--text-gray); margin-bottom: 24px;">Simply Press the button to move straight to that section.</p>
+        <div class="category-buttons-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; max-width: 1000px; margin: 0 auto;">
+          <a href="#7-fizz" class="btn btn-category" style="background: #3d2c20; border: 2px solid var(--border-glass); border-radius: 30px; padding: 12px; font-weight: 700; color: #fff; text-align: center; text-decoration: none; display: block; font-style: italic;">7 Fizz</a>
+          <a href="#7-classics" class="btn btn-category" style="background: #3d2c20; border: 2px solid var(--border-glass); border-radius: 30px; padding: 12px; font-weight: 700; color: #fff; text-align: center; text-decoration: none; display: block; font-style: italic;">Classics</a>
+          <a href="#7-energy" class="btn btn-category" style="background: #3d2c20; border: 2px solid var(--border-glass); border-radius: 30px; padding: 12px; font-weight: 700; color: #fff; text-align: center; text-decoration: none; display: block; font-style: italic;">7 Energy</a>
+          <a href="#teas" class="btn btn-category" style="background: #3d2c20; border: 2px solid var(--border-glass); border-radius: 30px; padding: 12px; font-weight: 700; color: #fff; text-align: center; text-decoration: none; display: block; font-style: italic;">Teas</a>
+          <a href="#smoothies" class="btn btn-category" style="background: #3d2c20; border: 2px solid var(--border-glass); border-radius: 30px; padding: 12px; font-weight: 700; color: #fff; text-align: center; text-decoration: none; display: block; font-style: italic;">Smoothies</a>
+          <a href="#7-originals" class="btn btn-category" style="background: #3d2c20; border: 2px solid var(--border-glass); border-radius: 30px; padding: 12px; font-weight: 700; color: #fff; text-align: center; text-decoration: none; display: block; font-style: italic;">7 Originals</a>
+          <a href="#lemonades" class="btn btn-category" style="background: #3d2c20; border: 2px solid var(--border-glass); border-radius: 30px; padding: 12px; font-weight: 700; color: #fff; text-align: center; text-decoration: none; display: block; font-style: italic;">Lemonade</a>
+          <a href="#shakes" class="btn btn-category" style="background: #3d2c20; border: 2px solid var(--border-glass); border-radius: 30px; padding: 12px; font-weight: 700; color: #fff; text-align: center; text-decoration: none; display: block; font-style: italic;">7 Milkshake</a>
+          <a href="#extras" class="btn btn-category" style="background: #3d2c20; border: 2px solid var(--border-glass); border-radius: 30px; padding: 12px; font-weight: 700; color: #fff; text-align: center; text-decoration: none; display: block; font-style: italic;">Extras</a>
+        </div>
+      </section>
+
+      <!-- FILTER CONTROLS -->
+      <section class="menu-controls">
+        <div class="search-filter-row">
+          <!-- Live Search -->
+          <div class="search-input-wrapper">
+            <span class="search-icon-inside">&#128269;</span>
+            <input type="text" id="menu-search" class="search-input" placeholder="Search drinks, syrups, ingredients...">
+          </div>
+
+          <!-- Sort Selector -->
+          <select id="menu-sort" class="sort-select" aria-label="Sort Menu Items">
+            <option value="default">Sort by: Featured</option>
+            <option value="name-asc">Name: A to Z</option>
+            <option value="name-desc">Name: Z to A</option>
+            <option value="price-low">Price: Low to High</option>
+            <option value="price-high">Price: High to Low</option>
+            <option value="calories-low">Calories: Low to High</option>
+            <option value="calories-high">Calories: High to Low</option>
+          </select>
+        </div>
+      </section>
+
+      <!-- DYNAMIC DRINK SECTIONS -->
+      <div id="menu-sections-container">
+        <div style="text-align: center; color: var(--text-gray); padding: 40px 0;">Loading menu options...</div>
+      </div>
+
+      <!-- INTERACTIVE SECRET MENU RECIPE CREATOR -->
+      <section style="margin-top: 100px; padding: 60px 40px; border-radius: var(--border-radius-lg); background: linear-gradient(135deg, var(--bg-secondary), var(--bg-card)); border: 2px dashed var(--color-primary); box-shadow: var(--shadow-neon);">
+        <div style="text-align: center; margin-bottom: 40px;">
+          <span style="color: var(--color-primary); font-weight: 700; text-transform: uppercase;">Barista Hacks</span>
+          <h2 style="font-size: 2.2rem; margin: 8px 0 12px 0; font-family: var(--font-heading);">Secret Recipe Card Maker</h2>
+          <p style="color: var(--text-gray); max-width: 600px; margin: 0 auto;">Can't find your recipe? Build a custom drink mixture and generate an order summary card to show your barista at the drive-thru stand!</p>
+        </div>
+
+        <div class="calc-layout" style="margin-top: 0;">
+          <!-- Creation inputs -->
+          <div style="display: flex; flex-direction: column; gap: 20px;">
+            <div class="calc-group">
+              <label class="calc-label" for="mix-name">Custom Drink Name</label>
+              <input type="text" id="mix-name" class="calc-input" placeholder="e.g. Midnight Mint Dream" style="background: var(--bg-primary);">
+            </div>
+            
+            <div class="calc-group">
+              <label class="calc-label" for="mix-base">Base Beverage Style</label>
+              <select id="mix-base" class="calc-select" style="background: var(--bg-primary);">
+                <option value="Breve Coffee">Iced Breve Coffee (Creamy Espresso)</option>
+                <option value="Mocha Coffee">Iced Mocha Coffee (Chocolate Espresso)</option>
+                <option value="Cold Brew">House Cold Brew</option>
+                <option value="Energy Mixer">Seven Energy Base</option>
+                <option value="Iced Tea">Fresh Brewed Iced Tea</option>
+                <option value="Lemonade">Premium Lemonade</option>
+              </select>
+            </div>
+
+            <div class="calc-group">
+              <label class="calc-label">Mix-In Syrups (Select up to 3)</label>
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                <label style="display: flex; align-items: center; gap: 8px; font-size: 0.9rem; cursor: pointer;">
+                  <input type="checkbox" class="mix-syrup" value="Caramel" style="width: 18px; height: 18px;"> Caramel
+                </label>
+                <label style="display: flex; align-items: center; gap: 8px; font-size: 0.9rem; cursor: pointer;">
+                  <input type="checkbox" class="mix-syrup" value="Vanilla" style="width: 18px; height: 18px;"> Vanilla
+                </label>
+                <label style="display: flex; align-items: center; gap: 8px; font-size: 0.9rem; cursor: pointer;">
+                  <input type="checkbox" class="mix-syrup" value="White Chocolate" style="width: 18px; height: 18px;"> White Chocolate
+                </label>
+                <label style="display: flex; align-items: center; gap: 8px; font-size: 0.9rem; cursor: pointer;">
+                  <input type="checkbox" class="mix-syrup" value="Creme de Menthe" style="width: 18px; height: 18px;"> Creme de Menthe
+                </label>
+                <label style="display: flex; align-items: center; gap: 8px; font-size: 0.9rem; cursor: pointer;">
+                  <input type="checkbox" class="mix-syrup" value="Coconut" style="width: 18px; height: 18px;"> Coconut
+                </label>
+                <label style="display: flex; align-items: center; gap: 8px; font-size: 0.9rem; cursor: pointer;">
+                  <input type="checkbox" class="mix-syrup" value="Peach" style="width: 18px; height: 18px;"> Peach
+                </label>
+              </div>
+            </div>
+
+            <div class="calc-group">
+              <label class="calc-label" for="mix-top">Top Add-on</label>
+              <select id="mix-top" class="calc-select" style="background: var(--bg-primary);">
+                <option value="None">No toppings</option>
+                <option value="Whipped Cream">Whipped Cream</option>
+                <option value="Cold Foam">Velvety Cold Foam</option>
+                <option value="Extra Drizzle">Extra Sauce Drizzle</option>
+              </select>
+            </div>
+
+            <button class="btn btn-primary" onclick="generateSecretRecipe()">Generate Recipe Card</button>
+          </div>
+
+          <!-- Recipe Card Display -->
+          <div>
+            <div id="recipe-card-display" style="background: var(--bg-primary); border: 2px solid var(--color-secondary); box-shadow: var(--shadow-neon-pink); border-radius: var(--border-radius-md); padding: 30px; text-align: center; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+              <span style="font-size: 3rem; margin-bottom: 12px;">🧪</span>
+              <h3 style="font-size: 1.4rem; color: var(--color-secondary); margin-bottom: 8px;">Order Card Preview</h3>
+              <p style="color: var(--text-gray); font-size: 0.9rem;">Fill out the customization fields on the left and click generate to view your custom barista ordering script.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- DRINK DETAILS MODAL -->
+  <div class="modal" id="drink-modal" aria-hidden="true" role="dialog">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal()" aria-label="Close Details Modal">&times;</button>
+      <div class="modal-body" id="modal-body-content">
+        <!-- Dynamic details populated from menu.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <h3>&#9889; 7 Brew Inspired</h3>
+        <p>Changing drive-thru coffee and energy one custom recipe at a time. High-energy vibes, friendly teams, and speedy delivery.</p>
+      </div>
+      <div>
+        <h4 class="footer-links-title">Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="menu.html">Full Menu</a></li>
+          <li><a href="calorie-calculator.html">Calorie Calculator</a></li>
+          <li><a href="locations.html">Find Drive-Thrus</a></li>
+          <li><a href="blog.html">Read Our Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-links-title">Support</h4>
+        <ul class="footer-links">
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="contact.html#faqs">FAQ & Help</a></li>
+          <li><a href="contact.html">Franchise Info</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-links-title">Legal</h4>
+        <ul class="footer-links">
+          <li><a href="privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="privacy-requests.html">Privacy Requests</a></li>
+          <li><a href="terms.html">Terms & Conditions</a></li>
+          <li><a href="cookie-policy.html">Cookie Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>&copy; 2026 7 Brew Coffee Inspired Fan Site. All Rights Reserved. Crafted for high-energy coffee fans.</p>
+      <p>SSL Secured | Static Hosting Ready</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/menu.js?v=1.0.3"></script>
+</body>
+</html>

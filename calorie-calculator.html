@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Calorie & Price Calculator | 7 Brew Inspired</title>
+  <meta name="description" content="Calculate the exact calories, sugars, caffeine, and cost of your customized beverage. Substitute milks, select sugar-free syrups, and add extra shots in real time.">
+  <link rel="canonical" href="7brew-calorie-calculator">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Dynamic Nutrition & Calorie Calculator | 7 Brew Inspired">
+  <meta property="og:description" content="Adjust your size, select oat/almond milk, toggles sugar-free, and count caffeine levels instantly.">
+  <meta property="og:image" content="assets/images/og-calc.jpg">
+
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container nav-container">
+      <a href="/" class="logo" id="nav-logo">
+        <span class="logo-icon">&#9889;</span> 7 Brew Inspired
+      </a>
+      <nav class="nav-menu" id="nav-menu">
+        <a href="/" class="nav-link">Home</a>
+        
+        <!-- Menu Dropdown -->
+        <div style="position: relative;" class="nav-dropdown-wrapper">
+          <a href="7brew-menu" class="nav-link">Menu &#9662;</a>
+          <div class="nav-dropdown-content" style="position: absolute; top: 100%; left: 0; background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); min-width: 160px; display: none; z-index: 100;">
+            <a href="7brew-menu" style="display: block; padding: 10px 16px; font-size: 0.9rem;">Full Menu</a>
+            <a href="7brew-secret-menu" style="display: block; padding: 10px 16px; font-size: 0.9rem;">Secret Menu</a>
+            <a href="7brew-recipe-maker" style="display: block; padding: 10px 16px; font-size: 0.9rem;">Recipe Maker</a>
+          </div>
+        </div>
+
+        <a href="7brew-locations" class="nav-link">Locations</a>
+
+        <a href="7brew-rewards" class="nav-link">Rewards</a>
+        <a href="7brew-deals" class="nav-link">Deals</a>
+        <a href="7brew-blog" class="nav-link">Blog</a>
+
+        <!-- More Dropdown -->
+        <div style="position: relative;" class="nav-dropdown-wrapper">
+          <a href="#" class="nav-link" onclick="event.preventDefault(); this.parentElement.classList.toggle('active');">More &#9662;</a>
+          <div class="nav-dropdown-content" style="position: absolute; top: 100%; right: 0; left: auto; background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); min-width: 160px; display: none; z-index: 100;">
+            <a href="7brew-calorie-calculator" style="display: block; padding: 10px 16px; font-size: 0.9rem;">Calorie Calculator</a>
+            <a href="7brew-careers" target="_blank" rel="noopener noreferrer" style="display: block; padding: 10px 16px; font-size: 0.9rem;">Careers</a>
+            <a href="7brew-gift-cards" style="display: block; padding: 10px 16px; font-size: 0.9rem;">Gift Cards</a>
+            <a href="7brew-franchise" style="display: block; padding: 10px 16px; font-size: 0.9rem;">Franchise</a>
+            <a href="7brew-merch-shop" style="display: block; padding: 10px 16px; font-size: 0.9rem;">Merch Shop</a>
+          </div>
+        </div>
+      </nav>
+      <div class="nav-toggle" id="nav-toggle" aria-label="Toggle Menu">&#9776;</div>
+    </div>
+  </header>
+
+  <!-- CALCULATOR CONTENT -->
+  <main style="padding-top: 140px; padding-bottom: 80px;">
+    <div class="container">
+      <div class="section-header">
+        <h1 style="font-size: 3rem; margin-bottom: 12px; font-family: var(--font-heading);">Nutrition Calculator</h1>
+        <p>Fine-tune your beverage to match your dietary targets. Change sizes, milk bases, and toppings to view direct nutritional and price shifts.</p>
+      </div>
+
+      <div class="calc-layout">
+        <!-- Configuration Panel -->
+        <section class="calc-panel">
+          
+          <!-- Category Select -->
+          <div class="calc-group">
+            <label class="calc-label" for="calc-category">1. Select Drink Category</label>
+            <select id="calc-category" class="calc-select">
+              <option value="">Loading categories...</option>
+            </select>
+          </div>
+
+          <!-- Drink Select -->
+          <div class="calc-group">
+            <label class="calc-label" for="calc-drink">2. Select Your Drink Base</label>
+            <select id="calc-drink" class="calc-select">
+              <option value="">-- Choose Category First --</option>
+            </select>
+          </div>
+
+          <!-- Size Select -->
+          <div class="calc-group">
+            <label class="calc-label" for="calc-size">3. Choose Your Size</label>
+            <select id="calc-size" class="calc-select">
+              <option value="">-- Choose Drink First --</option>
+            </select>
+          </div>
+
+          <!-- Milk Customization -->
+          <div class="calc-group">
+            <label class="calc-label" for="calc-milk">4. Milk Option / Alternative</label>
+            <select id="calc-milk" class="calc-select">
+              <option value="none">Standard Base (No Substitutions)</option>
+              <option value="whole">Whole Milk (Standard Mocha)</option>
+              <option value="half-half">Breve Mix (Half & Half) (+$0.75)</option>
+              <option value="oat">Creamy Oat Milk (+$0.75)</option>
+              <option value="almond">Smooth Almond Milk (+$0.75)</option>
+              <option value="coconut">Sweet Coconut Milk (+$0.75)</option>
+            </select>
+          </div>
+
+          <!-- Custom Syrups & Espresso Shots -->
+          <div class="calc-group">
+            <label class="calc-label">5. Espresso & Syrup Boosts</label>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+              <div>
+                <label style="font-size: 0.85rem; color: var(--text-gray); display:block; margin-bottom: 6px;" for="calc-syrup-qty">Extra Syrup Pumps (+$0.50/pump)</label>
+                <input type="number" id="calc-syrup-qty" class="calc-input" min="0" max="10" value="0">
+              </div>
+              <div>
+                <label style="font-size: 0.85rem; color: var(--text-gray); display:block; margin-bottom: 6px;" for="calc-shots-qty">Extra Espresso Shots (+$0.75/shot)</label>
+                <input type="number" id="calc-shots-qty" class="calc-input" min="0" max="6" value="0">
+              </div>
+            </div>
+          </div>
+
+          <!-- Healthy & Topping Toggles -->
+          <div class="calc-group">
+            <label class="calc-label">6. Toppings & Adjustments</label>
+            
+            <div style="display: flex; flex-direction: column; gap: 12px; margin-top: 10px;">
+              <!-- Sugar Free -->
+              <label style="display: flex; align-items: center; gap: 10px; cursor: pointer;">
+                <input type="checkbox" id="calc-sugar-free" style="width: 20px; height: 20px; cursor: pointer;">
+                <span>Use Sugar-Free Flavors/Sweeteners (Drastically cuts calories & sugar)</span>
+              </label>
+
+              <!-- Whipped Cream -->
+              <label style="display: flex; align-items: center; gap: 10px; cursor: pointer;">
+                <input type="checkbox" id="calc-whip" style="width: 20px; height: 20px; cursor: pointer;">
+                <span>Add Whipped Cream (+$0.50)</span>
+              </label>
+
+              <!-- Cold Foam -->
+              <label style="display: flex; align-items: center; gap: 10px; cursor: pointer;">
+                <input type="checkbox" id="calc-coldfoam" style="width: 20px; height: 20px; cursor: pointer;">
+                <span>Add Cold Foam (+$0.75)</span>
+              </label>
+
+              <!-- Extra Caramel / Chocolate Drizzle -->
+              <label style="display: flex; align-items: center; gap: 10px; cursor: pointer;">
+                <input type="checkbox" id="calc-drizzle" style="width: 20px; height: 20px; cursor: pointer;">
+                <span>Add Extra Drizzle (Caramel/Chocolate) (+$0.50)</span>
+              </label>
+            </div>
+          </div>
+
+        </section>
+
+        <!-- Dynamic Results Sidebar -->
+        <aside>
+          <div class="calc-results-sticky">
+            <div class="calc-results">
+              <h3 style="font-size: 1.5rem; margin-bottom: 20px;">Estimated Calories</h3>
+              <div class="calc-result-number" id="res-calories">0</div>
+              <p style="color: var(--text-gray); font-size: 0.9rem;">kcal per serving</p>
+
+              <!-- Stats Grid -->
+              <div class="calc-stats-grid">
+                <div>
+                  <span style="color: var(--text-muted); font-size: 0.85rem; text-transform: uppercase;">Estimated Price</span>
+                  <div class="calc-stat-val" id="res-price">$0.00</div>
+                </div>
+                <div>
+                  <span style="color: var(--text-muted); font-size: 0.85rem; text-transform: uppercase;">Total Sugars</span>
+                  <div class="calc-stat-val" id="res-sugar">0g</div>
+                </div>
+                <div style="grid-column: 1/-1; padding-top: 16px; border-top: 1px solid var(--border-glass); margin-top: 16px;">
+                  <span style="color: var(--text-muted); font-size: 0.85rem; text-transform: uppercase;">Caffeine Level</span>
+                  <div class="calc-stat-val" id="res-caffeine" style="color: var(--color-secondary);">0mg</div>
+                </div>
+              </div>
+            </div>
+            
+            <div style="margin-top: 24px; padding: 20px; border-radius: var(--border-radius-md); border: 1px solid var(--border-glass); background: var(--bg-card); font-size: 0.85rem; color: var(--text-gray);">
+              <strong>* Disclaimer:</strong> Nutritional estimates are calculated using brand standard guidelines. Actual figures may vary based on customization volumes and hand-crafted serving proportions.
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <h3>&#9889; 7 Brew Inspired</h3>
+        <p>Changing drive-thru coffee and energy one custom recipe at a time. High-energy vibes, friendly teams, and speedy delivery.</p>
+      </div>
+      <div>
+        <h4 class="footer-links-title">Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="7brew-menu">Full Menu</a></li>
+          <li><a href="7brew-calorie-calculator">Calorie Calculator</a></li>
+          <li><a href="7brew-merch-shop">Merch Shop</a></li>
+          <li><a href="7brew-locations">Find Drive-Thrus</a></li>
+          <li><a href="7brew-blog">Read Our Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-links-title">Support</h4>
+        <ul class="footer-links">
+          <li><a href="contact">Contact Us</a></li>
+          <li><a href="contact#faqs">FAQ & Help</a></li>
+          <li><a href="7brew-careers" target="_blank" rel="noopener noreferrer">Careers</a></li>
+          <li><a href="7brew-gift-cards">Gift Cards</a></li>
+          <li><a href="7brew-franchise">Franchise Info</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-links-title">Legal</h4>
+        <ul class="footer-links">
+          <li><a href="privacy-policy">Privacy Policy</a></li>
+          <li><a href="privacy-requests">Privacy Requests</a></li>
+          <li><a href="terms">Terms & Conditions</a></li>
+          <li><a href="cookie-policy">Cookie Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>&copy; 2026 7 Brew Coffee Inspired Fan Site. All Rights Reserved. Crafted for high-energy coffee fans.</p>
+      <p>SSL Secured | Static Hosting Ready</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/calculator.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

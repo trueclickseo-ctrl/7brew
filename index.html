@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>7 Brew Coffee Inspired | Premium Custom Beverages & Energy Drinks</title>
+  <meta name="description" content="Discover premium custom coffee, teas, lemonades, smoothies, and high-energy drinks. Craft your perfect cup with our calorie calculator or find a drive-thru near you.">
+  <link rel="canonical" href="index.html">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="7 Brew Coffee Inspired | Custom Drive-Thru Beverages">
+  <meta property="og:description" content="Experience high-energy coffee, custom flavors, and speedy friendly service. Check our interactive menu, calories, and blog updates.">
+  <meta property="og:image" content="assets/images/og-main.jpg">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="7 Brew Coffee Inspired | Custom Beverages">
+  <meta name="twitter:description" content="Fast, friendly drive-thru coffee and energy drinks with customizable syrup mixes.">
+  <meta name="twitter:image" content="assets/images/og-main.jpg">
+
+  <!-- Style Sheets -->
+  <link rel="stylesheet" href="assets/css/style.css?v=1.0.1">
+  
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "FastFoodRestaurant",
+        "@id": "https://www.7brewguide.com/#restaurant",
+        "name": "7 Brew Inspired Coffee",
+        "image": "assets/images/hero-cup.jpg",
+        "description": "High-energy drive-thru coffee stand offering custom breves, mocha, energy mixers, and smoothies.",
+        "servesCuisine": "Coffee, Beverages, Energy Drinks",
+        "priceRange": "$$"
+      },
+      {
+        "@type": "FAQPage",
+        "@context": "https://schema.org",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What are the Original 7 drinks at 7 Brew?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The Original 7 signature drinks at 7 Brew include the Blondie (Caramel & Vanilla Breve), Brunette (Hazelnut & Caramel Mocha), Smooth 7 (White Chocolate & Irish Cream Breve), White Mac (White Chocolate & Macadamia Nut Breve), German Chocolate (Coconut & Caramel Mocha), Snickerz (Hazelnut & Caramel Mocha with Caramel Drizzle), and Cinnamon Roll (Brown Sugar Cinnamon & White Chocolate Breve)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can you customize drinks at 7 Brew?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes! With over 30 flavor syrups (including sugar-free options), alternative milk bases like Oat, Coconut, Almond, and Half-and-Half, and customizable sweetness levels, there are over 20,000 unique drink configurations available at 7 Brew."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is in a 7 Brew energy drink?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "7 Brew energy drinks are made using their proprietary premium energy drink, '7 Energy', combined with your choice of custom syrup flavors. Popular custom energy drinks include the Pixie Stick, Love Potion, and Black Mamba."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does 7 Brew offer sugar-free syrups?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes! 7 Brew offers a wide range of sugar-free flavor syrups, including Sugar-Free Caramel, Vanilla, Irish Cream, White Chocolate, Coconut, Hazelnut, and Chocolate, making it easy to create delicious low-calorie or keto-friendly beverages."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- HEADER / NAVIGATION -->
+  <header class="header">
+    <div class="container nav-container">
+      <a href="index.html" class="logo" id="nav-logo">
+        <span class="logo-icon">&#9889;</span> 7 Brew Inspired
+      </a>
+      <nav class="nav-menu" id="nav-menu">
+        <a href="index.html" class="nav-link active">Home</a>
+        
+        <!-- Menu Dropdown -->
+        <div style="position: relative;" class="nav-dropdown-wrapper">
+          <a href="menu.html" class="nav-link">Menu &#9662;</a>
+          <div class="nav-dropdown-content" style="position: absolute; top: 100%; left: 0; background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); min-width: 160px; display: none; z-index: 100;">
+            <a href="menu.html" style="display: block; padding: 10px 16px; font-size: 0.9rem;">Full Menu</a>
+            <a href="menu.html" style="display: block; padding: 10px 16px; font-size: 0.9rem;">Secret Menu</a>
+            <a href="menu.html#recipes" style="display: block; padding: 10px 16px; font-size: 0.9rem;">Recipe Maker</a>
+          </div>
+        </div>
+
+        <a href="locations.html" class="nav-link">Locations</a>
+
+        <a href="index.html#rewards" class="nav-link">Rewards</a>
+        <a href="index.html#deals" class="nav-link">Deals</a>
+        <a href="blog.html" class="nav-link">Blog</a>
+
+        <!-- More Dropdown -->
+        <div style="position: relative;" class="nav-dropdown-wrapper">
+          <a href="#" class="nav-link" onclick="event.preventDefault(); this.parentElement.classList.toggle('active');">More &#9662;</a>
+          <div class="nav-dropdown-content" style="position: absolute; top: 100%; right: 0; left: auto; background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); min-width: 160px; display: none; z-index: 100;">
+            <a href="calorie-calculator.html" style="display: block; padding: 10px 16px; font-size: 0.9rem;">Sizes Calculator</a>
+            <a href="contact.html" style="display: block; padding: 10px 16px; font-size: 0.9rem;">Careers</a>
+            <a href="contact.html" style="display: block; padding: 10px 16px; font-size: 0.9rem;">Gift Cards</a>
+            <a href="contact.html" style="display: block; padding: 10px 16px; font-size: 0.9rem;">Franchise</a>
+            <a href="menu.html" style="display: block; padding: 10px 16px; font-size: 0.9rem;">Merch Shop</a>
+          </div>
+        </div>
+      </nav>
+      <div class="nav-toggle" id="nav-toggle" aria-label="Toggle Menu">&#9776;</div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <h1 class="hero-title">
+          <span class="text-gradient-blue">Revolutionizing</span>
+          <span class="text-gradient-pink">Your Daily Brew</span>
+        </h1>
+        <p class="hero-description">
+          Fast, friendly drive-thru coffee and custom energy drink mixes crafted to fuel your day. Over 20,000 customization possibilities!
+        </p>
+        <div class="hero-buttons">
+          <a href="menu.html" class="btn btn-primary">Explore Menu</a>
+          <a href="calorie-calculator.html" class="btn btn-secondary">Calorie Calculator</a>
+        </div>
+      </div>
+      <div class="hero-image-container">
+        <div class="hero-circle-bg" style="width: 450px; height: 450px; opacity: 0.25;"></div>
+        <img src="assets/images/blondie.webp" alt="7 Brew Signature Blondie Breve" class="hero-cup-image">
+      </div>
+    </div>
+  </section>
+
+  <!-- SEASONAL SPECISALS / FEATURED SECTION -->
+  <section style="padding: 100px 0;">
+    <div class="container">
+      <div class="section-header">
+        <h2>Seasonal Favorites</h2>
+        <p>Try our latest limited-time hand-crafted drink sensations.</p>
+      </div>
+      
+      <div class="menu-grid">
+        <!-- Featured Drink 1 -->
+        <article class="drink-card">
+          <div class="drink-image-wrap">
+            <img src="assets/images/pumpkin_spice_dream.jpg" alt="Pumpkin Spice Dream">
+          </div>
+          <div class="drink-info">
+            <span class="drink-category-label">Seasonal Specials</span>
+            <h3 class="drink-title">Pumpkin Spice Dream</h3>
+            <p class="drink-description">Cozy pumpkin spice combined with vanilla and white chocolate mocha, topped with cinnamon.</p>
+            <div class="drink-meta-row">
+              <span class="drink-price">$5.25</span>
+              <a href="menu.html" class="btn btn-secondary" style="padding: 6px 16px; font-size: 0.75rem;">View Menu</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Featured Drink 2 -->
+        <article class="drink-card">
+          <div class="drink-image-wrap">
+            <img src="assets/images/blondie.webp" alt="Blondie Drink">
+          </div>
+          <div class="drink-info">
+            <span class="drink-category-label">7 Originals</span>
+            <h3 class="drink-title">The Blondie</h3>
+            <p class="drink-description">Our legendary caramel and vanilla breve. Smooth, sweet, and unbelievably rich.</p>
+            <div class="drink-meta-row">
+              <span class="drink-price">$4.99</span>
+              <a href="menu.html" class="btn btn-secondary" style="padding: 6px 16px; font-size: 0.75rem;">View Menu</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Featured Drink 3 -->
+        <article class="drink-card">
+          <div class="drink-image-wrap">
+            <img src="assets/images/ocean-breeze.webp" alt="Blue Punch Energy">
+          </div>
+          <div class="drink-info">
+            <span class="drink-category-label">Energy Drinks</span>
+            <h3 class="drink-title">Seven Energy Blue Punch</h3>
+            <p class="drink-description">Blue raspberry, peach, and raspberry blended with our custom carbonated energy base.</p>
+            <div class="drink-meta-row">
+              <span class="drink-price">$3.99</span>
+              <a href="menu.html" class="btn btn-secondary" style="padding: 6px 16px; font-size: 0.75rem;">View Menu</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE US / STATS -->
+  <section class="about">
+    <div class="container about-grid">
+      <div>
+        <img src="assets/images/drive_thru.jpg" alt="7 Brew inspired drive-thru restaurant stand" class="about-image" style="width: 100%; object-fit: cover;">
+      </div>
+      <div>
+        <span style="color: var(--color-primary); font-weight: 700; text-transform: uppercase;">Why 7 Brew Inspired</span>
+        <h2 class="about-title">More Than Just Great Coffee</h2>
+        <p style="color: var(--text-gray); margin-bottom: 24px;">
+          We are committed to cultivating kindness and speeding up your morning commute. Our double-lane drive-thrus are engineered for speed, and our staff is dedicated to spreading positive vibes with every single cup.
+        </p>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 16px; color: var(--text-white);">
+          <li>&#10004; <strong>Fast Double-Lane Drive Thru</strong> - Get your drink and go in minutes.</li>
+          <li>&#10004; <strong>Unlimited Customizations</strong> - Make it sugar-free, light, or extra bold.</li>
+          <li>&#10004; <strong>Premium Sourced Beans</strong> - Organic Arabica blends sourced ethically.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- POPULAR CATEGORIES -->
+  <section style="padding: 100px 0;">
+    <div class="container">
+      <div class="section-header">
+        <h2>Popular Categories</h2>
+        <p>From rich espresso breves to refreshing sparkling lemonades.</p>
+      </div>
+      
+      <div class="categories-grid">
+        <div class="category-card" onclick="window.location.href='menu.html'">
+          <div class="category-icon">&#9749;</div>
+          <h3 class="category-title">7 Originals</h3>
+          <p style="color: var(--text-gray); font-size: 0.9rem;">Our signature breve and mocha recipes.</p>
+        </div>
+        <div class="category-card" onclick="window.location.href='menu.html'">
+          <div class="category-icon">&#9749;</div>
+          <h3 class="category-title">7 Classics</h3>
+          <p style="color: var(--text-gray); font-size: 0.9rem;">Steamed espressos, lattes, cappuccinos, and cold brews.</p>
+        </div>
+        <div class="category-card" onclick="window.location.href='menu.html'">
+          <div class="category-icon">&#9889;</div>
+          <h3 class="category-title">Seven Energy</h3>
+          <p style="color: var(--text-gray); font-size: 0.9rem;">Dynamic custom carbonated mixers.</p>
+        </div>
+        <div class="category-card" onclick="window.location.href='menu.html'">
+          <div class="category-icon">&#127819;</div>
+          <h3 class="category-title">Fizz & Lemonade</h3>
+          <p style="color: var(--text-gray); font-size: 0.9rem;">Iced sparkling sodas and tart lemonades.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7 BREW REWARDS SECTION -->
+  <section id="rewards" style="padding: 100px 0; background: linear-gradient(135deg, var(--bg-secondary), #e9ecf3); border-top: 1px solid var(--border-glass); border-bottom: 1px solid var(--border-glass);">
+    <div class="container">
+      <div class="about-grid" style="grid-template-columns: 0.9fr 1.1fr;">
+        <!-- Left Column: Interactive Loyalty Tracker Mockup -->
+        <div class="calc-results" style="border: 2px solid var(--color-secondary); box-shadow: var(--shadow-neon-pink); text-align: left; padding: 32px;">
+          <span style="color: var(--color-secondary); font-weight: 700; font-size: 0.8rem; text-transform: uppercase;">Loyalty Portal</span>
+          <h3 style="font-size: 1.8rem; margin: 8px 0 16px 0;">Check Your Brew Points</h3>
+          
+          <div id="rewards-input-wrapper">
+            <p style="color: var(--text-gray); font-size: 0.9rem; margin-bottom: 20px;">Enter your phone number to check your loyalty status or register instantly.</p>
+            <div class="calc-group" style="margin-bottom: 16px;">
+              <input type="tel" id="rewards-phone" class="calc-input" placeholder="(555) 000-0000" style="background: var(--bg-primary);">
+            </div>
+            <button class="btn btn-secondary" style="width: 100%;" onclick="checkBrewPoints()">Lookup Account</button>
+          </div>
+
+          <div id="rewards-result-wrapper" style="display: none; text-align: center;">
+            <div style="font-size: 3rem; color: var(--color-primary); font-family: var(--font-heading); font-weight: 700;" id="rewards-points-val">85</div>
+            <p style="color: var(--text-white); font-weight: 600; margin-bottom: 8px;">Points Accumulated</p>
+            
+            <!-- Progress Bar -->
+            <div style="width: 100%; height: 10px; background: var(--bg-primary); border-radius: 5px; overflow: hidden; margin: 16px 0;">
+              <div id="rewards-progress" style="width: 85%; height: 100%; background: linear-gradient(to right, var(--color-primary), var(--color-secondary));"></div>
+            </div>
+            
+            <p style="color: var(--text-gray); font-size: 0.85rem;" id="rewards-message">You are only 15 points away from a FREE medium drink!</p>
+            <button class="btn btn-secondary" style="margin-top: 20px; font-size: 0.8rem; padding: 8px 16px;" onclick="resetRewardsWidget()">Back</button>
+          </div>
+        </div>
+
+        <!-- Right Column: Information Content -->
+        <div style="display: flex; flex-direction: column; justify-content: center; padding-left: 20px;">
+          <span style="color: var(--color-primary); font-weight: 700; text-transform: uppercase;">7 Brew Rewards</span>
+          <h2 style="font-size: 2.8rem; margin: 8px 0 20px 0; font-family: var(--font-heading);">Drink Coffee, Earn Free Drinks</h2>
+          <p style="color: var(--text-gray); margin-bottom: 24px;">
+            Join our high-energy rewards family and earn points for every sip you take. Signing up is completely free, and you can start accumulating points immediately at any of our drive-thru stands.
+          </p>
+          
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;">
+            <div>
+              <strong style="color: var(--color-primary); font-size: 1.2rem; display: block; margin-bottom: 6px;">1 Point</strong>
+              <span style="color: var(--text-gray); font-size: 0.85rem;">earned for every dollar spent on drinks.</span>
+            </div>
+            <div>
+              <strong style="color: var(--color-secondary); font-size: 1.2rem; display: block; margin-bottom: 6px;">100 Pts</strong>
+              <span style="color: var(--text-gray); font-size: 0.85rem;">gives you a FREE medium drink coupon.</span>
+            </div>
+            <div>
+              <strong style="color: var(--color-accent); font-size: 1.2rem; display: block; margin-bottom: 6px;">Free Gift</strong>
+              <span style="color: var(--text-gray); font-size: 0.85rem;">on your birthday and anniversary days.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DRINK FINDER QUIZ SECTION -->
+  <section style="padding: 100px 0; background: var(--bg-primary);">
+    <div class="container" style="max-width: 800px;">
+      <div class="section-header">
+        <span style="color: var(--color-primary); font-weight: 700; text-transform: uppercase;">Interactive Recommendation</span>
+        <h2>Find Your Perfect Drink</h2>
+        <p>Answer 3 quick questions to unlock a personalized beverage match!</p>
+      </div>
+
+      <div class="calc-panel" id="quiz-card" style="border: 2px solid var(--color-primary); box-shadow: var(--shadow-neon); padding: 40px;">
+        
+        <!-- Step 1 -->
+        <div id="quiz-step-1" class="quiz-step">
+          <h3 style="margin-bottom: 20px; font-family: var(--font-heading);">1. What is your energy source preference?</h3>
+          <div class="calc-options-grid" style="grid-template-columns: repeat(3, 1fr);">
+            <div class="calc-option-card" onclick="selectQuizOption(1, 'coffee')">
+              <span style="font-size: 2rem; display: block; margin-bottom: 8px;">☕</span>
+              <strong>Espresso / Coffee</strong>
+            </div>
+            <div class="calc-option-card" onclick="selectQuizOption(1, 'energy')">
+              <span style="font-size: 2rem; display: block; margin-bottom: 8px;">⚡</span>
+              <strong>Energy Booster</strong>
+            </div>
+            <div class="calc-option-card" onclick="selectQuizOption(1, 'caffeine-free')">
+              <span style="font-size: 2rem; display: block; margin-bottom: 8px;">🍹</span>
+              <strong>Caffeine-Free Refresher</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 2 (Hidden) -->
+        <div id="quiz-step-2" class="quiz-step" style="display: none;">
+          <h3 style="margin-bottom: 20px; font-family: var(--font-heading);">2. How do you prefer the flavor profile?</h3>
+          <div class="calc-options-grid" style="grid-template-columns: repeat(3, 1fr);">
+            <div class="calc-option-card" onclick="selectQuizOption(2, 'sweet')">
+              <span style="font-size: 2rem; display: block; margin-bottom: 8px;">🍩</span>
+              <strong>Sweet & Creamy</strong>
+            </div>
+            <div class="calc-option-card" onclick="selectQuizOption(2, 'fruity')">
+              <span style="font-size: 2rem; display: block; margin-bottom: 8px;">🍓</span>
+              <strong>Fruity & Refreshing</strong>
+            </div>
+            <div class="calc-option-card" onclick="selectQuizOption(2, 'bold')">
+              <span style="font-size: 2rem; display: block; margin-bottom: 8px;">🖤</span>
+              <strong>Bold & Classic</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 3 (Hidden) -->
+        <div id="quiz-step-3" class="quiz-step" style="display: none;">
+          <h3 style="margin-bottom: 20px; font-family: var(--font-heading);">3. What is your temperature preference?</h3>
+          <div class="calc-options-grid" style="grid-template-columns: repeat(2, 1fr);">
+            <div class="calc-option-card" onclick="selectQuizOption(3, 'iced')">
+              <span style="font-size: 2rem; display: block; margin-bottom: 8px;">🧊</span>
+              <strong>Iced / Chilled</strong>
+            </div>
+            <div class="calc-option-card" onclick="selectQuizOption(3, 'hot')">
+              <span style="font-size: 2rem; display: block; margin-bottom: 8px;">🔥</span>
+              <strong>Steaming Hot</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- Result Step (Hidden) -->
+        <div id="quiz-result-step" class="quiz-step" style="display: none; text-align: center;">
+          <h3 style="color: var(--color-primary); font-size: 1.8rem; margin-bottom: 12px;">Your Matches:</h3>
+          <div id="quiz-recommendation-card" style="margin-bottom: 24px; padding: 20px; border-radius: var(--border-radius-md); background: var(--bg-primary); border: 1px solid var(--border-glass);">
+            <!-- Recommendation details injected -->
+          </div>
+          <button class="btn btn-secondary" onclick="restartQuiz()">Restart Quiz</button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CUSTOMER TESTIMONIALS -->
+  <section style="padding: 100px 0; background: var(--bg-secondary);">
+    <div class="container">
+      <div class="section-header">
+        <h2>What Our Customers Say</h2>
+        <p>Real feedback from fans who visit our drive-thru stands daily.</p>
+      </div>
+      
+      <div class="menu-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+        <div class="category-card" style="text-align: left; padding: 24px;">
+          <div style="color: var(--color-accent); font-size: 1.5rem; margin-bottom: 12px;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p style="color: var(--text-gray); font-size: 0.95rem; margin-bottom: 16px;">"The Smooth 7 with extra caramel is out of this world. The line is always super fast and the baristas are always dancing and happy!"</p>
+          <strong>- Jessica R.</strong>
+        </div>
+        <div class="category-card" style="text-align: left; padding: 24px;">
+          <div style="color: var(--color-accent); font-size: 1.5rem; margin-bottom: 12px;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p style="color: var(--text-gray); font-size: 0.95rem; margin-bottom: 16px;">"I love the sugar-free Blondie breve. Swapping half-and-half for oat milk cuts down on calories but it still tastes so creamy."</p>
+          <strong>- David T.</strong>
+        </div>
+        <div class="category-card" style="text-align: left; padding: 24px;">
+          <div style="color: var(--color-accent); font-size: 1.5rem; margin-bottom: 12px;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p style="color: var(--text-gray); font-size: 0.95rem; margin-bottom: 16px;">"The Energy Blue Punch is my absolute go-to before heading to work. Customizable options are a game changer."</p>
+          <strong>- Sarah M.</strong>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LATEST BLOG ARTICLES PREVIEW -->
+  <section style="padding: 100px 0;">
+    <div class="container">
+      <div class="section-header">
+        <h2>Latest from the Blog</h2>
+        <p>Tips, brewing guides, and coffee culture news from our baristas.</p>
+      </div>
+      
+      <div class="menu-grid" style="grid-template-columns: repeat(3, 1fr);" id="latest-blogs-preview">
+        <!-- Will populate or static placeholder -->
+        <article class="blog-card" onclick="window.location.href='blog.html'">
+          <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?q=80&w=600&auto=format&fit=crop" class="blog-card-img" alt="Blog coffee art">
+          <div class="blog-card-body">
+            <span class="blog-card-category">Coffee Guides</span>
+            <h3 class="blog-card-title">The Art of the Breve: Why Cream Matters</h3>
+            <p style="color: var(--text-gray); font-size: 0.9rem; margin-bottom: 20px;">Discover what makes a breve coffee so rich and creamy. Learn the secret behind breve coffee recipes.</p>
+            <div class="blog-card-meta">
+              <span>By Marcus Vane</span>
+              <span>2026-06-15</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="blog-card" onclick="window.location.href='blog.html'">
+          <img src="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?q=80&w=600&auto=format&fit=crop" class="blog-card-img" alt="Cold brewing tips">
+          <div class="blog-card-body">
+            <span class="blog-card-category">Brewing Tips</span>
+            <h3 class="blog-card-title">5 Tips for Cold Brewing Smooth Coffee</h3>
+            <p style="color: var(--text-gray); font-size: 0.9rem; margin-bottom: 20px;">Learn how to make the smoothest, low-acid cold brew coffee at home with our easy brewing tips.</p>
+            <div class="blog-card-meta">
+              <span>By Sara Jenkins</span>
+              <span>2026-06-20</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="blog-card" onclick="window.location.href='blog.html'">
+          <img src="https://images.unsplash.com/photo-1497515114629-f71d768fd07c?q=80&w=600&auto=format&fit=crop" class="blog-card-img" alt="Healthy customizations">
+          <div class="blog-card-body">
+            <span class="blog-card-category">Healthy Choices</span>
+            <h3 class="blog-card-title">Low-Calorie Customizations</h3>
+            <p style="color: var(--text-gray); font-size: 0.9rem; margin-bottom: 20px;">Want to keep your coffee light? Read our guide on low-calorie coffee modifications and options.</p>
+            <div class="blog-card-meta">
+              <span>By Dr. Alan Mercer</span>
+              <span>2026-07-01</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- INSTAGRAM GALLERY -->
+  <section style="padding: 100px 0; background: var(--bg-secondary);">
+    <div class="container">
+      <div class="section-header">
+        <h2>#7BrewInspired Gallery</h2>
+        <p>Tag us in your photos to get featured on our wall!</p>
+      </div>
+      
+      <div class="instagram-grid">
+        <div class="instagram-item">
+          <img src="https://images.unsplash.com/photo-1498804103079-a6351b050096?q=80&w=400&auto=format&fit=crop" alt="Coffee cup hands">
+        </div>
+        <div class="instagram-item">
+          <img src="https://images.unsplash.com/photo-1507133750040-4a8f57021571?q=80&w=400&auto=format&fit=crop" alt="Espresso extraction">
+        </div>
+        <div class="instagram-item">
+          <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=400&auto=format&fit=crop" alt="Vibrant coffee shop">
+        </div>
+        <div class="instagram-item">
+          <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?q=80&w=400&auto=format&fit=crop" alt="Iced drink on street">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ SECTION (AEO & GEO OPTIMIZED) -->
+  <section style="padding: 100px 0; background: var(--bg-secondary); border-top: 1px solid var(--border-glass);">
+    <div class="container" style="max-width: 800px;">
+      <div class="section-header" style="text-align: center; margin-bottom: 50px;">
+        <h2 style="font-size: 2.5rem; font-family: var(--font-heading); margin-bottom: 16px;">Frequently Asked Questions</h2>
+        <p style="color: var(--text-gray); font-size: 1.1rem;">Get quick answers about 7 Brew drinks, customizations, and recipes.</p>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 20px;">
+        <div style="background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: var(--border-radius-md); padding: 24px; box-shadow: var(--shadow-card);">
+          <h3 style="font-size: 1.2rem; font-family: var(--font-heading); color: var(--color-primary); margin-bottom: 10px;">What are the Original 7 drinks at 7 Brew?</h3>
+          <p style="color: var(--text-gray); line-height: 1.6;">
+            The <strong>Original 7</strong> signature drinks are the core of the 7 Brew menu:
+          </p>
+          <ul style="color: var(--text-gray); padding-left: 20px; margin-top: 10px; line-height: 1.6;">
+            <li><strong>Blondie:</strong> Caramel and Vanilla Breve</li>
+            <li><strong>Brunette:</strong> Hazelnut and Caramel Mocha</li>
+            <li><strong>Smooth 7:</strong> White Chocolate and Irish Cream Breve</li>
+            <li><strong>White Mac:</strong> White Chocolate and Macadamia Nut Breve</li>
+            <li><strong>German Chocolate:</strong> Coconut and Caramel Mocha</li>
+            <li><strong>Snickerz:</strong> Hazelnut and Caramel Mocha with Caramel Drizzle</li>
+            <li><strong>Cinnamon Roll:</strong> Brown Sugar Cinnamon and White Chocolate Breve</li>
+          </ul>
+        </div>
+
+        <div style="background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: var(--border-radius-md); padding: 24px; box-shadow: var(--shadow-card);">
+          <h3 style="font-size: 1.2rem; font-family: var(--font-heading); color: var(--color-primary); margin-bottom: 10px;">Can I get sugar-free drinks at 7 Brew?</h3>
+          <p style="color: var(--text-gray); line-height: 1.6;">
+            Absolutely! 7 Brew offers an extensive selection of sugar-free syrups (like Vanilla, Caramel, Irish Cream, White Chocolate, Coconut, and Raspberry) that can be mixed into any coffee, rebel energy drink, or tea. Check out our <a href="7brew-calorie-calculator" style="color: var(--color-secondary); font-weight: 600; text-decoration: underline;">Calorie Calculator</a> to customize low-calorie options.
+          </p>
+        </div>
+
+        <div style="background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: var(--border-radius-md); padding: 24px; box-shadow: var(--shadow-card);">
+          <h3 style="font-size: 1.2rem; font-family: var(--font-heading); color: var(--color-primary); margin-bottom: 10px;">What is a 7 Energy drink?</h3>
+          <p style="color: var(--text-gray); line-height: 1.6;">
+            7 Energy is 7 Brew's exclusive premium energy drink base. You can order it sugar-free or regular and customize it with any fruit syrups (such as Blue Raspberry, Strawberry, Kiwi, Passion Fruit, and Peach) to make popular custom mixes like the <strong>Love Potion</strong> or <strong>Pixie Stick</strong>.
+          </p>
+        </div>
+
+        <div style="background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: var(--border-radius-md); padding: 24px; box-shadow: var(--shadow-card);">
+          <h3 style="font-size: 1.2rem; font-family: var(--font-heading); color: var(--color-primary); margin-bottom: 10px;">How do I make 7 Brew copycat drinks at home?</h3>
+          <p style="color: var(--text-gray); line-height: 1.6;">
+            You can recreate signature 7 Brew drinks by using espresso, half-and-half (for breves), and Torani syrups in the correct ratios (typically 1 to 2 scoops of flavor syrup). Visit our interactive <a href="7brew-recipe-maker" style="color: var(--color-secondary); font-weight: 600; text-decoration: underline;">Recipe Maker</a> to get direct step-by-step copycat recipes and ratios!
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER SIGNUP -->
+  <section style="padding: 100px 0; background: linear-gradient(135deg, var(--bg-primary), var(--bg-card));">
+    <div class="container" style="text-align: center; max-width: 600px;">
+      <h2 style="font-size: 2.2rem; margin-bottom: 12px; font-family: var(--font-heading);">Stay Energized!</h2>
+      <p style="color: var(--text-gray); margin-bottom: 30px;">Sign up for exclusive menu deals, secret discount drops, and product alerts.</p>
+      <form onsubmit="event.preventDefault(); alert('Awesome! Check your inbox for your 15% off coupon.'); this.reset();" style="display: flex; gap: 10px; flex-wrap: wrap;">
+        <input type="email" placeholder="Enter your email address" required style="flex: 1; padding: 14px 24px; border-radius: 50px; background: var(--bg-primary); border: 1px solid var(--border-glass); min-width: 250px;">
+        <button type="submit" class="btn btn-primary">Subscribe</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <h3>&#9889; 7 Brew Inspired</h3>
+        <p>Changing drive-thru coffee and energy one custom recipe at a time. High-energy vibes, friendly teams, and speedy delivery.</p>
+      </div>
+      <div>
+        <h4 class="footer-links-title">Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="menu.html">Full Menu</a></li>
+          <li><a href="calorie-calculator.html">Calorie Calculator</a></li>
+          <li><a href="locations.html">Find Drive-Thrus</a></li>
+          <li><a href="blog.html">Read Our Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-links-title">Support</h4>
+        <ul class="footer-links">
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="contact.html#faqs">FAQ & Help</a></li>
+          <li><a href="contact.html">Franchise Info</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-links-title">Legal</h4>
+        <ul class="footer-links">
+          <li><a href="privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="privacy-requests.html">Privacy Requests</a></li>
+          <li><a href="terms.html">Terms & Conditions</a></li>
+          <li><a href="cookie-policy.html">Cookie Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>&copy; 2026 7 Brew Coffee Inspired Fan Site. All Rights Reserved. Crafted for high-energy coffee fans.</p>
+      <p>SSL Secured | Static Hosting Ready</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

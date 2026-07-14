@@ -8,7 +8,7 @@
     "date": "2026-06-15",
     "readingTime": "5 min",
     "category": "Coffee Guides",
-    "image": "assets/images/breve.webp",
+    "image": "assets/images/banner_classics.png",
     "content": "<p>When it comes to espresso-based beverages, most people are familiar with the classic latte or cappuccino. However, there is a luxurious alternative that coffee aficionados swear by: the Breve. Originally stemming from the Italian word for 'short', a breve (or cafe breve) is an espresso-based drink made with steamed half-and-half instead of whole milk.</p><h3>Why Half-and-Half?</h3><p>The choice of half-and-half completely alters the chemistry and taste profile of the drink. Half-and-half contains roughly 10% to 12% milkfat, compared to the 3.25% found in whole milk. This higher fat content yields a texture that is exceptionally velvety and dense. It rounds out the bitter notes of the espresso, transforming it into a smooth, custard-like beverage.</p><h3>Brewing the Perfect Breve</h3><p>To craft a master-level breve, you need a double shot of espresso and about 4 to 6 ounces of steamed half-and-half. Because half-and-half is heavier, it requires a slightly different steaming technique than regular milk. Keep the steam wand just below the surface to create a tight microfoam without making it too airy. The result is a drink that feels like a dessert but carries the strong, robust punch of espresso.</p>"
   },
   {
@@ -32,7 +32,7 @@
     "date": "2026-06-25",
     "readingTime": "3 min",
     "category": "Energy Drink Tips",
-    "image": "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?q=80&w=800&auto=format&fit=crop",
+    "image": "assets/images/banner_energy.png",
     "content": "<p>Energy drinks are great for focus, but drinking the same canned flavor day after day can get boring. That's why custom energy drink mixology is growing in popularity. By starting with a clean energy base and blending premium syrups, you can create a customized energy mocktail that is uniquely yours.</p><h3>Our Favorite Combos</h3><p>Try mixing blue raspberry with peach for a sweet, refreshing flavor that cuts through the metallic taste of energy bases. Or, go tropical with a blend of coconut and pineapple. Remember to keep an eye on sugar levels by mixing in sugar-free syrups where possible to avoid the afternoon crash!</p>"
   },
   {
@@ -92,7 +92,7 @@
     "date": "2026-07-11",
     "readingTime": "4 min",
     "category": "Lifestyle",
-    "image": "https://images.unsplash.com/photo-1497515114629-f71d768fd07c?q=80&w=800&auto=format&fit=crop",
+    "image": "assets/images/banner_featured.png",
     "content": "<p>While the standard menu has plenty of options, the true magic happens when you venture into custom territory. Mixing white chocolate and creme de menthe gives you 'The Ninja', a cool minty beverage. Alternatively, blend peach and raspberry with iced green tea for a tropical refresher. The possibilities are infinite when you understand flavor profiles!</p>"
   }
 ]

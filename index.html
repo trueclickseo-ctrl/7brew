@@ -96,18 +96,6 @@
         <a href="index.html#rewards" class="nav-link">Rewards</a>
         <a href="index.html#deals" class="nav-link">Deals</a>
         <a href="blog.html" class="nav-link">Blog</a>
-
-        <!-- More Dropdown -->
-        <div style="position: relative;" class="nav-dropdown-wrapper">
-          <a href="#" class="nav-link" onclick="event.preventDefault(); this.parentElement.classList.toggle('active');">More &#9662;</a>
-          <div class="nav-dropdown-content" style="position: absolute; top: 100%; right: 0; left: auto; background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); min-width: 160px; display: none; z-index: 100;">
-            <a href="calorie-calculator.html" style="display: block; padding: 10px 16px; font-size: 0.9rem;">Sizes Calculator</a>
-            <a href="contact.html" style="display: block; padding: 10px 16px; font-size: 0.9rem;">Careers</a>
-            <a href="contact.html" style="display: block; padding: 10px 16px; font-size: 0.9rem;">Gift Cards</a>
-            <a href="contact.html" style="display: block; padding: 10px 16px; font-size: 0.9rem;">Franchise</a>
-            <a href="menu.html" style="display: block; padding: 10px 16px; font-size: 0.9rem;">Merch Shop</a>
-          </div>
-        </div>
       </nav>
       <div class="nav-toggle" id="nav-toggle" aria-label="Toggle Menu">&#9776;</div>
     </div>
@@ -225,26 +213,34 @@
         <p>From rich espresso breves to refreshing sparkling lemonades.</p>
       </div>
       
-      <div class="categories-grid">
-        <div class="category-card" onclick="window.location.href='menu.html'">
-          <div class="category-icon">&#9749;</div>
-          <h3 class="category-title">7 Originals</h3>
-          <p style="color: var(--text-gray); font-size: 0.9rem;">Our signature breve and mocha recipes.</p>
+      <div class="categories-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px;">
+        <div class="category-card" onclick="window.location.href='menu.html#7-originals'" style="overflow: hidden; padding: 0; cursor: pointer; transition: transform 0.3s ease;">
+          <img src="assets/images/banner_originals.png" alt="7 Originals" style="width: 100%; height: 200px; object-fit: cover; border-bottom: 1px solid var(--border-glass);">
+          <div style="padding: 20px;">
+            <h3 class="category-title" style="margin-bottom: 8px;">7 Originals</h3>
+            <p style="color: var(--text-gray); font-size: 0.9rem;">Our signature breve and mocha recipes.</p>
+          </div>
         </div>
-        <div class="category-card" onclick="window.location.href='menu.html'">
-          <div class="category-icon">&#9749;</div>
-          <h3 class="category-title">7 Classics</h3>
-          <p style="color: var(--text-gray); font-size: 0.9rem;">Steamed espressos, lattes, cappuccinos, and cold brews.</p>
+        <div class="category-card" onclick="window.location.href='menu.html#7-classics'" style="overflow: hidden; padding: 0; cursor: pointer; transition: transform 0.3s ease;">
+          <img src="assets/images/banner_classics.png" alt="7 Classics" style="width: 100%; height: 200px; object-fit: cover; border-bottom: 1px solid var(--border-glass);">
+          <div style="padding: 20px;">
+            <h3 class="category-title" style="margin-bottom: 8px;">7 Classics</h3>
+            <p style="color: var(--text-gray); font-size: 0.9rem;">Steamed espressos, lattes, cappuccinos, and cold brews.</p>
+          </div>
         </div>
-        <div class="category-card" onclick="window.location.href='menu.html'">
-          <div class="category-icon">&#9889;</div>
-          <h3 class="category-title">Seven Energy</h3>
-          <p style="color: var(--text-gray); font-size: 0.9rem;">Dynamic custom carbonated mixers.</p>
+        <div class="category-card" onclick="window.location.href='menu.html#7-energy'" style="overflow: hidden; padding: 0; cursor: pointer; transition: transform 0.3s ease;">
+          <img src="assets/images/banner_energy.png" alt="Seven Energy" style="width: 100%; height: 200px; object-fit: cover; border-bottom: 1px solid var(--border-glass);">
+          <div style="padding: 20px;">
+            <h3 class="category-title" style="margin-bottom: 8px;">Seven Energy</h3>
+            <p style="color: var(--text-gray); font-size: 0.9rem;">Dynamic custom carbonated mixers.</p>
+          </div>
         </div>
-        <div class="category-card" onclick="window.location.href='menu.html'">
-          <div class="category-icon">&#127819;</div>
-          <h3 class="category-title">Fizz & Lemonade</h3>
-          <p style="color: var(--text-gray); font-size: 0.9rem;">Iced sparkling sodas and tart lemonades.</p>
+        <div class="category-card" onclick="window.location.href='menu.html#7-fizz'" style="overflow: hidden; padding: 0; cursor: pointer; transition: transform 0.3s ease;">
+          <img src="assets/images/banner_fizz.png" alt="Fizz & Lemonade" style="width: 100%; height: 200px; object-fit: cover; border-bottom: 1px solid var(--border-glass);">
+          <div style="padding: 20px;">
+            <h3 class="category-title" style="margin-bottom: 8px;">Fizz & Lemonade</h3>
+            <p style="color: var(--text-gray); font-size: 0.9rem;">Iced sparkling sodas and tart lemonades.</p>
+          </div>
         </div>
       </div>
     </div>

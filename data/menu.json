@@ -287,7 +287,7 @@
                             "Caramel Drizzle",
                             "Vanilla Syrup"
                         ],
-        "image":  "https://images.unsplash.com/photo-1578314675249-a6910f80cc4e?q=80\u0026w=600\u0026auto=format\u0026fit=crop",
+        "image":  "assets/images/classic_macchiato.jpg",
         "sizes":  {
                       "small":  {
                                     "price":  3.99,
@@ -313,7 +313,7 @@
                             "Espresso Shots",
                             "Steamed Half \u0026 Half Cream"
                         ],
-        "image":  "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?q=80\u0026w=600\u0026auto=format\u0026fit=crop",
+        "image":  "assets/images/classic_breve.jpg",
         "sizes":  {
                       "small":  {
                                     "price":  3.99,
@@ -340,7 +340,7 @@
                             "Steamed Milk",
                             "Extra Thick Foam"
                         ],
-        "image":  "https://images.unsplash.com/photo-1572442388796-11668a67e53d?q=80\u0026w=600\u0026auto=format\u0026fit=crop",
+        "image":  "assets/images/classic_cappuccino.jpg",
         "sizes":  {
                       "small":  {
                                     "price":  3.75,
@@ -366,7 +366,7 @@
                             "Espresso Shots",
                             "Hot Water"
                         ],
-        "image":  "https://images.unsplash.com/photo-1551030173-122aabc4489c?q=80\u0026w=600\u0026auto=format\u0026fit=crop",
+        "image":  "assets/images/classic_americano.jpg",
         "sizes":  {
                       "small":  {
                                     "price":  3.50,
@@ -642,7 +642,7 @@
                             "Peach Syrup",
                             "Raspberry Syrup"
                         ],
-        "image":  "assets/images/energy_blue.jpg",
+        "image":  "assets/images/energy_blue_punch.jpg",
         "sizes":  {
                       "small":  {
                                     "price":  3.99,
@@ -671,7 +671,7 @@
                             "Drizzle of Cream",
                             "Ice"
                         ],
-        "image":  "https://images.unsplash.com/photo-1497515114629-f71d768fd07c?q=80\u0026w=600\u0026auto=format\u0026fit=crop",
+        "image":  "assets/images/dragons_blood.jpg",
         "sizes":  {
                       "small":  {
                                     "price":  3.99,
@@ -699,7 +699,7 @@
                             "Strawberry Syrup",
                             "Ice"
                         ],
-        "image":  "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?q=80\u0026w=600\u0026auto=format\u0026fit=crop",
+        "image":  "assets/images/tigers_blood.jpg",
         "sizes":  {
                       "small":  {
                                     "price":  3.99,
@@ -727,7 +727,7 @@
                             "Strawberry Syrup",
                             "Ice"
                         ],
-        "image":  "https://images.unsplash.com/photo-1553530979-7ee52a2670c4?q=80\u0026w=600\u0026auto=format\u0026fit=crop",
+        "image":  "assets/images/georgia_peach_energy.jpg",
         "sizes":  {
                       "small":  {
                                     "price":  3.99,
@@ -756,7 +756,7 @@
                             "Vanilla Syrup",
                             "Ice"
                         ],
-        "image":  "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?q=80\u0026w=600\u0026auto=format\u0026fit=crop",
+        "image":  "assets/images/orange_sherbet.jpg",
         "sizes":  {
                       "small":  {
                                     "price":  3.99,
@@ -1208,7 +1208,7 @@
                             "Ice Cream Blend Mix",
                             "Ice"
                         ],
-        "image":  "https://images.unsplash.com/photo-1553530979-7ee52a2670c4?q=80\u0026w=600\u0026auto=format\u0026fit=crop",
+        "image":  "assets/images/strawberry_smoothie.jpg",
         "sizes":  {
                       "small":  {
                                     "price":  4.99,
@@ -1316,7 +1316,7 @@
                             "Ice Cream Blend Mix",
                             "Ice"
                         ],
-        "image":  "https://images.unsplash.com/photo-1553530979-7ee52a2670c4?q=80\u0026w=600\u0026auto=format\u0026fit=crop",
+        "image":  "assets/images/green_apple_smoothie.jpg",
         "sizes":  {
                       "small":  {
                                     "price":  4.99,

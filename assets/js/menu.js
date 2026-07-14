@@ -9,64 +9,30 @@ const slugMap = {
   'German Chocolate': '7-brew-german-chocolate',
   'Snickerz': '7-brew-snickerz',
   'Cinnamon Roll': '7-brew-cinnamon-roll',
-  'Triple Seven': '7-brew-triple-seven',
   'Ocean Breeze': '7-brew-ocean-breeze-7-energy',
   'Tropic Thunder': '7-brew-tropic-thunder-7-energy',
   'Sunrise': '7-brew-sunrise-7-energy'
 };
 
-const categorySlugMap = {
-  'All': 'menu',
-  '7 Originals': '7orignal',
-  '7 Classics': '7classics',
-  'Featured Drinks': 'featured-drinks',
-  '7 Energy': '7energy',
-  '7 Fizz': '7fizz',
-  'Teas, Chai & Matcha': 'teas-chai-matcha',
-  'Secret Menu': 'secret-menu'
-};
-
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', () => {
-    fetchMenu();
-    setupEventListeners();
-  });
-} else {
+document.addEventListener('DOMContentLoaded', () => {
   fetchMenu();
   setupEventListeners();
-}
+});
 
 // Fetch menu from JSON database
 async function fetchMenu() {
   try {
     const response = await fetch('data/menu.json');
     if (!response.ok) throw new Error('Failed to load menu database.');
-    const text = await response.text();
-    const cleanText = text.replace(/^\uFEFF/, '');
-    menuData = JSON.parse(cleanText);
+    menuData = await response.json();
     
     // Check for category filter in URL query, hash, or clean pathnames
     const params = new URLSearchParams(window.location.search);
     const catParam = params.get('category');
     const path = window.location.pathname.toLowerCase().replace(/\/$/, '');
     
-    const reverseCategorySlugMap = {
-      '7orignal': '7 Originals',
-      '7classics': '7 Classics',
-      'featured-drinks': 'Featured Drinks',
-      '7energy': '7 Energy',
-      '7fizz': '7 Fizz',
-      'teas-chai-matcha': 'Teas, Chai & Matcha',
-      'secret-menu': 'Secret Menu',
-      '7brew-secret-menu': 'Secret Menu'
-    };
-    
-    const matchedSlug = Object.keys(reverseCategorySlugMap).find(slug => path.endsWith('/' + slug));
-    
     if (catParam) {
       activeCategory = catParam;
-    } else if (matchedSlug) {
-      activeCategory = reverseCategorySlugMap[matchedSlug];
     } else if (window.location.hash === '#secret-menu' || path.endsWith('/7brew-secret-menu') || path.endsWith('/secret-menu')) {
       activeCategory = 'Secret Menu';
     }
@@ -90,114 +56,64 @@ async function fetchMenu() {
   }
 }
 
-// No need for filter tag rendering in section-based view
+// Render dynamic category filter tags
 function renderCategoryFilterTags() {
-  // Empty stub to maintain compatibility with fetchMenu call
-}
-
-// Main Render Function for Categorized Sections
-function renderMenu(items) {
-  const container = document.getElementById('menu-sections-container');
+  const container = document.getElementById('category-tags');
   if (!container) return;
 
-  const searchInput = document.getElementById('menu-search');
-  const query = searchInput ? searchInput.value.toLowerCase().trim() : '';
+  const categories = ['All', ...new Set(menuData.map(item => item.category))];
+  container.innerHTML = categories.map(cat => `
+    <button class="category-tag ${cat === activeCategory ? 'active' : ''}" data-category="${cat}">
+      ${cat}
+    </button>
+  `).join('');
 
-  // If search is active, render all matching items in a single grid
-  if (query) {
-    container.innerHTML = `
-      <section class="menu-category-section" style="margin-top: 40px;">
-        <h2 class="category-section-title" style="font-size: 2.2rem; font-family: var(--font-heading); margin-bottom: 24px; border-bottom: 2px solid var(--border-glass); padding-bottom: 12px; color: var(--text-white); font-style: italic;">
-          Search Results for "${query}"
-        </h2>
-        <div class="menu-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 30px;">
-          ${items.map(item => renderDrinkCard(item)).join('')}
-        </div>
-      </section>
-    `;
+  // Add click events to tag buttons
+  container.querySelectorAll('.category-tag').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      container.querySelectorAll('.category-tag').forEach(b => b.classList.remove('active'));
+      e.target.classList.add('active');
+      activeCategory = e.target.dataset.category;
+      applyFilters();
+    });
+  });
+}
+
+// Main Render Function for Grid Cards
+function renderMenu(items) {
+  const grid = document.getElementById('menu-grid');
+  if (!grid) return;
+
+  if (items.length === 0) {
+    grid.innerHTML = `<div style="grid-column: 1/-1; text-align: center; color: var(--text-gray); padding: 40px 0;">No matching drinks found. Try adjusting your filters!</div>`;
     return;
   }
 
-  // Define the categories and their sections
-  const categoryGroups = {
-    '7-fizz': { title: '7 Fizz', items: [] },
-    '7-classics': { title: 'Classics', items: [] },
-    '7-energy': { title: '7 Energy', items: [] },
-    'teas': { title: 'Teas, Chai & Matcha', items: [] },
-    'smoothies': { title: 'Smoothies', items: [] },
-    '7-originals': { title: '7 Originals', items: [] },
-    'lemonades': { title: 'Lemonade', items: [] },
-    'shakes': { title: '7 Milkshake', items: [] },
-    'secret-menu': { title: 'Secret Menu', items: [] },
-    'extras': { title: 'Extras & Kids Drinks', items: [] }
-  };
-
-  // Group items
-  items.forEach(item => {
-    const cat = item.category;
-    if (cat === '7 Originals') {
-      categoryGroups['7-originals'].items.push(item);
-    } else if (cat === '7 Classics') {
-      categoryGroups['7-classics'].items.push(item);
-    } else if (cat === '7 Energy') {
-      categoryGroups['7-energy'].items.push(item);
-    } else if (cat === '7 Fizz') {
-      categoryGroups['7-fizz'].items.push(item);
-    } else if (cat === 'Teas, Chai & Matcha') {
-      categoryGroups['teas'].items.push(item);
-    } else if (cat === 'Lemonades') {
-      categoryGroups['lemonades'].items.push(item);
-    } else if (cat === 'Smoothies') {
-      categoryGroups['smoothies'].items.push(item);
-    } else if (cat === 'Shakes') {
-      categoryGroups['shakes'].items.push(item);
-    } else if (cat === 'Secret Menu') {
-      categoryGroups['secret-menu'].items.push(item);
-    } else if (cat === 'Kids Drinks' || cat === 'Snacks / Food' || cat === 'Featured Drinks') {
-      categoryGroups['extras'].items.push(item);
-    }
-  });
-
-  // Render each non-empty group as a section
-  container.innerHTML = Object.entries(categoryGroups).map(([id, group]) => {
-    if (group.items.length === 0) return '';
+  grid.innerHTML = items.map(item => {
+    // Get small size price
+    const defaultPrice = item.sizes.medium ? item.sizes.medium.price : (item.sizes.small ? item.sizes.small.price : 0);
+    const isFav = window.FavoritesManager.isFav(item.name);
+    
     return `
-      <section id="${id}" class="menu-category-section" style="margin-top: 60px; scroll-margin-top: 100px;">
-        <h2 class="category-section-title" style="font-size: 2.2rem; font-family: var(--font-heading); margin-bottom: 24px; border-bottom: 2px solid var(--border-glass); padding-bottom: 12px; color: var(--text-white); font-style: italic;">
-          ${group.title}
-        </h2>
-        <div class="menu-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 30px;">
-          ${group.items.map(item => renderDrinkCard(item)).join('')}
+      <article class="drink-card" data-name="${item.name}">
+        <div class="drink-image-wrap">
+          <img src="${item.image}" alt="${item.name}" onerror="this.src='https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=600&auto=format&fit=crop';" loading="lazy">
+          <button class="favorite-btn ${isFav ? 'active' : ''}" aria-label="Favorite ${item.name}" onclick="event.stopPropagation(); toggleFavorite('${item.name}', this)">
+            &#9829;
+          </button>
         </div>
-      </section>
+        <div class="drink-info" onclick="openDrinkModal('${item.name}')">
+          <span class="drink-category-label">${item.category}</span>
+          <h3 class="drink-title">${item.name}</h3>
+          <p class="drink-description">${item.description}</p>
+          <div class="drink-meta-row">
+            <span class="drink-price">$${defaultPrice.toFixed(2)}</span>
+            <button class="btn btn-secondary" style="padding: 6px 16px; font-size: 0.75rem;">View Details</button>
+          </div>
+        </div>
+      </article>
     `;
   }).join('');
-}
-
-// Render individual drink card
-function renderDrinkCard(item) {
-  const defaultPrice = item.sizes.medium ? item.sizes.medium.price : (item.sizes.small ? item.sizes.small.price : 0);
-  const isFav = window.FavoritesManager.isFav(item.name);
-  
-  return `
-    <article class="drink-card" data-name="${item.name}">
-      <div class="drink-image-wrap">
-        <img src="${item.image}" alt="${item.name}" onerror="this.src='https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=600&auto=format&fit=crop';" loading="lazy">
-        <button class="favorite-btn ${isFav ? 'active' : ''}" aria-label="Favorite ${item.name}" onclick="event.stopPropagation(); toggleFavorite('${item.name}', this)">
-          &#9829;
-        </button>
-      </div>
-      <div class="drink-info" onclick="openDrinkModal('${item.name}')">
-        <span class="drink-category-label">${item.category}</span>
-        <h3 class="drink-title">${item.name}</h3>
-        <p class="drink-description">${item.description}</p>
-        <div class="drink-meta-row">
-          <span class="drink-price">$${defaultPrice.toFixed(2)}</span>
-          <button class="btn btn-secondary" style="padding: 6px 16px; font-size: 0.75rem;">View Details</button>
-        </div>
-      </div>
-    </article>
-  `;
 }
 
 // Favorites Toggle Callback
@@ -352,11 +268,23 @@ function setupEventListeners() {
     });
   }
 
-  // Handle same-page hash changes for smooth scrolling
+  // Handle same-page hash changes for Secret Menu and Recipe Maker
   window.addEventListener('hashchange', () => {
-    const hash = window.location.hash;
-    if (hash) {
-      const el = document.getElementById(hash.substring(1));
+    if (window.location.hash === '#secret-menu') {
+      activeCategory = 'Secret Menu';
+      const container = document.getElementById('category-tags');
+      if (container) {
+        container.querySelectorAll('.category-tag').forEach(b => {
+          if (b.dataset.category === 'Secret Menu') {
+            b.classList.add('active');
+          } else {
+            b.classList.remove('active');
+          }
+        });
+      }
+      applyFilters();
+    } else if (window.location.hash === '#recipes') {
+      const el = document.getElementById('recipes');
       if (el) el.scrollIntoView({ behavior: 'smooth' });
     }
   });

@@ -84,31 +84,6 @@ function renderMenu(items) {
   const grid = document.getElementById('menu-grid');
   if (!grid) return;
 
-  // Dynamically update Category Banner Image based on filters
-  const bannerContainer = document.getElementById('category-banner-container');
-  const bannerImg = document.getElementById('category-banner-img');
-  if (bannerContainer && bannerImg) {
-    const bannerMap = {
-      '7 Originals': 'assets/images/banner_originals.png',
-      '7 Classics': 'assets/images/banner_classics.png',
-      '7 Energy': 'assets/images/banner_energy.png',
-      '7 Fizz': 'assets/images/banner_fizz.png',
-      'Teas, Chai \u0026 Matcha': 'assets/images/banner_featured.png',
-      'Smoothies': 'assets/images/banner_featured.png',
-      'Kids \u0026 Extras': 'assets/images/banner_featured.png',
-      'Secret Menu': 'assets/images/banner_featured.png'
-    };
-    
-    const currentBanner = bannerMap[activeCategory];
-    if (currentBanner) {
-      bannerImg.src = currentBanner;
-      bannerImg.alt = `${activeCategory} banner`;
-      bannerContainer.style.display = 'block';
-    } else {
-      bannerContainer.style.display = 'none';
-    }
-  }
-
   if (items.length === 0) {
     grid.innerHTML = `<div style="grid-column: 1/-1; text-align: center; color: var(--text-gray); padding: 40px 0;">No matching drinks found. Try adjusting your filters!</div>`;
     return;

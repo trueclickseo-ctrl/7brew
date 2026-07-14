@@ -2,6 +2,40 @@ DirectoryIndex index.html
 
 RewriteEngine On
 
+# Redirect direct HTML file requests to clean 7brew- URLs
+RewriteCond %{THE_REQUEST} \s/calorie-calculator\.html\s [NC]
+RewriteRule ^ 7brew-calorie-calculator [R=301,L]
+
+RewriteCond %{THE_REQUEST} \s/menu\.html\s [NC]
+RewriteRule ^ 7brew-menu [R=301,L]
+
+RewriteCond %{THE_REQUEST} \s/locations\.html\s [NC]
+RewriteRule ^ 7brew-locations [R=301,L]
+
+RewriteCond %{THE_REQUEST} \s/blog\.html\s [NC]
+RewriteRule ^ 7brew-blog [R=301,L]
+
+RewriteCond %{THE_REQUEST} \s/rewards\.html\s [NC]
+RewriteRule ^ 7brew-rewards [R=301,L]
+
+RewriteCond %{THE_REQUEST} \s/deals\.html\s [NC]
+RewriteRule ^ 7brew-deals [R=301,L]
+
+RewriteCond %{THE_REQUEST} \s/franchise\.html\s [NC]
+RewriteRule ^ 7brew-franchise [R=301,L]
+
+RewriteCond %{THE_REQUEST} \s/merch-shop\.html\s [NC]
+RewriteRule ^ 7brew-merch-shop [R=301,L]
+
+RewriteCond %{THE_REQUEST} \s/gift-cards\.html\s [NC]
+RewriteRule ^ 7brew-gift-cards [R=301,L]
+
+RewriteCond %{THE_REQUEST} \s/secret-menu\.html\s [NC]
+RewriteRule ^ 7brew-secret-menu [R=301,L]
+
+RewriteCond %{THE_REQUEST} \s/recipe-maker\.html\s [NC]
+RewriteRule ^ 7brew-recipe-maker [R=301,L]
+
 # Permanent redirect for Careers to the official corporate page
 RewriteRule ^7brew-careers$ https://7brew.com/careers [R=301,L]
 RewriteRule ^careers$ https://7brew.com/careers [R=301,L]

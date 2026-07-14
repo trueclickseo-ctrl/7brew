@@ -785,7 +785,7 @@
                             "Coconut Syrup",
                             "Ice"
                         ],
-        "image":  "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?q=80\u0026w=600\u0026auto=format\u0026fit=crop",
+        "image":  "assets/images/pink_mermaid_fizz.jpg",
         "sizes":  {
                       "small":  {
                                     "price":  3.25,
@@ -814,7 +814,7 @@
                             "Blue Raspberry",
                             "Ice"
                         ],
-        "image":  "https://images.unsplash.com/photo-1551024709-8f23befc6f87?q=80\u0026w=600\u0026auto=format\u0026fit=crop",
+        "image":  "assets/images/black_mamba_fizz.jpg",
         "sizes":  {
                       "small":  {
                                     "price":  3.25,
@@ -843,7 +843,7 @@
                             "Pomegranate Syrup",
                             "Ice"
                         ],
-        "image":  "https://images.unsplash.com/photo-1497515114629-f71d768fd07c?q=80\u0026w=600\u0026auto=format\u0026fit=crop",
+        "image":  "assets/images/hawaiian_punch_fizz.jpg",
         "sizes":  {
                       "small":  {
                                     "price":  3.25,
@@ -872,7 +872,7 @@
                             "Raspberry Syrup",
                             "Ice"
                         ],
-        "image":  "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?q=80\u0026w=600\u0026auto=format\u0026fit=crop",
+        "image":  "assets/images/firecracker_fizz.jpg",
         "sizes":  {
                       "small":  {
                                     "price":  3.25,
@@ -900,7 +900,7 @@
                             "Passion Fruit Syrup",
                             "Ice"
                         ],
-        "image":  "https://images.unsplash.com/photo-1556679343-c7306c1976bc?q=80\u0026w=600\u0026auto=format\u0026fit=crop",
+        "image":  "assets/images/sunny_7_fizz.jpg",
         "sizes":  {
                       "small":  {
                                     "price":  3.25,
@@ -928,7 +928,7 @@
                             "Strawberry Syrup",
                             "Ice"
                         ],
-        "image":  "https://images.unsplash.com/photo-1556679343-c7306c1976bc?q=80\u0026w=600\u0026auto=format\u0026fit=crop",
+        "image":  "assets/images/georgia_peach_tea.png",
         "sizes":  {
                       "small":  {
                                     "price":  2.99,
@@ -956,7 +956,7 @@
                             "Peach Syrup",
                             "Ice"
                         ],
-        "image":  "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?q=80\u0026w=600\u0026auto=format\u0026fit=crop",
+        "image":  "assets/images/hula_tea.png",
         "sizes":  {
                       "small":  {
                                     "price":  2.99,
@@ -984,7 +984,7 @@
                             "Breve Cream Mix",
                             "Steamed Milk"
                         ],
-        "image":  "https://images.unsplash.com/photo-1576092768241-dec231879fc3?q=80\u0026w=600\u0026auto=format\u0026fit=crop",
+        "image":  "assets/images/brewchata_chai.png",
         "sizes":  {
                       "small":  {
                                     "price":  3.99,
@@ -1012,7 +1012,7 @@
                             "Strawberry Syrup",
                             "Ice"
                         ],
-        "image":  "assets/images/matcha.jpg",
+        "image":  "assets/images/matcha_latte.png",
         "sizes":  {
                       "small":  {
                                     "price":  4.25,
@@ -1040,7 +1040,7 @@
                             "Vanilla Syrup",
                             "Whole Milk"
                         ],
-        "image":  "assets/images/matcha.jpg",
+        "image":  "assets/images/matcha_latte.png",
         "sizes":  {
                       "small":  {
                                     "price":  4.25,

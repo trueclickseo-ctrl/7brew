@@ -875,6 +875,8 @@ button, input, select, textarea {
   border-radius: var(--border-radius-md);
   padding: 28px;
   transition: var(--transition-smooth);
+  display: flex;
+  flex-direction: column;
 }
 
 .location-card:hover {

@@ -73,7 +73,18 @@ function renderLocations(locations) {
   if (!container) return;
 
   if (locations.length === 0) {
-    container.innerHTML = `<div style="grid-column: 1/-1; text-align: center; color: var(--text-gray); padding: 40px 0;">No locations match your search criteria.</div>`;
+    container.innerHTML = `
+      <div style="grid-column: 1/-1; text-align: center; padding: 40px 20px; background: linear-gradient(135deg, var(--bg-card), var(--bg-secondary)); border: 2px dashed var(--color-primary); border-radius: var(--border-radius-md); box-shadow: var(--shadow-neon); margin-top: 20px;">
+        <span style="font-size: 3rem; margin-bottom: 15px; display: block;">📍</span>
+        <h3 style="font-size: 1.6rem; color: var(--color-primary); margin-bottom: 10px;">Don't see your favorite stand?</h3>
+        <p style="color: var(--text-gray); max-width: 600px; margin: 0 auto 24px auto; font-size: 1rem; line-height: 1.5;">
+          We currently showcase our top local stands, but there are over 300+ official 7 Brew stands nationwide! Use the official store finder to locate one near you.
+        </p>
+        <a href="https://7brew.com/locations/" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="display: inline-flex; font-size: 0.9rem;">
+          Search All 300+ Official Stands
+        </a>
+      </div>
+    `;
     return;
   }
 

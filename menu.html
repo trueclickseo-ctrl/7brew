@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8VM681EN3E"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-8VM681EN3E');
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Interactive Coffee & Beverage Menu | 7 Brew Inspired</title>
@@ -12,7 +20,7 @@
   <meta property="og:description" content="View ingredients, sizes, calories, caffeine metrics, and pricing for every beverage. Filter and find your favorite combination.">
   <meta property="og:image" content="assets/images/og-menu.jpg">
 
-  <link rel="stylesheet" href="assets/css/style.css?v=1.0.1">
+  <link rel="stylesheet" href="assets/css/style.css?v=1.0.8">
 
   <!-- Menu Structured Data -->
   <script type="application/ld+json">
@@ -100,6 +108,7 @@
       transform: translateY(-4px) scale(1.02) !important;
     }
   </style>
+  <link rel="icon" type="image/png" href="/favicon.png?v=1.0.2">
 </head>
 <body>
 
@@ -107,7 +116,7 @@
   <header class="header">
     <div class="container nav-container">
       <a href="/" class="logo" id="nav-logo">
-        <span class="logo-icon">&#9889;</span> 7 Brew Inspired
+        <img src="/assets/images/logo-header.png" alt="7 Brew Logo" class="logo-img"> 7 Brew Inspired
       </a>
       <nav class="nav-menu" id="nav-menu">
         <a href="/" class="nav-link">Home</a>
@@ -172,9 +181,9 @@
         </div>
       </section>
 
-      <!-- DYNAMIC DRINK GRID -->
-      <div id="menu-grid" class="menu-grid">
-        <div style="text-align: center; color: var(--text-gray); padding: 40px 0; grid-column: 1/-1;">Loading menu options...</div>
+      <!-- DYNAMIC DRINK SECTIONS -->
+      <div id="menu-sections-container">
+        <div style="text-align: center; color: var(--text-gray); padding: 40px 0;">Loading menu options...</div>
       </div>
 
       <!-- INTERACTIVE SECRET MENU RECIPE CREATOR -->
@@ -310,6 +319,6 @@
 
   <!-- Scripts -->
   <script src="assets/js/main.js"></script>
-  <script src="assets/js/menu.js?v=1.0.5"></script>
+  <script src="assets/js/menu.js?v=1.0.8"></script>
 </body>
 </html>

@@ -1,105 +1,176 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Main Pages -->
   <url>
-    <loc>index.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <loc>https://7brewguide.com/</loc>
+    <lastmod>2026-07-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>menu.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <loc>https://7brewguide.com/7brew-menu</loc>
+    <lastmod>2026-07-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>calorie-calculator.html</loc>
-    <lastmod>2026-07-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://7brewguide.com/7brew-calorie-calculator</loc>
+    <lastmod>2026-07-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
-    <loc>locations.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <loc>https://7brewguide.com/7brew-locations</loc>
+    <lastmod>2026-07-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>blog.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <loc>https://7brewguide.com/7brew-blog</loc>
+    <lastmod>2026-07-15</lastmod>
     <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://7brewguide.com/7brew-deals</loc>
+    <lastmod>2026-07-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://7brewguide.com/7brew-rewards</loc>
+    <lastmod>2026-07-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Interactive Features -->
+  <url>
+    <loc>https://7brewguide.com/recipe-maker.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>contact.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <loc>https://7brewguide.com/secret-menu.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Other Pages -->
+  <url>
+    <loc>https://7brewguide.com/merch-shop.html</loc>
+    <lastmod>2026-07-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>7-brew-blondie</loc>
-    <lastmod>2026-07-14</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://7brewguide.com/gift-cards.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://7brewguide.com/franchise.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://7brewguide.com/contact.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Individual 7 Originals Recipes -->
+  <url>
+    <loc>https://7brewguide.com/7-brew-blondie.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>7-brew-brunette</loc>
-    <lastmod>2026-07-14</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://7brewguide.com/7-brew-brunette.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>7-brew-smooth-7</loc>
-    <lastmod>2026-07-14</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://7brewguide.com/7-brew-smooth-7.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>7-brew-white-mac</loc>
-    <lastmod>2026-07-14</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://7brewguide.com/7-brew-white-mac.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>7-brew-german-chocolate</loc>
-    <lastmod>2026-07-14</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://7brewguide.com/7-brew-german-chocolate.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>7-brew-snickerz</loc>
-    <lastmod>2026-07-14</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://7brewguide.com/7-brew-snickerz.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>7-brew-cinnamon-roll</loc>
-    <lastmod>2026-07-14</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://7brewguide.com/7-brew-cinnamon-roll.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>7-brew-ocean-breeze-7-energy</loc>
-    <lastmod>2026-07-14</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://7brewguide.com/7-brew-triple-seven.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Energy Mixers -->
+  <url>
+    <loc>https://7brewguide.com/7-brew-ocean-breeze-7-energy.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>7-brew-tropic-thunder-7-energy</loc>
-    <lastmod>2026-07-14</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://7brewguide.com/7-brew-tropic-thunder-7-energy.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>7-brew-sunrise-7-energy</loc>
-    <lastmod>2026-07-14</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://7brewguide.com/7-brew-sunrise-7-energy.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+
+  <!-- Legal Info -->
   <url>
-    <loc>7-brew-triple-seven</loc>
-    <lastmod>2026-07-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://7brewguide.com/privacy-policy.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://7brewguide.com/terms.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://7brewguide.com/cookie-policy.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
   </url>
 </urlset>

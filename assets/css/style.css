@@ -185,9 +185,21 @@ button, input, select, textarea {
   -webkit-text-fill-color: transparent;
 }
 
+.logo-img {
+  height: 42px;
+  width: 42px;
+  object-fit: contain;
+  border-radius: 50%;
+  border: 2px solid var(--color-primary);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  margin-right: 4px;
+}
+
 .logo-icon {
   color: var(--color-primary);
-  filter: drop-shadow(0 0 5px var(--color-primary));
+  -webkit-text-fill-color: var(--color-primary);
+  display: inline-block;
+  margin-right: 4px;
 }
 
 .nav-menu {

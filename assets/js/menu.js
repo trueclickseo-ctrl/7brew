@@ -11,7 +11,23 @@ const slugMap = {
   'Cinnamon Roll': '7-brew-cinnamon-roll',
   'Ocean Breeze': '7-brew-ocean-breeze-7-energy',
   'Tropic Thunder': '7-brew-tropic-thunder-7-energy',
-  'Sunrise': '7-brew-sunrise-7-energy'
+  'Sunrise': '7-brew-sunrise-7-energy',
+  'Triple 7': '7-brew-triple-seven'
+};
+
+const categoryIdMap = {
+  '7 Originals': '7-originals',
+  '7 Classics': '7-classics',
+  '7 Energy': '7-energy',
+  '7 Fizz': '7-fizz',
+  'Teas, Chai & Matcha': 'teas',
+  'Lemonades': 'lemonades',
+  'Smoothies': 'smoothies',
+  'Shakes': 'shakes',
+  'Featured Drinks': 'featured-drinks',
+  'Kids Drinks': 'kids-drinks',
+  'Secret Menu': 'secret-menu',
+  'Snacks / Food': 'extras'
 };
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -40,18 +56,29 @@ async function fetchMenu() {
     renderCategoryFilterTags();
     applyFilters();
     
-    // Handle scrolling to recipes section if requested
-    if (window.location.hash === '#recipes' || path.endsWith('/7brew-recipe-maker') || path.endsWith('/recipe-maker')) {
+    // Handle scrolling to requested hash element (e.g. #7-originals, #7-energy, #recipes)
+    if (window.location.hash) {
+      const hashVal = window.location.hash;
+      setTimeout(() => {
+        try {
+          const targetId = hashVal.replace('#', '');
+          const el = document.getElementById(targetId);
+          if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        } catch (e) {
+          console.error('Failed to scroll to target:', hashVal, e);
+        }
+      }, 600);
+    } else if (path.endsWith('/7brew-recipe-maker') || path.endsWith('/recipe-maker')) {
       setTimeout(() => {
         const el = document.getElementById('recipes');
         if (el) el.scrollIntoView({ behavior: 'smooth' });
-      }, 500);
+      }, 600);
     }
   } catch (error) {
     console.error(error);
-    const grid = document.getElementById('menu-grid');
-    if (grid) {
-      grid.innerHTML = `<p class="error-message">Oops! We couldn't load the menu right now. Please try again later.</p>`;
+    const container = document.getElementById('menu-sections-container');
+    if (container) {
+      container.innerHTML = `<p class="error-message">Oops! We couldn't load the menu right now. Please try again later.</p>`;
     }
   }
 }
@@ -81,39 +108,87 @@ function renderCategoryFilterTags() {
 
 // Main Render Function for Grid Cards
 function renderMenu(items) {
-  const grid = document.getElementById('menu-grid');
-  if (!grid) return;
+  const container = document.getElementById('menu-sections-container');
+  if (!container) return;
 
   if (items.length === 0) {
-    grid.innerHTML = `<div style="grid-column: 1/-1; text-align: center; color: var(--text-gray); padding: 40px 0;">No matching drinks found. Try adjusting your filters!</div>`;
+    container.innerHTML = `<div style="text-align: center; color: var(--text-gray); padding: 40px 0;">No matching drinks found. Try adjusting your filters!</div>`;
     return;
   }
 
-  grid.innerHTML = items.map(item => {
-    // Get small size price
-    const defaultPrice = item.sizes.medium ? item.sizes.medium.price : (item.sizes.small ? item.sizes.small.price : 0);
-    const isFav = window.FavoritesManager.isFav(item.name);
+  // Group items by category
+  const grouped = {};
+  items.forEach(item => {
+    if (!grouped[item.category]) {
+      grouped[item.category] = [];
+    }
+    grouped[item.category].push(item);
+  });
+
+  // Sort categories or output them in order
+  const categoryOrder = [
+    '7 Originals',
+    '7 Classics',
+    'Featured Drinks',
+    '7 Energy',
+    '7 Fizz',
+    'Teas, Chai & Matcha',
+    'Lemonades',
+    'Smoothies',
+    'Shakes',
+    'Kids Drinks',
+    'Secret Menu',
+    'Snacks / Food'
+  ];
+
+  let html = '';
+  
+  // Render categories in order if they exist, or append any others
+  const categoriesToRender = categoryOrder.filter(cat => grouped[cat]);
+  // Add any categories not in the ordered list
+  Object.keys(grouped).forEach(cat => {
+    if (!categoriesToRender.includes(cat)) {
+      categoriesToRender.push(cat);
+    }
+  });
+
+  categoriesToRender.forEach(cat => {
+    const catItems = grouped[cat];
+    const sectionId = categoryIdMap[cat] || cat.toLowerCase().replace(/[^a-z0-9]+/g, '-');
     
-    return `
-      <article class="drink-card" data-name="${item.name.replace(/"/g, '&quot;')}">
-        <div class="drink-image-wrap">
-          <img src="${item.image}" alt="${item.name.replace(/"/g, '&quot;')}" onerror="this.src='https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=600&auto=format&fit=crop';" loading="lazy">
-          <button class="favorite-btn ${isFav ? 'active' : ''}" aria-label="Favorite" onclick="event.stopPropagation(); toggleFavorite(this.closest('.drink-card').getAttribute('data-name'), this)">
-            &#9829;
-          </button>
+    html += `
+      <section class="menu-category-section" id="${sectionId}" style="margin-bottom: 60px; scroll-margin-top: 120px;">
+        <h2 style="font-size: 2.2rem; font-family: var(--font-heading); margin-bottom: 24px; padding-bottom: 10px; border-bottom: 2px solid var(--color-primary); color: var(--text-white); text-shadow: 0 0 10px rgba(0, 225, 255, 0.2);">${cat}</h2>
+        <div class="menu-grid">
+          ${catItems.map(item => {
+            const defaultPrice = item.sizes.medium ? item.sizes.medium.price : (item.sizes.small ? item.sizes.small.price : 0);
+            const isFav = window.FavoritesManager.isFav(item.name);
+            return `
+              <article class="drink-card" data-name="${item.name.replace(/"/g, '&quot;')}">
+                <div class="drink-image-wrap">
+                  <img src="${item.image}" alt="${item.name.replace(/"/g, '&quot;')}" onerror="this.src='https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=600&auto=format&fit=crop';" loading="lazy">
+                  <button class="favorite-btn ${isFav ? 'active' : ''}" aria-label="Favorite" onclick="event.stopPropagation(); toggleFavorite(this.closest('.drink-card').getAttribute('data-name'), this)">
+                    &#9829;
+                  </button>
+                </div>
+                <div class="drink-info" onclick="openDrinkModal(this.closest('.drink-card').getAttribute('data-name'))">
+                  <span class="drink-category-label">${item.category}</span>
+                  <h3 class="drink-title">${item.name}</h3>
+                  <p class="drink-description">${item.description}</p>
+                  <div class="drink-meta-row">
+                    <span class="drink-price">$${defaultPrice.toFixed(2)}</span>
+                    <button class="btn btn-secondary" style="padding: 6px 16px; font-size: 0.75rem;">View Details</button>
+                  </div>
+                </div>
+              </article>
+            `;
+          }).join('')}
         </div>
-        <div class="drink-info" onclick="openDrinkModal(this.closest('.drink-card').getAttribute('data-name'))">
-          <span class="drink-category-label">${item.category}</span>
-          <h3 class="drink-title">${item.name}</h3>
-          <p class="drink-description">${item.description}</p>
-          <div class="drink-meta-row">
-            <span class="drink-price">$${defaultPrice.toFixed(2)}</span>
-            <button class="btn btn-secondary" style="padding: 6px 16px; font-size: 0.75rem;">View Details</button>
-          </div>
-        </div>
-      </article>
+      </section>
     `;
-  }).join('');
+  });
+
+  container.innerHTML = html;
 }
 
 // Favorites Toggle Callback

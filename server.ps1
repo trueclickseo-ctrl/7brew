@@ -32,6 +32,7 @@ try {
             elseif ($ext -eq ".json") { $contentType = "application/json" }
             elseif ($ext -eq ".jpg" -or $ext -eq ".jpeg") { $contentType = "image/jpeg" }
             elseif ($ext -eq ".png") { $contentType = "image/png" }
+            elseif ($ext -eq ".webp") { $contentType = "image/webp" }
             elseif ($ext -eq ".xml") { $contentType = "application/xml" }
             
             $res.ContentType = $contentType

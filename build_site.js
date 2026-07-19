@@ -1410,11 +1410,44 @@ ${getHead(`7 Brew ${city}, ${stateCode = locs[0].stateCode} — Drive-Thru Locat
   });
 });
 
-// Update Locations entrypoint file mapping
+// Update and Pre-render Locations entrypoint file
+console.log('Pre-rendering locations.html...');
 let locHtml = fs.readFileSync(path.join(__dirname, 'locations.html'), 'utf8');
+
+let preRenderedLocsHtml = '';
+Object.entries(locsByState).forEach(([state, cities]) => {
+  const stateSlug = state.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+  preRenderedLocsHtml += `
+    <div style="grid-column: 1/-1; margin-top: 30px; margin-bottom: 20px; border-bottom: 2px solid var(--color-primary); padding-bottom: 10px;">
+      <h2 style="font-size: 2rem; font-family: var(--font-heading); color: var(--text-white);"><a href="/locations/${stateSlug}">${state} Hub</a></h2>
+    </div>
+  `;
+  
+  Object.entries(cities).forEach(([city, locsList]) => {
+    const citySlug = `${city.toLowerCase().replace(/[^a-z0-9]+/g, '-')}-${stateSlug}`;
+    
+    locsList.forEach(loc => {
+      preRenderedLocsHtml += `
+        <article class="drink-card" style="padding: 24px; border: 2px solid var(--text-white); background: var(--bg-card); border-radius: var(--border-radius-md); box-shadow: var(--shadow-card);">
+          <div class="drink-info" style="padding: 0;">
+            <span class="drink-category-label" style="background: var(--color-secondary); color: white; padding: 4px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: bold; text-transform: uppercase;">${loc.city}, ${loc.stateCode}</span>
+            <h3 class="drink-title" style="margin-top: 10px; margin-bottom: 8px;"><a href="/locations/${citySlug}">${loc.name}</a></h3>
+            <p style="color: var(--text-white); font-weight: bold; font-size: 0.9rem; margin-bottom: 12px;">${loc.address}</p>
+            <p style="color: var(--text-gray); font-size: 0.85rem; margin-bottom: 16px;"><strong>Phone:</strong> ${loc.phone}</p>
+            <div style="display: flex; gap: 10px;">
+              <a href="/locations/${citySlug}" class="btn btn-secondary" style="padding: 6px 12px; font-size: 0.75rem; flex: 1; text-align: center;">View Directions & Maps</a>
+            </div>
+          </div>
+        </article>
+      `;
+    });
+  });
+});
+
 locHtml = locHtml.replace(/<link rel="canonical" href="[^"]*">/, '<link rel="canonical" href="https://7brewguide.com/7brew-locations">');
 locHtml = locHtml.replace(/<header class="header">[\s\S]*?<\/header>/, getHeader('locations'));
 locHtml = locHtml.replace(/<footer class="footer">[\s\S]*?<\/footer>/, getFooter());
+locHtml = locHtml.replace(/<section class="locations-grid" id="locations-grid">[\s\S]*?<\/section>/, `<section class="locations-grid" id="locations-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">${preRenderedLocsHtml}</section>`);
 fs.writeFileSync(path.join(__dirname, 'locations.html'), locHtml, 'utf8');
 
 

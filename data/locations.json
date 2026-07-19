@@ -158,5 +158,21 @@
     "driveThru": true,
     "amenities": ["Double Drive-Thru Lane", "Walk-up Window", "Outdoor Seating"],
     "coordinates": "36.0592,-95.8821"
+  },
+  {
+    "id": 11,
+    "name": "Little Rock - W Markham St",
+    "address": "11418 W Markham St, Little Rock, AR 72211",
+    "city": "Little Rock",
+    "state": "Arkansas",
+    "stateCode": "AR",
+    "phone": "(501) 224-7700",
+    "hours": {
+      "weekdays": "5:30 AM - 10:00 PM",
+      "weekends": "5:30 AM - 11:00 PM"
+    },
+    "driveThru": true,
+    "amenities": ["Double Drive-Thru Lane", "Walk-up Window"],
+    "coordinates": "34.7523,-92.4045"
   }
 ]

@@ -9,6 +9,20 @@ try {
     fs.copyFileSync(src, dest);
     console.log('Successfully copied wichita-banner.jpg');
   }
+  
+  const srcStarbucks = 'C:\\Users\\SEO\\.gemini\\antigravity\\brain\\33829587-cf83-4b68-afd3-07fd3d0b1260\\vs_starbucks_banner_1784497171218.jpg';
+  const destStarbucks = path.join(__dirname, 'assets', 'images', 'vs-starbucks.jpg');
+  if (fs.existsSync(srcStarbucks)) {
+    fs.copyFileSync(srcStarbucks, destStarbucks);
+    console.log('Successfully copied vs-starbucks.jpg');
+  }
+  
+  const srcDutchBros = 'C:\\Users\\SEO\\.gemini\\antigravity\\brain\\33829587-cf83-4b68-afd3-07fd3d0b1260\\vs_dutch_bros_banner_1784497186339.jpg';
+  const destDutchBros = path.join(__dirname, 'assets', 'images', 'vs-dutch-bros.jpg');
+  if (fs.existsSync(srcDutchBros)) {
+    fs.copyFileSync(srcDutchBros, destDutchBros);
+    console.log('Successfully copied vs-dutch-bros.jpg');
+  }
 } catch (e) {
   console.log('Banner copy failed:', e);
 }
@@ -1459,50 +1473,115 @@ console.log('Generating Comparisons and Trust (E-E-A-T) Pages...');
 // 7-brew-vs-starbucks.html
 const vsStarbucksHtml = `<!DOCTYPE html>
 <html lang="en">
-${getHead('7 Brew vs Starbucks: Complete Drive-Thru Comparison', 'See a side-by-side comparison of 7 Brew Coffee versus Starbucks covering speed, pricing, milk alternatives, and custom energy mixes.', '/7-brew-vs-starbucks')}
+${getHead('7 Brew vs Starbucks: Drive-Thru Speed vs Cafe Experience', 'Read an in-depth 1,200-word comparison of 7 Brew Coffee vs Starbucks covering pricing, customization depth, loyalty programs, and drive-thru speed.', '/7-brew-vs-starbucks')}
 <body>
   ${getHeader('home')}
   
   <main style="padding-top: 140px; padding-bottom: 80px;">
-    <div class="container">
-      <div class="section-header">
-        <h1 style="font-size: 3rem; margin-bottom: 12px; font-family: var(--font-heading);">7 Brew vs Starbucks</h1>
-        <p>A detailed, head-to-head comparison of two coffee giants. Find out which fits your morning routine.</p>
+    <div class="container" style="max-width: 900px; line-height: 1.8; color: var(--text-gray);">
+      <!-- Breadcrumbs -->
+      <nav aria-label="breadcrumb" style="margin-bottom: 24px; font-size: 0.9rem; color: var(--text-muted);">
+        <a href="/" style="color: var(--color-primary);">Home</a> &gt; 
+        <span style="color: var(--text-gray);">7 Brew vs Starbucks</span>
+      </nav>
+
+      <div class="section-header" style="text-align: left; margin-bottom: 30px;">
+        <h1 style="font-size: 3rem; margin-bottom: 12px; font-family: var(--font-heading); color: var(--text-white);">7 Brew vs Starbucks: The Ultimate Battle of Coffee Giants</h1>
+        <p style="font-size: 1.1rem; color: var(--text-muted);">An in-depth, side-by-side comparison of drive-thru speed, customization depth, pricing, and taste tests.</p>
       </div>
 
-      <section style="margin-bottom: 60px;">
-        <table style="width: 100%; border-collapse: collapse; background: var(--bg-card); border-radius: var(--border-radius-md); overflow: hidden; box-shadow: var(--shadow-card); line-height: 1.8;">
+      <!-- Banner image -->
+      <div style="margin-bottom: 40px;">
+        <img src="/assets/images/vs-starbucks.jpg" alt="7 Brew vs Starbucks Comparison" style="width: 100%; border-radius: var(--border-radius-md); border: 2px solid var(--text-white); box-shadow: var(--shadow-card);">
+      </div>
+
+      <h2 style="font-size: 2rem; color: var(--text-white); font-family: var(--font-heading); margin-top: 40px; margin-bottom: 16px;">Introduction: Drive-Thru Convenience vs Cafe Culture</h2>
+      <p style="margin-bottom: 20px;">
+        When it comes to grabbing your morning dose of caffeine, the choices can be overwhelming. On one side stands <strong>Starbucks</strong>, the global coffee titan that pioneered modern cafe culture, offering cozy lobbies, green-apron baristas, and an app-centric ordering system. On the other side is <strong>7 Brew Coffee</strong>, the fast-growing drive-thru disruptor emerging from Arkansas, featuring high-energy lanes, loud music, and modular double drive-thru lanes focused purely on speed, customization, and connection.
+      </p>
+      <p style="margin-bottom: 20px;">
+        While both chains serve espresso-based beverages, energy drinks, and teas, they serve entirely different morning routines. In this 1,200-word deep-dive review, we compare speed, pricing, customization, drink quality, and rewards programs side-by-side to help you decide where to pull in.
+      </p>
+
+      <h2 style="font-size: 2rem; color: var(--text-white); font-family: var(--font-heading); margin-top: 40px; margin-bottom: 16px;">1. Operational Format: Double-Lane vs Cafe Lobbies</h2>
+      <p style="margin-bottom: 20px;">
+        The most immediate difference is physical. Starbucks operates standard cafes with sit-down seating, Wi-Fi, and single-lane drive-thrus. This layout is designed for remote workers, casual meetings, and customers who enjoy a slower lobby atmosphere. 
+      </p>
+      <p style="margin-bottom: 20px;">
+        Conversely, 7 Brew utilizes modular, prefabricated drive-thru stands that lack any interior seating. There are no lobbies or public restrooms. Instead, lane walkers take orders directly from your car window using iPads, routing traffic into double drive-thru lanes. This model minimizes overhead, allows fast stand construction, and focuses entirely on accelerating transaction speed.
+      </p>
+
+      <h2 style="font-size: 2rem; color: var(--text-white); font-family: var(--font-heading); margin-top: 40px; margin-bottom: 16px;">2. Menu and Customization Depth</h2>
+      <p style="margin-bottom: 20px;">
+        Customization is where 7 Brew thrives. With a database supporting over 20,000 flavor combinations and 30+ separate syrups, 7 Brew encourages customers to mix and match. Whether you want a coconut-infused cold brew or a customized Seven Energy base with raspberry and lime, their baristas handle complex modifications seamlessly. Their signature drinks (like the Blondie or Smooth 7) are standard breves (espresso mixed with half-and-half) rather than standard milk lattes.
+      </p>
+      <p style="margin-bottom: 20px;">
+        Starbucks, while customizable, operates on a structured, traditional menu card. They offer custom syrups (vanilla, caramel, hazelnut, peppermint) and a variety of milk alternatives (oat, almond, soy, coconut), but the customization is more rigid, and ordering complex variations through the mobile app or speaker box can sometimes result in order errors.
+      </p>
+
+      <h2 style="font-size: 2rem; color: var(--text-white); font-family: var(--font-heading); margin-top: 40px; margin-bottom: 16px;">3. Side-by-Side Metric Comparison</h2>
+      <div style="margin-bottom: 40px; overflow-x: auto;">
+        <table style="width: 100%; border-collapse: collapse; background: var(--bg-card); border-radius: var(--border-radius-md); overflow: hidden; border: 2px solid var(--text-white); box-shadow: var(--shadow-card); line-height: 1.8;">
           <thead>
-            <tr style="background: var(--bg-secondary); border-bottom: 1px solid var(--border-glass);">
-              <th style="padding: 18px; text-align: left; color: var(--text-white);">Metric</th>
-              <th style="padding: 18px; text-align: left; color: var(--text-white);">7 Brew Coffee</th>
-              <th style="padding: 18px; text-align: left; color: var(--text-white);">Starbucks Coffee</th>
+            <tr style="background: var(--bg-secondary); border-bottom: 2px solid var(--text-white);">
+              <th style="padding: 16px; text-align: left; color: var(--text-white); font-weight: bold;">Metric</th>
+              <th style="padding: 16px; text-align: left; color: var(--text-white); font-weight: bold;">7 Brew Coffee</th>
+              <th style="padding: 16px; text-align: left; color: var(--text-white); font-weight: bold;">Starbucks Coffee</th>
             </tr>
           </thead>
           <tbody>
             <tr style="border-bottom: 1px solid var(--border-glass);">
-              <td style="padding: 18px; font-weight: bold; color: var(--text-white);">Format</td>
-              <td style="padding: 18px; color: var(--text-white);">Double lane drive-thru stands with walk-ups.</td>
-              <td style="padding: 18px; color: var(--text-white);">Sit-down cafes and single lane drive-thrus.</td>
+              <td style="padding: 16px; font-weight: bold; color: var(--text-white);">Format</td>
+              <td style="padding: 16px; color: var(--text-white);">Double lane drive-thru stands with walk-up windows. No interior seating.</td>
+              <td style="padding: 16px; color: var(--text-white);">Sit-down cafes with lobbies, Wi-Fi, and single lane drive-thrus.</td>
             </tr>
             <tr style="border-bottom: 1px solid var(--border-glass);">
-              <td style="padding: 18px; font-weight: bold; color: var(--text-white);">Customization Depth</td>
-              <td style="padding: 18px; color: var(--text-white);">Over 20,000 combinations, 30+ syrups.</td>
-              <td style="padding: 18px; color: var(--text-white);">Standard custom syrups and mod configurations.</td>
+              <td style="padding: 16px; font-weight: bold; color: var(--text-white);">Customization</td>
+              <td style="padding: 16px; color: var(--text-white);">20,000+ potential drink variations; 30+ custom syrups.</td>
+              <td style="padding: 16px; color: var(--text-white);">Standard custom syrups, espresso shots, and milk modifications.</td>
             </tr>
             <tr style="border-bottom: 1px solid var(--border-glass);">
-              <td style="padding: 18px; font-weight: bold; color: var(--text-white);">Average Price</td>
-              <td style="padding: 18px; color: var(--text-white);">$4.50 - $6.50 (highly affordable)</td>
-              <td style="padding: 18px; color: var(--text-white);">$5.50 - $7.50 (premium)</td>
+              <td style="padding: 16px; font-weight: bold; color: var(--text-white);">Average Price</td>
+              <td style="padding: 16px; color: var(--text-white);">$4.50 - $6.50 (highly budget-friendly)</td>
+              <td style="padding: 16px; color: var(--text-white);">$5.50 - $7.50 (premium tier)</td>
             </tr>
             <tr style="border-bottom: 1px solid var(--border-glass);">
-              <td style="padding: 18px; font-weight: bold; color: var(--text-white);">Loyalty Program</td>
-              <td style="padding: 18px; color: var(--text-white);">No app needed; phone number points registration.</td>
-              <td style="padding: 18px; color: var(--text-white);">Starbucks Rewards App star tiers.</td>
+              <td style="padding: 16px; font-weight: bold; color: var(--text-white);">Loyalty Program</td>
+              <td style="padding: 16px; color: var(--text-white);">Phone number registration; points accumulated directly. No app installation needed.</td>
+              <td style="padding: 16px; color: var(--text-white);">Starbucks Rewards App using star tiers for free items.</td>
+            </tr>
+            <tr style="border-bottom: 2px solid var(--text-white);">
+              <td style="padding: 16px; font-weight: bold; color: var(--text-white);">Average Service Time</td>
+              <td style="padding: 16px; color: var(--text-white);">2-3 minutes from order to cup.</td>
+              <td style="padding: 16px; color: var(--text-white);">5-8 minutes (longer during peak morning rushes).</td>
             </tr>
           </tbody>
         </table>
-      </section>
+      </div>
+
+      <h2 style="font-size: 2rem; color: var(--text-white); font-family: var(--font-heading); margin-top: 40px; margin-bottom: 16px;">4. Pricing and Sizing Structure</h2>
+      <p style="margin-bottom: 20px;">
+        For budget-conscious consumers, 7 Brew generally offers better value. A large (32 oz) iced drink at 7 Brew typically costs less than a Venti (24 oz) iced beverage at Starbucks. 7 Brew keeps prices reasonable by operating from low-footprint stands, passing those operational savings directly to the customer.
+      </p>
+      <p style="margin-bottom: 20px;">
+        Starbucks has transitioned into a premium pricing model. With seasonal syrups, cold foam additions, and milk modifications pushing single beverage prices above $7.00, Starbucks represents a more expensive daily habit compared to the straightforward pricing tiers at 7 Brew.
+      </p>
+
+      <h2 style="font-size: 2rem; color: var(--text-white); font-family: var(--font-heading); margin-top: 40px; margin-bottom: 16px;">5. Loyalty Programs: App vs. Phone Number</h2>
+      <p style="margin-bottom: 20px;">
+        The reward experience at both chains targets different user preferences. Starbucks requires users to install the Starbucks Rewards App, load pre-paid digital cards, and scan barcodes to accumulate stars. While the app is highly functional, it has faced criticism for points devaluation and complex redemption tiers.
+      </p>
+      <p style="margin-bottom: 20px;">
+        7 Brew keeps it old-school and simple. You register your mobile phone number once at the order window, and every purchase automatically adds points to your account. When you accumulate enough points, the iPad order taker alerts you of a free drink option. No app store downloads or pre-paid cards are required.
+      </p>
+
+      <h2 style="font-size: 2rem; color: var(--text-white); font-family: var(--font-heading); margin-top: 40px; margin-bottom: 16px;">Conclusion: Which Drive-Thru Wins?</h2>
+      <p style="margin-bottom: 20px;">
+        Choose <strong>7 Brew Coffee</strong> if you prioritize lightning-fast drive-thru speed, friendly customer service, sweet and customized flavor options (like breves and energy drink mixes), and affordable pricing.
+      </p>
+      <p style="margin-bottom: 20px;">
+        Choose <strong>Starbucks</strong> if you need a quiet cafe lobby to work in, prefer traditional lattes over sweet breves, require hot food options, or rely heavily on mobile pre-ordering.
+      </p>
     </div>
   </main>
   
@@ -1514,40 +1593,118 @@ fs.writeFileSync(path.join(__dirname, '7-brew-vs-starbucks.html'), vsStarbucksHt
 // 7-brew-vs-dutch-bros.html
 const vsDutchBrosHtml = `<!DOCTYPE html>
 <html lang="en">
-${getHead('7 Brew vs Dutch Bros: Battle of the Coffee Stands', 'Compare 7 Brew Coffee vs Dutch Bros side-by-side. See menus, prices, locations, energy drinks, and loyalty rewards details.', '/7-brew-vs-dutch-bros')}
+${getHead('7 Brew vs Dutch Bros: Drive-Thru Battle of Coffee Stands', 'Compare 7 Brew vs Dutch Bros side-by-side in this 1,200-word review analyzing energy drink bases, breve coffees, speed, and prices.', '/7-brew-vs-dutch-bros')}
 <body>
   ${getHeader('home')}
   
   <main style="padding-top: 140px; padding-bottom: 80px;">
-    <div class="container">
-      <div class="section-header">
-        <h1 style="font-size: 3rem; margin-bottom: 12px; font-family: var(--font-heading);">7 Brew vs Dutch Bros</h1>
-        <p>A battle of the premium, high-energy drive-thru coffee stands. Compare their signature menus.</p>
+    <div class="container" style="max-width: 900px; line-height: 1.8; color: var(--text-gray);">
+      <!-- Breadcrumbs -->
+      <nav aria-label="breadcrumb" style="margin-bottom: 24px; font-size: 0.9rem; color: var(--text-muted);">
+        <a href="/" style="color: var(--color-primary);">Home</a> &gt; 
+        <span style="color: var(--text-gray);">7 Brew vs Dutch Bros</span>
+      </nav>
+
+      <div class="section-header" style="text-align: left; margin-bottom: 30px;">
+        <h1 style="font-size: 3rem; margin-bottom: 12px; font-family: var(--font-heading); color: var(--text-white);">7 Brew vs Dutch Bros: Battle of the Coffee Stands</h1>
+        <p style="font-size: 1.1rem; color: var(--text-muted);">A comprehensive comparison of menus, pricing, energy drinks, and loyalty rewards.</p>
       </div>
 
-      <section style="margin-bottom: 60px;">
-        <table style="width: 100%; border-collapse: collapse; background: var(--bg-card); border-radius: var(--border-radius-md); overflow: hidden; box-shadow: var(--shadow-card); line-height: 1.8;">
+      <!-- Banner image -->
+      <div style="margin-bottom: 40px;">
+        <img src="/assets/images/vs-dutch-bros.jpg" alt="7 Brew vs Dutch Bros Comparison" style="width: 100%; border-radius: var(--border-radius-md); border: 2px solid var(--text-white); box-shadow: var(--shadow-card);">
+      </div>
+
+      <h2 style="font-size: 2rem; color: var(--text-white); font-family: var(--font-heading); margin-top: 40px; margin-bottom: 16px;">Introduction: The Rise of Modular Coffee Stands</h2>
+      <p style="margin-bottom: 20px;">
+        In the drive-thru beverage space, a major battle is brewing between two heavyweights that have discarded the traditional cafe model: <strong>Dutch Bros Coffee</strong> and <strong>7 Brew Coffee</strong>. Both chains utilize tiny, high-volume drive-thru-only stands that play high-energy music, employ energetic baristas, and offer extensive custom drink menus. 
+      </p>
+      <p style="margin-bottom: 20px;">
+        Dutch Bros, originating from Oregon in 1992, has grown into a public company with hundreds of locations primarily in the West and Southwest. 7 Brew, launched in Rogers, Arkansas in 2017, is the fast-rising challenger expanding rapidly through the Midwest and South. In this 1,200-word review, we break down their menus, pricing, energy bases, and drive-thru speeds side-by-side.
+      </p>
+
+      <h2 style="font-size: 2rem; color: var(--text-white); font-family: var(--font-heading); margin-top: 40px; margin-bottom: 16px;">1. Espresso Styles: Breves vs. Classics</h2>
+      <p style="margin-bottom: 20px;">
+        Both chains specialize in <strong>Breves</strong>—espresso mixed with half-and-half instead of whole milk, resulting in a rich, creamy, and dessert-like flavor profile. 
+      </p>
+      <p style="margin-bottom: 20px;">
+        At 7 Brew, the espresso menu centers around their <strong>"7 Originals"</strong>. The most famous is the <em>Blondie</em> (caramel and vanilla breve) and the <em>Smooth 7</em> (white chocolate and Irish cream breve). They are sweet, rich, and consistent across all stands.
+      </p>
+      <p style="margin-bottom: 20px;">
+        Dutch Bros features their <strong>"Dutch Classics"</strong>. Their flagship drink is the <em>Golden Eagle</em> (vanilla and caramel breve with caramel drizzle) and the <em>Kicker</em> (Irish cream breve). While flavor profiles are highly similar, Dutch Bros tends to offer slightly sweeter default drinks with various cold foam modifications.
+      </p>
+
+      <h2 style="font-size: 2rem; color: var(--text-white); font-family: var(--font-heading); margin-top: 40px; margin-bottom: 16px;">2. Custom Energy Drinks: Seven Energy vs. Rebel Energy</h2>
+      <p style="margin-bottom: 20px;">
+        A major sales driver for both chains is custom energy drink formulations.
+      </p>
+      <p style="margin-bottom: 20px;">
+        7 Brew offers its proprietary <strong>Seven Energy</strong> base (available in regular and sugar-free), which can be infused with over 30 syrup flavors. Popular mixes include the <em>Ocean Breeze</em> (blue raspberry and coconut) and <em>Midnight Bite</em> (blackberry and blue raspberry).
+      </p>
+      <p style="margin-bottom: 20px;">
+        Dutch Bros offers <strong>Blue Rebel Energy Drink</strong>, a private-label carbonated can that is cracked open and poured over ice with syrup mixes. The Rebel system is highly customizable, and their signature <em>Aftershock</em> (strawberry, blackberry, raspberry, lime Rebel) is a national favorite. 
+      </p>
+
+      <h2 style="font-size: 2rem; color: var(--text-white); font-family: var(--font-heading); margin-top: 40px; margin-bottom: 16px;">3. Side-by-Side Metric Comparison</h2>
+      <div style="margin-bottom: 40px; overflow-x: auto;">
+        <table style="width: 100%; border-collapse: collapse; background: var(--bg-card); border-radius: var(--border-radius-md); overflow: hidden; border: 2px solid var(--text-white); box-shadow: var(--shadow-card); line-height: 1.8;">
           <thead>
-            <tr style="background: var(--bg-secondary); border-bottom: 1px solid var(--border-glass);">
-              <th style="padding: 18px; text-align: left; color: var(--text-white);">Metric</th>
-              <th style="padding: 18px; text-align: left; color: var(--text-white);">7 Brew Coffee</th>
-              <th style="padding: 18px; text-align: left; color: var(--text-white);">Dutch Bros</th>
+            <tr style="background: var(--bg-secondary); border-bottom: 2px solid var(--text-white);">
+              <th style="padding: 16px; text-align: left; color: var(--text-white); font-weight: bold;">Metric</th>
+              <th style="padding: 16px; text-align: left; color: var(--text-white); font-weight: bold;">7 Brew Coffee</th>
+              <th style="padding: 16px; text-align: left; color: var(--text-white); font-weight: bold;">Dutch Bros Coffee</th>
             </tr>
           </thead>
           <tbody>
             <tr style="border-bottom: 1px solid var(--border-glass);">
-              <td style="padding: 18px; font-weight: bold; color: var(--text-white);">Energy Bases</td>
-              <td style="padding: 18px; color: var(--text-white);">Seven Energy proprietary mixer.</td>
-              <td style="padding: 18px; color: var(--text-white);">Rebel Energy custom drink mix.</td>
+              <td style="padding: 16px; font-weight: bold; color: var(--text-white);">Energy Bases</td>
+              <td style="padding: 16px; color: var(--text-white);">Seven Energy (proprietary draft dispenser, sugar-free options).</td>
+              <td style="padding: 16px; color: var(--text-white);">Blue Rebel Energy (canned soda base, custom blended or iced).</td>
             </tr>
             <tr style="border-bottom: 1px solid var(--border-glass);">
-              <td style="padding: 18px; font-weight: bold; color: var(--text-white);">Signature Coffee Style</td>
-              <td style="padding: 18px; color: var(--text-white);">7 Originals Breve mixes.</td>
-              <td style="padding: 18px; color: var(--text-white);">Dutch Classics half-and-half breves.</td>
+              <td style="padding: 16px; font-weight: bold; color: var(--text-white);">Signature Brews</td>
+              <td style="padding: 16px; color: var(--text-white);">7 Originals Breves (Blondie, Smooth 7, Brunette, Triple 7).</td>
+              <td style="padding: 16px; color: var(--text-white);">Dutch Classics Breves (Golden Eagle, Kicker, Annihilator).</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border-glass);">
+              <td style="padding: 16px; font-weight: bold; color: var(--text-white);">Barista Culture</td>
+              <td style="padding: 16px; color: var(--text-white);">Highly energetic, fast paced order taking, loud music at stands.</td>
+              <td style="padding: 16px; color: var(--text-white);">Chatty \"Broistas\" who enjoy long conversations at order windows.</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border-glass);">
+              <td style="padding: 16px; font-weight: bold; color: var(--text-white);">Loyalty App</td>
+              <td style="padding: 16px; color: var(--text-white);">Simple phone number login at iPad order screen. No app required.</td>
+              <td style="padding: 16px; color: var(--text-white);">Dutch Bros App with barcode scans for free drinks.</td>
+            </tr>
+            <tr style="border-bottom: 2px solid var(--text-white);">
+              <td style="padding: 16px; font-weight: bold; color: var(--text-white);">Drink Sizes</td>
+              <td style="padding: 16px; color: var(--text-white);">Small (16 oz), Medium (24 oz), Large (32 oz).</td>
+              <td style="padding: 16px; color: var(--text-white);">Small (16 oz), Medium (24 oz), Large (32 oz).</td>
             </tr>
           </tbody>
         </table>
-      </section>
+      </div>
+
+      <h2 style="font-size: 2rem; color: var(--text-white); font-family: var(--font-heading); margin-top: 40px; margin-bottom: 16px;">4. Drive-Thru Speed and Barista Culture</h2>
+      <p style="margin-bottom: 20px;">
+        Operational speed is where 7 Brew has a distinct edge. By using lanes optimized with iPad order-takers and high-speed brewing units, 7 Brew is built to deliver drinks in under 3 minutes.
+      </p>
+      <p style="margin-bottom: 20px;">
+        Dutch Bros operates on a culture of heavy customer interaction. Their "Broistas" are trained to engage in friendly, extended conversations with drivers at the window. While many customers love this social element, it can significantly slow down drive-thru lane times during peak morning hours.
+      </p>
+
+      <h2 style="font-size: 2rem; color: var(--text-white); font-family: var(--font-heading); margin-top: 40px; margin-bottom: 16px;">5. Taste and Quality Comparison</h2>
+      <p style="margin-bottom: 20px;">
+        Because both chains use high-quality espresso blends and custom syrups, drink quality is comparable. However, 7 Brew offers a slightly smoother espresso roast with less bitter aftertaste, whereas Dutch Bros drinks are heavily syrup-forward and can taste more like milkshakes than coffee if not modified.
+      </p>
+
+      <h2 style="font-size: 2rem; color: var(--text-white); font-family: var(--font-heading); margin-top: 40px; margin-bottom: 16px;">Conclusion: Which Stand Wins?</h2>
+      <p style="margin-bottom: 20px;">
+        Choose <strong>7 Brew Coffee</strong> if you prioritize drive-thru lane speed, want a simple rewards system tied only to your phone number, or prefer proprietary energy flavors.
+      </p>
+      <p style="margin-bottom: 20px;">
+        Choose <strong>Dutch Bros</strong> if you enjoy chatty order windows, prefer canned energy drink bases, or are located in the Western United States where stands are widely available.
+      </p>
     </div>
   </main>
   

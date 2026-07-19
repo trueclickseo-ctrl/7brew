@@ -188,7 +188,7 @@ const getHead = (title, description, canonicalPath, extraSchema = '') => `
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>${title}</title>
   <meta name="description" content="${description}">
-  <link rel="canonical" href="https://7brewguide.com${canonicalPath}">
+  <link rel="canonical" href="https://www.7brewguide.com${canonicalPath}">
   
   <meta property="og:type" content="website">
   <meta property="og:title" content="${title}">
@@ -271,7 +271,7 @@ categoryOrder.forEach(cat => {
 });
 
 // Clean canonical, replace nav and footer, inject menu HTML
-menuHtml = menuHtml.replace(/<link rel="canonical" href="[^"]*">/, '<link rel="canonical" href="https://7brewguide.com/7brew-menu">');
+menuHtml = menuHtml.replace(/<link rel="canonical" href="[^"]*">/, '<link rel="canonical" href="https://www.7brewguide.com/7brew-menu">');
 menuHtml = menuHtml.replace(/<header class="header">[\s\S]*?<\/header>/, getHeader('menu'));
 menuHtml = menuHtml.replace(/<footer class="footer">[\s\S]*?<\/footer>/, getFooter());
 menuHtml = menuHtml.replace(/<div id="menu-sections-container">[\s\S]*?<\/div>\s*<\/div>/, `<div id="menu-sections-container">${preRenderedMenuHtml}</div></div>`);
@@ -317,7 +317,7 @@ blog.forEach(article => {
   `;
 });
 
-blogHtml = blogHtml.replace(/<link rel="canonical" href="[^"]*">/, '<link rel="canonical" href="https://7brewguide.com/7brew-blog">');
+blogHtml = blogHtml.replace(/<link rel="canonical" href="[^"]*">/, '<link rel="canonical" href="https://www.7brewguide.com/7brew-blog">');
 blogHtml = blogHtml.replace(/<header class="header">[\s\S]*?<\/header>/, getHeader('blog'));
 blogHtml = blogHtml.replace(/<footer class="footer">[\s\S]*?<\/footer>/, getFooter());
 blogHtml = blogHtml.replace(/<section id="featured-blog-area">[\s\S]*?<\/section>/, `<section id="featured-blog-area">${featuredPostHtml}</section>`);
@@ -553,7 +553,7 @@ menu.forEach(drink => {
     "@graph": [
       {
         "@type": "Product",
-        "@id": `https://7brewguide.com/${slug}#product`,
+        "@id": `https://www.7brewguide.com/${slug}#product`,
         "name": `7 Brew ${drink.name}`,
         "image": `/${drink.image}`,
         "description": drink.description,
@@ -571,7 +571,7 @@ menu.forEach(drink => {
       },
       {
         "@type": "Recipe",
-        "@id": `https://7brewguide.com/${slug}#recipe`,
+        "@id": `https://www.7brewguide.com/${slug}#recipe`,
         "name": `7 Brew ${drink.name} Copycat Recipe`,
         "image": `/${drink.image}`,
         "description": `How to make a copycat 7 Brew ${drink.name} beverage at home using standard syrups and bases.`,
@@ -595,7 +595,7 @@ menu.forEach(drink => {
       },
       {
         "@type": "FAQPage",
-        "@id": `https://7brewguide.com/${slug}#faq`,
+        "@id": `https://www.7brewguide.com/${slug}#faq`,
         "mainEntity": [
           {
             "@type": "Question",
@@ -833,7 +833,7 @@ const schemaList = {
     return {
       "@type": "ListItem",
       "position": idx + 1,
-      "url": `https://7brewguide.com/${slug}`,
+      "url": `https://www.7brewguide.com/${slug}`,
       "name": item.name,
       "description": item.description
     };
@@ -1070,7 +1070,7 @@ console.log('Updating rewards.html, deals.html, secret-menu.html...');
 
 // rewards.html
 let rewardsHtml = fs.readFileSync(path.join(__dirname, 'rewards.html'), 'utf8');
-rewardsHtml = rewardsHtml.replace(/<link rel="canonical" href="[^"]*">/, '<link rel="canonical" href="https://7brewguide.com/7brew-rewards">');
+rewardsHtml = rewardsHtml.replace(/<link rel="canonical" href="[^"]*">/, '<link rel="canonical" href="https://www.7brewguide.com/7brew-rewards">');
 rewardsHtml = rewardsHtml.replace(/<header class="header">[\s\S]*?<\/header>/, getHeader('rewards'));
 rewardsHtml = rewardsHtml.replace(/<footer class="footer">[\s\S]*?<\/footer>/, getFooter());
 // Inject rewards guide requirements and FAQ
@@ -1078,7 +1078,7 @@ fs.writeFileSync(path.join(__dirname, 'rewards.html'), rewardsHtml, 'utf8');
 
 // deals.html
 let dealsHtml = fs.readFileSync(path.join(__dirname, 'deals.html'), 'utf8');
-dealsHtml = dealsHtml.replace(/<link rel="canonical" href="[^"]*">/, '<link rel="canonical" href="https://7brewguide.com/7brew-deals">');
+dealsHtml = dealsHtml.replace(/<link rel="canonical" href="[^"]*">/, '<link rel="canonical" href="https://www.7brewguide.com/7brew-deals">');
 dealsHtml = dealsHtml.replace(/<header class="header">[\s\S]*?<\/header>/, getHeader('deals'));
 dealsHtml = dealsHtml.replace(/<footer class="footer">[\s\S]*?<\/footer>/, getFooter());
 fs.writeFileSync(path.join(__dirname, 'deals.html'), dealsHtml, 'utf8');
@@ -1098,7 +1098,7 @@ const secretSchemaList = {
     return {
       "@type": "ListItem",
       "position": idx + 1,
-      "url": `https://7brewguide.com/${slug}`,
+      "url": `https://www.7brewguide.com/${slug}`,
       "name": item.name,
       "description": item.description
     };
@@ -1923,7 +1923,7 @@ Object.entries(locsByState).forEach(([state, cities]) => {
   });
 });
 
-locHtml = locHtml.replace(/<link rel="canonical" href="[^"]*">/, '<link rel="canonical" href="https://7brewguide.com/7brew-locations">');
+locHtml = locHtml.replace(/<link rel="canonical" href="[^"]*">/, '<link rel="canonical" href="https://www.7brewguide.com/7brew-locations">');
 locHtml = locHtml.replace(/<header class="header">[\s\S]*?<\/header>/, getHeader('locations'));
 locHtml = locHtml.replace(/<footer class="footer">[\s\S]*?<\/footer>/, getFooter());
 locHtml = locHtml.replace(/<section class="locations-grid" id="locations-grid">[\s\S]*?<\/section>/, `<section class="locations-grid" id="locations-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">${preRenderedLocsHtml}</section>`);

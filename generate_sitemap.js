@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 const rootDir = __dirname;
-const domain = 'https://7brewguide.com';
+const domain = 'https://www.7brewguide.com';
 
 function walkDir(dir, fileList = []) {
   const files = fs.readdirSync(dir);

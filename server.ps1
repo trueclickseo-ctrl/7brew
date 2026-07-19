@@ -21,7 +21,31 @@ try {
         # Determine file path
         $urlPath = $req.Url.LocalPath
         if ($urlPath -eq "/" -or $urlPath -eq "") { $urlPath = "/index.html" }
+        $urlPath = $urlPath.TrimEnd('/')
+        
         $filePath = Join-Path $PSScriptRoot $urlPath.TrimStart('/')
+        if (-not (Test-Path $filePath -PathType Leaf)) {
+            # Apply HTACCESS mappings
+            if ($urlPath -eq "/7brew-menu") { $urlPath = "/menu.html" }
+            elseif ($urlPath -eq "/7brew-locations") { $urlPath = "/locations.html" }
+            elseif ($urlPath -eq "/7brew-blog") { $urlPath = "/blog.html" }
+            elseif ($urlPath -eq "/7brew-calorie-calculator") { $urlPath = "/calorie-calculator.html" }
+            elseif ($urlPath -eq "/7brew-rewards" -or $urlPath -eq "/rewards") { $urlPath = "/rewards.html" }
+            elseif ($urlPath -eq "/7brew-deals" -or $urlPath -eq "/deals") { $urlPath = "/deals.html" }
+            elseif ($urlPath -eq "/7brew-franchise" -or $urlPath -eq "/franchise") { $urlPath = "/franchise.html" }
+            elseif ($urlPath -eq "/7brew-merch-shop" -or $urlPath -eq "/merch-shop") { $urlPath = "/merch-shop.html" }
+            elseif ($urlPath -eq "/7brew-gift-cards" -or $urlPath -eq "/gift-cards") { $urlPath = "/gift-cards.html" }
+            elseif ($urlPath -eq "/7brew-secret-menu" -or $urlPath -eq "/secret-menu") { $urlPath = "/secret-menu.html" }
+            elseif ($urlPath -eq "/7brew-recipe-maker" -or $urlPath -eq "/recipe-maker") { $urlPath = "/recipe-maker.html" }
+            elseif ($urlPath -eq "/about") { $urlPath = "/about.html" }
+            elseif ($urlPath -eq "/editorial-policy") { $urlPath = "/editorial-policy.html" }
+            elseif ($urlPath -eq "/contact") { $urlPath = "/contact.html" }
+            
+            $filePath = Join-Path $PSScriptRoot $urlPath.TrimStart('/')
+            if (-not (Test-Path $filePath -PathType Leaf) -and (Test-Path "$filePath.html" -PathType Leaf)) {
+                $filePath = "$filePath.html"
+            }
+        }
         
         if (Test-Path $filePath -PathType Leaf) {
             # Determine content type

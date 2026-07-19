@@ -1,52 +1,124 @@
 [
   {
     "id": 1,
-    "name": "Rogers - Pleasant Grove",
-    "address": "2100 W Pleasant Grove Rd, Rogers, AR 72758",
-    "state": "AR",
-    "phone": "(479) 555-0101",
+    "name": "Rogers - W Walnut St",
+    "address": "4100 W Walnut St, Rogers, AR 72756",
+    "city": "Rogers",
+    "state": "Arkansas",
+    "stateCode": "AR",
+    "phone": "(479) 335-1945",
     "hours": {
       "weekdays": "5:30 AM - 10:00 PM",
       "weekends": "5:30 AM - 11:00 PM"
     },
     "driveThru": true,
     "amenities": ["Double Drive-Thru Lane", "Walk-up Window", "Outdoor Seating"],
-    "coordinates": "36.2974,-94.1611"
+    "coordinates": "36.3262,-94.1624"
   },
   {
     "id": 2,
-    "name": "Springdale - Sunset",
-    "address": "3812 W Sunset Ave, Springdale, AR 72762",
-    "state": "AR",
-    "phone": "(479) 555-0102",
+    "name": "Rogers - S 52nd St",
+    "address": "2101 S 52nd St, Rogers, AR 72758",
+    "city": "Rogers",
+    "state": "Arkansas",
+    "stateCode": "AR",
+    "phone": "(479) 335-1905",
     "hours": {
       "weekdays": "5:30 AM - 10:00 PM",
       "weekends": "5:30 AM - 11:00 PM"
     },
     "driveThru": true,
     "amenities": ["Double Drive-Thru Lane", "Walk-up Window"],
-    "coordinates": "36.1867,-94.1878"
+    "coordinates": "36.2974,-94.1611"
   },
   {
     "id": 3,
-    "name": "Fayetteville - College Ave",
-    "address": "1620 N College Ave, Fayetteville, AR 72703",
-    "state": "AR",
-    "phone": "(479) 555-0103",
+    "name": "Rogers - N 2nd St",
+    "address": "2503 N 2nd St, Rogers, AR 72756",
+    "city": "Rogers",
+    "state": "Arkansas",
+    "stateCode": "AR",
+    "phone": "(479) 335-5260",
     "hours": {
       "weekdays": "5:30 AM - 10:00 PM",
       "weekends": "5:30 AM - 11:00 PM"
     },
     "driveThru": true,
-    "amenities": ["Double Drive-Thru Lane", "Walk-up Window", "Bike Rack"],
-    "coordinates": "36.0842,-94.1565"
+    "amenities": ["Double Drive-Thru Lane", "Walk-up Window"],
+    "coordinates": "36.3564,-94.1189"
   },
   {
     "id": 4,
-    "name": "Springfield - Glenstone",
+    "name": "Springdale - E Robinson Ave",
+    "address": "1360 E Robinson Ave, Springdale, AR 72764",
+    "city": "Springdale",
+    "state": "Arkansas",
+    "stateCode": "AR",
+    "phone": "(479) 770-5633",
+    "hours": {
+      "weekdays": "5:30 AM - 10:00 PM",
+      "weekends": "5:30 AM - 11:00 PM"
+    },
+    "driveThru": true,
+    "amenities": ["Double Drive-Thru Lane", "Walk-up Window"],
+    "coordinates": "36.1894,-94.1165"
+  },
+  {
+    "id": 5,
+    "name": "Springdale - W Sunset Ave",
+    "address": "2960 W Sunset Ave, Springdale, AR 72762",
+    "city": "Springdale",
+    "state": "Arkansas",
+    "stateCode": "AR",
+    "phone": "(479) 487-5001",
+    "hours": {
+      "weekdays": "5:30 AM - 10:00 PM",
+      "weekends": "5:30 AM - 11:00 PM"
+    },
+    "driveThru": true,
+    "amenities": ["Double Drive-Thru Lane", "Walk-up Window"],
+    "coordinates": "36.1867,-94.1798"
+  },
+  {
+    "id": 6,
+    "name": "Fayetteville - N College Ave",
+    "address": "3322 N College Ave, Fayetteville, AR 72703",
+    "city": "Fayetteville",
+    "state": "Arkansas",
+    "stateCode": "AR",
+    "phone": "(479) 358-9274",
+    "hours": {
+      "weekdays": "5:30 AM - 10:00 PM",
+      "weekends": "5:30 AM - 11:00 PM"
+    },
+    "driveThru": true,
+    "amenities": ["Double Drive-Thru Lane", "Walk-up Window", "Outdoor Seating"],
+    "coordinates": "36.1042,-94.1365"
+  },
+  {
+    "id": 7,
+    "name": "Fayetteville - W MLK Blvd",
+    "address": "1195 W Martin Luther King Blvd, Fayetteville, AR 72701",
+    "city": "Fayetteville",
+    "state": "Arkansas",
+    "stateCode": "AR",
+    "phone": "(479) 358-9275",
+    "hours": {
+      "weekdays": "5:30 AM - 10:00 PM",
+      "weekends": "5:30 AM - 11:00 PM"
+    },
+    "driveThru": true,
+    "amenities": ["Double Drive-Thru Lane", "Walk-up Window"],
+    "coordinates": "36.0592,-94.1765"
+  },
+  {
+    "id": 8,
+    "name": "Springfield - Glenstone Ave",
     "address": "1455 S Glenstone Ave, Springfield, MO 65804",
-    "state": "MO",
-    "phone": "(417) 555-0201",
+    "city": "Springfield",
+    "state": "Missouri",
+    "stateCode": "MO",
+    "phone": "(417) 883-1455",
     "hours": {
       "weekdays": "5:30 AM - 10:00 PM",
       "weekends": "5:30 AM - 11:00 PM"
@@ -56,11 +128,13 @@
     "coordinates": "37.1824,-93.2625"
   },
   {
-    "id": 5,
-    "name": "Joplin - Range Line",
+    "id": 9,
+    "name": "Joplin - Range Line Rd",
     "address": "2002 S Range Line Rd, Joplin, MO 64804",
-    "state": "MO",
-    "phone": "(417) 555-0202",
+    "city": "Joplin",
+    "state": "Missouri",
+    "stateCode": "MO",
+    "phone": "(417) 623-2002",
     "hours": {
       "weekdays": "5:30 AM - 10:00 PM",
       "weekends": "5:30 AM - 11:00 PM"
@@ -70,11 +144,13 @@
     "coordinates": "37.0678,-94.4789"
   },
   {
-    "id": 6,
+    "id": 10,
     "name": "Tulsa - 71st St",
     "address": "8220 E 71st St, Tulsa, OK 74133",
-    "state": "OK",
-    "phone": "(918) 555-0301",
+    "city": "Tulsa",
+    "state": "Oklahoma",
+    "stateCode": "OK",
+    "phone": "(918) 461-8220",
     "hours": {
       "weekdays": "5:30 AM - 10:00 PM",
       "weekends": "5:30 AM - 11:00 PM"

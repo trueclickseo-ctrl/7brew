@@ -20,32 +20,32 @@
   <meta property="og:description" content="Explore articles on decaffeination, home espresso frothing, kitchen setups, and drink mixology hacks.">
   <meta property="og:image" content="assets/images/og-blog.jpg">
 
-  <link rel="stylesheet" href="assets/css/style.css?v=1.0.8">
+  <link rel="stylesheet" href="/assets/css/style.css?v=1.0.9">
   <link rel="icon" type="image/png" href="/favicon.png?v=1.0.2">
 </head>
 <body>
 
   <!-- HEADER -->
+  
   <header class="header">
     <div class="container nav-container">
       <a href="/" class="logo" id="nav-logo">
         <img src="/assets/images/logo-header.png" alt="7 Brew Logo" class="logo-img"> 7 Brew Inspired
       </a>
       <nav class="nav-menu" id="nav-menu">
-        <a href="/" class="nav-link">Home</a>
-        
-                <a href="7brew-menu" class="nav-link">Menu</a>
-        <a href="7brew-calorie-calculator" class="nav-link">Calorie Calculator</a>
-
-        <a href="7brew-locations" class="nav-link">Locations</a>
-
-        <a href="7brew-rewards" class="nav-link">Rewards</a>
-        <a href="7brew-deals" class="nav-link">Deals</a>
-        <a href="7brew-blog" class="nav-link active">Blog</a>
+        <a href="/" class="nav-link ">Home</a>
+        <a href="/7brew-menu" class="nav-link ">Menu</a>
+        <a href="/secret-menu" class="nav-link ">Secret Menu</a>
+        <a href="/7brew-calorie-calculator" class="nav-link ">Calculator</a>
+        <a href="/7brew-locations" class="nav-link ">Locations</a>
+        <a href="/7brew-rewards" class="nav-link ">Rewards</a>
+        <a href="/7brew-deals" class="nav-link ">Deals</a>
+        <a href="/7brew-blog" class="nav-link active">Blog</a>
       </nav>
       <div class="nav-toggle" id="nav-toggle" aria-label="Toggle Menu">&#9776;</div>
     </div>
   </header>
+
 
   <!-- MAIN WRAPPER -->
   <main style="padding-top: 140px; padding-bottom: 80px;">
@@ -57,8 +57,19 @@
 
       <!-- FEATURED BLOG ARTICLE -->
       <section id="featured-blog-area">
-        <!-- Injected via blog.js -->
-      </section>
+  <div class="featured-blog-card" style="cursor: pointer;">
+    <img src="/assets/images/banner_classics.png" alt="The Art of the Breve: Why Cream Matters" class="featured-blog-img" onerror="this.src='https://images.unsplash.com/photo-1570968915860-54d5c301fc9f?q=80&w=800&auto=format&fit=crop';">
+    <div class="featured-blog-body">
+      <span class="blog-card-category" style="font-size: 0.9rem;">Featured • Coffee Guides</span>
+      <h2 style="font-size: 2.2rem; margin: 12px 0 16px 0; font-family: var(--font-heading);">The Art of the Breve: Why Cream Matters</h2>
+      <p style="color: var(--text-gray); margin-bottom: 24px;">Discover what makes a breve coffee so rich and creamy. Learn the secret behind breve coffee recipes and why milk selection changes everything.</p>
+      <div style="display: flex; justify-content: space-between; align-items: center; color: var(--text-muted); font-size: 0.9rem;">
+        <span>By Marcus Vane • 2026-06-15</span>
+        <span>Read Time: 5 min</span>
+      </div>
+    </div>
+  </div>
+</section>
 
       <!-- BLOG LIST SECTION -->
       <section id="blog-list-section" style="border-top: 1px solid var(--border-glass); padding-top: 50px;">
@@ -79,8 +90,102 @@
 
         <!-- Articles Grid -->
         <div class="blog-grid" id="blog-grid">
-          <!-- Populated via blog.js -->
+    <article class="blog-card" data-category="Coffee Guides">
+      <img src="/assets/images/banner_classics.png" alt="The Art of the Breve: Why Cream Matters" class="blog-card-img" onerror="this.src='https://images.unsplash.com/photo-1570968915860-54d5c301fc9f?q=80&w=800&auto=format&fit=crop';">
+      <div class="blog-card-body">
+        <span class="blog-card-category">Coffee Guides</span>
+        <h3 class="blog-card-title">The Art of the Breve: Why Cream Matters</h3>
+        <p class="blog-card-excerpt">Discover what makes a breve coffee so rich and creamy. Learn the secret behind breve coffee recipes and why milk selection changes everything.</p>
+        <div class="blog-card-meta">
+          <span>By Marcus Vane • 2026-06-15</span>
         </div>
+      </div>
+    </article>
+  
+    <article class="blog-card" data-category="Brewing Tips">
+      <img src="/assets/images/cold-brew.webp" alt="5 Tips for Cold Brewing Smooth Coffee at Home" class="blog-card-img" onerror="this.src='https://images.unsplash.com/photo-1570968915860-54d5c301fc9f?q=80&w=800&auto=format&fit=crop';">
+      <div class="blog-card-body">
+        <span class="blog-card-category">Brewing Tips</span>
+        <h3 class="blog-card-title">5 Tips for Cold Brewing Smooth Coffee at Home</h3>
+        <p class="blog-card-excerpt">Learn how to make the smoothest, low-acid cold brew coffee at home with our 5 easy expert brewing tips.</p>
+        <div class="blog-card-meta">
+          <span>By Sara Jenkins • 2026-06-20</span>
+        </div>
+      </div>
+    </article>
+  
+    <article class="blog-card" data-category="Energy Drink Tips">
+      <img src="/assets/images/banner_energy.png" alt="Boosting Your Focus: Energy Drink Flavor Mixology" class="blog-card-img" onerror="this.src='https://images.unsplash.com/photo-1570968915860-54d5c301fc9f?q=80&w=800&auto=format&fit=crop';">
+      <div class="blog-card-body">
+        <span class="blog-card-category">Energy Drink Tips</span>
+        <h3 class="blog-card-title">Boosting Your Focus: Energy Drink Flavor Mixology</h3>
+        <p class="blog-card-excerpt">Discover how custom syrup flavoring can elevate your energy drink experience. Tips on combining fruit flavors for maximum taste.</p>
+        <div class="blog-card-meta">
+          <span>By Elena Rostova • 2026-06-25</span>
+        </div>
+      </div>
+    </article>
+  
+    <article class="blog-card" data-category="Healthy Drink Choices">
+      <img src="/https://images.unsplash.com/photo-1556679343-c7306c1976bc?q=80&w=800&auto=format&fit=crop" alt="Low-Calorie Customizations at Your Local Drive-Thru" class="blog-card-img" onerror="this.src='https://images.unsplash.com/photo-1570968915860-54d5c301fc9f?q=80&w=800&auto=format&fit=crop';">
+      <div class="blog-card-body">
+        <span class="blog-card-category">Healthy Drink Choices</span>
+        <h3 class="blog-card-title">Low-Calorie Customizations at Your Local Drive-Thru</h3>
+        <p class="blog-card-excerpt">Want to keep your coffee light? Read our guide on low-calorie coffee modifications, milk alternatives, and sugar-free syrups.</p>
+        <div class="blog-card-meta">
+          <span>By Dr. Alan Mercer • 2026-07-01</span>
+        </div>
+      </div>
+    </article>
+  
+    <article class="blog-card" data-category="Seasonal Specials">
+      <img src="/https://images.unsplash.com/photo-1570968915860-54d5c301fc9f?q=80&w=800&auto=format&fit=crop" alt="Introducing the Pumpkin Spice Dream: Autumn in a Cup" class="blog-card-img" onerror="this.src='https://images.unsplash.com/photo-1570968915860-54d5c301fc9f?q=80&w=800&auto=format&fit=crop';">
+      <div class="blog-card-body">
+        <span class="blog-card-category">Seasonal Specials</span>
+        <h3 class="blog-card-title">Introducing the Pumpkin Spice Dream: Autumn in a Cup</h3>
+        <p class="blog-card-excerpt">Read all about our seasonal fall launch: The Pumpkin Spice Dream. Discover the rich blend of cinnamon, pumpkin, and espresso.</p>
+        <div class="blog-card-meta">
+          <span>By Clara Higgins • 2026-07-05</span>
+        </div>
+      </div>
+    </article>
+  
+    <article class="blog-card" data-category="Coffee Culture">
+      <img src="/assets/images/hot-coffee.webp" alt="The Evolution of Drive-Thru Coffee Culture" class="blog-card-img" onerror="this.src='https://images.unsplash.com/photo-1570968915860-54d5c301fc9f?q=80&w=800&auto=format&fit=crop';">
+      <div class="blog-card-body">
+        <span class="blog-card-category">Coffee Culture</span>
+        <h3 class="blog-card-title">The Evolution of Drive-Thru Coffee Culture</h3>
+        <p class="blog-card-excerpt">Explore how the drive-thru coffee industry evolved from basic diner cups to premium custom energy and espresso beverages.</p>
+        <div class="blog-card-meta">
+          <span>By Marcus Vane • 2026-07-08</span>
+        </div>
+      </div>
+    </article>
+  
+    <article class="blog-card" data-category="Coffee Guides">
+      <img src="/https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?q=80&w=800&auto=format&fit=crop" alt="Decaf Decoded: How Caffeine is Removed from Coffee" class="blog-card-img" onerror="this.src='https://images.unsplash.com/photo-1570968915860-54d5c301fc9f?q=80&w=800&auto=format&fit=crop';">
+      <div class="blog-card-body">
+        <span class="blog-card-category">Coffee Guides</span>
+        <h3 class="blog-card-title">Decaf Decoded: How Caffeine is Removed from Coffee</h3>
+        <p class="blog-card-excerpt">Curious how decaf coffee is made? We explain the Swiss Water, CO2, and solvent decaffeination processes in simple terms.</p>
+        <div class="blog-card-meta">
+          <span>By Sara Jenkins • 2026-07-10</span>
+        </div>
+      </div>
+    </article>
+  
+    <article class="blog-card" data-category="Lifestyle">
+      <img src="/assets/images/banner_featured.png" alt="Unlocking the Secret Menu: Flavor Combos You Must Try" class="blog-card-img" onerror="this.src='https://images.unsplash.com/photo-1570968915860-54d5c301fc9f?q=80&w=800&auto=format&fit=crop';">
+      <div class="blog-card-body">
+        <span class="blog-card-category">Lifestyle</span>
+        <h3 class="blog-card-title">Unlocking the Secret Menu: Flavor Combos You Must Try</h3>
+        <p class="blog-card-excerpt">Explore the secret drink combinations that baristas love. Custom syrup combinations for coffee, energy drinks, and teas.</p>
+        <div class="blog-card-meta">
+          <span>By Elena Rostova • 2026-07-11</span>
+        </div>
+      </div>
+    </article>
+  </div>
 
         <!-- Pagination -->
         <div class="pagination" id="blog-pagination">
@@ -101,50 +206,54 @@
   </div>
 
   <!-- FOOTER -->
+  
   <footer class="footer">
     <div class="container footer-grid">
       <div class="footer-brand">
-        <h3>&#9889; 7 Brew Inspired</h3>
-        <p>Changing drive-thru coffee and energy one custom recipe at a time. High-energy vibes, friendly teams, and speedy delivery.</p>
+        <h3>⚡ 7 Brew Inspired</h3>
+        <p>Your ultimate independent fan guide to custom menu creations, caffeine calculations, and secret barista hacks.</p>
       </div>
       <div>
-        <h4 class="footer-links-title">Quick Links</h4>
+        <h4 class="footer-links-title">Menu & Guide</h4>
         <ul class="footer-links">
-          <li><a href="7brew-menu">Full Menu</a></li>
-          <li><a href="7brew-calorie-calculator">Calorie Calculator</a></li>
-          <li><a href="7brew-merch-shop">Merch Shop</a></li>
-          <li><a href="7brew-locations">Find Drive-Thrus</a></li>
-          <li><a href="7brew-blog">Read Our Blog</a></li>
+          <li><a href="/7brew-menu">Full Menu</a></li>
+          <li><a href="/secret-menu">Secret Menu</a></li>
+          <li><a href="/menu/caffeine-and-allergens">Caffeine & Allergens</a></li>
+          <li><a href="/7brew-calorie-calculator">Calorie Calculator</a></li>
+          <li><a href="/recipe-maker">Recipe Maker</a></li>
         </ul>
       </div>
       <div>
-        <h4 class="footer-links-title">Support</h4>
+        <h4 class="footer-links-title">Stand Info</h4>
         <ul class="footer-links">
-          <li><a href="contact">Contact Us</a></li>
-          <li><a href="contact#faqs">FAQ & Help</a></li>
-          <li><a href="7brew-careers" target="_blank" rel="noopener noreferrer">Careers</a></li>
-          <li><a href="7brew-gift-cards">Gift Cards</a></li>
-          <li><a href="7brew-franchise">Franchise Info</a></li>
+          <li><a href="/7brew-locations">Find Locations</a></li>
+          <li><a href="/7brew-rewards">Rewards Program</a></li>
+          <li><a href="/rewards/sign-up">Sign Up Guide</a></li>
+          <li><a href="/7brew-deals">Current Deals</a></li>
+          <li><a href="/7-brew-vs-starbucks">7 Brew vs Starbucks</a></li>
+          <li><a href="/7-brew-vs-dutch-bros">7 Brew vs Dutch Bros</a></li>
         </ul>
       </div>
       <div>
-        <h4 class="footer-links-title">Legal</h4>
+        <h4 class="footer-links-title">About Fan Site</h4>
         <ul class="footer-links">
-          <li><a href="privacy-policy">Privacy Policy</a></li>
-          <li><a href="privacy-requests">Privacy Requests</a></li>
-          <li><a href="terms">Terms & Conditions</a></li>
-          <li><a href="cookie-policy">Cookie Policy</a></li>
+          <li><a href="/about">About Us</a></li>
+          <li><a href="/editorial-policy">Editorial Policy</a></li>
+          <li><a href="/contact">Contact</a></li>
+          <li><a href="/privacy-policy">Privacy Policy</a></li>
+          <li><a href="/terms">Terms & Conditions</a></li>
         </ul>
       </div>
     </div>
     <div class="container footer-bottom">
       <p>&copy; 2026 7 Brew Coffee Inspired Fan Site. All Rights Reserved. Crafted for high-energy coffee fans.</p>
       <p style="font-size: 0.75rem; margin-top: 10px; opacity: 0.6; max-width: 800px; margin-left: auto; margin-right: auto; line-height: 1.4;">
-        Independent blog for 7 Brew fans, featuring drink guides, menu insights, and community content. This website is not affiliated with, endorsed by, or sponsored by 7 Brew. All trademarks and brand names are the property of their respective owners.
+        Independent blog and fan site for 7 Brew enthusiasts. This website is not affiliated with, authorized, endorsed by, or sponsored by 7 Brew Coffee or its parent companies. All trademarks, logos, and brand names are the property of their respective owners.
       </p>
       <p>SSL Secured | Static Hosting Ready</p>
     </div>
   </footer>
+
 
   <!-- Scripts -->
   <script src="assets/js/main.js"></script>

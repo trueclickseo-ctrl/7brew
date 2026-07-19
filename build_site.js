@@ -941,6 +941,20 @@ ${getHead('7 Brew Coffee Guide | Interactive Menu & Review Directory', 'Find cal
         🎲 Surprise Me
       </button>
 
+      <!-- Surprise Modal Popup -->
+      <div id="surprise-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.65); z-index: 200; justify-content: center; align-items: center; padding: 20px;">
+        <div style="background: #ffffff; border: 3px solid #121212; border-radius: var(--border-radius-md); box-shadow: 8px 8px 0px #121212; max-width: 500px; width: 100%; padding: 30px; position: relative; color: #121212; text-align: center;">
+          <button onclick="closeSurpriseModal()" style="position: absolute; top: 15px; right: 15px; background: none; border: none; font-size: 1.8rem; cursor: pointer; color: #121212; font-weight: bold; line-height: 1;">&times;</button>
+          <span style="font-size: 3rem; display: block; margin-bottom: 15px;">🎲</span>
+          <span style="font-size: 0.75rem; text-transform: uppercase; font-weight: 900; background: #121212; color: #ffffff; padding: 4px 8px; border-radius: 4px; letter-spacing: 0.05em; display: inline-block; margin-bottom: 12px;" id="surprise-category">Category</span>
+          <h2 style="font-size: 2.2rem; margin: 0 0 15px 0; font-family: var(--font-heading); color: #121212; font-weight: 800;" id="surprise-title">Drink Name</h2>
+          <p style="font-size: 1rem; color: #2c3e50; margin: 0 0 24px 0; line-height: 1.5; font-weight: 600;" id="surprise-desc">Description...</p>
+          <div style="display: flex; justify-content: center; gap: 15px;">
+            <a href="#" id="surprise-link" class="btn btn-primary" style="background: #00ff66; color: #000000; border: 2px solid #121212; box-shadow: 4px 4px 0px #121212; font-weight: 900; padding: 12px 24px; border-radius: 30px; text-decoration: none; text-transform: uppercase; font-size: 0.95rem; display: inline-block;">View Recipe &rarr;</a>
+          </div>
+        </div>
+      </div>
+
     </div>
   </main>
 
@@ -1004,6 +1018,22 @@ ${getHead('7 Brew Coffee Guide | Interactive Menu & Review Directory', 'Find cal
       });
     });
 
+    window.closeSurpriseModal = function() {
+      const modal = document.getElementById('surprise-modal');
+      if (modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+      }
+    };
+
+    // Close modal on outside click
+    const modalEl = document.getElementById('surprise-modal');
+    if (modalEl) {
+      modalEl.addEventListener('click', (e) => {
+        if (e.target === modalEl) closeSurpriseModal();
+      });
+    }
+
     // Surprise Me Button
     const surpriseBtn = document.getElementById('surprise-btn');
     if (surpriseBtn) {
@@ -1011,27 +1041,19 @@ ${getHead('7 Brew Coffee Guide | Interactive Menu & Review Directory', 'Find cal
         const visibleCards = Array.from(cards).filter(c => getComputedStyle(c).display !== 'none');
         if (visibleCards.length > 0) {
           const randomCard = visibleCards[Math.floor(Math.random() * visibleCards.length)];
-          randomCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
           
-          // Wait slightly for scroll to start/align, then apply highlight
-          setTimeout(() => {
-            randomCard.focus();
-            const originalTransform = randomCard.style.transform;
-            const originalOutline = randomCard.style.outline;
-            const originalShadow = randomCard.style.boxShadow;
-            
-            randomCard.style.outline = '6px solid #121212';
-            randomCard.style.transform = 'scale(1.05)';
-            randomCard.style.boxShadow = '8px 8px 0px #121212';
-            randomCard.style.zIndex = '10';
-            
-            setTimeout(() => {
-              randomCard.style.transform = originalTransform;
-              randomCard.style.outline = originalOutline;
-              randomCard.style.boxShadow = originalShadow;
-              randomCard.style.zIndex = '';
-            }, 1600);
-          }, 300);
+          const name = randomCard.getAttribute('data-name');
+          const category = randomCard.getAttribute('data-category');
+          const description = randomCard.querySelector('p').textContent;
+          const link = randomCard.getAttribute('href');
+          
+          document.getElementById('surprise-title').textContent = name;
+          document.getElementById('surprise-category').textContent = category;
+          document.getElementById('surprise-desc').textContent = description;
+          document.getElementById('surprise-link').setAttribute('href', link);
+          
+          document.getElementById('surprise-modal').style.display = 'flex';
+          document.body.style.overflow = 'hidden';
         }
       });
     }
@@ -1062,37 +1084,222 @@ dealsHtml = dealsHtml.replace(/<footer class="footer">[\s\S]*?<\/footer>/, getFo
 fs.writeFileSync(path.join(__dirname, 'deals.html'), dealsHtml, 'utf8');
 
 // secret-menu.html
-console.log('Pre-rendering secret-menu.html...');
-let secretMenuHtml = fs.readFileSync(path.join(__dirname, 'secret-menu.html'), 'utf8');
+console.log('Generating pre-rendered filterable secret-menu.html...');
 
-const secretItems = menu.filter(item => item.category === 'Secret Menu');
-let secretItemsGridHtml = '';
-secretItems.forEach(item => {
-  const defaultPrice = item.sizes.medium ? item.sizes.medium.price : (item.sizes.small ? item.sizes.small.price : 0);
-  const slug = getSlug(item.name);
-  secretItemsGridHtml += `
-    <article class="drink-card" data-name="${item.name.replace(/"/g, '&quot;')}" onclick="location.href='/${slug}'" style="cursor: pointer;">
-      <div class="drink-image-wrap">
-        <img src="${getImageUrl(item)}" alt="${item.name}" onerror="this.src='https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=600&auto=format&fit=crop';" loading="lazy">
+const secretMenuDrinks = menu.filter(item => item.category === 'Secret Menu');
+
+const secretSchemaList = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "7 Brew Secret Menu Drinks Directory",
+  "numberOfItems": secretMenuDrinks.length,
+  "itemListElement": secretMenuDrinks.map((item, idx) => {
+    const slug = getSlug(item.name);
+    return {
+      "@type": "ListItem",
+      "position": idx + 1,
+      "url": `https://7brewguide.com/${slug}`,
+      "name": item.name,
+      "description": item.description
+    };
+  })
+};
+const secretJsonLdSchemaString = `<script type="application/ld+json">${JSON.stringify(secretSchemaList)}</script>`;
+
+const secretMenuHtmlContent = `<!DOCTYPE html>
+<html lang="en">
+${getHead('7 Brew Secret Menu Guide | Custom Drink Customizations', 'Find ingredients lists, copycat recipes, calories, and custom flavor mixes for all 7 Brew secret menu drive-thru drinks.', '/secret-menu', secretJsonLdSchemaString)}
+<body>
+  ${getHeader('secret-menu')}
+  
+  <main style="padding-top: 140px; padding-bottom: 80px;">
+    <div class="container">
+      
+      <!-- Header section -->
+      <header class="homepage-hero" style="text-align: center; margin-bottom: 40px;">
+        <span style="display: block; font-size: 0.85rem; color: var(--color-primary); font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 8px;">Fan-made guide · not an official menu</span>
+        <h1 style="font-size: 3.5rem; margin-bottom: 12px; font-family: var(--font-heading); color: var(--text-white);">7 Brew Secret Menu</h1>
+        <p style="font-size: 1.2rem; color: var(--text-gray); max-width: 700px; margin: 0 auto;">Filter and discover secret menu drink customizations, custom barista blends, and secret recipes.</p>
+      </header>
+
+      <!-- Controls Row: Search box + sugar-free toggle -->
+      <section style="display: flex; gap: 20px; flex-wrap: wrap; align-items: center; justify-content: space-between; margin-bottom: 30px; background: var(--bg-card); padding: 20px; border-radius: var(--border-radius-md); border: 2px solid var(--text-white); box-shadow: var(--shadow-card);">
+        <div style="flex: 1; min-width: 250px; position: relative;">
+          <label for="search-input" class="sr-only" style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); border: 0;">Search secret drinks by name or flavor</label>
+          <span style="position: absolute; left: 16px; top: 50%; transform: translateY(-50%); color: var(--text-muted);">&#128269;</span>
+          <input type="text" id="search-input" style="width: 100%; padding: 12px 16px 12px 44px; border-radius: var(--border-radius-sm); border: 2px solid var(--text-white); background: var(--bg-primary); color: var(--text-white); font-size: 1rem; outline: none;" placeholder="Search secret menu (e.g. Ninja, mint, Biscoff)...">
+        </div>
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <span style="color: var(--text-white); font-weight: bold; font-size: 0.95rem;">Show Sugar-Free Only</span>
+          <label class="switch" style="position: relative; display: inline-block; width: 60px; height: 34px;">
+            <input type="checkbox" id="sf-toggle" style="opacity: 0; width: 0; height: 0;" aria-label="Toggle sugar-free options only">
+            <span class="slider round" style="position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: var(--bg-primary); border: 2px solid var(--text-white); transition: .4s; border-radius: 34px;"></span>
+          </label>
+        </div>
+      </section>
+
+      <!-- Empty State -->
+      <div id="empty-state" style="display: none; text-align: center; padding: 60px 0; color: var(--text-gray); font-size: 1.1rem; background: var(--bg-card); border-radius: var(--border-radius-md); border: 2px dashed var(--text-white); margin-bottom: 40px;">
+        <span style="font-size: 2.5rem; display: block; margin-bottom: 15px;">🔍</span>
+        No secret menu drinks found matching your active filters. Try clearing your search query or toggling off the sugar-free switch!
       </div>
-      <div class="drink-info">
-        <span class="drink-category-label">${item.category}</span>
-        <h3 class="drink-title"><a href="/${slug}">${item.name}</a></h3>
-        <p class="drink-description">${item.description}</p>
-        <div class="drink-meta-row">
-          <span class="drink-price">$${defaultPrice.toFixed(2)}</span>
-          <a href="/${slug}" class="btn btn-secondary" style="padding: 6px 16px; font-size: 0.75rem;">View Details</a>
+
+      <!-- Drink Grid (Statically Rendered) -->
+      <section id="menu-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 30px; margin-bottom: 50px;">
+        ${secretMenuDrinks.map((item, idx) => {
+          const defaultPrice = item.sizes.medium ? item.sizes.medium.price : (item.sizes.small ? item.sizes.small.price : 0);
+          const slug = getSlug(item.name);
+          const isSF = parseFloat(item.sugar) === 0 || item.name.toLowerCase().includes('sugar-free') || item.description.toLowerCase().includes('sugar-free');
+          
+          // Generate unique non-repeating light pastel colors using the golden angle
+          const hue = (idx * 137.5) % 360;
+          const cardBg = `hsl(${hue}, 80%, 82%)`;
+
+          // Extract flavor tags
+          const flavorIngredients = ['caramel', 'vanilla', 'hazelnut', 'coconut', 'blue raspberry', 'blackberry', 'strawberry', 'peach', 'lime', 'mint', 'pumpkin', 'marshmallow', 'cinnamon', 'white chocolate', 'irish cream', 'chocolate', 'raspberry', 'passion fruit', 'mango', 'watermelon', 'cherry', 'kiwi', 'pomegranate', 'banana', 'cupcake'];
+          const tags = item.ingredients.filter(ing => flavorIngredients.some(f => ing.toLowerCase().includes(f)));
+
+          return `
+            <a href="/${slug}" class="drink-card" data-name="${item.name.replace(/"/g, '&quot;')}" data-category="${item.category}" data-sf="${isSF}" data-tags="${tags.join(',').replace(/"/g, '&quot;')}" style="display: flex; flex-direction: column; background: ${cardBg}; border: 2px solid #121212; border-radius: var(--border-radius-md); box-shadow: 4px 4px 0px #121212; text-decoration: none; color: #121212; padding: 24px; min-height: 220px; justify-content: space-between; transition: transform 0.2s, box-shadow 0.2s; position: relative;">
+              <div>
+                <!-- Header row with Category and SF tag -->
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                  <span style="font-size: 0.75rem; text-transform: uppercase; font-weight: 900; background: #121212; padding: 4px 8px; border-radius: 4px; letter-spacing: 0.05em; color: #ffffff; border: 1px solid #121212;">${item.category}</span>
+                  ${isSF ? `<span style="background: #00ff66; color: #000000; font-weight: 900; font-size: 0.7rem; padding: 3px 6px; border-radius: 4px; text-transform: uppercase; border: 1px solid #121212; box-shadow: 2px 2px 0px #121212;">Sugar Free</span>` : ''}
+                </div>
+                
+                <!-- Drink Title -->
+                <h3 style="font-size: 1.6rem; margin: 0 0 10px 0; font-family: var(--font-heading); color: #121212; line-height: 1.2; font-weight: 800;">${item.name}</h3>
+                
+                <!-- Recipe description -->
+                <p style="font-size: 0.9rem; color: #2c3e50; margin: 0 0 16px 0; line-height: 1.4; font-weight: 600;">${item.description}</p>
+              </div>
+
+              <div>
+                <!-- Flavor pills -->
+                <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px;">
+                  ${tags.map(t => `<span style="background: rgba(0,0,0,0.05); border: 1px solid #121212; border-radius: 12px; font-size: 0.75rem; padding: 2px 8px; text-transform: capitalize; color: #121212; font-weight: 700;">${t}</span>`).join('')}
+                </div>
+                
+                <!-- Bottom pricing & link row -->
+                <div style="display: flex; align-items: center; justify-content: space-between; padding-top: 12px; border-top: 2px solid #121212;">
+                  <span style="font-weight: 900; font-size: 1.25rem; color: #121212;">$${defaultPrice.toFixed(2)}</span>
+                  <span style="font-size: 0.85rem; font-weight: 900; background: #121212; color: #ffffff; padding: 6px 12px; border-radius: 20px; border: 2px solid #121212; box-shadow: 2px 2px 0px rgba(0,0,0,0.15); text-transform: uppercase;">See Recipe &rarr;</span>
+                </div>
+              </div>
+            </a>
+          `;
+        }).join('')}
+      </section>
+
+      <!-- Floating Surprise Me Button -->
+      <button id="surprise-btn" class="btn btn-primary" style="position: fixed; bottom: 30px; right: 30px; z-index: 100; border-radius: 50px; padding: 14px 28px; font-weight: bold; font-size: 1rem; border: 2px solid var(--text-white); box-shadow: 4px 4px 0px #000; cursor: pointer; display: flex; align-items: center; gap: 8px;" aria-label="Select a random secret drink">
+        🎲 Surprise Me
+      </button>
+
+      <!-- Surprise Modal Popup -->
+      <div id="surprise-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.65); z-index: 200; justify-content: center; align-items: center; padding: 20px;">
+        <div style="background: #ffffff; border: 3px solid #121212; border-radius: var(--border-radius-md); box-shadow: 8px 8px 0px #121212; max-width: 500px; width: 100%; padding: 30px; position: relative; color: #121212; text-align: center;">
+          <button onclick="closeSurpriseModal()" style="position: absolute; top: 15px; right: 15px; background: none; border: none; font-size: 1.8rem; cursor: pointer; color: #121212; font-weight: bold; line-height: 1;">&times;</button>
+          <span style="font-size: 3rem; display: block; margin-bottom: 15px;">🎲</span>
+          <span style="font-size: 0.75rem; text-transform: uppercase; font-weight: 900; background: #121212; color: #ffffff; padding: 4px 8px; border-radius: 4px; letter-spacing: 0.05em; display: inline-block; margin-bottom: 12px;" id="surprise-category">Category</span>
+          <h2 style="font-size: 2.2rem; margin: 0 0 15px 0; font-family: var(--font-heading); color: #121212; font-weight: 800;" id="surprise-title">Drink Name</h2>
+          <p style="font-size: 1rem; color: #2c3e50; margin: 0 0 24px 0; line-height: 1.5; font-weight: 600;" id="surprise-desc">Description...</p>
+          <div style="display: flex; justify-content: center; gap: 15px;">
+            <a href="#" id="surprise-link" class="btn btn-primary" style="background: #00ff66; color: #000000; border: 2px solid #121212; box-shadow: 4px 4px 0px #121212; font-weight: 900; padding: 12px 24px; border-radius: 30px; text-decoration: none; text-transform: uppercase; font-size: 0.95rem; display: inline-block;">View Recipe &rarr;</a>
+          </div>
         </div>
       </div>
-    </article>
-  `;
-});
 
-secretMenuHtml = secretMenuHtml.replace(/<link rel="canonical" href="[^"]*">/, '<link rel="canonical" href="https://7brewguide.com/secret-menu">');
-secretMenuHtml = secretMenuHtml.replace(/<header class="header">[\s\S]*?<\/header>/, getHeader('secret-menu'));
-secretMenuHtml = secretMenuHtml.replace(/<footer class="footer">[\s\S]*?<\/footer>/, getFooter());
-secretMenuHtml = secretMenuHtml.replace(/<section class="menu-grid" id="menu-grid"[^>]*>[\s\S]*?<\/section>/, `<section class="menu-grid" id="menu-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 30px; margin-top: 40px;">${secretItemsGridHtml}</section>`);
-fs.writeFileSync(path.join(__dirname, 'secret-menu.html'), secretMenuHtml, 'utf8');
+    </div>
+  </main>
+
+  ${getFooter()}
+
+  <!-- Client-side filtering script -->
+  <script>
+    const searchInput = document.getElementById('search-input');
+    const sfToggle = document.getElementById('sf-toggle');
+    const cards = document.querySelectorAll('.drink-card');
+    const emptyState = document.getElementById('empty-state');
+
+    function filterCards() {
+      const query = searchInput.value.toLowerCase().trim();
+      const showOnlySF = sfToggle.checked;
+      let visibleCount = 0;
+
+      cards.forEach(card => {
+        const name = card.getAttribute('data-name').toLowerCase();
+        const tags = card.getAttribute('data-tags').toLowerCase();
+        const isSF = card.getAttribute('data-sf') === 'true';
+
+        const matchesSearch = name.includes(query) || tags.includes(query);
+        const matchesSF = (!showOnlySF || isSF);
+
+        if (matchesSearch && matchesSF) {
+          card.style.display = 'flex';
+          visibleCount++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      if (visibleCount === 0) {
+        emptyState.style.display = 'block';
+        emptyState.setAttribute('aria-hidden', 'false');
+      } else {
+        emptyState.style.display = 'none';
+        emptyState.setAttribute('aria-hidden', 'true');
+      }
+    }
+
+    searchInput.addEventListener('input', filterCards);
+    sfToggle.addEventListener('change', filterCards);
+
+    window.closeSurpriseModal = function() {
+      const modal = document.getElementById('surprise-modal');
+      if (modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+      }
+    };
+
+    // Close modal on outside click
+    const modalEl = document.getElementById('surprise-modal');
+    if (modalEl) {
+      modalEl.addEventListener('click', (e) => {
+        if (e.target === modalEl) closeSurpriseModal();
+      });
+    }
+
+    // Surprise Me Button
+    const surpriseBtn = document.getElementById('surprise-btn');
+    if (surpriseBtn) {
+      surpriseBtn.addEventListener('click', () => {
+        const visibleCards = Array.from(cards).filter(c => getComputedStyle(c).display !== 'none');
+        if (visibleCards.length > 0) {
+          const randomCard = visibleCards[Math.floor(Math.random() * visibleCards.length)];
+          
+          const name = randomCard.getAttribute('data-name');
+          const category = randomCard.getAttribute('data-category');
+          const description = randomCard.querySelector('p').textContent;
+          const link = randomCard.getAttribute('href');
+          
+          document.getElementById('surprise-title').textContent = name;
+          document.getElementById('surprise-category').textContent = category;
+          document.getElementById('surprise-desc').textContent = description;
+          document.getElementById('surprise-link').setAttribute('href', link);
+          
+          document.getElementById('surprise-modal').style.display = 'flex';
+          document.body.style.overflow = 'hidden';
+        }
+      });
+    }
+  </script>
+</body>
+</html>`;
+
+fs.writeFileSync(path.join(__dirname, 'secret-menu.html'), secretMenuHtmlContent, 'utf8');
 
 // ----------------------------------------------------
 // STEP 7: Generate /menu/caffeine-and-allergens.html

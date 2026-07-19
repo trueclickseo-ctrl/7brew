@@ -895,40 +895,40 @@ ${getHead('7 Brew Coffee Guide | Interactive Menu & Review Directory', 'Find cal
           const slug = getSlug(item.name);
           const isSF = parseFloat(item.sugar) === 0 || item.name.toLowerCase().includes('sugar-free') || item.description.toLowerCase().includes('sugar-free');
           
-          // Solid Vibrant Palette colors matching screenshot
-          const cardColors = ['#8c6239', '#e65100', '#c2185b', '#2e7d32', '#0288d1', '#ab47bc', '#d84315', '#00796b', '#ad1457', '#558b2f', '#f57c00', '#512da8'];
-          const cardBg = cardColors[idx % cardColors.length];
+          // Generate unique non-repeating light pastel colors using the golden angle
+          const hue = (idx * 137.5) % 360;
+          const cardBg = `hsl(${hue}, 80%, 82%)`;
 
           // Extract flavor tags
           const flavorIngredients = ['caramel', 'vanilla', 'hazelnut', 'coconut', 'blue raspberry', 'blackberry', 'strawberry', 'peach', 'lime', 'mint', 'pumpkin', 'marshmallow', 'cinnamon', 'white chocolate', 'irish cream', 'chocolate', 'raspberry', 'passion fruit', 'mango', 'watermelon', 'cherry', 'kiwi', 'pomegranate', 'banana', 'cupcake'];
           const tags = item.ingredients.filter(ing => flavorIngredients.some(f => ing.toLowerCase().includes(f)));
 
           return `
-            <a href="/${slug}" class="drink-card" data-name="${item.name.replace(/"/g, '&quot;')}" data-category="${item.category}" data-sf="${isSF}" data-tags="${tags.join(',').replace(/"/g, '&quot;')}" style="display: flex; flex-direction: column; background: ${cardBg}; border: 2px solid var(--text-white); border-radius: var(--border-radius-md); box-shadow: var(--shadow-card); text-decoration: none; color: var(--text-white); padding: 24px; min-height: 220px; justify-content: space-between; transition: transform 0.2s, box-shadow 0.2s; position: relative;">
+            <a href="/${slug}" class="drink-card" data-name="${item.name.replace(/"/g, '&quot;')}" data-category="${item.category}" data-sf="${isSF}" data-tags="${tags.join(',').replace(/"/g, '&quot;')}" style="display: flex; flex-direction: column; background: ${cardBg}; border: 2px solid #121212; border-radius: var(--border-radius-md); box-shadow: 4px 4px 0px #121212; text-decoration: none; color: #121212; padding: 24px; min-height: 220px; justify-content: space-between; transition: transform 0.2s, box-shadow 0.2s; position: relative;">
               <div>
                 <!-- Header row with Category and SF tag -->
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
-                  <span style="font-size: 0.75rem; text-transform: uppercase; font-weight: 900; background: rgba(0,0,0,0.25); padding: 4px 8px; border-radius: 4px; letter-spacing: 0.05em; color: var(--text-white); border: 1px solid rgba(255,255,255,0.2);">${item.category}</span>
-                  ${isSF ? `<span style="background: #00ff66; color: #000; font-weight: 900; font-size: 0.7rem; padding: 3px 6px; border-radius: 4px; text-transform: uppercase; border: 1px solid #000; box-shadow: 2px 2px 0px #000;">Sugar Free</span>` : ''}
+                  <span style="font-size: 0.75rem; text-transform: uppercase; font-weight: 900; background: #121212; padding: 4px 8px; border-radius: 4px; letter-spacing: 0.05em; color: #ffffff; border: 1px solid #121212;">${item.category}</span>
+                  ${isSF ? `<span style="background: #00ff66; color: #000000; font-weight: 900; font-size: 0.7rem; padding: 3px 6px; border-radius: 4px; text-transform: uppercase; border: 1px solid #121212; box-shadow: 2px 2px 0px #121212;">Sugar Free</span>` : ''}
                 </div>
                 
                 <!-- Drink Title -->
-                <h3 style="font-size: 1.6rem; margin: 0 0 10px 0; font-family: var(--font-heading); color: var(--text-white); line-height: 1.2; text-shadow: 1px 1px 0px rgba(0,0,0,0.2);">${item.name}</h3>
+                <h3 style="font-size: 1.6rem; margin: 0 0 10px 0; font-family: var(--font-heading); color: #121212; line-height: 1.2; font-weight: 800;">${item.name}</h3>
                 
                 <!-- Recipe description -->
-                <p style="font-size: 0.9rem; color: rgba(255,255,255,0.9); margin: 0 0 16px 0; line-height: 1.4; font-weight: 500;">${item.description}</p>
+                <p style="font-size: 0.9rem; color: #2c3e50; margin: 0 0 16px 0; line-height: 1.4; font-weight: 600;">${item.description}</p>
               </div>
 
               <div>
                 <!-- Flavor pills -->
                 <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px;">
-                  ${tags.map(t => `<span style="background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); border-radius: 12px; font-size: 0.75rem; padding: 2px 8px; text-transform: capitalize; color: var(--text-white); font-weight: bold;">${t}</span>`).join('')}
+                  ${tags.map(t => `<span style="background: rgba(0,0,0,0.05); border: 1px solid #121212; border-radius: 12px; font-size: 0.75rem; padding: 2px 8px; text-transform: capitalize; color: #121212; font-weight: 700;">${t}</span>`).join('')}
                 </div>
                 
                 <!-- Bottom pricing & link row -->
-                <div style="display: flex; align-items: center; justify-content: space-between; padding-top: 12px; border-top: 2px solid rgba(255,255,255,0.25);">
-                  <span style="font-weight: 900; font-size: 1.2rem; color: #fff; text-shadow: 1px 1px 0px rgba(0,0,0,0.3);">$${defaultPrice.toFixed(2)}</span>
-                  <span style="font-size: 0.85rem; font-weight: bold; background: var(--text-white); color: #000; padding: 6px 12px; border-radius: 20px; border: 2px solid #000; box-shadow: 2px 2px 0px #000; text-transform: uppercase;">See Recipe &rarr;</span>
+                <div style="display: flex; align-items: center; justify-content: space-between; padding-top: 12px; border-top: 2px solid #121212;">
+                  <span style="font-weight: 900; font-size: 1.25rem; color: #121212;">$${defaultPrice.toFixed(2)}</span>
+                  <span style="font-size: 0.85rem; font-weight: 900; background: #121212; color: #ffffff; padding: 6px 12px; border-radius: 20px; border: 2px solid #121212; box-shadow: 2px 2px 0px rgba(0,0,0,0.15); text-transform: uppercase;">See Recipe &rarr;</span>
                 </div>
               </div>
             </a>

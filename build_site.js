@@ -895,8 +895,8 @@ ${getHead('7 Brew Coffee Guide | Interactive Menu & Review Directory', 'Find cal
           const slug = getSlug(item.name);
           const isSF = parseFloat(item.sugar) === 0 || item.name.toLowerCase().includes('sugar-free') || item.description.toLowerCase().includes('sugar-free');
           
-          // Fixed Vibrant Palette Y2K colors
-          const cardColors = ['#1d2b44', '#3b0066', '#004c6d', '#3f1a04', '#470024', '#0d383b', '#4c1e08', '#072e4c'];
+          // Solid Vibrant Palette colors matching screenshot
+          const cardColors = ['#8c6239', '#e65100', '#c2185b', '#2e7d32', '#0288d1', '#ab47bc', '#d84315', '#00796b', '#ad1457', '#558b2f', '#f57c00', '#512da8'];
           const cardBg = cardColors[idx % cardColors.length];
 
           // Extract flavor tags
@@ -904,25 +904,31 @@ ${getHead('7 Brew Coffee Guide | Interactive Menu & Review Directory', 'Find cal
           const tags = item.ingredients.filter(ing => flavorIngredients.some(f => ing.toLowerCase().includes(f)));
 
           return `
-            <a href="/${slug}" class="drink-card" data-name="${item.name.replace(/"/g, '&quot;')}" data-category="${item.category}" data-sf="${isSF}" data-tags="${tags.join(',').replace(/"/g, '&quot;')}" style="display: flex; flex-direction: column; background: ${cardBg}; border: 2px solid var(--text-white); border-radius: var(--border-radius-md); box-shadow: var(--shadow-card); text-decoration: none; color: var(--text-white); overflow: hidden; transition: transform 0.2s, box-shadow 0.2s; position: relative;">
-              <div class="drink-image-wrap" style="height: 180px; overflow: hidden; position: relative;">
-                <img src="${getImageUrl(item)}" alt="${item.name}" onerror="this.src='https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=600&auto=format&fit=crop';" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
-                ${isSF ? `<span style="position: absolute; top: 12px; right: 12px; background: #00ff66; color: #000; font-weight: 900; font-size: 0.75rem; padding: 4px 8px; border-radius: 4px; text-transform: uppercase; border: 1px solid #000;">Sugar Free</span>` : ''}
-              </div>
-              <div style="padding: 20px; display: flex; flex-direction: column; flex: 1; justify-content: space-between;">
-                <div>
-                  <span style="font-size: 0.75rem; text-transform: uppercase; font-weight: bold; color: var(--color-primary); letter-spacing: 0.05em; display: block; margin-bottom: 6px;">${item.category}</span>
-                  <h3 style="font-size: 1.4rem; margin: 0 0 10px 0; font-family: var(--font-heading); color: var(--text-white); line-height: 1.2;">${item.name}</h3>
-                  <p style="font-size: 0.85rem; color: #cccccc; margin: 0 0 15px 0; line-height: 1.4;">${item.description}</p>
+            <a href="/${slug}" class="drink-card" data-name="${item.name.replace(/"/g, '&quot;')}" data-category="${item.category}" data-sf="${isSF}" data-tags="${tags.join(',').replace(/"/g, '&quot;')}" style="display: flex; flex-direction: column; background: ${cardBg}; border: 2px solid var(--text-white); border-radius: var(--border-radius-md); box-shadow: var(--shadow-card); text-decoration: none; color: var(--text-white); padding: 24px; min-height: 220px; justify-content: space-between; transition: transform 0.2s, box-shadow 0.2s; position: relative;">
+              <div>
+                <!-- Header row with Category and SF tag -->
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                  <span style="font-size: 0.75rem; text-transform: uppercase; font-weight: 900; background: rgba(0,0,0,0.25); padding: 4px 8px; border-radius: 4px; letter-spacing: 0.05em; color: var(--text-white); border: 1px solid rgba(255,255,255,0.2);">${item.category}</span>
+                  ${isSF ? `<span style="background: #00ff66; color: #000; font-weight: 900; font-size: 0.7rem; padding: 3px 6px; border-radius: 4px; text-transform: uppercase; border: 1px solid #000; box-shadow: 2px 2px 0px #000;">Sugar Free</span>` : ''}
                 </div>
-                <div>
-                  <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 15px;">
-                    ${tags.map(t => `<span style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 12px; font-size: 0.7rem; padding: 2px 8px; text-transform: capitalize;">${t}</span>`).join('')}
-                  </div>
-                  <div style="display: flex; align-items: center; justify-content: space-between; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.15);">
-                    <span style="font-weight: bold; font-size: 1.1rem; color: var(--color-secondary);">$${defaultPrice.toFixed(2)}</span>
-                    <span style="font-size: 0.8rem; font-weight: bold; text-decoration: underline; color: var(--color-primary);">See Recipe &rarr;</span>
-                  </div>
+                
+                <!-- Drink Title -->
+                <h3 style="font-size: 1.6rem; margin: 0 0 10px 0; font-family: var(--font-heading); color: var(--text-white); line-height: 1.2; text-shadow: 1px 1px 0px rgba(0,0,0,0.2);">${item.name}</h3>
+                
+                <!-- Recipe description -->
+                <p style="font-size: 0.9rem; color: rgba(255,255,255,0.9); margin: 0 0 16px 0; line-height: 1.4; font-weight: 500;">${item.description}</p>
+              </div>
+
+              <div>
+                <!-- Flavor pills -->
+                <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px;">
+                  ${tags.map(t => `<span style="background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); border-radius: 12px; font-size: 0.75rem; padding: 2px 8px; text-transform: capitalize; color: var(--text-white); font-weight: bold;">${t}</span>`).join('')}
+                </div>
+                
+                <!-- Bottom pricing & link row -->
+                <div style="display: flex; align-items: center; justify-content: space-between; padding-top: 12px; border-top: 2px solid rgba(255,255,255,0.25);">
+                  <span style="font-weight: 900; font-size: 1.2rem; color: #fff; text-shadow: 1px 1px 0px rgba(0,0,0,0.3);">$${defaultPrice.toFixed(2)}</span>
+                  <span style="font-size: 0.85rem; font-weight: bold; background: var(--text-white); color: #000; padding: 6px 12px; border-radius: 20px; border: 2px solid #000; box-shadow: 2px 2px 0px #000; text-transform: uppercase;">See Recipe &rarr;</span>
                 </div>
               </div>
             </a>

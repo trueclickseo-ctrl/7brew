@@ -1008,19 +1008,30 @@ ${getHead('7 Brew Coffee Guide | Interactive Menu & Review Directory', 'Find cal
     const surpriseBtn = document.getElementById('surprise-btn');
     if (surpriseBtn) {
       surpriseBtn.addEventListener('click', () => {
-        const visibleCards = Array.from(cards).filter(c => c.style.display !== 'none');
+        const visibleCards = Array.from(cards).filter(c => getComputedStyle(c).display !== 'none');
         if (visibleCards.length > 0) {
           const randomCard = visibleCards[Math.floor(Math.random() * visibleCards.length)];
           randomCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
-          randomCard.focus();
           
-          // Highlight animation
-          randomCard.style.outline = '4px solid var(--color-primary)';
-          randomCard.style.transform = 'scale(1.05)';
+          // Wait slightly for scroll to start/align, then apply highlight
           setTimeout(() => {
-            randomCard.style.outline = '';
-            randomCard.style.transform = '';
-          }, 1500);
+            randomCard.focus();
+            const originalTransform = randomCard.style.transform;
+            const originalOutline = randomCard.style.outline;
+            const originalShadow = randomCard.style.boxShadow;
+            
+            randomCard.style.outline = '6px solid #121212';
+            randomCard.style.transform = 'scale(1.05)';
+            randomCard.style.boxShadow = '8px 8px 0px #121212';
+            randomCard.style.zIndex = '10';
+            
+            setTimeout(() => {
+              randomCard.style.transform = originalTransform;
+              randomCard.style.outline = originalOutline;
+              randomCard.style.boxShadow = originalShadow;
+              randomCard.style.zIndex = '';
+            }, 1600);
+          }, 300);
         }
       });
     }

@@ -49,6 +49,30 @@ function getSlug(name) {
   return slugMap[name] || '7-brew-' + name.toLowerCase().replace(/[^a-z0-9]+/g, '-');
 }
 
+function getImageUrl(item) {
+  let img = item.image || '';
+  if (img.startsWith('http://') || img.startsWith('https://')) {
+    return img;
+  }
+  const cleanPath = img.startsWith('/') ? img.substring(1) : img;
+  if (!fs.existsSync(path.join(__dirname, cleanPath))) {
+    if (item.category === '7 Originals' || item.category === 'Classics' || item.description.toLowerCase().includes('breve')) {
+      return '/assets/images/breve.webp';
+    } else if (item.category === 'Infused Energy' || item.description.toLowerCase().includes('energy')) {
+      return '/assets/images/energy_blue.jpg';
+    } else if (item.category === 'Teas' || item.description.toLowerCase().includes('tea') || item.description.toLowerCase().includes('chai')) {
+      return '/assets/images/hula_tea.png';
+    } else if (item.category === 'Smoothies' || item.description.toLowerCase().includes('smoothie')) {
+      return '/assets/images/peach_smoothie.jpg';
+    } else if (item.category === 'Fizz' || item.description.toLowerCase().includes('fizz') || item.description.toLowerCase().includes('soda')) {
+      return '/assets/images/sunny_7_fizz.jpg';
+    } else {
+      return '/assets/images/breve.webp';
+    }
+  }
+  return img.startsWith('/') ? img : '/' + img;
+}
+
 const categoryIdMap = {
   '7 Originals': 'originals',
   '7 Classics': 'classics',
@@ -227,7 +251,7 @@ categoryOrder.forEach(cat => {
           return `
             <article class="drink-card" data-name="${item.name.replace(/"/g, '&quot;')}">
               <div class="drink-image-wrap">
-                <img src="/${item.image}" alt="${item.name}" onerror="this.src='https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=600&auto=format&fit=crop';" loading="lazy">
+                <img src="${getImageUrl(item)}" alt="${item.name}" onerror="this.src='https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=600&auto=format&fit=crop';" loading="lazy">
               </div>
               <div class="drink-info">
                 <span class="drink-category-label">${item.category}</span>
@@ -364,7 +388,7 @@ Object.entries(categoryDescriptions).forEach(([catKey, info]) => {
           return `
             <article class="drink-card">
               <div class="drink-image-wrap">
-                <img src="/${item.image}" alt="${item.name}" onerror="this.src='https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=600&auto=format&fit=crop';" loading="lazy">
+                <img src="${getImageUrl(item)}" alt="${item.name}" onerror="this.src='https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=600&auto=format&fit=crop';" loading="lazy">
               </div>
               <div class="drink-info">
                 <span class="drink-category-label">${item.category}</span>
@@ -637,7 +661,7 @@ ${getHead(`7 Brew ${drink.name}: Prices, Calories & Copycat Recipe Guide`, `Disc
         </div>
         <div style="position: relative; display: flex; justify-content: center;">
           <div style="position: absolute; width: 300px; height: 300px; background: radial-gradient(circle, rgba(0, 102, 255, 0.15), transparent); border-radius: 50%; z-index: -1;"></div>
-          <img src="/${drink.image}" alt="7 Brew ${drink.name}" style="max-height: 450px; filter: drop-shadow(0 15px 30px rgba(0,0,0,0.15)); border-radius: var(--border-radius-md);" onerror="this.src='https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=600&auto=format&fit=crop';">
+          <img src="${getImageUrl(drink)}" alt="7 Brew ${drink.name}" style="max-height: 450px; filter: drop-shadow(0 15px 30px rgba(0,0,0,0.15)); border-radius: var(--border-radius-md);" onerror="this.src='https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=600&auto=format&fit=crop';">
         </div>
       </section>
 
@@ -830,10 +854,36 @@ dealsHtml = dealsHtml.replace(/<footer class="footer">[\s\S]*?<\/footer>/, getFo
 fs.writeFileSync(path.join(__dirname, 'deals.html'), dealsHtml, 'utf8');
 
 // secret-menu.html
+console.log('Pre-rendering secret-menu.html...');
 let secretMenuHtml = fs.readFileSync(path.join(__dirname, 'secret-menu.html'), 'utf8');
+
+const secretItems = menu.filter(item => item.category === 'Secret Menu');
+let secretItemsGridHtml = '';
+secretItems.forEach(item => {
+  const defaultPrice = item.sizes.medium ? item.sizes.medium.price : (item.sizes.small ? item.sizes.small.price : 0);
+  const slug = getSlug(item.name);
+  secretItemsGridHtml += `
+    <article class="drink-card" data-name="${item.name.replace(/"/g, '&quot;')}" onclick="location.href='/${slug}'" style="cursor: pointer;">
+      <div class="drink-image-wrap">
+        <img src="${getImageUrl(item)}" alt="${item.name}" onerror="this.src='https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=600&auto=format&fit=crop';" loading="lazy">
+      </div>
+      <div class="drink-info">
+        <span class="drink-category-label">${item.category}</span>
+        <h3 class="drink-title"><a href="/${slug}">${item.name}</a></h3>
+        <p class="drink-description">${item.description}</p>
+        <div class="drink-meta-row">
+          <span class="drink-price">$${defaultPrice.toFixed(2)}</span>
+          <a href="/${slug}" class="btn btn-secondary" style="padding: 6px 16px; font-size: 0.75rem;">View Details</a>
+        </div>
+      </div>
+    </article>
+  `;
+});
+
 secretMenuHtml = secretMenuHtml.replace(/<link rel="canonical" href="[^"]*">/, '<link rel="canonical" href="https://7brewguide.com/secret-menu">');
 secretMenuHtml = secretMenuHtml.replace(/<header class="header">[\s\S]*?<\/header>/, getHeader('secret-menu'));
 secretMenuHtml = secretMenuHtml.replace(/<footer class="footer">[\s\S]*?<\/footer>/, getFooter());
+secretMenuHtml = secretMenuHtml.replace(/<section class="menu-grid" id="menu-grid"[^>]*>[\s\S]*?<\/section>/, `<section class="menu-grid" id="menu-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 30px; margin-top: 40px;">${secretItemsGridHtml}</section>`);
 fs.writeFileSync(path.join(__dirname, 'secret-menu.html'), secretMenuHtml, 'utf8');
 
 // ----------------------------------------------------

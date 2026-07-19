@@ -1211,10 +1211,15 @@ ${getHead(`7 Brew Drive-Thrus in ${state} | Location Finder`, `Find verified 7 B
             </div>
           </div>
           <div>
-            <!-- Google Maps Embed Simulation -->
-            <div style="width: 100%; height: 250px; background: #e0e0e0; border-radius: var(--border-radius-sm); overflow: hidden; display: flex; align-items: center; justify-content: center; border: 1px solid var(--border-glass);">
-              <span style="color: #666; font-weight: bold;">[Map: ${loc.coordinates}]</span>
-            </div>
+            <!-- Google Maps Embed -->
+            <iframe 
+              src="https://maps.google.com/maps?q=${encodeURIComponent(loc.address)}&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+              width="100%" 
+              height="250" 
+              style="border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm);" 
+              allowfullscreen="" 
+              loading="lazy">
+            </iframe>
           </div>
         </article>
       `;
@@ -1303,12 +1308,15 @@ ${getHead(`7 Brew Wichita, Kansas Drive-Thru Locations & Hours`, `Get driving di
               </div>
             </div>
             <div>
-              <!-- Google Maps placeholder styled to look like iframe -->
-              <div style="width: 100%; height: 260px; background: #e0e6ed; border-radius: var(--border-radius-sm); overflow: hidden; display: flex; flex-direction: column; align-items: center; justify-content: center; border: 2px solid var(--text-white); box-shadow: 4px 4px 0px rgba(0,0,0,0.1);">
-                <strong style="color: var(--color-primary); font-size: 1.1rem; margin-bottom: 8px;">Map View</strong>
-                <span style="color: var(--text-muted); font-size: 0.85rem;">[Coordinates: ${l.coordinates}]</span>
-                <span style="color: var(--text-muted); font-size: 0.8rem; margin-top: 10px; font-style: italic; font-weight: bold;">(Click to expand directions)</span>
-              </div>
+              <!-- Google Maps Embed -->
+              <iframe 
+                src="https://maps.google.com/maps?q=${encodeURIComponent(l.address)}&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                width="100%" 
+                height="260" 
+                style="border: 2px solid var(--text-white); border-radius: var(--border-radius-sm); box-shadow: 4px 4px 0px rgba(0,0,0,0.15);" 
+                allowfullscreen="" 
+                loading="lazy">
+              </iframe>
             </div>
           </article>
         `).join('')}

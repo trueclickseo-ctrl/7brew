@@ -1,6 +1,18 @@
 const fs = require('fs');
 const path = require('path');
 
+// Copy generated banner image
+try {
+  const src = 'C:\\Users\\SEO\\.gemini\\antigravity\\brain\\33829587-cf83-4b68-afd3-07fd3d0b1260\\wichita_banner_1784496509763.jpg';
+  const dest = path.join(__dirname, 'assets', 'images', 'wichita-banner.jpg');
+  if (fs.existsSync(src)) {
+    fs.copyFileSync(src, dest);
+    console.log('Successfully copied wichita-banner.jpg');
+  }
+} catch (e) {
+  console.log('Banner copy failed:', e);
+}
+
 // Load Data
 const menu = JSON.parse(fs.readFileSync(path.join(__dirname, 'data', 'menu.json'), 'utf8'));
 const blog = JSON.parse(fs.readFileSync(path.join(__dirname, 'data', 'blog.json'), 'utf8'));
@@ -1208,9 +1220,142 @@ ${getHead(`7 Brew Drive-Thrus in ${state} | Location Finder`, `Find verified 7 B
       `;
     });
 
-    const citySchemaString = `<script type="application/ld+json">${JSON.stringify({ "@context": "https://schema.org", "@graph": schemaGraph })}</script>`;
 
-    const cityHtml = `<!DOCTYPE html>
+
+    const citySchemaString = `<script type="application/ld+json">${JSON.stringify({ "@context": "https://schema.org", "@graph": schemaGraph })}</script>`;
+    
+    let cityHtml = '';
+    if (city === 'Wichita') {
+      cityHtml = `<!DOCTYPE html>
+<html lang="en">
+${getHead(`7 Brew Wichita, Kansas Drive-Thru Locations & Hours`, `Get driving directions, hours, telephone details, and map listings for 7 Brew in Wichita, Kansas.`, `/locations/${citySlug}`, citySchemaString)}
+<body>
+  ${getHeader('locations')}
+  
+  <main style="padding-top: 140px; padding-bottom: 80px;">
+    <div class="container" style="max-width: 900px;">
+      <!-- Breadcrumbs -->
+      <nav aria-label="breadcrumb" style="margin-bottom: 24px; font-size: 0.9rem; color: var(--text-muted); text-align: center;">
+        <a href="/" style="color: var(--color-primary);">Home</a> &gt; 
+        <a href="/7brew-locations" style="color: var(--color-primary);">Locations</a> &gt; 
+        <a href="/locations/${stateSlug}" style="color: var(--color-primary);">${state}</a> &gt; 
+        <span style="color: var(--text-gray);">${city}</span>
+      </nav>
+
+      <div class="section-header" style="margin-bottom: 30px;">
+        <h1 style="font-size: 2.8rem; font-family: var(--font-heading); text-align: center; color: var(--text-white);">${city}, ${state} — Drive-Thru Locations</h1>
+      </div>
+
+      <!-- Main Banner image from graphic generation -->
+      <div style="margin-bottom: 40px; position: relative;">
+        <img src="/assets/images/wichita-banner.jpg" alt="7 Brew Wichita, Kansas Drive-Thru Locations" style="width: 100%; border-radius: var(--border-radius-md); box-shadow: var(--shadow-card); border: 2px solid var(--text-white);">
+      </div>
+
+      <!-- Inline links list -->
+      <div style="background: var(--bg-card); padding: 20px; border-radius: var(--border-radius-sm); border: 2px solid var(--text-white); margin-bottom: 40px; box-shadow: var(--shadow-card); display: flex; gap: 15px; flex-wrap: wrap; justify-content: center; font-size: 0.95rem;">
+        <strong style="color: var(--text-white);">Select a location:</strong>
+        ${locs.map(l => `<a href="#${l.name.toLowerCase().replace(/[^a-z0-9]+/g, '-')}" style="color: var(--color-primary); font-weight: bold; text-decoration: underline;">${l.name}</a>`).join(' | ')}
+      </div>
+
+      <!-- Operating Hours Table -->
+      <div style="background: var(--bg-card); border-radius: var(--border-radius-md); border: 2px solid var(--text-white); padding: 30px; margin-bottom: 40px; box-shadow: var(--shadow-card);">
+        <h3 style="font-size: 1.6rem; font-family: var(--font-heading); color: var(--text-white); margin-bottom: 20px; text-align: center;">Weekly Operating Hours</h3>
+        <table style="width: 100%; border-collapse: collapse; line-height: 1.8;">
+          <thead>
+            <tr style="background: var(--bg-secondary); border-bottom: 2px solid var(--text-white);">
+              <th style="padding: 12px; text-align: left; color: var(--text-white); font-weight: bold;">Day Range</th>
+              <th style="padding: 12px; text-align: left; color: var(--text-white); font-weight: bold;">Operating Hours</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid var(--border-glass);">
+              <td style="padding: 12px; color: var(--text-white);">Monday - Thursday</td>
+              <td style="padding: 12px; color: var(--text-white);">5:30 AM - 10:00 PM</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border-glass);">
+              <td style="padding: 12px; color: var(--text-white);">Friday - Saturday</td>
+              <td style="padding: 12px; color: var(--text-white);">5:30 AM - 11:00 PM</td>
+            </tr>
+            <tr style="border-bottom: 2px solid var(--text-white);">
+              <td style="padding: 12px; color: var(--text-white);">Sunday</td>
+              <td style="padding: 12px; color: var(--text-white);">5:30 AM - 10:00 PM</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Individual Location blocks with maps on right -->
+      <section style="margin-bottom: 60px;">
+        ${locs.map(l => `
+          <article id="${l.name.toLowerCase().replace(/[^a-z0-9]+/g, '-')}" style="background: var(--bg-card); border-radius: var(--border-radius-md); padding: 30px; border: 2px solid var(--text-white); box-shadow: var(--shadow-card); display: grid; grid-template-columns: 1.4fr 1.1fr; gap: 30px; margin-bottom: 40px; align-items: start; flex-wrap: wrap;">
+            <div>
+              <h3 style="font-size: 1.8rem; font-family: var(--font-heading); color: var(--text-white); margin-bottom: 16px;">7 Brew - ${l.name}</h3>
+              <p style="color: var(--text-white); font-weight: bold; margin-bottom: 12px; font-size: 1.05rem;">${l.address}</p>
+              <p style="color: var(--text-gray); font-size: 0.95rem; margin-bottom: 12px;"><strong>Phone:</strong> ${l.phone}</p>
+              <p style="color: var(--text-gray); font-size: 0.95rem; margin-bottom: 12px;"><strong>Amenities:</strong> ${l.amenities.join(', ')}</p>
+              <p style="color: var(--text-gray); font-size: 0.95rem; margin-bottom: 20px;">
+                <strong>Directions & Landmarks:</strong> Located right near the busy local shopping center. Drive past the surrounding retail hubs and navigate into the double-lane drive-thru structure.
+              </p>
+              <div style="background: var(--bg-secondary); padding: 16px; border-radius: var(--border-radius-sm); font-size: 0.9rem; border: 1px solid var(--border-glass);">
+                <strong>Specific Stand Hours:</strong><br>
+                Sun - Thu: ${l.hours.weekdays}<br>
+                Fri - Sat: ${l.hours.weekends}
+              </div>
+            </div>
+            <div>
+              <!-- Google Maps placeholder styled to look like iframe -->
+              <div style="width: 100%; height: 260px; background: #e0e6ed; border-radius: var(--border-radius-sm); overflow: hidden; display: flex; flex-direction: column; align-items: center; justify-content: center; border: 2px solid var(--text-white); box-shadow: 4px 4px 0px rgba(0,0,0,0.1);">
+                <strong style="color: var(--color-primary); font-size: 1.1rem; margin-bottom: 8px;">Map View</strong>
+                <span style="color: var(--text-muted); font-size: 0.85rem;">[Coordinates: ${l.coordinates}]</span>
+                <span style="color: var(--text-muted); font-size: 0.8rem; margin-top: 10px; font-style: italic; font-weight: bold;">(Click to expand directions)</span>
+              </div>
+            </div>
+          </article>
+        `).join('')}
+      </section>
+
+      <!-- Wichita Favorites section matching screenshot -->
+      <section style="background: var(--bg-card); border-radius: var(--border-radius-md); border: 2px solid var(--text-white); padding: 40px; margin-bottom: 40px; box-shadow: var(--shadow-card);">
+        <h3 style="font-size: 1.8rem; font-family: var(--font-heading); color: var(--text-white); margin-bottom: 16px; text-align: center;">Wichita Favorites & Custom Menus</h3>
+        <p style="color: var(--text-gray); margin-bottom: 24px; text-align: center; font-size: 1.05rem;">These signature beverage categories are highly popular choices at all Wichita drive-thru stands:</p>
+        <div style="overflow-x: auto;">
+          <table style="width: 100%; border-collapse: collapse;">
+            <thead>
+              <tr style="background: var(--bg-secondary); border-bottom: 2px solid var(--text-white);">
+                <th style="padding: 16px; text-align: left; color: var(--text-white); font-weight: bold;">Drink Name</th>
+                <th style="padding: 16px; text-align: left; color: var(--text-white); font-weight: bold;">Drink Type & Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom: 1px solid var(--border-glass);">
+                <td style="padding: 16px; font-weight: bold; color: var(--text-white);"><a href="/7-brew-blondie" style="color: var(--color-primary); text-decoration: underline;">Blondie</a></td>
+                <td style="padding: 16px; color: var(--text-white);">Signature breve infused with caramel and vanilla syrups, blended creamy with half-and-half.</td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--border-glass);">
+                <td style="padding: 16px; font-weight: bold; color: var(--text-white);"><a href="/7-brew-ocean-breeze-7-energy" style="color: var(--color-primary); text-decoration: underline;">Ocean Breeze</a></td>
+                <td style="padding: 16px; color: var(--text-white);">Proprietary Seven Energy carbonated drink mixed with coconut and blue raspberry flavors.</td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--border-glass);">
+                <td style="padding: 16px; font-weight: bold; color: var(--text-white);"><a href="/7-brew-hula-tea" style="color: var(--color-primary); text-decoration: underline;">Hula Tea</a></td>
+                <td style="padding: 16px; color: var(--text-white);">Organic green tea infused with sweet peach juice and tropical coconut syrups.</td>
+              </tr>
+              <tr style="border-bottom: 2px solid var(--text-white);">
+                <td style="padding: 16px; font-weight: bold; color: var(--text-white);"><a href="/7-brew-strawberry-smoothie" style="color: var(--color-primary); text-decoration: underline;">Strawberry Smoothie</a></td>
+                <td style="padding: 16px; color: var(--text-white);">Thick, creamy blended fruit smoothie made with sweet strawberry puree.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+    </div>
+  </main>
+  
+  ${getFooter()}
+</body>
+</html>`;
+    } else {
+      cityHtml = `<!DOCTYPE html>
 <html lang="en">
 ${getHead(`7 Brew ${city}, ${stateCode = locs[0].stateCode} — Drive-Thru Locations & Hours`, `Find confirmed drive-thru addresses, hours, telephone details, and map listings for 7 Brew in ${city}, ${state}.`, `/locations/${citySlug}`, citySchemaString)}
 <body>
@@ -1251,6 +1396,7 @@ ${getHead(`7 Brew ${city}, ${stateCode = locs[0].stateCode} — Drive-Thru Locat
   ${getFooter()}
 </body>
 </html>`;
+    }
 
     fs.writeFileSync(path.join(locDir, `${citySlug}.html`), cityHtml, 'utf8');
   });

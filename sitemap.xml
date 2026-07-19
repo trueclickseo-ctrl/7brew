@@ -487,6 +487,12 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://7brewguide.com/locations/kansas</loc>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://7brewguide.com/locations/little-rock-arkansas</loc>
     <lastmod>2026-07-19</lastmod>
     <changefreq>weekly</changefreq>
@@ -524,6 +530,12 @@
   </url>
   <url>
     <loc>https://7brewguide.com/locations/tulsa-oklahoma</loc>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://7brewguide.com/locations/wichita-kansas</loc>
     <lastmod>2026-07-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>

@@ -174,5 +174,85 @@
     "driveThru": true,
     "amenities": ["Double Drive-Thru Lane", "Walk-up Window"],
     "coordinates": "34.7523,-92.4045"
+  },
+  {
+    "id": 12,
+    "name": "Wichita - N Rock Rd",
+    "address": "110 N Rock Rd, Wichita, KS 67206",
+    "city": "Wichita",
+    "state": "Kansas",
+    "stateCode": "KS",
+    "phone": "(316) 685-1100",
+    "hours": {
+      "weekdays": "5:30 AM - 10:00 PM",
+      "weekends": "5:30 AM - 11:00 PM"
+    },
+    "driveThru": true,
+    "amenities": ["Double Drive-Thru Lane", "Walk-up Window"],
+    "coordinates": "37.6874,-97.2435"
+  },
+  {
+    "id": 13,
+    "name": "Wichita - E Central Ave",
+    "address": "3031 E Central Ave, Wichita, KS 67214",
+    "city": "Wichita",
+    "state": "Kansas",
+    "stateCode": "KS",
+    "phone": "(316) 685-3031",
+    "hours": {
+      "weekdays": "5:30 AM - 10:00 PM",
+      "weekends": "5:30 AM - 11:00 PM"
+    },
+    "driveThru": true,
+    "amenities": ["Double Drive-Thru Lane", "Walk-up Window"],
+    "coordinates": "37.6942,-97.3005"
+  },
+  {
+    "id": 14,
+    "name": "Wichita - N Webb Rd",
+    "address": "11465 E 21st St N, Wichita, KS 67206",
+    "city": "Wichita",
+    "state": "Kansas",
+    "stateCode": "KS",
+    "phone": "(316) 685-1146",
+    "hours": {
+      "weekdays": "5:30 AM - 10:00 PM",
+      "weekends": "5:30 AM - 11:00 PM"
+    },
+    "driveThru": true,
+    "amenities": ["Double Drive-Thru Lane", "Walk-up Window"],
+    "coordinates": "37.7224,-97.2185"
+  },
+  {
+    "id": 15,
+    "name": "Wichita - S Ridge Rd",
+    "address": "325 S Ridge Rd, Wichita, KS 67209",
+    "city": "Wichita",
+    "state": "Kansas",
+    "stateCode": "KS",
+    "phone": "(316) 685-3250",
+    "hours": {
+      "weekdays": "5:30 AM - 10:00 PM",
+      "weekends": "5:30 AM - 11:00 PM"
+    },
+    "driveThru": true,
+    "amenities": ["Double Drive-Thru Lane", "Walk-up Window"],
+    "coordinates": "37.6812,-97.4385"
+  },
+  {
+    "id": 16,
+    "name": "Wichita - N Rock Rd North",
+    "address": "3505 N Rock Rd, Wichita, KS 67226",
+    "city": "Wichita",
+    "state": "Kansas",
+    "stateCode": "KS",
+    "phone": "(316) 685-3505",
+    "hours": {
+      "weekdays": "5:30 AM - 10:00 PM",
+      "weekends": "5:30 AM - 11:00 PM"
+    },
+    "driveThru": true,
+    "amenities": ["Double Drive-Thru Lane", "Walk-up Window"],
+    "coordinates": "37.7478,-97.2435"
   }
 ]

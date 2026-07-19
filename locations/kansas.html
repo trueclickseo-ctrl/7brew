@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-8VM681EN3E"></script>
@@ -11,23 +12,22 @@
   </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Find Nearby Coffee Drive-Thru Locations | 7 Brew Inspired</title>
-  <meta name="description" content="Use our interactive location finder to locate drive-thru coffee stands nearby. Get hours, phone numbers, and driving directions.">
-  <link rel="canonical" href="https://7brewguide.com/7brew-locations">
-
+  <title>7 Brew Drive-Thrus in Kansas | Location Finder</title>
+  <meta name="description" content="Find verified 7 Brew drive-thru locations, phone numbers, and operating hours across the state of Kansas.">
+  <link rel="canonical" href="https://7brewguide.com/locations/kansas">
+  
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Find Drive-Thrus & Operating Hours | 7 Brew Inspired">
-  <meta property="og:description" content="Locate double-lane coffee stands in Arkansas, Missouri, and Oklahoma. Quick hours lookup and direction mapping links.">
-  <meta property="og:image" content="assets/images/og-locations.jpg">
-
+  <meta property="og:title" content="7 Brew Drive-Thrus in Kansas | Location Finder">
+  <meta property="og:description" content="Find verified 7 Brew drive-thru locations, phone numbers, and operating hours across the state of Kansas.">
+  <meta property="og:image" content="/assets/images/og-main.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  
   <link rel="stylesheet" href="/assets/css/style.css?v=1.0.9">
   <link rel="icon" type="image/png" href="/favicon.png?v=1.0.2">
+  
 </head>
-<body>
 
-  <!-- HEADER -->
-  
-  
+<body>
   
   <header class="header">
     <div class="container nav-container">
@@ -48,42 +48,34 @@
     </div>
   </header>
 
-
-
-
-  <!-- LOCATIONS FINDER -->
+  
   <main style="padding-top: 140px; padding-bottom: 80px;">
     <div class="container">
-      <div class="section-header">
-        <h1 style="font-size: 3rem; margin-bottom: 12px; font-family: var(--font-heading);">Find a Location</h1>
-        <p>Find your nearest drive-thru coffee stand. Get hours, amenities, and step-by-step driving directions.</p>
+      <nav aria-label="breadcrumb" style="margin-bottom: 24px; font-size: 0.9rem; color: var(--text-muted);">
+        <a href="/" style="color: var(--color-primary);">Home</a> &gt; 
+        <a href="/7brew-locations" style="color: var(--color-primary);">Locations</a> &gt; 
+        <span style="color: var(--text-gray);">Kansas</span>
+      </nav>
+
+      <div class="section-header" style="text-align: left; margin-bottom: 40px;">
+        <h1 style="font-size: 3rem; margin-bottom: 12px; font-family: var(--font-heading);">7 Brew Locations in Kansas</h1>
+        <p style="font-size: 1.1rem; color: var(--text-gray);">Choose a city below to view local drive-thru addresses, maps, phone numbers, and operational hours.</p>
       </div>
 
-      <!-- Search Controls -->
-      <section class="locations-search-container">
-        <div style="position: relative; flex: 1;">
-          <span style="position: absolute; left: 16px; top: 50%; transform: translateY(-50%); color: var(--text-muted);">&#128269;</span>
-          <input type="text" id="location-search" class="search-input" style="padding-left: 44px; width: 100%;" placeholder="Search by city, address, zip...">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-bottom: 60px;">
+        
+      <div style="background: var(--bg-card); padding: 24px; border-radius: var(--border-radius-md); border: 1px solid var(--border-glass); display: flex; justify-content: space-between; align-items: center;">
+        <div>
+          <h3 style="font-size: 1.4rem; font-family: var(--font-heading); margin: 0; color: var(--text-white);">Wichita</h3>
+          <span style="color: var(--text-gray); font-size: 0.9rem;">5 Active Stands</span>
         </div>
-        <select id="location-state-filter" class="sort-select" style="min-width: 140px;" aria-label="Filter by State">
-          <option value="All">All States</option>
-        </select>
-      </section>
-
-      <!-- Nationwide store finder helper text -->
-      <div style="text-align: center; margin: -10px 0 40px 0; font-size: 0.95rem; color: var(--text-gray);">
-        Looking for a stand in a different region? <a href="https://7brew.com/locations/" target="_blank" rel="noopener noreferrer" style="color: var(--color-primary); font-weight: 600; text-decoration: underline;">Search all 300+ official 7 Brew stands nationwide &rarr;</a>
+        <a href="/locations/wichita-kansas" class="btn btn-secondary" style="font-size: 0.8rem; padding: 8px 16px;">View City</a>
+      </div>
+    
       </div>
 
-      <!-- Locations Grid -->
-      <section class="locations-grid" id="locations-grid">
-        <div style="grid-column: 1/-1; text-align: center; color: var(--text-gray); padding: 40px 0;">Searching for coffee stands...</div>
-      </section>
     </div>
   </main>
-
-  <!-- FOOTER -->
-  
   
   
   <footer class="footer">
@@ -133,11 +125,5 @@
     </div>
   </footer>
 
-
-
-
-  <!-- Scripts -->
-  <script src="assets/js/main.js?v=1.0.6"></script>
-  <script src="assets/js/locations.js?v=1.0.6"></script>
 </body>
 </html>

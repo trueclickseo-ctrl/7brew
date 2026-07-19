@@ -816,22 +816,213 @@ ${getHead(`7 Brew ${drink.name}: Prices, Calories & Copycat Recipe Guide`, `Disc
 });
 
 // ----------------------------------------------------
-// STEP 5: Convert index.html Anchors and Teasers
+// STEP 5: Generate and Pre-render Homepage index.html
 // ----------------------------------------------------
-console.log('Updating index.html navigation and teasers...');
+console.log('Generating pre-rendered filterable index.html...');
 const indexTemplatePath = path.join(__dirname, 'index.html');
-let indexHtml = fs.readFileSync(indexTemplatePath, 'utf8');
 
-// Replace active page header
-indexHtml = indexHtml.replace(/<link rel="canonical" href="[^"]*">/, '<link rel="canonical" href="https://7brewguide.com/">');
-indexHtml = indexHtml.replace(/<header class="header">[\s\S]*?<\/header>/, getHeader('home'));
-indexHtml = indexHtml.replace(/<footer class="footer">[\s\S]*?<\/footer>/, getFooter());
+const categories = ['All', ...new Set(menu.map(item => item.category))];
 
-// Replace links like "index.html#rewards" with clean "/7brew-rewards"
-indexHtml = indexHtml.replaceAll('index.html#rewards', '/7brew-rewards');
-indexHtml = indexHtml.replaceAll('index.html#deals', '/7brew-deals');
+const schemaList = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "7 Brew Coffee Drinks Directory",
+  "numberOfItems": menu.length,
+  "itemListElement": menu.map((item, idx) => {
+    const slug = getSlug(item.name);
+    return {
+      "@type": "ListItem",
+      "position": idx + 1,
+      "url": `https://7brewguide.com/${slug}`,
+      "name": item.name,
+      "description": item.description
+    };
+  })
+};
+const jsonLdSchemaString = `<script type="application/ld+json">${JSON.stringify(schemaList)}</script>`;
 
-fs.writeFileSync(indexTemplatePath, indexHtml, 'utf8');
+const indexHtmlContent = `<!DOCTYPE html>
+<html lang="en">
+${getHead('7 Brew Coffee Guide | Interactive Menu & Review Directory', 'Find calorie facts, ingredients lists, copycat recipes, and secret menu options for all 7 Brew drive-thru drinks.', '/', jsonLdSchemaString)}
+<body>
+  ${getHeader('home')}
+  
+  <main style="padding-top: 140px; padding-bottom: 80px;">
+    <div class="container">
+      
+      <!-- Header section -->
+      <header class="homepage-hero" style="text-align: center; margin-bottom: 40px;">
+        <span style="display: block; font-size: 0.85rem; color: var(--color-primary); font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 8px;">Fan-made guide · not an official menu</span>
+        <h1 style="font-size: 3.5rem; margin-bottom: 12px; font-family: var(--font-heading); color: var(--text-white);">7 Brew Coffee Directory</h1>
+        <p style="font-size: 1.2rem; color: var(--text-gray); max-width: 700px; margin: 0 auto;">Discover ingredients, copycat recipes, calories, and custom flavor mixes for all 65 drinks.</p>
+      </header>
+
+      <!-- Controls Row: Search box + sugar-free toggle -->
+      <section style="display: flex; gap: 20px; flex-wrap: wrap; align-items: center; justify-content: space-between; margin-bottom: 30px; background: var(--bg-card); padding: 20px; border-radius: var(--border-radius-md); border: 2px solid var(--text-white); box-shadow: var(--shadow-card);">
+        <div style="flex: 1; min-width: 250px; position: relative;">
+          <label for="search-input" class="sr-only" style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); border: 0;">Search drinks by name or flavor</label>
+          <span style="position: absolute; left: 16px; top: 50%; transform: translateY(-50%); color: var(--text-muted);">&#128269;</span>
+          <input type="text" id="search-input" style="width: 100%; padding: 12px 16px 12px 44px; border-radius: var(--border-radius-sm); border: 2px solid var(--text-white); background: var(--bg-primary); color: var(--text-white); font-size: 1rem; outline: none;" placeholder="Search drinks (e.g. Blondie, peach, caramel)...">
+        </div>
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <span style="color: var(--text-white); font-weight: bold; font-size: 0.95rem;">Show Sugar-Free Only</span>
+          <label class="switch" style="position: relative; display: inline-block; width: 60px; height: 34px;">
+            <input type="checkbox" id="sf-toggle" style="opacity: 0; width: 0; height: 0;" aria-label="Toggle sugar-free options only">
+            <span class="slider round" style="position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: var(--bg-primary); border: 2px solid var(--text-white); transition: .4s; border-radius: 34px;"></span>
+          </label>
+        </div>
+      </section>
+
+      <!-- Category Filter Pills -->
+      <section style="margin-bottom: 40px; display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;" role="tablist" aria-label="Drink Categories">
+        ${categories.map((cat, idx) => `
+          <button class="filter-pill ${idx === 0 ? 'active' : ''}" data-category="${cat}" role="tab" aria-selected="${idx === 0 ? 'true' : 'false'}" style="padding: 10px 20px; border-radius: 30px; border: 2px solid var(--text-white); background: var(--bg-card); color: var(--text-white); font-weight: bold; cursor: pointer; transition: all 0.2s; font-size: 0.9rem;">
+            ${cat}
+          </button>
+        `).join('')}
+      </section>
+
+      <!-- Empty State -->
+      <div id="empty-state" style="display: none; text-align: center; padding: 60px 0; color: var(--text-gray); font-size: 1.1rem; background: var(--bg-card); border-radius: var(--border-radius-md); border: 2px dashed var(--text-white); margin-bottom: 40px;">
+        <span style="font-size: 2.5rem; display: block; margin-bottom: 15px;">🔍</span>
+        No drinks found matching your active filters. Try clearing your search query or toggling off the sugar-free switch!
+      </div>
+
+      <!-- Drink Grid (Statically Rendered) -->
+      <section id="menu-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 30px; margin-bottom: 50px;">
+        ${menu.map((item, idx) => {
+          const defaultPrice = item.sizes.medium ? item.sizes.medium.price : (item.sizes.small ? item.sizes.small.price : 0);
+          const slug = getSlug(item.name);
+          const isSF = parseFloat(item.sugar) === 0 || item.name.toLowerCase().includes('sugar-free') || item.description.toLowerCase().includes('sugar-free');
+          
+          // Fixed Vibrant Palette Y2K colors
+          const cardColors = ['#1d2b44', '#3b0066', '#004c6d', '#3f1a04', '#470024', '#0d383b', '#4c1e08', '#072e4c'];
+          const cardBg = cardColors[idx % cardColors.length];
+
+          // Extract flavor tags
+          const flavorIngredients = ['caramel', 'vanilla', 'hazelnut', 'coconut', 'blue raspberry', 'blackberry', 'strawberry', 'peach', 'lime', 'mint', 'pumpkin', 'marshmallow', 'cinnamon', 'white chocolate', 'irish cream', 'chocolate', 'raspberry', 'passion fruit', 'mango', 'watermelon', 'cherry', 'kiwi', 'pomegranate', 'banana', 'cupcake'];
+          const tags = item.ingredients.filter(ing => flavorIngredients.some(f => ing.toLowerCase().includes(f)));
+
+          return `
+            <a href="/${slug}" class="drink-card" data-name="${item.name.replace(/"/g, '&quot;')}" data-category="${item.category}" data-sf="${isSF}" data-tags="${tags.join(',').replace(/"/g, '&quot;')}" style="display: flex; flex-direction: column; background: ${cardBg}; border: 2px solid var(--text-white); border-radius: var(--border-radius-md); box-shadow: var(--shadow-card); text-decoration: none; color: var(--text-white); overflow: hidden; transition: transform 0.2s, box-shadow 0.2s; position: relative;">
+              <div class="drink-image-wrap" style="height: 180px; overflow: hidden; position: relative;">
+                <img src="${getImageUrl(item)}" alt="${item.name}" onerror="this.src='https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=600&auto=format&fit=crop';" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
+                ${isSF ? `<span style="position: absolute; top: 12px; right: 12px; background: #00ff66; color: #000; font-weight: 900; font-size: 0.75rem; padding: 4px 8px; border-radius: 4px; text-transform: uppercase; border: 1px solid #000;">Sugar Free</span>` : ''}
+              </div>
+              <div style="padding: 20px; display: flex; flex-direction: column; flex: 1; justify-content: space-between;">
+                <div>
+                  <span style="font-size: 0.75rem; text-transform: uppercase; font-weight: bold; color: var(--color-primary); letter-spacing: 0.05em; display: block; margin-bottom: 6px;">${item.category}</span>
+                  <h3 style="font-size: 1.4rem; margin: 0 0 10px 0; font-family: var(--font-heading); color: var(--text-white); line-height: 1.2;">${item.name}</h3>
+                  <p style="font-size: 0.85rem; color: #cccccc; margin: 0 0 15px 0; line-height: 1.4;">${item.description}</p>
+                </div>
+                <div>
+                  <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 15px;">
+                    ${tags.map(t => `<span style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 12px; font-size: 0.7rem; padding: 2px 8px; text-transform: capitalize;">${t}</span>`).join('')}
+                  </div>
+                  <div style="display: flex; align-items: center; justify-content: space-between; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.15);">
+                    <span style="font-weight: bold; font-size: 1.1rem; color: var(--color-secondary);">$${defaultPrice.toFixed(2)}</span>
+                    <span style="font-size: 0.8rem; font-weight: bold; text-decoration: underline; color: var(--color-primary);">See Recipe &rarr;</span>
+                  </div>
+                </div>
+              </div>
+            </a>
+          `;
+        }).join('')}
+      </section>
+
+      <!-- Floating Surprise Me Button -->
+      <button id="surprise-btn" class="btn btn-primary" style="position: fixed; bottom: 30px; right: 30px; z-index: 100; border-radius: 50px; padding: 14px 28px; font-weight: bold; font-size: 1rem; border: 2px solid var(--text-white); box-shadow: 4px 4px 0px #000; cursor: pointer; display: flex; align-items: center; gap: 8px;" aria-label="Select a random drink">
+        🎲 Surprise Me
+      </button>
+
+    </div>
+  </main>
+
+  ${getFooter()}
+
+  <!-- Client-side filtering script -->
+  <script>
+    const searchInput = document.getElementById('search-input');
+    const sfToggle = document.getElementById('sf-toggle');
+    const filterPills = document.querySelectorAll('.filter-pill');
+    const cards = document.querySelectorAll('.drink-card');
+    const emptyState = document.getElementById('empty-state');
+    
+    let currentCategory = 'All';
+
+    function filterCards() {
+      const query = searchInput.value.toLowerCase().trim();
+      const showOnlySF = sfToggle.checked;
+      let visibleCount = 0;
+
+      cards.forEach(card => {
+        const name = card.getAttribute('data-name').toLowerCase();
+        const tags = card.getAttribute('data-tags').toLowerCase();
+        const category = card.getAttribute('data-category');
+        const isSF = card.getAttribute('data-sf') === 'true';
+
+        const matchesSearch = name.includes(query) || tags.includes(query);
+        const matchesCategory = (currentCategory === 'All' || category === currentCategory);
+        const matchesSF = (!showOnlySF || isSF);
+
+        if (matchesSearch && matchesCategory && matchesSF) {
+          card.style.display = 'flex';
+          visibleCount++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      if (visibleCount === 0) {
+        emptyState.style.display = 'block';
+        emptyState.setAttribute('aria-hidden', 'false');
+      } else {
+        emptyState.style.display = 'none';
+        emptyState.setAttribute('aria-hidden', 'true');
+      }
+    }
+
+    searchInput.addEventListener('input', filterCards);
+    sfToggle.addEventListener('change', filterCards);
+
+    filterPills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        filterPills.forEach(p => {
+          p.classList.remove('active');
+          p.setAttribute('aria-selected', 'false');
+        });
+        pill.classList.add('active');
+        pill.setAttribute('aria-selected', 'true');
+        currentCategory = pill.getAttribute('data-category');
+        filterCards();
+      });
+    });
+
+    // Surprise Me Button
+    const surpriseBtn = document.getElementById('surprise-btn');
+    if (surpriseBtn) {
+      surpriseBtn.addEventListener('click', () => {
+        const visibleCards = Array.from(cards).filter(c => c.style.display !== 'none');
+        if (visibleCards.length > 0) {
+          const randomCard = visibleCards[Math.floor(Math.random() * visibleCards.length)];
+          randomCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          randomCard.focus();
+          
+          // Highlight animation
+          randomCard.style.outline = '4px solid var(--color-primary)';
+          randomCard.style.transform = 'scale(1.05)';
+          setTimeout(() => {
+            randomCard.style.outline = '';
+            randomCard.style.transform = '';
+          }, 1500);
+        }
+      });
+    }
+  </script>
+</body>
+</html>`;
+
+fs.writeFileSync(indexTemplatePath, indexHtmlContent, 'utf8');
 
 // ----------------------------------------------------
 // STEP 6: Update existing rewards.html, deals.html, secret-menu.html

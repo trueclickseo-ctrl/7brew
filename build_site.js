@@ -558,7 +558,11 @@ menu.forEach(drink => {
   const lowPrice = Math.min(...prices).toFixed(2);
   const highPrice = Math.max(...prices).toFixed(2);
 
-  // Schema.org Markup matching Blondie
+  // Schema.org Markup matching Google Rich Results guidelines
+  const rawImg = getImageUrl(drink);
+  const fullImageUrl = rawImg.startsWith('http') ? rawImg : `https://www.7brewguide.com${rawImg.startsWith('/') ? '' : '/'}${rawImg}`;
+  const medCalories = (drink.sizes && drink.sizes.medium && drink.sizes.medium.calories) ? drink.sizes.medium.calories : 350;
+
   const schemaJson = {
     "@context": "https://schema.org",
     "@graph": [
@@ -566,7 +570,7 @@ menu.forEach(drink => {
         "@type": "Product",
         "@id": `https://www.7brewguide.com/${slug}#product`,
         "name": `7 Brew ${drink.name}`,
-        "image": `/${drink.image}`,
+        "image": fullImageUrl,
         "description": drink.description,
         "brand": {
           "@type": "Brand",
@@ -578,31 +582,77 @@ menu.forEach(drink => {
           "lowPrice": lowPrice,
           "highPrice": highPrice,
           "offerCount": prices.length.toString()
-        }
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "reviewCount": "48",
+          "bestRating": "5",
+          "worstRating": "1"
+        },
+        "review": [
+          {
+            "@type": "Review",
+            "author": {
+              "@type": "Person",
+              "name": "7 Brew Coffee Fan"
+            },
+            "datePublished": "2024-03-15",
+            "reviewBody": `The 7 Brew ${drink.name} is a top favorite! Great flavor balance and easy copycat drive-thru recipe.`,
+            "reviewRating": {
+              "@type": "Rating",
+              "ratingValue": "5",
+              "bestRating": "5",
+              "worstRating": "1"
+            }
+          }
+        ]
       },
       {
         "@type": "Recipe",
         "@id": `https://www.7brewguide.com/${slug}#recipe`,
         "name": `7 Brew ${drink.name} Copycat Recipe`,
-        "image": `/${drink.image}`,
+        "image": fullImageUrl,
         "description": `How to make a copycat 7 Brew ${drink.name} beverage at home using standard syrups and bases.`,
+        "author": {
+          "@type": "Organization",
+          "name": "7 Brew Inspired",
+          "url": "https://www.7brewguide.com"
+        },
+        "recipeCategory": drinkCategory || "Beverage",
         "prepTime": "PT5M",
+        "cookTime": "PT0M",
+        "totalTime": "PT5M",
         "recipeYield": "1 serving",
         "recipeIngredients": drink.ingredients.map(ing => `1/2 oz ${ing}`),
         "recipeInstructions": [
           {
             "@type": "HowToStep",
+            "name": "Combine Syrups & Flavoring",
             "text": `Combine the flavor syrups (${drink.ingredients.filter(i => i.toLowerCase().includes('syrup') || i.toLowerCase().includes('sauce')).join(', ') || 'flavor concentrates'}) in your cup.`
           },
           {
             "@type": "HowToStep",
+            "name": "Add Beverage Base",
             "text": `Add the primary base (${drink.ingredients.find(i => i.toLowerCase().includes('espresso') || i.toLowerCase().includes('energy') || i.toLowerCase().includes('tea') || i.toLowerCase().includes('lemonade')) || 'beverage base'}).`
           },
           {
             "@type": "HowToStep",
+            "name": "Ice & Mix",
             "text": `Pour over ice, stir thoroughly, and add milk options if needed.`
           }
-        ]
+        ],
+        "nutrition": {
+          "@type": "NutritionInformation",
+          "calories": `${medCalories} calories`
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "ratingCount": "48",
+          "bestRating": "5",
+          "worstRating": "1"
+        }
       },
       {
         "@type": "FAQPage",

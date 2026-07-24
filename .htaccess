@@ -2,6 +2,10 @@ DirectoryIndex index.html
 
 RewriteEngine On
 
+# Enforce canonical www domain (Redirect non-www to www)
+RewriteCond %{HTTP_HOST} ^7brewguide\.com$ [NC]
+RewriteRule ^(.*)$ https://www.7brewguide.com/$1 [R=301,L]
+
 # Redirect direct HTML file requests to clean 7brew- URLs
 RewriteCond %{THE_REQUEST} \s/calorie-calculator\.html\s [NC]
 RewriteRule ^ 7brew-calorie-calculator [R=301,L]

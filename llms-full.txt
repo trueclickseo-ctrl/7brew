@@ -1,0 +1,733 @@
+# 7 Brew Coffee Inspired Fan Guide - Complete Dataset
+
+This document provides a complete, machine-readable dataset for AI agents and LLMs covering all 7 Brew drinks, calories, copycat recipes, secret menu items, blog guides, and location directories.
+
+## Drink Database & Nutrition
+
+### 1. Blondie
+- **Category**: 7 Originals
+- **Description**: Our famous caramel and vanilla breve. Rich, creamy, and perfectly sweet.
+- **Ingredients**: Espresso, Caramel Sauce, Vanilla Syrup, Breve Mix (Half & Half)
+- **Caffeine Content**: 150mg
+- **Sugar Content (Medium)**: 36g
+- **Calories & Pricing**:
+  - Small: 320 cal ($4.99)
+  - Medium: 460 cal ($5.49)
+  - Large: 610 cal ($5.99)
+
+### 2. Brunette
+- **Category**: 7 Originals
+- **Description**: A delicious hazelnut and caramel mocha. Decadently sweet and bold.
+- **Ingredients**: Espresso, Hazelnut Syrup, Caramel Sauce, Chocolate Milk
+- **Caffeine Content**: 150mg
+- **Sugar Content (Medium)**: 42g
+- **Calories & Pricing**:
+  - Small: 340 cal ($4.99)
+  - Medium: 490 cal ($5.49)
+  - Large: 640 cal ($5.99)
+
+### 3. Smooth 7
+- **Category**: 7 Originals
+- **Description**: Irish cream and white chocolate breve. The ultimate smooth pick-me-up.
+- **Ingredients**: Espresso, Irish Cream Syrup, White Chocolate Sauce, Breve Mix (Half & Half)
+- **Caffeine Content**: 150mg
+- **Sugar Content (Medium)**: 38g
+- **Calories & Pricing**:
+  - Small: 330 cal ($5.15)
+  - Medium: 470 cal ($5.65)
+  - Large: 620 cal ($6.15)
+
+### 4. Cinnamon Roll
+- **Category**: 7 Originals
+- **Description**: Brown sugar cinnamon and white chocolate breve. Tastes just like a fresh pastry.
+- **Ingredients**: Espresso, Brown Sugar Cinnamon Syrup, White Chocolate Sauce, Breve Mix
+- **Caffeine Content**: 150mg
+- **Sugar Content (Medium)**: 35g
+- **Calories & Pricing**:
+  - Small: 310 cal ($4.99)
+  - Medium: 450 cal ($5.49)
+  - Large: 600 cal ($5.99)
+
+### 5. White Mac
+- **Category**: 7 Originals
+- **Description**: White chocolate and macadamia nut breve. Nutty, sweet, and velvety.
+- **Ingredients**: Espresso, White Chocolate Sauce, Macadamia Nut Syrup, Breve Mix
+- **Caffeine Content**: 150mg
+- **Sugar Content (Medium)**: 34g
+- **Calories & Pricing**:
+  - Small: 325 cal ($4.99)
+  - Medium: 465 cal ($5.49)
+  - Large: 615 cal ($5.99)
+
+### 6. German Chocolate
+- **Category**: 7 Originals
+- **Description**: Coconut and caramel mocha. A rich dessert-like coffee experience.
+- **Ingredients**: Espresso, Coconut Syrup, Caramel Sauce, Chocolate Milk
+- **Caffeine Content**: 150mg
+- **Sugar Content (Medium)**: 45g
+- **Calories & Pricing**:
+  - Small: 350 cal ($5.25)
+  - Medium: 500 cal ($5.75)
+  - Large: 660 cal ($6.25)
+
+### 7. Snickerz
+- **Category**: 7 Originals
+- **Description**: An official 7 Original mocha flavored with hazelnut and caramel, finished with caramel drizzle.
+- **Ingredients**: Espresso, Hazelnut Syrup, Caramel Syrup, Chocolate Milk, Caramel Drizzle
+- **Caffeine Content**: 150mg
+- **Sugar Content (Medium)**: 40g
+- **Calories & Pricing**:
+  - Small: 250 cal ($5.25)
+  - Medium: 390 cal ($5.95)
+  - Large: 520 cal ($6.95)
+
+### 8. Triple Seven
+- **Category**: 7 Originals
+- **Description**: Our classic Blondie recipe but with an extra shot of espresso to kickstart your day.
+- **Ingredients**: 3x Espresso Shots, Caramel Sauce, Vanilla Syrup, Breve Mix
+- **Caffeine Content**: 225mg
+- **Sugar Content (Medium)**: 36g
+- **Calories & Pricing**:
+  - Small: 330 cal ($5.99)
+  - Medium: 470 cal ($6.49)
+  - Large: 620 cal ($6.99)
+
+### 9. Classic Latte
+- **Category**: 7 Classics
+- **Description**: Rich espresso combined with steamed milk and a light layer of foam.
+- **Ingredients**: Espresso Shots, Steamed Whole Milk, Foam
+- **Caffeine Content**: 150mg
+- **Sugar Content (Medium)**: 12g
+- **Calories & Pricing**:
+  - Small: 150 cal ($3.75)
+  - Medium: 220 cal ($4.75)
+  - Large: 290 cal ($5.75)
+
+### 10. Classic Mocha
+- **Category**: 7 Classics
+- **Description**: Rich espresso shots combined with sweet chocolate milk.
+- **Ingredients**: Espresso Shots, Steamed Chocolate Milk
+- **Caffeine Content**: 150mg
+- **Sugar Content (Medium)**: 36g
+- **Calories & Pricing**:
+  - Small: 280 cal ($3.99)
+  - Medium: 380 cal ($4.99)
+  - Large: 490 cal ($5.99)
+
+### 11. Classic Macchiato
+- **Category**: 7 Classics
+- **Description**: Delicious layered espresso over milk with a sweet caramel drizzle.
+- **Ingredients**: Espresso Shots, Steamed Milk, Caramel Drizzle, Vanilla Syrup
+- **Caffeine Content**: 150mg
+- **Sugar Content (Medium)**: 28g
+- **Calories & Pricing**:
+  - Small: 240 cal ($3.99)
+  - Medium: 320 cal ($4.99)
+  - Large: 410 cal ($5.99)
+
+### 12. Classic Breve
+- **Category**: 7 Classics
+- **Description**: Traditional espresso coffee crafted with steamed half-and-half.
+- **Ingredients**: Espresso Shots, Steamed Half & Half Cream
+- **Caffeine Content**: 150mg
+- **Sugar Content (Medium)**: 14g
+- **Calories & Pricing**:
+  - Small: 290 cal ($3.99)
+  - Medium: 410 cal ($4.99)
+  - Large: 540 cal ($5.99)
+
+### 13. Classic Cappuccino
+- **Category**: 7 Classics
+- **Description**: Espresso with equal parts steamed milk and deep velvety milk foam.
+- **Ingredients**: Espresso Shots, Steamed Milk, Extra Thick Foam
+- **Caffeine Content**: 150mg
+- **Sugar Content (Medium)**: 8g
+- **Calories & Pricing**:
+  - Small: 110 cal ($3.75)
+  - Medium: 160 cal ($4.75)
+  - Large: 210 cal ($5.75)
+
+### 14. Classic Americano
+- **Category**: 7 Classics
+- **Description**: Espresso shots combined with hot water for a bold drip-style alternative.
+- **Ingredients**: Espresso Shots, Hot Water
+- **Caffeine Content**: 180mg
+- **Sugar Content (Medium)**: 0g
+- **Calories & Pricing**:
+  - Small: 5 cal ($3.5)
+  - Medium: 10 cal ($4)
+  - Large: 15 cal ($4.5)
+
+### 15. Classic Cold Brew
+- **Category**: 7 Classics
+- **Description**: Steeped slowly for 20 hours, creating an incredibly smooth and low-acid iced coffee.
+- **Ingredients**: Cold Brewed Coffee Extract, Water, Ice
+- **Caffeine Content**: 200mg
+- **Sugar Content (Medium)**: 0g
+- **Calories & Pricing**:
+  - Small: 5 cal ($4.25)
+  - Medium: 10 cal ($5.25)
+  - Large: 15 cal ($6.25)
+
+### 16. Pumpkin Spice Dream
+- **Category**: Featured Drinks
+- **Description**: Cozy pumpkin spice combined with vanilla and white chocolate mocha.
+- **Ingredients**: Espresso, Pumpkin Spice Syrup, White Chocolate Sauce, Vanilla, Chocolate Milk
+- **Caffeine Content**: 150mg
+- **Sugar Content (Medium)**: 48g
+- **Calories & Pricing**:
+  - Small: 360 cal ($5.25)
+  - Medium: 510 cal ($5.75)
+  - Large: 670 cal ($6.25)
+
+### 17. Crandaddy Energy
+- **Category**: Featured Drinks
+- **Description**: A carbonated holiday energy mixer combining tart cranberry and sweet pomegranate syrups.
+- **Ingredients**: 7 Brew Energy Base, Cranberry Syrup, Pomegranate Syrup, Ice
+- **Caffeine Content**: 160mg
+- **Sugar Content (Medium)**: 38g
+- **Calories & Pricing**:
+  - Small: 170 cal ($3.99)
+  - Medium: 240 cal ($4.99)
+  - Large: 320 cal ($5.99)
+
+### 18. Campfire Cocoa Mocha
+- **Category**: Featured Drinks
+- **Description**: Cozy toasted marshmallow flavor combined with rich, hot chocolate milk and espresso.
+- **Ingredients**: Espresso, Toasted Marshmallow Syrup, Steamed Chocolate Milk
+- **Caffeine Content**: 150mg
+- **Sugar Content (Medium)**: 44g
+- **Calories & Pricing**:
+  - Small: 380 cal ($5.25)
+  - Medium: 520 cal ($5.75)
+  - Large: 690 cal ($6.25)
+
+### 19. Cinnamon Roll Chiller
+- **Category**: Featured Drinks
+- **Description**: Double-blended chiller with sweet brown sugar cinnamon and white chocolate.
+- **Ingredients**: Chiller Espresso Base, Brown Sugar Cinnamon Syrup, White Chocolate Sauce, Whipped Cream
+- **Caffeine Content**: 120mg
+- **Sugar Content (Medium)**: 58g
+- **Calories & Pricing**:
+  - Small: 440 cal ($5.49)
+  - Medium: 590 cal ($5.99)
+  - Large: 760 cal ($6.49)
+
+### 20. Cherry Blossom Fizz
+- **Category**: Featured Drinks
+- **Description**: Sparkling soda with a refreshing blend of wild cherry and sweet peach syrups.
+- **Ingredients**: Sparkling Soda Base, Cherry Syrup, Peach Syrup, Ice
+- **Caffeine Content**: 0mg
+- **Sugar Content (Medium)**: 26g
+- **Calories & Pricing**:
+  - Small: 110 cal ($3.25)
+  - Medium: 160 cal ($4.25)
+  - Large: 220 cal ($5.25)
+
+### 21. Ocean Breeze
+- **Category**: 7 Energy
+- **Description**: Blue raspberry and coconut syrups mixed with our signature 7 Energy base.
+- **Ingredients**: 7 Energy Base, Blue Raspberry Syrup, Coconut Syrup
+- **Caffeine Content**: 160mg
+- **Sugar Content (Medium)**: 35g
+- **Calories & Pricing**:
+  - Small: 100 cal ($5.85)
+  - Medium: 260 cal ($6.55)
+  - Large: 450 cal ($7.65)
+
+### 22. Tropic Thunder
+- **Category**: 7 Energy
+- **Description**: Sweet mango and pineapple syrups mixed with our signature 7 Energy base.
+- **Ingredients**: 7 Energy Base, Mango Syrup, Pineapple Syrup
+- **Caffeine Content**: 160mg
+- **Sugar Content (Medium)**: 35g
+- **Calories & Pricing**:
+  - Small: 100 cal ($5.85)
+  - Medium: 260 cal ($6.55)
+  - Large: 450 cal ($7.65)
+
+### 23. Sunrise
+- **Category**: 7 Energy
+- **Description**: Sweet peach and raspberry syrups mixed with our signature 7 Energy base.
+- **Ingredients**: 7 Energy Base, Peach Syrup, Raspberry Syrup
+- **Caffeine Content**: 160mg
+- **Sugar Content (Medium)**: 35g
+- **Calories & Pricing**:
+  - Small: 100 cal ($5.85)
+  - Medium: 260 cal ($6.55)
+  - Large: 450 cal ($7.65)
+
+### 24. Seven Energy Blue Punch
+- **Category**: 7 Energy
+- **Description**: Blue raspberry, peach, and raspberry syrup blended into our signature Energy Drink.
+- **Ingredients**: 7 Brew Energy Base, Blue Raspberry Syrup, Peach Syrup, Raspberry Syrup
+- **Caffeine Content**: 160mg
+- **Sugar Content (Medium)**: 44g
+- **Calories & Pricing**:
+  - Small: 180 cal ($3.99)
+  - Medium: 260 cal ($4.99)
+  - Large: 340 cal ($5.99)
+
+### 25. Dragon's Blood
+- **Category**: 7 Energy
+- **Description**: A popular blend of cherry and raspberry syrups mixed with 7 Energy and topped with fresh cream.
+- **Ingredients**: 7 Energy Base, Cherry Syrup, Raspberry Syrup, Drizzle of Cream, Ice
+- **Caffeine Content**: 160mg
+- **Sugar Content (Medium)**: 42g
+- **Calories & Pricing**:
+  - Small: 180 cal ($3.99)
+  - Medium: 260 cal ($4.99)
+  - Large: 340 cal ($5.99)
+
+### 26. Tiger's Blood
+- **Category**: 7 Energy
+- **Description**: Vibrant energy blend combining coconut and sweet strawberry syrups.
+- **Ingredients**: 7 Energy Base, Coconut Syrup, Strawberry Syrup, Ice
+- **Caffeine Content**: 160mg
+- **Sugar Content (Medium)**: 45g
+- **Calories & Pricing**:
+  - Small: 190 cal ($3.99)
+  - Medium: 270 cal ($4.99)
+  - Large: 350 cal ($5.99)
+
+### 27. Georgia Peach
+- **Category**: 7 Energy
+- **Description**: Sweet southern-style peach syrup mixed with fresh strawberry syrup and energy.
+- **Ingredients**: 7 Energy Base, Peach Syrup, Strawberry Syrup, Ice
+- **Caffeine Content**: 160mg
+- **Sugar Content (Medium)**: 41g
+- **Calories & Pricing**:
+  - Small: 180 cal ($3.99)
+  - Medium: 255 cal ($4.99)
+  - Large: 335 cal ($5.99)
+
+### 28. Orange Sherbet
+- **Category**: 7 Energy
+- **Description**: A dessert-inspired energy refresher combining orange, strawberry, and smooth vanilla syrups.
+- **Ingredients**: 7 Energy Base, Orange Syrup, Strawberry Syrup, Vanilla Syrup, Ice
+- **Caffeine Content**: 160mg
+- **Sugar Content (Medium)**: 44g
+- **Calories & Pricing**:
+  - Small: 195 cal ($3.99)
+  - Medium: 275 cal ($4.99)
+  - Large: 355 cal ($5.99)
+
+### 29. Pink Mermaid Fizz
+- **Category**: 7 Fizz
+- **Description**: Sparkling water paired with sweet strawberry, watermelon, and tropical coconut syrups.
+- **Ingredients**: Sparkling Water, Strawberry Syrup, Watermelon Syrup, Coconut Syrup, Ice
+- **Caffeine Content**: 0mg
+- **Sugar Content (Medium)**: 25g
+- **Calories & Pricing**:
+  - Small: 110 cal ($3.25)
+  - Medium: 160 cal ($4.25)
+  - Large: 210 cal ($5.25)
+
+### 30. Black Mamba Fizz
+- **Category**: 7 Fizz
+- **Description**: A dark carbonated delight combining strawberry, passion fruit, and blue raspberry.
+- **Ingredients**: Sparkling Water, Strawberry Syrup, Passion Fruit, Blue Raspberry, Ice
+- **Caffeine Content**: 0mg
+- **Sugar Content (Medium)**: 28g
+- **Calories & Pricing**:
+  - Small: 120 cal ($3.25)
+  - Medium: 170 cal ($4.25)
+  - Large: 230 cal ($5.25)
+
+### 31. Hawaiian Punch Fizz
+- **Category**: 7 Fizz
+- **Description**: A carbonated tropical wave combining passion fruit, fresh orange, and pomegranate.
+- **Ingredients**: Sparkling Water, Passion Fruit, Orange Syrup, Pomegranate Syrup, Ice
+- **Caffeine Content**: 0mg
+- **Sugar Content (Medium)**: 26g
+- **Calories & Pricing**:
+  - Small: 115 cal ($3.25)
+  - Medium: 165 cal ($4.25)
+  - Large: 220 cal ($5.25)
+
+### 32. Firecracker Fizz
+- **Category**: 7 Fizz
+- **Description**: An explosive carbonated citrus refresher combining orange, pomegranate, and red raspberry.
+- **Ingredients**: Sparkling Water, Orange Syrup, Pomegranate Syrup, Raspberry Syrup, Ice
+- **Caffeine Content**: 0mg
+- **Sugar Content (Medium)**: 28g
+- **Calories & Pricing**:
+  - Small: 120 cal ($3.25)
+  - Medium: 170 cal ($4.25)
+  - Large: 230 cal ($5.25)
+
+### 33. Sunny 7 Fizz
+- **Category**: 7 Fizz
+- **Description**: Sweet peach syrup paired with tropical passion fruit and carbonated water.
+- **Ingredients**: Sparkling Water, Peach Syrup, Passion Fruit Syrup, Ice
+- **Caffeine Content**: 0mg
+- **Sugar Content (Medium)**: 23g
+- **Calories & Pricing**:
+  - Small: 105 cal ($3.25)
+  - Medium: 145 cal ($4.25)
+  - Large: 195 cal ($5.25)
+
+### 34. Georgia Peach Tea
+- **Category**: Teas, Chai & Matcha
+- **Description**: Sweet southern peach and fresh strawberry syrup mixed with organic iced black tea.
+- **Ingredients**: Brewed Black Tea, Peach Syrup, Strawberry Syrup, Ice
+- **Caffeine Content**: 45mg
+- **Sugar Content (Medium)**: 22g
+- **Calories & Pricing**:
+  - Small: 90 cal ($2.99)
+  - Medium: 130 cal ($3.99)
+  - Large: 180 cal ($4.99)
+
+### 35. Hula Tea
+- **Category**: Teas, Chai & Matcha
+- **Description**: A tropical iced green tea blend with pineapple and sweet peach syrups.
+- **Ingredients**: Brewed Green Tea, Pineapple Syrup, Peach Syrup, Ice
+- **Caffeine Content**: 35mg
+- **Sugar Content (Medium)**: 24g
+- **Calories & Pricing**:
+  - Small: 95 cal ($2.99)
+  - Medium: 135 cal ($3.99)
+  - Large: 185 cal ($4.99)
+
+### 36. Brewchata Chai
+- **Category**: Teas, Chai & Matcha
+- **Description**: Sweet, spiced Chai tea combined with cinnamon syrup and creamy breve mix.
+- **Ingredients**: Chai Tea Extract, Cinnamon Syrup, Breve Cream Mix, Steamed Milk
+- **Caffeine Content**: 60mg
+- **Sugar Content (Medium)**: 38g
+- **Calories & Pricing**:
+  - Small: 260 cal ($3.99)
+  - Medium: 380 cal ($4.49)
+  - Large: 490 cal ($4.99)
+
+### 37. Strawberry Matcha
+- **Category**: Teas, Chai & Matcha
+- **Description**: Vibrant Japanese matcha layered with milk and sweetened real strawberry syrup.
+- **Ingredients**: Matcha Powder, Whole Milk, Strawberry Syrup, Ice
+- **Caffeine Content**: 70mg
+- **Sugar Content (Medium)**: 32g
+- **Calories & Pricing**:
+  - Small: 240 cal ($4.25)
+  - Medium: 330 cal ($4.75)
+  - Large: 420 cal ($5.25)
+
+### 38. Cereal Milk Matcha
+- **Category**: Teas, Chai & Matcha
+- **Description**: Vibrant matcha green tea mixed with sweet vanilla and toasted marshmallow.
+- **Ingredients**: Matcha Powder, Toasted Marshmallow Syrup, Vanilla Syrup, Whole Milk
+- **Caffeine Content**: 70mg
+- **Sugar Content (Medium)**: 34g
+- **Calories & Pricing**:
+  - Small: 250 cal ($4.25)
+  - Medium: 340 cal ($4.75)
+  - Large: 435 cal ($5.25)
+
+### 39. Electric Berry Lemonade
+- **Category**: Lemonades
+- **Description**: Tart lemonade mixed with blue raspberry and wildberry syrups.
+- **Ingredients**: Premium Lemonade Base, Blue Raspberry Syrup, Wildberry Syrup, Ice
+- **Caffeine Content**: 0mg
+- **Sugar Content (Medium)**: 34g
+- **Calories & Pricing**:
+  - Small: 140 cal ($3.25)
+  - Medium: 200 cal ($4.25)
+  - Large: 270 cal ($5.25)
+
+### 40. Pink Paradise Lemonade
+- **Category**: Lemonades
+- **Description**: Tart fresh lemonade blended with sweet strawberry syrup and creamy coconut milk.
+- **Ingredients**: Premium Lemonade Base, Strawberry Syrup, Coconut Milk, Ice
+- **Caffeine Content**: 0mg
+- **Sugar Content (Medium)**: 32g
+- **Calories & Pricing**:
+  - Small: 150 cal ($3.25)
+  - Medium: 210 cal ($4.25)
+  - Large: 280 cal ($5.25)
+
+### 41. Blackberry Cobbler Lemonade
+- **Category**: Lemonades
+- **Description**: Sweet wild blackberry syrup combined with gourmet white chocolate and tart lemonade.
+- **Ingredients**: Premium Lemonade Base, Blackberry Syrup, White Chocolate Sauce, Ice
+- **Caffeine Content**: 0mg
+- **Sugar Content (Medium)**: 36g
+- **Calories & Pricing**:
+  - Small: 160 cal ($3.25)
+  - Medium: 220 cal ($4.25)
+  - Large: 295 cal ($5.25)
+
+### 42. Thunder Lemonade
+- **Category**: Lemonades
+- **Description**: An intense, electrifying combination of double blue raspberry and sweet pomegranate.
+- **Ingredients**: Premium Lemonade Base, Double Blue Raspberry Syrup, Pomegranate Syrup, Ice
+- **Caffeine Content**: 0mg
+- **Sugar Content (Medium)**: 33g
+- **Calories & Pricing**:
+  - Small: 145 cal ($3.25)
+  - Medium: 205 cal ($4.25)
+  - Large: 275 cal ($5.25)
+
+### 43. Brew Lagoon Lemonade
+- **Category**: Lemonades
+- **Description**: Our signature tropical blend of blue raspberry, coconut, and fresh key lime juice.
+- **Ingredients**: Premium Lemonade Base, Blue Raspberry Syrup, Coconut Syrup, Key Lime Juice, Ice
+- **Caffeine Content**: 0mg
+- **Sugar Content (Medium)**: 30g
+- **Calories & Pricing**:
+  - Small: 130 cal ($3.25)
+  - Medium: 185 cal ($4.25)
+  - Large: 250 cal ($5.25)
+
+### 44. Strawberry Smoothie
+- **Category**: Smoothies
+- **Description**: Thick, icy blend made with real strawberry fruit purees.
+- **Ingredients**: Strawberry Puree, Ice Cream Blend Mix, Ice
+- **Caffeine Content**: 0mg
+- **Sugar Content (Medium)**: 52g
+- **Calories & Pricing**:
+  - Small: 280 cal ($4.99)
+  - Medium: 400 cal ($5.99)
+  - Large: 520 cal ($6.99)
+
+### 45. Mango Smoothie
+- **Category**: Smoothies
+- **Description**: Deliciously sweet blended smoothie made with real tropical mango puree.
+- **Ingredients**: Mango Puree Base, Ice Cream Blend Mix, Ice
+- **Caffeine Content**: 0mg
+- **Sugar Content (Medium)**: 56g
+- **Calories & Pricing**:
+  - Small: 290 cal ($4.99)
+  - Medium: 410 cal ($5.99)
+  - Large: 530 cal ($6.99)
+
+### 46. Peach Smoothie
+- **Category**: Smoothies
+- **Description**: A thick, refreshing sweet peach puree blended to icy perfection.
+- **Ingredients**: Georgia Peach Puree, Ice Cream Blend Mix, Ice
+- **Caffeine Content**: 0mg
+- **Sugar Content (Medium)**: 48g
+- **Calories & Pricing**:
+  - Small: 270 cal ($4.99)
+  - Medium: 390 cal ($5.99)
+  - Large: 510 cal ($6.99)
+
+### 47. Wildberry Smoothie
+- **Category**: Smoothies
+- **Description**: A delicious berry blast blending real raspberry, blackberry, and blueberry purees.
+- **Ingredients**: Wildberry Puree Base, Ice Cream Blend Mix, Ice
+- **Caffeine Content**: 0mg
+- **Sugar Content (Medium)**: 58g
+- **Calories & Pricing**:
+  - Small: 295 cal ($4.99)
+  - Medium: 415 cal ($5.99)
+  - Large: 535 cal ($6.99)
+
+### 48. Green Apple Smoothie
+- **Category**: Smoothies
+- **Description**: A sweet and tart blended chiller made with real green apple puree.
+- **Ingredients**: Green Apple Puree Base, Ice Cream Blend Mix, Ice
+- **Caffeine Content**: 0mg
+- **Sugar Content (Medium)**: 46g
+- **Calories & Pricing**:
+  - Small: 260 cal ($4.99)
+  - Medium: 380 cal ($5.99)
+  - Large: 500 cal ($6.99)
+
+### 49. Strawberry Cake Shake
+- **Category**: Shakes
+- **Description**: Creamy strawberry milkshake blended with rich vanilla bean cake flavor.
+- **Ingredients**: Strawberry Flavor, Cupcake Syrup, Milkshake Base, Whipped Cream
+- **Caffeine Content**: 0mg
+- **Sugar Content (Medium)**: 46g
+- **Calories & Pricing**:
+  - Small: 360 cal ($4.99)
+  - Medium: 490 cal ($5.99)
+  - Large: 620 cal ($6.99)
+
+### 50. Cookies & Cream Shake
+- **Category**: Shakes
+- **Description**: Creamy, decadent vanilla shake loaded with blended cookie crumbles and dark chocolate sauce.
+- **Ingredients**: Vanilla Bean Base, Chocolate Cookie Pieces, Dark Chocolate Sauce, Whipped Cream
+- **Caffeine Content**: 0mg
+- **Sugar Content (Medium)**: 48g
+- **Calories & Pricing**:
+  - Small: 380 cal ($4.99)
+  - Medium: 520 cal ($5.99)
+  - Large: 660 cal ($6.99)
+
+### 51. Caramel Drizzle Shake
+- **Category**: Shakes
+- **Description**: Classic sweet vanilla shake base heavily loaded and layered with rich caramel sauce.
+- **Ingredients**: Vanilla Shake Base, Gourmet Caramel Drizzle, Whipped Cream
+- **Caffeine Content**: 0mg
+- **Sugar Content (Medium)**: 42g
+- **Calories & Pricing**:
+  - Small: 350 cal ($4.99)
+  - Medium: 480 cal ($5.99)
+  - Large: 610 cal ($6.99)
+
+### 52. Chocolate Dream Shake
+- **Category**: Shakes
+- **Description**: Decadent dark chocolate shake hand-blended and topped with chocolate curls.
+- **Ingredients**: Premium Chocolate Base, Chocolate Milk, Chocolate Syrup, Whipped Cream
+- **Caffeine Content**: 0mg
+- **Sugar Content (Medium)**: 46g
+- **Calories & Pricing**:
+  - Small: 370 cal ($4.99)
+  - Medium: 510 cal ($5.99)
+  - Large: 650 cal ($6.99)
+
+### 53. Vanilla Bean Shake
+- **Category**: Shakes
+- **Description**: A classic, velvety-smooth shake featuring real vanilla bean seeds and whipped cream.
+- **Ingredients**: Vanilla Bean Base, Fresh Milk, Whipped Cream
+- **Caffeine Content**: 0mg
+- **Sugar Content (Medium)**: 38g
+- **Calories & Pricing**:
+  - Small: 330 cal ($4.99)
+  - Medium: 460 cal ($5.99)
+  - Large: 590 cal ($6.99)
+
+### 54. Kids Cotton Candy Shake
+- **Category**: Kids Drinks
+- **Description**: A small sweet blend of cotton candy syrup and milk with whipped cream.
+- **Ingredients**: Cotton Candy Syrup, Whole Milk, Ice Cream Blend, Whipped Cream
+- **Caffeine Content**: 0mg
+- **Sugar Content (Medium)**: 26g
+- **Calories & Pricing**:
+  - Small: 190 cal ($2.99)
+
+### 55. The Ninja
+- **Category**: Secret Menu
+- **Description**: White chocolate and creme de menthe breve. Minty-fresh and velvety-smooth.
+- **Ingredients**: Espresso, Creme de Menthe Syrup, White Chocolate Sauce, Breve Mix
+- **Caffeine Content**: 150mg
+- **Sugar Content (Medium)**: 36g
+- **Calories & Pricing**:
+  - Small: 320 cal ($5.15)
+  - Medium: 460 cal ($5.65)
+  - Large: 610 cal ($6.15)
+
+### 56. Biscoff Cookie Breve
+- **Category**: Secret Menu
+- **Description**: Spiced brown cookie breve with hazelnut, toasted marshmallow, and caramel, topped with cookie dust.
+- **Ingredients**: Espresso, Hazelnut Syrup, Toasted Marshmallow, Caramel, Breve Mix, Cinnamon Powder
+- **Caffeine Content**: 150mg
+- **Sugar Content (Medium)**: 41g
+- **Calories & Pricing**:
+  - Small: 340 cal ($5.25)
+  - Medium: 480 cal ($5.75)
+  - Large: 630 cal ($6.25)
+
+### 57. Funnel Cake Chiller
+- **Category**: Secret Menu
+- **Description**: A blended iced drink that tastes exactly like carnival funnel cake. Sweets, cream, and bliss.
+- **Ingredients**: Chiller Espresso Base, Salted Caramel Sauce, Vanilla Syrup, White Chocolate Sauce, Whipped Cream
+- **Caffeine Content**: 120mg
+- **Sugar Content (Medium)**: 62g
+- **Calories & Pricing**:
+  - Small: 420 cal ($5.49)
+  - Medium: 580 cal ($5.99)
+  - Large: 740 cal ($6.49)
+
+### 58. Angel Food Chiller
+- **Category**: Secret Menu
+- **Description**: A heavenly, light vanilla-caramel blended espresso chiller.
+- **Ingredients**: Chiller Espresso Base, Caramel Sauce, Vanilla Syrup, Half & Half
+- **Caffeine Content**: 120mg
+- **Sugar Content (Medium)**: 34g
+- **Calories & Pricing**:
+  - Small: 310 cal ($5.15)
+  - Medium: 440 cal ($5.65)
+  - Large: 590 cal ($6.15)
+
+### 59. Peaches N' Cream
+- **Category**: Secret Menu
+- **Description**: Sweet peach syrup mixed with smooth vanilla breve cream.
+- **Ingredients**: Peach Syrup, Vanilla Syrup, Breve Cream Mix, Ice
+- **Caffeine Content**: 0mg
+- **Sugar Content (Medium)**: 44g
+- **Calories & Pricing**:
+  - Small: 320 cal ($5.15)
+  - Medium: 450 cal ($5.65)
+  - Large: 600 cal ($6.15)
+
+### 60. Brew Lagoon
+- **Category**: Secret Menu
+- **Description**: An electric tropical mixer blend of blue raspberry, coconut, and fresh lime.
+- **Ingredients**: 7 Brew Energy Base, Blue Raspberry, Coconut, Lime Juice, Ice
+- **Caffeine Content**: 150mg
+- **Sugar Content (Medium)**: 38g
+- **Calories & Pricing**:
+  - Small: 190 cal ($4.99)
+  - Medium: 270 cal ($5.49)
+  - Large: 350 cal ($5.99)
+
+### 61. Rocky Road
+- **Category**: Secret Menu
+- **Description**: A rich dessert mocha with toasted marshmallow, caramel, and hazelnut syrups.
+- **Ingredients**: Espresso, Toasted Marshmallow, Caramel, Hazelnut, Chocolate Milk
+- **Caffeine Content**: 150mg
+- **Sugar Content (Medium)**: 46g
+- **Calories & Pricing**:
+  - Small: 355 cal ($5.25)
+  - Medium: 515 cal ($5.75)
+  - Large: 680 cal ($6.25)
+
+### 62. Birthday Cake
+- **Category**: Secret Menu
+- **Description**: Indulgent cupcake syrup blended with smooth white chocolate.
+- **Ingredients**: Espresso, Cupcake Syrup, White Chocolate Sauce, Steamed Milk
+- **Caffeine Content**: 150mg
+- **Sugar Content (Medium)**: 48g
+- **Calories & Pricing**:
+  - Small: 360 cal ($5.15)
+  - Medium: 500 cal ($5.65)
+  - Large: 650 cal ($6.15)
+
+### 63. Key Lime Pie
+- **Category**: Secret Menu
+- **Description**: A tart citrus delight mixing lemon, lime, and white chocolate sauce.
+- **Ingredients**: Lemonade Base, Lime Juice, White Chocolate Sauce, Whipped Cream
+- **Caffeine Content**: 0mg
+- **Sugar Content (Medium)**: 42g
+- **Calories & Pricing**:
+  - Small: 280 cal ($5.15)
+  - Medium: 390 cal ($5.65)
+  - Large: 510 cal ($6.15)
+
+### 64. Premium Muffin Tops
+- **Category**: Snacks / Food
+- **Description**: Warm, soft, bakery fresh muffin tops. Available in Blueberry, Chocolate Chip, or Seasonal Pumpkin.
+- **Ingredients**: Enriched Flour, Sugar, Blueberries or Chocolate Chips, Butter
+- **Caffeine Content**: 0mg
+- **Sugar Content (Medium)**: 22g
+- **Calories & Pricing**:
+  - Small: 280 cal ($2.99)
+
+### 65. Barista Pup Cup
+- **Category**: Snacks / Food
+- **Description**: A cup filled with our sweet, delicious whipped cream for your furry friends.
+- **Ingredients**: Sweetened Whipped Cream
+- **Caffeine Content**: 0mg
+- **Sugar Content (Medium)**: 4g
+- **Calories & Pricing**:
+  - Small: 60 cal ($0.99)
+
+## Key Locations Directory
+
+- **Rogers - W Walnut St**: 4100 W Walnut St, Rogers, AR 72756 | Hours: [object Object] | Phone: (479) 335-1945
+- **Rogers - S 52nd St**: 2101 S 52nd St, Rogers, AR 72758 | Hours: [object Object] | Phone: (479) 335-1905
+- **Rogers - N 2nd St**: 2503 N 2nd St, Rogers, AR 72756 | Hours: [object Object] | Phone: (479) 335-5260
+- **Springdale - E Robinson Ave**: 1360 E Robinson Ave, Springdale, AR 72764 | Hours: [object Object] | Phone: (479) 770-5633
+- **Springdale - W Sunset Ave**: 2960 W Sunset Ave, Springdale, AR 72762 | Hours: [object Object] | Phone: (479) 487-5001
+- **Fayetteville - N College Ave**: 3322 N College Ave, Fayetteville, AR 72703 | Hours: [object Object] | Phone: (479) 358-9274
+- **Fayetteville - W MLK Blvd**: 1195 W Martin Luther King Blvd, Fayetteville, AR 72701 | Hours: [object Object] | Phone: (479) 358-9275
+- **Springfield - Glenstone Ave**: 1455 S Glenstone Ave, Springfield, MO 65804 | Hours: [object Object] | Phone: (417) 883-1455
+- **Joplin - Range Line Rd**: 2002 S Range Line Rd, Joplin, MO 64804 | Hours: [object Object] | Phone: (417) 623-2002
+- **Tulsa - 71st St**: 8220 E 71st St, Tulsa, OK 74133 | Hours: [object Object] | Phone: (918) 461-8220
+- **Little Rock - W Markham St**: 11418 W Markham St, Little Rock, AR 72211 | Hours: [object Object] | Phone: (501) 224-7700
+- **Wichita - N Rock Rd**: 110 N Rock Rd, Wichita, KS 67206 | Hours: [object Object] | Phone: (316) 685-1100
+- **Wichita - E Central Ave**: 3031 E Central Ave, Wichita, KS 67214 | Hours: [object Object] | Phone: (316) 685-3031
+- **Wichita - N Webb Rd**: 11465 E 21st St N, Wichita, KS 67206 | Hours: [object Object] | Phone: (316) 685-1146
+- **Wichita - S Ridge Rd**: 325 S Ridge Rd, Wichita, KS 67209 | Hours: [object Object] | Phone: (316) 685-3250
+- **Wichita - N Rock Rd North**: 3505 N Rock Rd, Wichita, KS 67226 | Hours: [object Object] | Phone: (316) 685-3505

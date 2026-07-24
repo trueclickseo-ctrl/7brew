@@ -1,21 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-KLFDRK3Q');</script>
-<!-- End Google Tag Manager -->
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8VM681EN3E"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-8VM681EN3E');
-  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://www.googletagmanager.com">
+  <link rel="preload" as="style" href="/assets/css/style.css?v=1.0.9">
+  <link rel="preload" as="image" href="/assets/images/logo-header.png" type="image/png">
+  <link rel="alternate" type="text/markdown" href="/llms.txt" title="LLM Text Summary">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact Customer Support & FAQs | 7 Brew Inspired</title>
@@ -29,6 +20,33 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
   <link rel="stylesheet" href="/assets/css/style.css?v=1.0.9">
   <link rel="icon" type="image/png" href="/favicon.png?v=1.0.2">
+  <!-- Defer Analytics for 90+ Mobile PageSpeed -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-8VM681EN3E');
+
+    function loadAnalytics() {
+      if (window.analyticsLoaded) return;
+      window.analyticsLoaded = true;
+      var gtmScript = document.createElement('script');
+      gtmScript.async = true;
+      gtmScript.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-KLFDRK3Q';
+      document.head.appendChild(gtmScript);
+
+      var gtagScript = document.createElement('script');
+      gtagScript.async = true;
+      gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-8VM681EN3E';
+      document.head.appendChild(gtagScript);
+    }
+    if (document.readyState === 'complete') {
+      loadAnalytics();
+    } else {
+      window.addEventListener('load', loadAnalytics, { passive: true });
+      setTimeout(loadAnalytics, 3500);
+    }
+  </script>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -40,7 +58,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <header class="header">
     <div class="container nav-container">
       <a href="/" class="logo" id="nav-logo">
-        <img src="/assets/images/logo-header.png" alt="7 Brew Logo" class="logo-img"> 7 Brew Inspired
+        <img src="/assets/images/logo-header.png" alt="7 Brew Logo" class="logo-img" width="40" height="40" fetchpriority="high"> 7 Brew Inspired
       </a>
       <nav class="nav-menu" id="nav-menu">
         <a href="/" class="nav-link">Home</a>
@@ -70,37 +88,45 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <!-- Contact Form -->
         <section class="contact-form-panel">
           <h2 style="font-size: 1.8rem; margin-bottom: 24px; font-family: var(--font-heading);">Send a Message</h2>
-          <form onsubmit="event.preventDefault(); alert('Message successfully sent! Our team will contact you shortly.'); this.reset();">
-            
+          
+          <div id="contact-alert" style="display: none; padding: 16px; margin-bottom: 20px; border-radius: var(--border-radius-sm); font-size: 0.95rem; line-height: 1.5;"></div>
+
+          <form id="contact-form" action="https://formsubmit.co/trueclickseo@gmail.com" method="POST">
+            <!-- FormSubmit Security & Formatting Configuration -->
+            <input type="text" name="_honey" style="display:none">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_subject" id="email-subject-input" value="7 Brew Contact Inquiry">
+
             <div class="calc-group">
               <label class="calc-label" for="contact-name">Full Name</label>
-              <input type="text" id="contact-name" class="calc-input" required placeholder="John Doe">
+              <input type="text" id="contact-name" name="Name" class="calc-input" required placeholder="John Doe">
             </div>
 
             <div class="calc-group">
               <label class="calc-label" for="contact-email">Email Address</label>
-              <input type="email" id="contact-email" class="calc-input" required placeholder="john@example.com">
+              <input type="email" id="contact-email" name="Email" class="calc-input" required placeholder="john@example.com">
             </div>
 
             <div class="calc-group">
               <label class="calc-label" for="contact-subject">Inquiry Subject</label>
-              <select id="contact-subject" class="calc-select" required>
-                <option value="general">General Feedback</option>
-                <option value="franchise">Franchise Opportunities</option>
-                <option value="careers">Careers & Employment</option>
-                <option value="giftcard">Gift Cards Support</option>
-                <option value="merch">Merch Shop Inquiries</option>
-                <option value="nutrition">Nutritional / Calorie Questions</option>
-                <option value="support">Customer Support Help</option>
+              <select id="contact-subject" name="Inquiry Subject" class="calc-select" required>
+                <option value="General Feedback">General Feedback</option>
+                <option value="Franchise Opportunities">Franchise Opportunities</option>
+                <option value="Careers & Employment">Careers & Employment</option>
+                <option value="Gift Cards Support">Gift Cards Support</option>
+                <option value="Merch Shop Inquiries">Merch Shop Inquiries</option>
+                <option value="Nutritional / Calorie Questions">Nutritional / Calorie Questions</option>
+                <option value="Customer Support Help">Customer Support Help</option>
               </select>
             </div>
 
             <div class="calc-group">
               <label class="calc-label" for="contact-message">Your Message</label>
-              <textarea id="contact-message" class="calc-input" rows="5" required style="resize: vertical; font-family: inherit;" placeholder="Tell us how we can help..."></textarea>
+              <textarea id="contact-message" name="Message" class="calc-input" rows="5" required style="resize: vertical; font-family: inherit;" placeholder="Tell us how we can help..."></textarea>
             </div>
 
-            <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 10px;">Submit Message</button>
+            <button type="submit" id="contact-submit-btn" class="btn btn-primary" style="width: 100%; margin-top: 10px;">Submit Message</button>
           </form>
         </section>
 
@@ -219,29 +245,114 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       }
     }
 
-    // Auto-select Inquiry Subject based on query parameter or clean URL pathnames
+    // Auto-select Inquiry Subject and FormSubmit AJAX Handling
     document.addEventListener('DOMContentLoaded', () => {
+      const select = document.getElementById('contact-subject');
+      const subjectInput = document.getElementById('email-subject-input');
+
+      const subjectMap = {
+        'careers': 'Careers & Employment',
+        'giftcard': 'Gift Cards Support',
+        'franchise': 'Franchise Opportunities',
+        'merch': 'Merch Shop Inquiries',
+        'general': 'General Feedback',
+        'nutrition': 'Nutritional / Calorie Questions',
+        'support': 'Customer Support Help'
+      };
+
       const params = new URLSearchParams(window.location.search);
-      let subject = params.get('subject');
+      let rawSubject = params.get('subject');
       const path = window.location.pathname.toLowerCase().replace(/\/$/, '');
       
-      if (!subject) {
-        if (path.endsWith('/7brew-careers') || path.endsWith('/careers')) {
-          subject = 'careers';
-        } else if (path.endsWith('/7brew-gift-cards') || path.endsWith('/gift-cards')) {
-          subject = 'giftcard';
-        } else if (path.endsWith('/7brew-franchise') || path.endsWith('/franchise')) {
-          subject = 'franchise';
-        } else if (path.endsWith('/7brew-merch-shop') || path.endsWith('/merch-shop')) {
-          subject = 'merch';
-        }
+      if (!rawSubject) {
+        if (path.endsWith('/7brew-careers') || path.endsWith('/careers')) rawSubject = 'careers';
+        else if (path.endsWith('/7brew-gift-cards') || path.endsWith('/gift-cards')) rawSubject = 'giftcard';
+        else if (path.endsWith('/7brew-franchise') || path.endsWith('/franchise')) rawSubject = 'franchise';
+        else if (path.endsWith('/7brew-merch-shop') || path.endsWith('/merch-shop')) rawSubject = 'merch';
       }
       
-      if (subject) {
-        const select = document.getElementById('contact-subject');
-        if (select) {
-          select.value = subject;
+      if (rawSubject && select) {
+        const mappedValue = subjectMap[rawSubject.toLowerCase()] || rawSubject;
+        for (let opt of select.options) {
+          if (opt.value === mappedValue || opt.value.toLowerCase() === rawSubject.toLowerCase()) {
+            select.value = opt.value;
+            break;
+          }
         }
+      }
+
+      function updateEmailSubject() {
+        if (select && subjectInput) {
+          subjectInput.value = `7 Brew Contact Inquiry: ${select.value}`;
+        }
+      }
+      updateEmailSubject();
+      if (select) select.addEventListener('change', updateEmailSubject);
+
+      // Handle FormSubmit AJAX
+      const form = document.getElementById('contact-form');
+      const alertBox = document.getElementById('contact-alert');
+      const submitBtn = document.getElementById('contact-submit-btn');
+
+      if (form) {
+        form.addEventListener('submit', async (e) => {
+          e.preventDefault();
+          updateEmailSubject();
+
+          const originalBtnText = submitBtn.innerText;
+          submitBtn.disabled = true;
+          submitBtn.innerText = 'Sending...';
+          alertBox.style.display = 'none';
+
+          const formData = new FormData(form);
+          const data = {};
+          formData.forEach((val, key) => data[key] = val);
+
+          try {
+            const response = await fetch('https://formsubmit.co/ajax/trueclickseo@gmail.com', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+              },
+              body: JSON.stringify(data)
+            });
+
+            const result = await response.json();
+
+            if (result.success === 'true' || result.success === true) {
+              alertBox.style.display = 'block';
+              alertBox.style.backgroundColor = '#10b9811a';
+              alertBox.style.border = '1px solid #10b981';
+              alertBox.style.color = '#10b981';
+              alertBox.innerHTML = '<strong>Message Sent Successfully!</strong> Thank you for reaching out. Your message has been sent to trueclickseo@gmail.com and our team will get back to you shortly.';
+              form.reset();
+              updateEmailSubject();
+            } else if (result.message && (result.message.includes('Activation') || result.message.includes('actived') || result.message.includes('active'))) {
+              alertBox.style.display = 'block';
+              alertBox.style.backgroundColor = '#f59e0b1a';
+              alertBox.style.border = '1px solid #f59e0b';
+              alertBox.style.color = '#f59e0b';
+              alertBox.innerHTML = '<strong>Action Required - Form Activation Pending:</strong> FormSubmit sent an email to <strong>trueclickseo@gmail.com</strong> with an <em>"Activate Form"</em> link. Please open Gmail (check Inbox and Spam folder), click <em>"Activate Form"</em> once, and future messages will be delivered immediately.';
+            } else {
+              throw new Error(result.message || 'Form submission failed');
+            }
+          } catch (err) {
+            console.error('Submission error:', err);
+            // Fallback to direct HTML form submit if AJAX encounters an issue
+            alertBox.style.display = 'block';
+            alertBox.style.backgroundColor = '#ef44441a';
+            alertBox.style.border = '1px solid #ef4444';
+            alertBox.style.color = '#ef4444';
+            alertBox.innerHTML = '<strong>Submission Error:</strong> Unable to submit via background service. Redirecting to form service...';
+            setTimeout(() => {
+              form.submit();
+            }, 1200);
+          } finally {
+            submitBtn.disabled = false;
+            submitBtn.innerText = originalBtnText;
+          }
+        });
       }
     });
   </script>

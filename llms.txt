@@ -1,0 +1,22 @@
+# 7 Brew Coffee Inspired Fan Guide
+
+> Independent, community-driven interactive menu, calorie calculator, copycat recipes, secret drink directory, and location guide for 7 Brew Drive-Thru Coffee fans.
+
+## Core Features & Tools
+- [Full Drink Menu](https://www.7brewguide.com/7brew-menu): Complete nutritional facts, caffeine content, and ingredient breakdowns for all 65+ 7 Brew beverages.
+- [Secret Menu Directory](https://www.7brewguide.com/secret-menu): Custom flavor syrup mix combinations, secret recipes (e.g., Biscoff Cookie Breve, Funnel Cake Chiller, Ninja, Birthday Cake).
+- [Calorie & Nutrition Calculator](https://www.7brewguide.com/7brew-calorie-calculator): Interactive tool to calculate calories, sugar, fat, and carbs by drink size, milk choice (Whole, Skim, Oat, Almond, Breve), and syrup modifications (Sugar-Free vs Standard).
+- [Drive-Thru Locations Finder](https://www.7brewguide.com/7brew-locations): Address directory, operating hours, phone numbers, and regional stand details.
+- [Rewards & Deals Guide](https://www.7brewguide.com/7brew-deals): Current promotional codes, discount drops, and 7 Brew Rewards loyalty breakdown.
+- [Coffee & Energy Blog](https://www.7brewguide.com/7brew-blog): Drink comparisons (7 Brew vs Starbucks, 7 Brew vs Dutch Bros), secret menu leaks, and ordering tips.
+
+## Signature Drink Categories
+- **7 Originals**: Blondie (Caramel & Vanilla Breve), Brunette (Hazelnut & Caramel Mocha), Smooth 7 (White Chocolate & Irish Cream Breve), Cinnamon Roll (Brown Sugar Cinnamon & White Chocolate Breve), White Mac (White Chocolate & Macadamia Nut Breve), German Chocolate (Coconut & Caramel Mocha), Triple Seven (Blondie with 6 espresso shots).
+- **7 Energy**: Custom carbonated energy mixers featuring 7 Brew proprietary energy base paired with blue raspberry, peach, passion fruit, watermelon, and coconut syrups.
+- **7 Classics**: Lattes, Mochas, Breves, Macchiatos, Cappuccinos, Americanos, and 20-hour steeped Cold Brew.
+- **Teas, Matcha & Chai**: Strawberry Matcha, Cereal Milk Matcha, Brewchata Chai, Hula Tea, Georgia Peach Tea.
+- **Smoothies & Shakes**: Real fruit purees (Strawberry, Mango, Peach, Wildberry, Green Apple) and handcrafted shakes (Cookies & Cream, Caramel Drizzle, Chocolate Dream, Vanilla Bean).
+
+## Optional / Detailed Data
+- [Full Text Data Dump](https://www.7brewguide.com/llms-full.txt): Comprehensive text dataset containing full drink specifications, copycat recipes, and location details.
+- [Contact Support](https://www.7brewguide.com/contact): Customer feedback, franchise inquiries, and support.

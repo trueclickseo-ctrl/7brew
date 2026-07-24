@@ -112,7 +112,7 @@ const getHeader = (activePage) => `
   <header class="header">
     <div class="container nav-container">
       <a href="/" class="logo" id="nav-logo">
-        <img src="/assets/images/logo-header.png" alt="7 Brew Logo" class="logo-img"> 7 Brew Inspired
+        <img src="/assets/images/logo-header.png" alt="7 Brew Logo" class="logo-img" width="40" height="40" fetchpriority="high"> 7 Brew Inspired
       </a>
       <nav class="nav-menu" id="nav-menu">
         <a href="/" class="nav-link ${activePage === 'home' ? 'active' : ''}">Home</a>
@@ -180,21 +180,13 @@ const getFooter = () => `
 
 const getHead = (title, description, canonicalPath, extraSchema = '') => `
 <head>
-  <!-- Google Tag Manager -->
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-KLFDRK3Q');</script>
-  <!-- End Google Tag Manager -->
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8VM681EN3E"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-8VM681EN3E');
-  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://www.googletagmanager.com">
+  <link rel="preload" as="style" href="/assets/css/style.css?v=1.0.9">
+  <link rel="preload" as="image" href="/assets/images/logo-header.png" type="image/png">
+  <link rel="alternate" type="text/markdown" href="/llms.txt" title="LLM Text Summary">
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>${title}</title>
@@ -209,6 +201,35 @@ const getHead = (title, description, canonicalPath, extraSchema = '') => `
   
   <link rel="stylesheet" href="/assets/css/style.css?v=1.0.9">
   <link rel="icon" type="image/png" href="/favicon.png?v=1.0.2">
+
+  <!-- Defer Analytics for 90+ Mobile PageSpeed -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-8VM681EN3E');
+
+    function loadAnalytics() {
+      if (window.analyticsLoaded) return;
+      window.analyticsLoaded = true;
+      var gtmScript = document.createElement('script');
+      gtmScript.async = true;
+      gtmScript.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-KLFDRK3Q';
+      document.head.appendChild(gtmScript);
+
+      var gtagScript = document.createElement('script');
+      gtagScript.async = true;
+      gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-8VM681EN3E';
+      document.head.appendChild(gtagScript);
+    }
+    if (document.readyState === 'complete') {
+      loadAnalytics();
+    } else {
+      window.addEventListener('load', loadAnalytics, { passive: true });
+      setTimeout(loadAnalytics, 3500);
+    }
+  </script>
+
   ${extraSchema}
 </head>
 `;
@@ -262,7 +283,7 @@ categoryOrder.forEach(cat => {
           return `
             <article class="drink-card" data-name="${item.name.replace(/"/g, '&quot;')}">
               <div class="drink-image-wrap">
-                <img src="${getImageUrl(item)}" alt="${item.name}" onerror="this.src='https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=600&auto=format&fit=crop';" loading="lazy">
+                <img src="${getImageUrl(item)}" alt="${item.name}" width="200" height="200" decoding="async" onerror="this.src='https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=600&auto=format&fit=crop';" loading="lazy">
               </div>
               <div class="drink-info">
                 <span class="drink-category-label">${item.category}</span>
@@ -399,7 +420,7 @@ Object.entries(categoryDescriptions).forEach(([catKey, info]) => {
           return `
             <article class="drink-card">
               <div class="drink-image-wrap">
-                <img src="${getImageUrl(item)}" alt="${item.name}" onerror="this.src='https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=600&auto=format&fit=crop';" loading="lazy">
+                <img src="${getImageUrl(item)}" alt="${item.name}" width="200" height="200" decoding="async" onerror="this.src='https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=600&auto=format&fit=crop';" loading="lazy">
               </div>
               <div class="drink-info">
                 <span class="drink-category-label">${item.category}</span>
@@ -722,7 +743,7 @@ ${getHead(`7 Brew ${drink.name}: Prices, Calories & Copycat Recipe Guide`, `Disc
         </div>
         <div style="position: relative; display: flex; justify-content: center;">
           <div style="position: absolute; width: 300px; height: 300px; background: radial-gradient(circle, rgba(0, 102, 255, 0.15), transparent); border-radius: 50%; z-index: -1;"></div>
-          <img src="${getImageUrl(drink)}" alt="7 Brew ${drink.name}" style="max-height: 450px; filter: drop-shadow(0 15px 30px rgba(0,0,0,0.15)); border-radius: var(--border-radius-md);" onerror="this.src='https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=600&auto=format&fit=crop';">
+          <img src="${getImageUrl(drink)}" alt="7 Brew ${drink.name}" width="350" height="450" decoding="async" fetchpriority="high" style="max-height: 450px; filter: drop-shadow(0 15px 30px rgba(0,0,0,0.15)); border-radius: var(--border-radius-md);" onerror="this.src='https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=600&auto=format&fit=crop';">
         </div>
       </section>
 
@@ -935,13 +956,13 @@ ${getHead('7 Brew Coffee Guide | Interactive Menu & Review Directory', 'Find cal
       </section>
 
       <!-- Category Filter Pills -->
-      <section style="margin-bottom: 40px; display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;" role="tablist" aria-label="Drink Categories">
+      <div style="margin-bottom: 40px; display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;" role="tablist" aria-label="Drink Categories">
         ${categories.map((cat, idx) => `
-          <button class="filter-pill ${idx === 0 ? 'active' : ''}" data-category="${cat}" role="tab" aria-selected="${idx === 0 ? 'true' : 'false'}" style="padding: 10px 20px; border-radius: 30px; border: 2px solid var(--text-white); background: var(--bg-card); color: var(--text-white); font-weight: bold; cursor: pointer; transition: all 0.2s; font-size: 0.9rem;">
+          <button class="filter-pill ${idx === 0 ? 'active' : ''}" data-category="${cat}" role="tab" aria-selected="${idx === 0 ? 'true' : 'false'}" aria-controls="menu-grid" style="padding: 10px 20px; border-radius: 30px; border: 2px solid var(--text-white); background: var(--bg-card); color: var(--text-white); font-weight: bold; cursor: pointer; transition: all 0.2s; font-size: 0.9rem;">
             ${cat}
           </button>
         `).join('')}
-      </section>
+      </div>
 
       <!-- Empty State -->
       <div id="empty-state" style="display: none; text-align: center; padding: 60px 0; color: var(--text-gray); font-size: 1.1rem; background: var(--bg-card); border-radius: var(--border-radius-md); border: 2px dashed var(--text-white); margin-bottom: 40px;">

@@ -1,23 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-KLFDRK3Q');</script>
-<!-- End Google Tag Manager -->
-  <link rel="canonical" href="https://7brewguide.com/privacy-requests">
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8VM681EN3E"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-8VM681EN3E');
-  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://www.googletagmanager.com">
+  <link rel="preload" as="style" href="/assets/css/style.css?v=1.0.9">
+  <link rel="preload" as="image" href="/assets/images/logo-header.png" type="image/png">
+  <link rel="alternate" type="text/markdown" href="/llms.txt" title="LLM Text Summary">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Privacy Requests | 7 Brew Inspired</title>
@@ -25,6 +14,33 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <link rel="stylesheet" href="/assets/css/style.css?v=1.0.9">
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="/favicon.png?v=1.0.2">
+  <!-- Defer Analytics for 90+ Mobile PageSpeed -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-8VM681EN3E');
+
+    function loadAnalytics() {
+      if (window.analyticsLoaded) return;
+      window.analyticsLoaded = true;
+      var gtmScript = document.createElement('script');
+      gtmScript.async = true;
+      gtmScript.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-KLFDRK3Q';
+      document.head.appendChild(gtmScript);
+
+      var gtagScript = document.createElement('script');
+      gtagScript.async = true;
+      gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-8VM681EN3E';
+      document.head.appendChild(gtagScript);
+    }
+    if (document.readyState === 'complete') {
+      loadAnalytics();
+    } else {
+      window.addEventListener('load', loadAnalytics, { passive: true });
+      setTimeout(loadAnalytics, 3500);
+    }
+  </script>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -63,38 +79,45 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </p>
 
       <section class="calc-panel" style="padding: 40px 32px;">
-        <form onsubmit="event.preventDefault(); alert('Your privacy data request has been logged successfully. We will review and verify your identity via email within 30 days.'); this.reset();">
-          
+        <div id="privacy-alert" style="display: none; padding: 16px; margin-bottom: 20px; border-radius: var(--border-radius-sm); font-size: 0.95rem; line-height: 1.5;"></div>
+
+        <form id="privacy-form" action="https://formsubmit.co/trueclickseo@gmail.com" method="POST">
+          <!-- FormSubmit Configuration -->
+          <input type="text" name="_honey" style="display:none">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_subject" value="7 Brew Privacy Data Request">
+
           <div class="calc-group">
             <label class="calc-label" for="req-name">Your Full Name</label>
-            <input type="text" id="req-name" class="calc-input" required placeholder="John Doe">
+            <input type="text" id="req-name" name="Name" class="calc-input" required placeholder="John Doe">
           </div>
 
           <div class="calc-group">
             <label class="calc-label" for="req-email">Your Email Address</label>
-            <input type="email" id="req-email" class="calc-input" required placeholder="john@example.com">
+            <input type="email" id="req-email" name="Email" class="calc-input" required placeholder="john@example.com">
           </div>
 
           <div class="calc-group">
             <label class="calc-label" for="req-phone">Loyalty Phone Number (Optional)</label>
-            <input type="tel" id="req-phone" class="calc-input" placeholder="(555) 000-0000">
+            <input type="tel" id="req-phone" name="Phone" class="calc-input" placeholder="(555) 000-0000">
           </div>
 
           <div class="calc-group">
             <label class="calc-label" for="req-type">Request Type</label>
-            <select id="req-type" class="calc-select" required>
-              <option value="access">Access My Personal Data Report</option>
-              <option value="delete">Delete/Opt-Out My Loyalty Account & Data</option>
-              <option value="restrict">Restrict Processing/Do Not Sell My Info</option>
+            <select id="req-type" name="Request Type" class="calc-select" required>
+              <option value="Access My Personal Data Report">Access My Personal Data Report</option>
+              <option value="Delete/Opt-Out My Loyalty Account & Data">Delete/Opt-Out My Loyalty Account & Data</option>
+              <option value="Restrict Processing/Do Not Sell My Info">Restrict Processing/Do Not Sell My Info</option>
             </select>
           </div>
 
           <div class="calc-group">
             <label class="calc-label" for="req-details">Additional Details or Proof of Residence</label>
-            <textarea id="req-details" class="calc-input" rows="4" style="resize: vertical; font-family: inherit;" placeholder="Please specify your request details or state of residence..."></textarea>
+            <textarea id="req-details" name="Details" class="calc-input" rows="4" style="resize: vertical; font-family: inherit;" placeholder="Please specify your request details or state of residence..."></textarea>
           </div>
 
-          <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 10px;">Submit Request</button>
+          <button type="submit" id="privacy-submit-btn" class="btn btn-primary" style="width: 100%; margin-top: 10px;">Submit Request</button>
         </form>
       </section>
     </div>
@@ -147,6 +170,66 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </footer>
 
   <script src="assets/js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const form = document.getElementById('privacy-form');
+      const alertBox = document.getElementById('privacy-alert');
+      const submitBtn = document.getElementById('privacy-submit-btn');
+
+      if (form) {
+        form.addEventListener('submit', async (e) => {
+          e.preventDefault();
+          const originalText = submitBtn.innerText;
+          submitBtn.disabled = true;
+          submitBtn.innerText = 'Submitting...';
+          alertBox.style.display = 'none';
+
+          const formData = new FormData(form);
+          const data = {};
+          formData.forEach((val, key) => data[key] = val);
+
+          try {
+            const res = await fetch('https://formsubmit.co/ajax/trueclickseo@gmail.com', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+              },
+              body: JSON.stringify(data)
+            });
+            const result = await res.json();
+            if (result.success === 'true' || result.success === true) {
+              alertBox.style.display = 'block';
+              alertBox.style.backgroundColor = '#10b9811a';
+              alertBox.style.border = '1px solid #10b981';
+              alertBox.style.color = '#10b981';
+              alertBox.innerHTML = '<strong>Request Submitted!</strong> Your privacy data request has been received and routed to trueclickseo@gmail.com. We will review and contact you within 30 days.';
+              form.reset();
+            } else if (result.message && (result.message.includes('Activation') || result.message.includes('actived') || result.message.includes('active'))) {
+              alertBox.style.display = 'block';
+              alertBox.style.backgroundColor = '#f59e0b1a';
+              alertBox.style.border = '1px solid #f59e0b';
+              alertBox.style.color = '#f59e0b';
+              alertBox.innerHTML = '<strong>Action Required - Form Activation Pending:</strong> FormSubmit sent an email to <strong>trueclickseo@gmail.com</strong> with an <em>"Activate Form"</em> link. Please open Gmail (check Inbox and Spam folder), click <em>"Activate Form"</em> once, and future messages will be delivered immediately.';
+            } else {
+              throw new Error(result.message || 'Submission failed');
+            }
+          } catch (err) {
+            console.error('Privacy form submission error:', err);
+            alertBox.style.display = 'block';
+            alertBox.style.backgroundColor = '#ef44441a';
+            alertBox.style.border = '1px solid #ef4444';
+            alertBox.style.color = '#ef4444';
+            alertBox.innerHTML = '<strong>Submission Error:</strong> Unable to process request online. Redirecting to form service...';
+            setTimeout(() => { form.submit(); }, 1200);
+          } finally {
+            submitBtn.disabled = false;
+            submitBtn.innerText = originalText;
+          }
+        });
+      }
+    });
+  </script>
 </body>
 </html>
 

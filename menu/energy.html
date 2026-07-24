@@ -2,21 +2,13 @@
 <html lang="en">
 
 <head>
-  <!-- Google Tag Manager -->
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-KLFDRK3Q');</script>
-  <!-- End Google Tag Manager -->
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8VM681EN3E"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-8VM681EN3E');
-  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://www.googletagmanager.com">
+  <link rel="preload" as="style" href="/assets/css/style.css?v=1.0.9">
+  <link rel="preload" as="image" href="/assets/images/logo-header.png" type="image/png">
+  <link rel="alternate" type="text/markdown" href="/llms.txt" title="LLM Text Summary">
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Seven Energy Custom Mixes | 7 Brew Inspired</title>
@@ -31,6 +23,35 @@
   
   <link rel="stylesheet" href="/assets/css/style.css?v=1.0.9">
   <link rel="icon" type="image/png" href="/favicon.png?v=1.0.2">
+
+  <!-- Defer Analytics for 90+ Mobile PageSpeed -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-8VM681EN3E');
+
+    function loadAnalytics() {
+      if (window.analyticsLoaded) return;
+      window.analyticsLoaded = true;
+      var gtmScript = document.createElement('script');
+      gtmScript.async = true;
+      gtmScript.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-KLFDRK3Q';
+      document.head.appendChild(gtmScript);
+
+      var gtagScript = document.createElement('script');
+      gtagScript.async = true;
+      gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-8VM681EN3E';
+      document.head.appendChild(gtagScript);
+    }
+    if (document.readyState === 'complete') {
+      loadAnalytics();
+    } else {
+      window.addEventListener('load', loadAnalytics, { passive: true });
+      setTimeout(loadAnalytics, 3500);
+    }
+  </script>
+
   
 </head>
 
@@ -43,7 +64,7 @@
   <header class="header">
     <div class="container nav-container">
       <a href="/" class="logo" id="nav-logo">
-        <img src="/assets/images/logo-header.png" alt="7 Brew Logo" class="logo-img"> 7 Brew Inspired
+        <img src="/assets/images/logo-header.png" alt="7 Brew Logo" class="logo-img" width="40" height="40" fetchpriority="high"> 7 Brew Inspired
       </a>
       <nav class="nav-menu" id="nav-menu">
         <a href="/" class="nav-link ">Home</a>
@@ -82,7 +103,7 @@
         
             <article class="drink-card">
               <div class="drink-image-wrap">
-                <img src="/assets/images/ocean-breeze.webp" alt="Ocean Breeze" onerror="this.src='https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=600&auto=format&fit=crop';" loading="lazy">
+                <img src="/assets/images/ocean-breeze.webp" alt="Ocean Breeze" width="200" height="200" decoding="async" onerror="this.src='https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=600&auto=format&fit=crop';" loading="lazy">
               </div>
               <div class="drink-info">
                 <span class="drink-category-label">7 Energy</span>
@@ -97,7 +118,7 @@
           
             <article class="drink-card">
               <div class="drink-image-wrap">
-                <img src="/assets/images/tropic-thunder.webp" alt="Tropic Thunder" onerror="this.src='https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=600&auto=format&fit=crop';" loading="lazy">
+                <img src="/assets/images/tropic-thunder.webp" alt="Tropic Thunder" width="200" height="200" decoding="async" onerror="this.src='https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=600&auto=format&fit=crop';" loading="lazy">
               </div>
               <div class="drink-info">
                 <span class="drink-category-label">7 Energy</span>
@@ -112,7 +133,7 @@
           
             <article class="drink-card">
               <div class="drink-image-wrap">
-                <img src="/assets/images/sunrise.webp" alt="Sunrise" onerror="this.src='https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=600&auto=format&fit=crop';" loading="lazy">
+                <img src="/assets/images/sunrise.webp" alt="Sunrise" width="200" height="200" decoding="async" onerror="this.src='https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=600&auto=format&fit=crop';" loading="lazy">
               </div>
               <div class="drink-info">
                 <span class="drink-category-label">7 Energy</span>
@@ -127,7 +148,7 @@
           
             <article class="drink-card">
               <div class="drink-image-wrap">
-                <img src="/assets/images/energy_blue_punch.jpg" alt="Seven Energy Blue Punch" onerror="this.src='https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=600&auto=format&fit=crop';" loading="lazy">
+                <img src="/assets/images/energy_blue_punch.jpg" alt="Seven Energy Blue Punch" width="200" height="200" decoding="async" onerror="this.src='https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=600&auto=format&fit=crop';" loading="lazy">
               </div>
               <div class="drink-info">
                 <span class="drink-category-label">7 Energy</span>
@@ -142,7 +163,7 @@
           
             <article class="drink-card">
               <div class="drink-image-wrap">
-                <img src="/assets/images/dragons_blood.jpg" alt="Dragon's Blood" onerror="this.src='https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=600&auto=format&fit=crop';" loading="lazy">
+                <img src="/assets/images/dragons_blood.jpg" alt="Dragon's Blood" width="200" height="200" decoding="async" onerror="this.src='https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=600&auto=format&fit=crop';" loading="lazy">
               </div>
               <div class="drink-info">
                 <span class="drink-category-label">7 Energy</span>
@@ -157,7 +178,7 @@
           
             <article class="drink-card">
               <div class="drink-image-wrap">
-                <img src="/assets/images/tigers_blood.jpg" alt="Tiger's Blood" onerror="this.src='https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=600&auto=format&fit=crop';" loading="lazy">
+                <img src="/assets/images/tigers_blood.jpg" alt="Tiger's Blood" width="200" height="200" decoding="async" onerror="this.src='https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=600&auto=format&fit=crop';" loading="lazy">
               </div>
               <div class="drink-info">
                 <span class="drink-category-label">7 Energy</span>
@@ -172,7 +193,7 @@
           
             <article class="drink-card">
               <div class="drink-image-wrap">
-                <img src="/assets/images/georgia_peach_energy.jpg" alt="Georgia Peach" onerror="this.src='https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=600&auto=format&fit=crop';" loading="lazy">
+                <img src="/assets/images/georgia_peach_energy.jpg" alt="Georgia Peach" width="200" height="200" decoding="async" onerror="this.src='https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=600&auto=format&fit=crop';" loading="lazy">
               </div>
               <div class="drink-info">
                 <span class="drink-category-label">7 Energy</span>
@@ -187,7 +208,7 @@
           
             <article class="drink-card">
               <div class="drink-image-wrap">
-                <img src="/assets/images/orange_sherbet.jpg" alt="Orange Sherbet" onerror="this.src='https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=600&auto=format&fit=crop';" loading="lazy">
+                <img src="/assets/images/orange_sherbet.jpg" alt="Orange Sherbet" width="200" height="200" decoding="async" onerror="this.src='https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=600&auto=format&fit=crop';" loading="lazy">
               </div>
               <div class="drink-info">
                 <span class="drink-category-label">7 Energy</span>

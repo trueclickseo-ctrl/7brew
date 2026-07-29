@@ -9,7 +9,7 @@
                             "Vanilla Syrup",
                             "Breve Mix (Half \u0026 Half)"
                         ],
-        "image":  "assets/images/blondie.webp",
+        "image":  "/assets/images/blondie.webp",
         "sizes":  {
                       "small":  {
                                     "price":  4.99,
@@ -37,7 +37,7 @@
                             "Caramel Sauce",
                             "Chocolate Milk"
                         ],
-        "image":  "assets/images/brunette.webp",
+        "image":  "/assets/images/brunette.webp",
         "sizes":  {
                       "small":  {
                                     "price":  4.99,
@@ -65,7 +65,7 @@
                             "White Chocolate Sauce",
                             "Breve Mix (Half \u0026 Half)"
                         ],
-        "image":  "assets/images/smooth-7.webp",
+        "image":  "/assets/images/smooth-7.webp",
         "sizes":  {
                       "small":  {
                                     "price":  5.15,
@@ -93,7 +93,7 @@
                             "White Chocolate Sauce",
                             "Breve Mix"
                         ],
-        "image":  "assets/images/cinnamon-roll.webp",
+        "image":  "/assets/images/cinnamon-roll.webp",
         "sizes":  {
                       "small":  {
                                     "price":  4.99,
@@ -121,7 +121,7 @@
                             "Macadamia Nut Syrup",
                             "Breve Mix"
                         ],
-        "image":  "assets/images/white-mac.webp",
+        "image":  "/assets/images/white-mac.webp",
         "sizes":  {
                       "small":  {
                                     "price":  4.99,
@@ -149,7 +149,7 @@
                             "Caramel Sauce",
                             "Chocolate Milk"
                         ],
-        "image":  "assets/images/german-chocolate.webp",
+        "image":  "/assets/images/german-chocolate.webp",
         "sizes":  {
                       "small":  {
                                     "price":  5.25,
@@ -178,7 +178,7 @@
                             "Chocolate Milk",
                             "Caramel Drizzle"
                         ],
-        "image":  "assets/images/snickerz.webp",
+        "image":  "/assets/images/snickerz.webp",
         "sizes":  {
                       "small":  {
                                     "price":  5.25,
@@ -206,7 +206,7 @@
                             "Vanilla Syrup",
                             "Breve Mix"
                         ],
-        "image":  "assets/images/triple_seven.jpg",
+        "image":  "/assets/images/triple_seven.jpg",
         "sizes":  {
                       "small":  {
                                     "price":  5.99,
@@ -233,7 +233,7 @@
                             "Steamed Whole Milk",
                             "Foam"
                         ],
-        "image":  "assets/images/classic_latte.png",
+        "image":  "/assets/images/classic_latte.png",
         "sizes":  {
                       "small":  {
                                     "price":  3.75,
@@ -259,7 +259,7 @@
                             "Espresso Shots",
                             "Steamed Chocolate Milk"
                         ],
-        "image":  "assets/images/classic_mocha.png",
+        "image":  "/assets/images/classic_mocha.png",
         "sizes":  {
                       "small":  {
                                     "price":  3.99,
@@ -287,7 +287,7 @@
                             "Caramel Drizzle",
                             "Vanilla Syrup"
                         ],
-        "image":  "assets/images/classic_macchiato.jpg",
+        "image":  "/assets/images/classic_macchiato.jpg",
         "sizes":  {
                       "small":  {
                                     "price":  3.99,
@@ -313,7 +313,7 @@
                             "Espresso Shots",
                             "Steamed Half \u0026 Half Cream"
                         ],
-        "image":  "assets/images/classic_breve.jpg",
+        "image":  "/assets/images/classic_breve.jpg",
         "sizes":  {
                       "small":  {
                                     "price":  3.99,
@@ -340,7 +340,7 @@
                             "Steamed Milk",
                             "Extra Thick Foam"
                         ],
-        "image":  "assets/images/classic_cappuccino.jpg",
+        "image":  "/assets/images/classic_cappuccino.jpg",
         "sizes":  {
                       "small":  {
                                     "price":  3.75,
@@ -366,7 +366,7 @@
                             "Espresso Shots",
                             "Hot Water"
                         ],
-        "image":  "assets/images/classic_americano.jpg",
+        "image":  "/assets/images/classic_americano.jpg",
         "sizes":  {
                       "small":  {
                                     "price":  3.50,
@@ -393,7 +393,7 @@
                             "Water",
                             "Ice"
                         ],
-        "image":  "assets/images/classic_cold_brew.png",
+        "image":  "/assets/images/classic_cold_brew.png",
         "sizes":  {
                       "small":  {
                                     "price":  4.25,
@@ -560,7 +560,7 @@
                             "Blue Raspberry Syrup",
                             "Coconut Syrup"
                         ],
-        "image":  "assets/images/ocean-breeze.webp",
+        "image":  "/assets/images/ocean-breeze.webp",
         "sizes":  {
                       "small":  {
                                     "price":  5.85,
@@ -587,7 +587,7 @@
                             "Mango Syrup",
                             "Pineapple Syrup"
                         ],
-        "image":  "assets/images/tropic-thunder.webp",
+        "image":  "/assets/images/tropic-thunder.webp",
         "sizes":  {
                       "small":  {
                                     "price":  5.85,
@@ -614,7 +614,7 @@
                             "Peach Syrup",
                             "Raspberry Syrup"
                         ],
-        "image":  "assets/images/sunrise.webp",
+        "image":  "/assets/images/sunrise.webp",
         "sizes":  {
                       "small":  {
                                     "price":  5.85,
@@ -642,7 +642,7 @@
                             "Peach Syrup",
                             "Raspberry Syrup"
                         ],
-        "image":  "assets/images/energy_blue_punch.jpg",
+        "image":  "/assets/images/energy_blue_punch.jpg",
         "sizes":  {
                       "small":  {
                                     "price":  3.99,
@@ -671,7 +671,7 @@
                             "Drizzle of Cream",
                             "Ice"
                         ],
-        "image":  "assets/images/dragons_blood.jpg",
+        "image":  "/assets/images/dragons_blood.jpg",
         "sizes":  {
                       "small":  {
                                     "price":  3.99,
@@ -699,7 +699,7 @@
                             "Strawberry Syrup",
                             "Ice"
                         ],
-        "image":  "assets/images/tigers_blood.jpg",
+        "image":  "/assets/images/tigers_blood.jpg",
         "sizes":  {
                       "small":  {
                                     "price":  3.99,
@@ -727,7 +727,7 @@
                             "Strawberry Syrup",
                             "Ice"
                         ],
-        "image":  "assets/images/georgia_peach_energy.jpg",
+        "image":  "/assets/images/georgia_peach_energy.jpg",
         "sizes":  {
                       "small":  {
                                     "price":  3.99,
@@ -756,7 +756,7 @@
                             "Vanilla Syrup",
                             "Ice"
                         ],
-        "image":  "assets/images/orange_sherbet.jpg",
+        "image":  "/assets/images/orange_sherbet.jpg",
         "sizes":  {
                       "small":  {
                                     "price":  3.99,
@@ -785,7 +785,7 @@
                             "Coconut Syrup",
                             "Ice"
                         ],
-        "image":  "assets/images/pink_mermaid_fizz.jpg",
+        "image":  "/assets/images/pink_mermaid_fizz.jpg",
         "sizes":  {
                       "small":  {
                                     "price":  3.25,
@@ -814,7 +814,7 @@
                             "Blue Raspberry",
                             "Ice"
                         ],
-        "image":  "assets/images/black_mamba_fizz.jpg",
+        "image":  "/assets/images/black_mamba_fizz.jpg",
         "sizes":  {
                       "small":  {
                                     "price":  3.25,
@@ -843,7 +843,7 @@
                             "Pomegranate Syrup",
                             "Ice"
                         ],
-        "image":  "assets/images/hawaiian_punch_fizz.jpg",
+        "image":  "/assets/images/hawaiian_punch_fizz.jpg",
         "sizes":  {
                       "small":  {
                                     "price":  3.25,
@@ -872,7 +872,7 @@
                             "Raspberry Syrup",
                             "Ice"
                         ],
-        "image":  "assets/images/firecracker_fizz.jpg",
+        "image":  "/assets/images/firecracker_fizz.jpg",
         "sizes":  {
                       "small":  {
                                     "price":  3.25,
@@ -900,7 +900,7 @@
                             "Passion Fruit Syrup",
                             "Ice"
                         ],
-        "image":  "assets/images/sunny_7_fizz.jpg",
+        "image":  "/assets/images/sunny_7_fizz.jpg",
         "sizes":  {
                       "small":  {
                                     "price":  3.25,
@@ -928,7 +928,7 @@
                             "Strawberry Syrup",
                             "Ice"
                         ],
-        "image":  "assets/images/georgia_peach_tea.png",
+        "image":  "/assets/images/georgia_peach_tea.png",
         "sizes":  {
                       "small":  {
                                     "price":  2.99,
@@ -956,7 +956,7 @@
                             "Peach Syrup",
                             "Ice"
                         ],
-        "image":  "assets/images/hula_tea.png",
+        "image":  "/assets/images/hula_tea.png",
         "sizes":  {
                       "small":  {
                                     "price":  2.99,
@@ -984,7 +984,7 @@
                             "Breve Cream Mix",
                             "Steamed Milk"
                         ],
-        "image":  "assets/images/brewchata_chai.png",
+        "image":  "/assets/images/brewchata_chai.png",
         "sizes":  {
                       "small":  {
                                     "price":  3.99,
@@ -1012,7 +1012,7 @@
                             "Strawberry Syrup",
                             "Ice"
                         ],
-        "image":  "assets/images/matcha_latte.png",
+        "image":  "/assets/images/matcha_latte.png",
         "sizes":  {
                       "small":  {
                                     "price":  4.25,
@@ -1040,7 +1040,7 @@
                             "Vanilla Syrup",
                             "Whole Milk"
                         ],
-        "image":  "assets/images/matcha_latte.png",
+        "image":  "/assets/images/matcha_latte.png",
         "sizes":  {
                       "small":  {
                                     "price":  4.25,
@@ -1208,7 +1208,7 @@
                             "Ice Cream Blend Mix",
                             "Ice"
                         ],
-        "image":  "assets/images/strawberry_smoothie.jpg",
+        "image":  "/assets/images/strawberry_smoothie.jpg",
         "sizes":  {
                       "small":  {
                                     "price":  4.99,
@@ -1235,7 +1235,7 @@
                             "Ice Cream Blend Mix",
                             "Ice"
                         ],
-        "image":  "assets/images/mango_smoothie.png",
+        "image":  "/assets/images/mango_smoothie.png",
         "sizes":  {
                       "small":  {
                                     "price":  4.99,
@@ -1262,7 +1262,7 @@
                             "Ice Cream Blend Mix",
                             "Ice"
                         ],
-        "image":  "assets/images/peach_smoothie.jpg",
+        "image":  "/assets/images/peach_smoothie.jpg",
         "sizes":  {
                       "small":  {
                                     "price":  4.99,
@@ -1289,7 +1289,7 @@
                             "Ice Cream Blend Mix",
                             "Ice"
                         ],
-        "image":  "assets/images/wildberry_smoothie.png",
+        "image":  "/assets/images/wildberry_smoothie.png",
         "sizes":  {
                       "small":  {
                                     "price":  4.99,
@@ -1316,7 +1316,7 @@
                             "Ice Cream Blend Mix",
                             "Ice"
                         ],
-        "image":  "assets/images/green_apple_smoothie.jpg",
+        "image":  "/assets/images/green_apple_smoothie.jpg",
         "sizes":  {
                       "small":  {
                                     "price":  4.99,
@@ -1502,7 +1502,7 @@
                             "White Chocolate Sauce",
                             "Breve Mix"
                         ],
-        "image":  "assets/images/ninja.jpg",
+        "image":  "/assets/images/ninja.jpg",
         "sizes":  {
                       "small":  {
                                     "price":  5.15,
@@ -1532,7 +1532,7 @@
                             "Breve Mix",
                             "Cinnamon Powder"
                         ],
-        "image":  "assets/images/biscoff.jpg",
+        "image":  "/assets/images/biscoff.jpg",
         "sizes":  {
                       "small":  {
                                     "price":  5.25,
@@ -1561,7 +1561,7 @@
                             "White Chocolate Sauce",
                             "Whipped Cream"
                         ],
-        "image":  "assets/images/funnel_cake.jpg",
+        "image":  "/assets/images/funnel_cake.jpg",
         "sizes":  {
                       "small":  {
                                     "price":  5.49,
@@ -1589,7 +1589,7 @@
                             "Vanilla Syrup",
                             "Half \u0026 Half"
                         ],
-        "image":  "assets/images/angel_food.jpg",
+        "image":  "/assets/images/angel_food.jpg",
         "sizes":  {
                       "small":  {
                                     "price":  5.15,
@@ -1617,7 +1617,7 @@
                             "Breve Cream Mix",
                             "Ice"
                         ],
-        "image":  "assets/images/peaches_cream.jpg",
+        "image":  "/assets/images/peaches_cream.jpg",
         "sizes":  {
                       "small":  {
                                     "price":  5.15,
@@ -1646,7 +1646,7 @@
                             "Lime Juice",
                             "Ice"
                         ],
-        "image":  "assets/images/brew_lagoon.jpg",
+        "image":  "/assets/images/brew_lagoon.jpg",
         "sizes":  {
                       "small":  {
                                     "price":  4.99,
@@ -1675,7 +1675,7 @@
                             "Hazelnut",
                             "Chocolate Milk"
                         ],
-        "image":  "assets/images/rocky_road.jpg",
+        "image":  "/assets/images/rocky_road.jpg",
         "sizes":  {
                       "small":  {
                                     "price":  5.25,
@@ -1704,7 +1704,7 @@
                             "White Chocolate Sauce",
                             "Steamed Milk"
                         ],
-        "image":  "assets/images/birthday_cake.jpg",
+        "image":  "/assets/images/birthday_cake.jpg",
         "sizes":  {
                       "small":  {
                                     "price":  5.15,
@@ -1732,7 +1732,7 @@
                             "White Chocolate Sauce",
                             "Whipped Cream"
                         ],
-        "image":  "assets/images/key_lime_pie.jpg",
+        "image":  "/assets/images/key_lime_pie.jpg",
         "sizes":  {
                       "small":  {
                                     "price":  5.15,

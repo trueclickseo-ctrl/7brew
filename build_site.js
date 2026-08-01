@@ -269,17 +269,44 @@ menu.forEach(item => {
   menuGrouped[item.category].push(item);
 });
 
+const catToSubpageSlug = {
+  '7 Originals': 'coffee',
+  '7 Classics': 'coffee',
+  '7 Energy': 'energy-drinks',
+  '7 Fizz': 'fizz',
+  'Teas, Chai & Matcha': 'teas-and-chai',
+  'Lemonades': 'lemonades',
+  'Smoothies': 'smoothies',
+  'Shakes': 'shakes',
+  'Kids Drinks': '../7brew-kids-menu',
+  'Secret Menu': '../secret-menu'
+};
+
 let preRenderedMenuHtml = '';
 categoryOrder.forEach(cat => {
   const catItems = menuGrouped[cat];
   if (!catItems || catItems.length === 0) return;
   const sectionId = categoryIdMap[cat] || cat.toLowerCase().replace(/[^a-z0-9]+/g, '-');
   
+  // Show only top 3 items to avoid a massive page height
+  const displayedItems = catItems.slice(0, 3);
+  
+  const subpageSlug = catToSubpageSlug[cat];
+  let subpageButtonHtml = '';
+  if (subpageSlug) {
+    const targetUrl = subpageSlug.startsWith('..') ? subpageSlug.substring(2) : `/7brew-menu/${subpageSlug}`;
+    subpageButtonHtml = `
+      <div style="text-align: center; margin-top: 30px;">
+        <a href="${targetUrl}" class="btn btn-primary" style="padding: 12px 30px; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; display: inline-block;">View Full ${cat} Menu &rarr;</a>
+      </div>
+    `;
+  }
+
   preRenderedMenuHtml += `
     <section class="menu-category-section" id="${sectionId}" style="margin-bottom: 60px; scroll-margin-top: 120px;">
-      <h2 style="font-size: 2.2rem; font-family: var(--font-heading); margin-bottom: 24px; padding-bottom: 10px; border-bottom: 2px solid var(--color-primary); color: var(--text-white);">${cat} Hub</h2>
+      <h2 style="font-size: 2.2rem; font-family: var(--font-heading); margin-bottom: 24px; padding-bottom: 10px; border-bottom: 2px solid var(--color-primary); color: var(--text-white);">${cat} Preview</h2>
       <div class="menu-grid">
-        ${catItems.map(item => {
+        ${displayedItems.map(item => {
           const defaultPrice = item.sizes.medium ? item.sizes.medium.price : (item.sizes.small ? item.sizes.small.price : 0);
           const slug = getSlug(item.name);
           return `
@@ -300,6 +327,7 @@ categoryOrder.forEach(cat => {
           `;
         }).join('')}
       </div>
+      ${subpageButtonHtml}
     </section>
   `;
 });

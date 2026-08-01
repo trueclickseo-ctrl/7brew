@@ -115,10 +115,6 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME}.html -f
 RewriteRule ^([^/]+)/?$ $1.html [L]
 
-# Clean URLs for subfolders
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME}.html -f
 # Route clean 7brew-menu/[category] to menu/[category].html
 RewriteRule ^7brew-menu/(coffee|energy-drinks|smoothies|teas-and-chai|lemonades|shakes|fizz)/?$ menu/$1.html [L]
 

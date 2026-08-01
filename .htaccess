@@ -8,10 +8,14 @@ RewriteRule ^how-rewards-work/?$ https://www.7brewguide.com/7brew-rewards [R=301
 RewriteRule ^prices/?$ https://www.7brewguide.com/7brew-menu [R=301,L,NC]
 RewriteRule ^index\.html$ https://www.7brewguide.com/ [R=301,L,NC]
 
-# 2. General Force HTTPS and www (Handled at Hostinger hosting/DNS level)
+# 2. General Force HTTPS and www
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP_HOST} ^7brewguide\.com$ [NC]
+RewriteRule ^ https://www.7brewguide.com%{REQUEST_URI} [R=301,L]
 
 # 3. Strip trailing slashes from non-directory requests (relative redirect to avoid SSL termination loops)
 RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} !^/$
 RewriteCond %{REQUEST_URI} (.+)/$
 RewriteRule ^ %1 [R=301,L]
 

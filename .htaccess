@@ -66,6 +66,16 @@ RewriteRule ^7brew-menu$ menu.html [L]
 RewriteRule ^7brew-locations$ locations.html [L]
 RewriteRule ^7brew-blog$ blog.html [L]
 RewriteRule ^7brew-calorie-calculator$ calorie-calculator.html [L]
+RewriteRule ^7brew-nutrition$ nutrition.html [L]
+RewriteRule ^7brew-sugar-free$ sugar-free.html [L]
+RewriteRule ^7brew-kids-menu$ kids-menu.html [L]
+
+# Route clean 7brew-locations/[state] to locations/[state].html
+RewriteRule ^7brew-locations/(arkansas|missouri|oklahoma|kansas)/?$ locations/$1.html [L]
+
+# 301 Redirect old /locations/[state] to /7brew-locations/[state]
+RewriteCond %{THE_REQUEST} \s/locations/(arkansas|missouri|oklahoma|kansas)\s [NC]
+RewriteRule ^ https://www.7brewguide.com/7brew-locations/%1 [R=301,L]
 
 # Route clean category slugs to menu.html
 RewriteRule ^7orignal$ menu.html [L]
@@ -109,6 +119,13 @@ RewriteRule ^([^/]+)/?$ $1.html [L]
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME}.html -f
+# Route clean 7brew-menu/[category] to menu/[category].html
+RewriteRule ^7brew-menu/(coffee|energy-drinks|smoothies|teas-and-chai|lemonades|shakes|fizz)/?$ menu/$1.html [L]
+
+# 301 Redirect old /menu/[category] to /7brew-menu/[category]
+RewriteCond %{THE_REQUEST} \s/menu/(coffee|energy-drinks|smoothies|teas-and-chai|lemonades|shakes|fizz)\s [NC]
+RewriteRule ^ https://www.7brewguide.com/7brew-menu/%1 [R=301,L]
+
 RewriteRule ^menu/([^/]+)/?$ menu/$1.html [L]
 
 RewriteCond %{REQUEST_FILENAME} !-d

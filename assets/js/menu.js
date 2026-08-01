@@ -51,6 +51,20 @@ async function fetchMenu() {
       activeCategory = catParam;
     } else if (window.location.hash === '#secret-menu' || path.endsWith('/7brew-secret-menu') || path.endsWith('/secret-menu')) {
       activeCategory = 'Secret Menu';
+    } else if (path.endsWith('/coffee')) {
+      activeCategory = 'Coffee';
+    } else if (path.endsWith('/energy-drinks')) {
+      activeCategory = '7 Energy';
+    } else if (path.endsWith('/smoothies')) {
+      activeCategory = 'Smoothies';
+    } else if (path.endsWith('/teas-and-chai')) {
+      activeCategory = 'Teas, Chai & Matcha';
+    } else if (path.endsWith('/lemonades')) {
+      activeCategory = 'Lemonades';
+    } else if (path.endsWith('/shakes')) {
+      activeCategory = 'Shakes';
+    } else if (path.endsWith('/fizz')) {
+      activeCategory = '7 Fizz';
     }
     
     renderCategoryFilterTags();
@@ -278,7 +292,11 @@ function applyFilters() {
 
   // Category filter
   if (activeCategory !== 'All') {
-    filtered = filtered.filter(item => item.category === activeCategory);
+    if (activeCategory === 'Coffee') {
+      filtered = filtered.filter(item => item.category === '7 Originals' || item.category === '7 Classics');
+    } else {
+      filtered = filtered.filter(item => item.category === activeCategory);
+    }
   }
 
   // Search filter

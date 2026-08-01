@@ -1,185 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://www.googletagmanager.com">
-  <link rel="preload" as="style" href="/assets/css/style.css?v=1.0.9">
-  <link rel="preload" as="image" href="/assets/images/logo-header.png" type="image/png">
-  <link rel="alternate" type="text/markdown" href="/llms.txt" title="LLM Text Summary">
-
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>7 Brew Drive-Thrus in Arkansas | Location Finder</title>
-  <meta name="description" content="Find verified 7 Brew drive-thru locations, phone numbers, and operating hours across the state of Arkansas.">
-  <link rel="canonical" href="https://www.7brewguide.com/locations/arkansas">
-  
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="7 Brew Drive-Thrus in Arkansas | Location Finder">
-  <meta property="og:description" content="Find verified 7 Brew drive-thru locations, phone numbers, and operating hours across the state of Arkansas.">
-  <meta property="og:image" content="/assets/images/og-main.jpg">
-  <meta name="twitter:card" content="summary_large_image">
-  
-  <link rel="stylesheet" href="/assets/css/style.css?v=1.0.9">
-  <link rel="icon" type="image/png" href="/favicon.png?v=1.0.2">
-
-  <!-- Defer Analytics for 90+ Mobile PageSpeed -->
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-8VM681EN3E');
-
-    function loadAnalytics() {
-      if (window.analyticsLoaded) return;
-      window.analyticsLoaded = true;
-      var gtmScript = document.createElement('script');
-      gtmScript.async = true;
-      gtmScript.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-KLFDRK3Q';
-      document.head.appendChild(gtmScript);
-
-      var gtagScript = document.createElement('script');
-      gtagScript.async = true;
-      gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-8VM681EN3E';
-      document.head.appendChild(gtagScript);
-    }
-    if (document.readyState === 'complete') {
-      loadAnalytics();
-    } else {
-      window.addEventListener('load', loadAnalytics, { passive: true });
-      setTimeout(loadAnalytics, 3500);
-    }
-  </script>
-
-  
-</head>
-
+${getHead(`7 Brew Locations in ${state} (2026) | Addresses, Hours & Map`, `Find every 7 Brew drive-thru in ${state} — addresses, hours, and directions for all ${totalStands} ${state} locations. Updated for 2026.`, `/7brew-locations/${stateSlug}`)}
 <body>
-  
-  <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KLFDRK3Q"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
-  <header class="header">
-    <div class="container nav-container">
-      <a href="/" class="logo" id="nav-logo">
-        <img src="/assets/images/logo-header.png" alt="7 Brew Logo" class="logo-img" width="40" height="40" fetchpriority="high"> 7 Brew Inspired
-      </a>
-      <nav class="nav-menu" id="nav-menu">
-        <a href="/" class="nav-link ">Home</a>
-        <a href="/7brew-menu" class="nav-link ">Menu</a>
-        <a href="/secret-menu" class="nav-link ">Secret Menu</a>
-        <a href="/7brew-calorie-calculator" class="nav-link ">Calculator</a>
-        <a href="/7brew-locations" class="nav-link active">Locations</a>
-        <a href="/7brew-rewards" class="nav-link ">Rewards</a>
-        <a href="/7brew-deals" class="nav-link ">Deals</a>
-        <a href="/7brew-blog" class="nav-link ">Blog</a>
-      </nav>
-      <div class="nav-toggle" id="nav-toggle" aria-label="Toggle Menu">&#9776;</div>
-    </div>
-  </header>
-
+  ${getHeader('locations')}
   
   <main style="padding-top: 140px; padding-bottom: 80px;">
     <div class="container">
       <nav aria-label="breadcrumb" style="margin-bottom: 24px; font-size: 0.9rem; color: var(--text-muted);">
         <a href="/" style="color: var(--color-primary);">Home</a> &gt; 
         <a href="/7brew-locations" style="color: var(--color-primary);">Locations</a> &gt; 
-        <span style="color: var(--text-gray);">Arkansas</span>
+        <span style="color: var(--text-gray);">${state}</span>
       </nav>
 
       <div class="section-header" style="text-align: left; margin-bottom: 40px;">
-        <h1 style="font-size: 3rem; margin-bottom: 12px; font-family: var(--font-heading);">7 Brew Locations in Arkansas</h1>
-        <p style="font-size: 1.1rem; color: var(--text-gray);">Choose a city below to view local drive-thru addresses, maps, phone numbers, and operational hours.</p>
+        <h1 style="font-size: 3rem; margin-bottom: 16px; font-family: var(--font-heading);">7 Brew Locations in ${state}</h1>
+        <p style="font-size: 1.1rem; line-height: 1.7; max-width: 900px; color: var(--text-gray);">${introParagraph}</p>
       </div>
 
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-bottom: 60px;">
-        
-      <div style="background: var(--bg-card); padding: 24px; border-radius: var(--border-radius-md); border: 1px solid var(--border-glass); display: flex; justify-content: space-between; align-items: center;">
-        <div>
-          <h3 style="font-size: 1.4rem; font-family: var(--font-heading); margin: 0; color: var(--text-white);">Rogers</h3>
-          <span style="color: var(--text-gray); font-size: 0.9rem;">3 Active Stands</span>
-        </div>
-        <a href="/locations/rogers-arkansas" class="btn btn-secondary" style="font-size: 0.8rem; padding: 8px 16px;">View City</a>
+      <div style="overflow-x: auto; margin-bottom: 40px; background: var(--bg-card); border-radius: var(--border-radius-md); border: 1px solid var(--border-glass);">
+        <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem;">
+          <thead>
+            <tr style="border-bottom: 2px solid var(--color-primary); background: rgba(255,255,255,0.02);">
+              <th style="padding: 16px; color: var(--text-white); font-family: var(--font-heading);">City</th>
+              <th style="padding: 16px; color: var(--text-white); font-family: var(--font-heading);">Address</th>
+              <th style="padding: 16px; color: var(--text-white); font-family: var(--font-heading);">Hours</th>
+              <th style="padding: 16px; color: var(--text-white); font-family: var(--font-heading);">Map Link</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${addressTableRowsHtml}
+          </tbody>
+        </table>
       </div>
-    
-      <div style="background: var(--bg-card); padding: 24px; border-radius: var(--border-radius-md); border: 1px solid var(--border-glass); display: flex; justify-content: space-between; align-items: center;">
-        <div>
-          <h3 style="font-size: 1.4rem; font-family: var(--font-heading); margin: 0; color: var(--text-white);">Springdale</h3>
-          <span style="color: var(--text-gray); font-size: 0.9rem;">2 Active Stands</span>
-        </div>
-        <a href="/locations/springdale-arkansas" class="btn btn-secondary" style="font-size: 0.8rem; padding: 8px 16px;">View City</a>
-      </div>
-    
-      <div style="background: var(--bg-card); padding: 24px; border-radius: var(--border-radius-md); border: 1px solid var(--border-glass); display: flex; justify-content: space-between; align-items: center;">
-        <div>
-          <h3 style="font-size: 1.4rem; font-family: var(--font-heading); margin: 0; color: var(--text-white);">Fayetteville</h3>
-          <span style="color: var(--text-gray); font-size: 0.9rem;">2 Active Stands</span>
-        </div>
-        <a href="/locations/fayetteville-arkansas" class="btn btn-secondary" style="font-size: 0.8rem; padding: 8px 16px;">View City</a>
-      </div>
-    
-      <div style="background: var(--bg-card); padding: 24px; border-radius: var(--border-radius-md); border: 1px solid var(--border-glass); display: flex; justify-content: space-between; align-items: center;">
-        <div>
-          <h3 style="font-size: 1.4rem; font-family: var(--font-heading); margin: 0; color: var(--text-white);">Little Rock</h3>
-          <span style="color: var(--text-gray); font-size: 0.9rem;">1 Active Stands</span>
-        </div>
-        <a href="/locations/little-rock-arkansas" class="btn btn-secondary" style="font-size: 0.8rem; padding: 8px 16px;">View City</a>
-      </div>
-    
+
+      <div style="background: var(--bg-card); border-radius: var(--border-radius-md); padding: 30px; border: 1px solid var(--border-glass); line-height: 1.8; color: var(--text-gray); margin-bottom: 40px;">
+        <p style="margin: 0; font-size: 1.05rem;">
+          Looking for more than just an address? Check the <a href="/7brew-menu" style="color: var(--color-primary); font-weight: 600;">full 7 Brew menu with prices</a>, browse the <a href="/secret-menu" style="color: var(--color-primary); font-weight: 600;">secret menu</a> for off-menu favorites, or use our <a href="/7brew-calorie-calculator" style="color: var(--color-primary); font-weight: 600;">calorie calculator</a> before you order.
+        </p>
       </div>
 
     </div>
   </main>
   
-  
-  <footer class="footer">
-    <div class="container footer-grid">
-      <div class="footer-brand">
-        <h3>⚡ 7 Brew Inspired</h3>
-        <p>Your ultimate independent fan guide to custom menu creations, caffeine calculations, and secret barista hacks.</p>
-      </div>
-      <div>
-        <h4 class="footer-links-title">Menu & Guide</h4>
-        <ul class="footer-links">
-          <li><a href="/7brew-menu">Full Menu</a></li>
-          <li><a href="/secret-menu">Secret Menu</a></li>
-          <li><a href="/menu/caffeine-and-allergens">Caffeine & Allergens</a></li>
-          <li><a href="/7brew-calorie-calculator">Calorie Calculator</a></li>
-          <li><a href="/recipe-maker">Recipe Maker</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4 class="footer-links-title">Stand Info</h4>
-        <ul class="footer-links">
-          <li><a href="/7brew-locations">Find Locations</a></li>
-          <li><a href="/7brew-rewards">Rewards Program</a></li>
-          <li><a href="/rewards/sign-up">Sign Up Guide</a></li>
-          <li><a href="/7brew-deals">Current Deals</a></li>
-          <li><a href="/7-brew-vs-starbucks">7 Brew vs Starbucks</a></li>
-          <li><a href="/7-brew-vs-dutch-bros">7 Brew vs Dutch Bros</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4 class="footer-links-title">About Fan Site</h4>
-        <ul class="footer-links">
-          <li><a href="/about">About Us</a></li>
-          <li><a href="/editorial-policy">Editorial Policy</a></li>
-          <li><a href="/contact">Contact</a></li>
-          <li><a href="/privacy-policy">Privacy Policy</a></li>
-          <li><a href="/terms">Terms & Conditions</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="container footer-bottom">
-      <p>&copy; 2026 7 Brew Coffee Inspired Fan Site. All Rights Reserved. Crafted for high-energy coffee fans.</p>
-      <p style="font-size: 0.75rem; margin-top: 10px; opacity: 0.6; max-width: 800px; margin-left: auto; margin-right: auto; line-height: 1.4;">
-        Independent blog and fan site for 7 Brew enthusiasts. This website is not affiliated with, authorized, endorsed by, or sponsored by 7 Brew Coffee or its parent companies. All trademarks, logos, and brand names are the property of their respective owners.
-      </p>
-      <p>SSL Secured | Static Hosting Ready</p>
-    </div>
-  </footer>
-
+  ${getFooter()}
 </body>
 </html>

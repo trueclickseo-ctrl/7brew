@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+${getHead('7 Brew Nutrition Facts & Calories Guide (2026)', 'Complete 7 Brew nutrition guide — calories, sugar, and caffeine by drink category. Find low-calorie picks and use our free calculator to check your exact order.', '/7brew-nutrition', nutritionFaqSchema)}
+<body>
+  ${getHeader('calculator')}
+  
+  <main style="padding-top: 140px; padding-bottom: 80px; min-height: 85vh;">
+    <div class="container">
+      <!-- Breadcrumbs -->
+      <nav aria-label="breadcrumb" style="margin-bottom: 24px; font-size: 0.9rem; color: var(--text-muted);">
+        <a href="/" style="color: var(--color-primary);">Home</a> &gt; 
+        <a href="/7brew-calorie-calculator" style="color: var(--color-primary);">Calorie Calculator</a> &gt; 
+        <span style="color: var(--text-gray);">Nutrition Facts</span>
+      </nav>
+
+      <div class="section-header" style="text-align: left; margin-bottom: 40px;">
+        <h1 style="font-size: 3rem; margin-bottom: 16px; font-family: var(--font-heading);">7 Brew Nutrition Facts & Calories</h1>
+        <p style="font-size: 1.1rem; line-height: 1.7; max-width: 900px; color: var(--text-gray); margin-bottom: 16px;">
+          Curious what's actually in your 7 Brew order? Because almost every drink is fully customizable — different bases, milks, syrups, and sizes — calories and sugar can swing a lot from one build to the next. This guide breaks down what affects your drink's nutrition the most, so you can make an informed choice before you pull up to the window. For an exact number based on your specific order, use our free <a href="/7brew-calorie-calculator" style="color: var(--color-primary); font-weight: bold; text-decoration: underline;">7 Brew Calorie Calculator</a>.
+        </p>
+        <p style="font-size: 0.9rem; color: var(--text-muted);">
+          Last updated: August 2, 2026 | Reviewed by <a href="/editorial-policy" style="color: var(--color-primary); font-weight: 600; text-decoration: underline;">7BrewGuide Editorial Team</a>
+        </p>
+      </div>
+
+      <!-- Nutrition table -->
+      <section style="margin-bottom: 50px;">
+        <h2 style="font-size: 2rem; font-family: var(--font-heading); color: var(--text-white); margin-bottom: 20px;">Calories, Sugar &amp; Caffeine Ranges by Category</h2>
+        <div style="overflow-x: auto; background: var(--bg-card); border-radius: var(--border-radius-md); border: 1px solid var(--border-glass);">
+          <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem;">
+            <thead>
+              <tr style="border-bottom: 2px solid var(--color-primary); background: rgba(255,255,255,0.02);">
+                <th style="padding: 16px; color: var(--text-white); font-family: var(--font-heading);">Category</th>
+                <th style="padding: 16px; color: var(--text-white); font-family: var(--font-heading);">Calories Range</th>
+                <th style="padding: 16px; color: var(--text-white); font-family: var(--font-heading);">Sugar Range</th>
+                <th style="padding: 16px; color: var(--text-white); font-family: var(--font-heading);">Caffeine Range</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${nutritionRowsHtml}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Customization details -->
+      <section style="background: var(--bg-card); border-radius: var(--border-radius-md); padding: 40px; margin-bottom: 60px; border: 1px solid var(--border-glass); line-height: 1.8; color: var(--text-gray);">
+        <h2 style="font-size: 2rem; font-family: var(--font-heading); color: var(--text-white); margin-bottom: 20px;">What Affects Your Calorie Count Most</h2>
+        <p style="margin-bottom: 20px;">
+          The biggest swings in a 7 Brew order come down to four things: base drink, milk choice, syrup amount, and size. Switching from whole milk to almond or oat milk, choosing sugar-free syrup, or sizing down are the fastest ways to cut calories without giving up flavor.
+        </p>
+        <p style="margin-bottom: 20px;">
+          For example:
+        </p>
+        <ul style="padding-left: 20px; color: var(--text-white); margin-bottom: 20px; list-style-type: square;">
+          <li>Choosing <strong>Almond Milk</strong> instead of whole milk saves about 80 calories per serving.</li>
+          <li>Opting for <strong>Sugar-Free Syrup</strong> swaps out standard syrups containing 80 calories and 19g of sugar per portion to essentially 0 calories and 0g sugar.</li>
+          <li>Ordering a <strong>Small (16 oz)</strong> instead of a <strong>Large (32 oz)</strong> generally cuts the calorie load and sugar intake in half.</li>
+        </ul>
+
+        <h3 style="font-size: 1.5rem; font-family: var(--font-heading); color: var(--text-white); margin-top: 30px; margin-bottom: 12px;">Lower-Calorie Picks</h3>
+        <p style="margin-bottom: 20px;">
+          If you want to keep it light, here are some excellent lower-calorie options directly from the menu:
+        </p>
+        <ul style="padding-left: 20px; color: var(--text-white); list-style-type: square;">
+          <li><strong>Classic Cold Brew</strong>: Just 5 calories for plain black coffee, providing a smooth caffeine boost without sugar or dairy.</li>
+          <li><strong>Classic Americano</strong>: Bold espresso shot with hot water, yielding only 5-10 calories depending on size.</li>
+          <li><strong>Sugar-Free customized energy drinks</strong>: Using sugar-free syrups and sugar-free energy bases keeps the calorie count extremely low while keeping the vibrant fruit flavors intact.</li>
+        </ul>
+      </section>
+
+      <!-- FAQ Section -->
+      <section style="max-width: 800px; margin: 0 auto;">
+        <h2 style="font-size: 2rem; font-family: var(--font-heading); text-align: center; margin-bottom: 30px; color: var(--text-white);">Frequently Asked Questions</h2>
+        <div style="display: flex; flex-direction: column; gap: 20px;">
+          <div style="background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: var(--border-radius-md); padding: 24px;">
+            <h3 style="font-size: 1.2rem; color: var(--color-primary); margin-bottom: 10px; font-family: var(--font-heading);">What is the lowest-calorie drink at 7 Brew?</h3>
+            <p style="color: var(--text-gray); line-height: 1.6; margin: 0;">
+              Plain black coffee options like Cold Brew or House Blend are typically the lowest-calorie choices on the 7 Brew menu, since they contain no added milk or syrup.
+            </p>
+          </div>
+          <div style="background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: var(--border-radius-md); padding: 24px;">
+            <h3 style="font-size: 1.2rem; color: var(--color-primary); margin-bottom: 10px; font-family: var(--font-heading);">Does 7 Brew have sugar-free options?</h3>
+            <p style="color: var(--text-gray); line-height: 1.6; margin: 0;">
+              Yes. 7 Brew offers sugar-free syrup for most drinks across coffee, energy, tea, and lemonade categories, letting you customize almost any drink to cut added sugar.
+            </p>
+          </div>
+          <div style="background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: var(--border-radius-md); padding: 24px;">
+            <h3 style="font-size: 1.2rem; color: var(--color-primary); margin-bottom: 10px; font-family: var(--font-heading);">How can I lower the calories in my 7 Brew order?</h3>
+            <p style="color: var(--text-gray); line-height: 1.6; margin: 0;">
+              The four biggest levers are: choosing a lower-calorie milk (almond, oat, or skim instead of whole), asking for sugar-free syrup, reducing the number of syrup pumps, and ordering a smaller size.
+            </p>
+          </div>
+          <div style="background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: var(--border-radius-md); padding: 24px;">
+            <h3 style="font-size: 1.2rem; color: var(--color-primary); margin-bottom: 10px; font-family: var(--font-heading);">Does 7 Brew publish an official nutrition PDF?</h3>
+            <p style="color: var(--text-gray); line-height: 1.6; margin: 0;">
+              7 Brew does not currently publish a complete official nutrition PDF covering every drink and customization. This guide is based on publicly available ingredient and sizing information.
+            </p>
+          </div>
+          <div style="background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: var(--border-radius-md); padding: 24px;">
+            <h3 style="font-size: 1.2rem; color: var(--color-primary); margin-bottom: 10px; font-family: var(--font-heading);">How many calories are in a 7 Brew energy drink?</h3>
+            <p style="color: var(--text-gray); line-height: 1.6; margin: 0;">
+              Calories vary by flavor and size, largely depending on how much syrup is used — sugar-free syrup options can significantly reduce the total.
+            </p>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+  
+  ${getFooter()}
+</body>
+</html>

@@ -46,6 +46,21 @@ allHtmlFiles.forEach(file => {
     if (urlPath === 'rewards') urlPath = '7brew-rewards';
     if (urlPath === 'recipe-maker') urlPath = '7brew-recipe-maker';
     if (urlPath === 'secret-menu') urlPath = 'secret-menu'; // or 7brew-secret-menu
+    if (urlPath === 'nutrition') urlPath = '7brew-nutrition';
+    if (urlPath === 'sugar-free') urlPath = '7brew-sugar-free';
+    if (urlPath === 'kids-menu') urlPath = '7brew-kids-menu';
+
+    // Map locations/[state] to 7brew-locations/[state]
+    const stateSlugs = ['arkansas', 'missouri', 'oklahoma', 'kansas'];
+    const parts = urlPath.split('/');
+    if (parts[0] === 'locations' && parts.length === 2 && stateSlugs.includes(parts[1])) {
+      urlPath = '7brew-locations/' + parts[1];
+    }
+    
+    // Map menu/[category] to 7brew-menu/[category]
+    if (parts[0] === 'menu' && parts.length === 2 && parts[1] !== 'caffeine-and-allergens') {
+      urlPath = '7brew-menu/' + parts[1];
+    }
   }
 
   const url = `${domain}/${urlPath}`;

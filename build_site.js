@@ -143,6 +143,8 @@ const getFooter = () => `
           <li><a href="/secret-menu">Secret Menu</a></li>
           <li><a href="/menu/caffeine-and-allergens">Caffeine & Allergens</a></li>
           <li><a href="/7brew-calorie-calculator">Calorie Calculator</a></li>
+          <li><a href="/7brew-sugar-free">Sugar-Free Guide</a></li>
+          <li><a href="/7brew-kids-menu">Kids Menu</a></li>
           <li><a href="/recipe-maker">Recipe Maker</a></li>
         </ul>
       </div>
@@ -303,10 +305,87 @@ categoryOrder.forEach(cat => {
 });
 
 // Clean canonical, replace nav and footer, inject menu HTML
+const menuFaqHtml = `
+  <!-- FAQs -->
+  <section style="max-width: 800px; margin: 60px auto 0 auto; border-top: 1px solid var(--border-glass); padding-top: 40px; clear: both;">
+    <h2 style="font-size: 2rem; font-family: var(--font-heading); text-align: center; margin-bottom: 30px; color: var(--text-white);">Frequently Asked Questions</h2>
+    <div style="display: flex; flex-direction: column; gap: 20px;">
+      <div style="background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: var(--border-radius-md); padding: 24px;">
+        <h3 style="font-size: 1.2rem; color: var(--color-primary); margin-bottom: 10px; font-family: var(--font-heading);">How many drink combinations does 7 Brew offer?</h3>
+        <p style="color: var(--text-gray); line-height: 1.6; margin: 0;">
+          7 Brew's menu supports over 20,000 possible drink combinations once you factor in bases, milks, syrups, and sizes.
+        </p>
+      </div>
+      <div style="background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: var(--border-radius-md); padding: 24px;">
+        <h3 style="font-size: 1.2rem; color: var(--color-primary); margin-bottom: 10px; font-family: var(--font-heading);">What sizes does 7 Brew offer?</h3>
+        <p style="color: var(--text-gray); line-height: 1.6; margin: 0;">
+          7 Brew drinks typically come in Small, Medium, and Large, with prices increasing by size across most categories.
+        </p>
+      </div>
+      <div style="background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: var(--border-radius-md); padding: 24px;">
+        <h3 style="font-size: 1.2rem; color: var(--color-primary); margin-bottom: 10px; font-family: var(--font-heading);">Can I customize any drink at 7 Brew?</h3>
+        <p style="color: var(--text-gray); line-height: 1.6; margin: 0;">
+          Yes — nearly every drink on the 7 Brew menu can be customized with your choice of milk, syrup flavor, sweetness level, and size.
+        </p>
+      </div>
+      <div style="background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: var(--border-radius-md); padding: 24px;">
+        <h3 style="font-size: 1.2rem; color: var(--color-primary); margin-bottom: 10px; font-family: var(--font-heading);">Does 7 Brew have dairy-free options?</h3>
+        <p style="color: var(--text-gray); line-height: 1.6; margin: 0;">
+          Yes, 7 Brew offers several non-dairy milk alternatives, including almond, oat, and coconut milk.
+        </p>
+      </div>
+    </div>
+  </section>
+`;
+
+const menuFaqSchema = `
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How many drink combinations does 7 Brew offer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "7 Brew's menu supports over 20,000 possible drink combinations once you factor in bases, milks, syrups, and sizes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What sizes does 7 Brew offer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "7 Brew drinks typically come in Small, Medium, and Large, with prices increasing by size across most categories."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I customize any drink at 7 Brew?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — nearly every drink on the 7 Brew menu can be customized with your choice of milk, syrup flavor, sweetness level, and size."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does 7 Brew have dairy-free options?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, 7 Brew offers several non-dairy milk alternatives, including almond, oat, and coconut milk."
+      }
+    }
+  ]
+}
+</script>
+</head>`;
+
 menuHtml = menuHtml.replace(/<link rel="canonical" href="[^"]*">/, '<link rel="canonical" href="https://www.7brewguide.com/7brew-menu">');
+menuHtml = menuHtml.replace('</head>', menuFaqSchema);
 menuHtml = menuHtml.replace(/<header class="header">[\s\S]*?<\/header>/, getHeader('menu'));
 menuHtml = menuHtml.replace(/<footer class="footer">[\s\S]*?<\/footer>/, getFooter());
-menuHtml = menuHtml.replace(/<div id="menu-sections-container">[\s\S]*?<\/div>\s*<\/div>/, `<div id="menu-sections-container">${preRenderedMenuHtml}</div></div>`);
+menuHtml = menuHtml.replace(/<div id="menu-sections-container">[\s\S]*?<\/div>\s*<\/div>/, `<div id="menu-sections-container">${preRenderedMenuHtml}${menuFaqHtml}</div></div>`);
 fs.writeFileSync(menuTemplatePath, menuHtml, 'utf8');
 
 // ----------------------------------------------------
@@ -364,75 +443,76 @@ const menuDir = path.join(__dirname, 'menu');
 if (!fs.existsSync(menuDir)) fs.mkdirSync(menuDir);
 
 const categoryDescriptions = {
-  'originals': {
-    title: '7 Originals Signature Drinks',
-    desc: 'Explore the legendary 7 Originals menu at 7 Brew Coffee! These custom espresso-based breve drinks are rich, creamy, and packed with flavor syrups.',
-    intro: 'The 7 Originals are the core signature beverages that built the 7 Brew legacy. These specialty breves (made with creamy half-and-half) and mochas combine robust espresso shots with premium syrup combinations. From the vanilla-caramel sweetness of the Blondie to the coconut-infused German Chocolate, these recipes offer an elevated coffee experience that stands out in the drive-thru landscape.'
+  'coffee': {
+    title: '7 Brew Coffee Menu',
+    desc: 'See the full 7 Brew coffee menu with prices — lattes, cold brew, americanos, macchiatos, and the signature 7 Originals breves.',
+    intro: "7 Brew's coffee lineup runs from straightforward classics — lattes, cold brew, americanos — to the signature 7 Originals breves that built the brand's reputation, like the Blondie and Brunette. Every drink can be built hot, iced, or blended, and customized with any syrup or milk on the menu. Below is the full coffee menu with current prices by size.",
+    categories: ['7 Originals', '7 Classics']
   },
-  'classics': {
-    title: '7 Classics Beverages',
-    desc: 'Discover the timeless favorites on the 7 Brew Classics menu. Rich lattes, premium mochas, flat whites, and bold house espresso options.',
-    intro: 'While custom mixes are a fan favorite, the 7 Classics cater to the purists who appreciate traditional coffee execution. Featuring perfectly pulled espresso shots blended with steamed whole milk or chocolate bases, these drinks represent coffee craftsmanship. Enjoy a rich caramel latte, a velvety cappuccino, or a dark chocolate mocha, crafted quickly for your drive-thru convenience.'
-  },
-  'energy': {
-    title: 'Seven Energy Custom Mixes',
-    desc: 'Check out the high-powered Seven Energy drink menu. Premium carbonated energy bases customized with blue raspberry, peach, and berry flavor syrups.',
-    intro: 'Need a powerful pick-me-up? The Seven Energy category is 7 Brew’s customizable energy powerhouse. Starting with our proprietary Seven Energy carbonated drink base, we layer in custom syrups to create refreshing, colorful focus-boosters. Popular combinations like Ocean Breeze and Tropic Thunder showcase fruit infusions that keep you hydrated and fully energized throughout the day.'
-  },
-  'fizz': {
-    title: 'Sparkling 7 Fizz Flavors',
-    desc: 'Quench your thirst with our sparkling 7 Fizz drinks. Effervescent carbonated water mixed with premium syrups for a soda-style refresher.',
-    intro: 'If you want bubbles without the caffeine or coffee, 7 Fizz is the ultimate sparkling alternative. Combining sparkling water with any choice of our 30+ fruit and dessert syrups, it is a customizable soda beverage that kids and adults love. Combine blue raspberry, cherry, or lime to create your custom sparkling flavor profile.'
-  },
-  'teas': {
-    title: 'Premium Teas, Chai & Matcha',
-    desc: 'Browse 7 Brew green, black, chai, and matcha tea menus. Enjoy them hot, iced, or blended as custom fruit-sweetened refreshers.',
-    intro: 'Our premium tea selection brings balance and flavor variety to the menu. Brewed from premium green and black tea leaves, these refreshers can be customized with fruit syrups, peach juice, or creamy milk bases. For those seeking spice or earthiness, our chai tea lattes and stone-ground matcha beverages provide the perfect aromatic escape.'
-  },
-  'lemonades': {
-    title: 'Vibrant Sweet Lemonades',
-    desc: 'Sip on our ice-cold, tart and sweet premium lemonades. Customized with fruit syrups for a perfect summer drive-thru refresher.',
-    intro: 'Nothing beats an ice-cold lemonade on a warm afternoon. At 7 Brew, our premium lemonade is sweet, tart, and fully customizable. Pump in blue raspberry, strawberry, or mango syrup to create a custom fruit lemonade that stands out for its bold flavor profile and refreshing quality.'
+  'energy-drinks': {
+    title: '7 Brew Energy Drink Menu',
+    desc: 'Explore the full 7 Brew energy drink menu — flavors like Tiger\'s Blood and Ocean Breeze, caffeine content, and prices by size.',
+    intro: "7 Brew's Energy line takes their signature customization and applies it to a caffeinated, syrup-based energy drink base — no coffee flavor, just clean caffeine and fruit-forward flavor combinations. Popular picks include Ocean Breeze, Tiger's Blood, and Dragon's Blood. Sugar-free syrup is available across the entire Energy menu.",
+    categories: ['7 Energy']
   },
   'smoothies': {
-    title: 'Real Fruit Smoothies',
-    desc: 'Indulge in thick, rich real fruit smoothies at 7 Brew. Flavors include strawberry, wild berry, peach, and pina colada.',
-    intro: 'Craving a thick, fruity refreshment? Our real fruit smoothies are blended creamy and thick, featuring classic fruit flavors like Strawberry, Wild Berry, Mango, Peach, and Piña Colada. Perfect for an on-the-go snack, these smoothies provide a cool, sweet treat that feels healthy and tastes indulgent.'
+    title: '7 Brew Smoothie Menu',
+    desc: 'See the full 7 Brew smoothie menu — real fruit purees, flavors like strawberry, mango, and wildberry, with prices by size.',
+    intro: "7 Brew's smoothies are built on real fruit purees rather than syrup alone, making them one of the more indulgent options on the menu. Popular flavors include Strawberry, Mango, Peach, and Wildberry. Below is the full smoothie lineup with prices.",
+    categories: ['Smoothies']
+  },
+  'teas-and-chai': {
+    title: '7 Brew Teas & Chai Menu',
+    desc: 'Browse the 7 Brew tea menu with prices — iced green & black teas, spiced chai lattes, and matcha. Customize with fruit syrups or milks.',
+    intro: "7 Brew's tea and chai lineup brings together premium green and black tea bases, aromatic spiced chai, and stone-ground matcha. Perfect as ice-cold summer refreshers or cozy hot lattes, these drinks are fully customizable with your choice of fruit syrups and milk bases. Below is the full tea, chai, and matcha menu with prices.",
+    categories: ['Teas, Chai & Matcha']
+  },
+  'lemonades': {
+    title: '7 Brew Lemonade Menu',
+    desc: 'Explore the 7 Brew lemonade menu with prices — sweet & tart lemonades customized with real fruit syrup flavors.',
+    intro: "7 Brew's lemonades feature a classic sweet and tart base served ice-cold or blended as a chiller. Infuse any fruit syrup flavor from our massive library — from blue raspberry to strawberry — to create your ultimate thirst-quencher. Below is the full lemonade lineup with prices.",
+    categories: ['Lemonades']
   },
   'shakes': {
-    title: 'Creamy Custom Shakes',
-    desc: 'Try our thick, hand-blended milkshakes. Choose from chocolate, vanilla, strawberry, or custom flavor syrup mixes.',
-    intro: 'Indulge in a classic American treat. Our hand-blended shakes are crafted with premium vanilla cream bases and mixed with your favorite dessert syrups like caramel, chocolate, or hazelnut. Thick, cold, and rich, they are the perfect sweet finish to any drive-thru visit.'
+    title: '7 Brew Milkshake Menu',
+    desc: 'See the 7 Brew milkshake menu with prices — thick vanilla, chocolate, and strawberry shakes customized with baristas\' favorite dessert syrups.',
+    intro: "7 Brew's shakes are hand-blended with a rich vanilla ice cream base and layered with custom dessert syrups or toppings. From classic vanilla and chocolate to customized caramel drizzled shakes, they are the ultimate sweet treat. Below is the full shake menu with prices.",
+    categories: ['Shakes']
+  },
+  'fizz': {
+    title: '7 Brew Fizz Menu',
+    desc: 'Browse the 7 Brew Fizz menu with prices — caffeine-free sparkling waters customized with any combination of fruit flavor syrups.',
+    intro: "7 Brew Fizz is our caffeine-free, sparkling water refreshment. Blending crisp carbonated water with any mix of our 30+ syrups, it is a clean and fizzy custom soda suitable for kids and adults alike. Below is the full Fizz menu with prices.",
+    categories: ['7 Fizz']
   }
 };
 
 Object.entries(categoryDescriptions).forEach(([catKey, info]) => {
-  const catName = Object.keys(categoryIdMap).find(k => categoryIdMap[k] === catKey);
-  const catItems = menu.filter(item => item.category === catName || (catKey === 'teas' && item.category === 'Teas, Chai & Matcha'));
+  const catItems = menu.filter(item => info.categories.includes(item.category));
   
   let gridHtml = '';
   if (catItems && catItems.length > 0) {
     gridHtml = `
       <div class="menu-grid">
-        ${catItems.map(item => {
+        \${catItems.map(item => {
           const defaultPrice = item.sizes.medium ? item.sizes.medium.price : (item.sizes.small ? item.sizes.small.price : 0);
           const slug = getSlug(item.name);
-          return `
-            <article class="drink-card">
+          return \`
+            <article class="drink-card" data-name="\${item.name.replace(/"/g, '&quot;')}">
               <div class="drink-image-wrap">
-                <img src="${getImageUrl(item)}" alt="${item.name}" width="200" height="200" decoding="async" onerror="this.src='https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=600&auto=format&fit=crop';" loading="lazy">
+                <img src="\${getImageUrl(item)}" alt="\${item.name}" width="200" height="200" decoding="async" onerror="this.src='https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=600&auto=format&fit=crop';" loading="lazy">
               </div>
               <div class="drink-info">
-                <span class="drink-category-label">${item.category}</span>
-                <h3 class="drink-title"><a href="/${slug}">${item.name}</a></h3>
-                <p class="drink-description">${item.description}</p>
+                <span class="drink-category-label">\${item.category}</span>
+                <h3 class="drink-title"><a href="/\${slug}">\${item.name}</a></h3>
+                <p class="drink-description">\${item.description}</p>
                 <div class="drink-meta-row">
-                  <span class="drink-price">$${defaultPrice.toFixed(2)}</span>
-                  <a href="/${slug}" class="btn btn-secondary" style="padding: 6px 16px; font-size: 0.75rem;">View Details</a>
+                  <span class="drink-price">$\${defaultPrice.toFixed(2)}</span>
+                  <a href="/\${slug}" class="btn btn-secondary" style="padding: 6px 16px; font-size: 0.75rem;">View Details</a>
                 </div>
               </div>
             </article>
-          `;
+          \`;
         }).join('')}
       </div>
     `;
@@ -444,15 +524,91 @@ Object.entries(categoryDescriptions).forEach(([catKey, info]) => {
   const relatedCats = Object.keys(categoryDescriptions)
     .filter(k => k !== catKey)
     .slice(0, 3)
-    .map(k => `<li><a href="/menu/${k}" style="color: var(--color-primary); font-weight: 600;">${categoryDescriptions[k].title}</a></li>`)
+    .map(k => `<li><a href="/7brew-menu/${k}" style="color: var(--color-primary); font-weight: 600;">${categoryDescriptions[k].title}</a></li>`)
     .join('');
+
+  // FAQ Schema for Category Pages
+  const categoryFaqSchema = `
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the most popular drink on the ${info.title}?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Customer favorites vary, but our custom syrup mixes tend to top the orders. You can customize any beverage with extra flavor pumps or milk alternatives."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I get these drinks in sugar-free versions?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes! 7 Brew offers a vast library of sugar-free flavor syrups, and you can easily customize your order to utilize sugar-free syrups and low-glycemic milk alternatives."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How can I order these drinks?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Simply ask for the beverage name at the drive-thru, select your size (Small, Medium, Large), specify hot, iced, or blended, and add any customization preferences."
+      }
+    }
+  ]
+}
+</script>
+`;
+
+  // Filter UI navigation buttons for Category pages
+  const categoryNavHtml = `
+      <!-- CATEGORY SCROLL BUTTONS PANEL (Routed to clean category URLs) -->
+      <section class="category-panel-section" style="background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: var(--border-radius-lg); padding: 30px; margin-bottom: 45px; text-align: center; box-shadow: var(--shadow-neon-pink); clear: both;">
+        <h2 style="font-size: 2.2rem; font-family: var(--font-heading); margin-bottom: 10px; color: var(--text-white);">7 Brew Menu Drinks Categories</h2>
+        <p style="color: var(--text-gray); margin-bottom: 24px;">Browse category-specific offerings and menus.</p>
+        <div class="category-buttons-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; max-width: 1000px; margin: 0 auto;">
+          <a href="/7brew-menu/coffee" style="\${catKey === 'coffee' ? 'background: var(--color-primary); color: #fff;' : ''}">Coffee</a>
+          <a href="/7brew-menu/energy-drinks" style="\${catKey === 'energy-drinks' ? 'background: var(--color-primary); color: #fff;' : ''}">Energy Drinks</a>
+          <a href="/7brew-menu/smoothies" style="\${catKey === 'smoothies' ? 'background: var(--color-primary); color: #fff;' : ''}">Smoothies</a>
+          <a href="/7brew-menu/teas-and-chai" style="\${catKey === 'teas-and-chai' ? 'background: var(--color-primary); color: #fff;' : ''}">Teas & Chai</a>
+          <a href="/7brew-menu/lemonades" style="\${catKey === 'lemonades' ? 'background: var(--color-primary); color: #fff;' : ''}">Lemonades</a>
+          <a href="/7brew-menu/shakes" style="\${catKey === 'shakes' ? 'background: var(--color-primary); color: #fff;' : ''}">Shakes</a>
+          <a href="/7brew-menu/fizz" style="\${catKey === 'fizz' ? 'background: var(--color-primary); color: #fff;' : ''}">Fizz</a>
+        </div>
+      </section>
+
+      <!-- FILTER CONTROLS -->
+      <section class="menu-controls">
+        <div class="search-filter-row">
+          <!-- Live Search -->
+          <div class="search-input-wrapper">
+            <span class="search-icon-inside">&#128269;</span>
+            <input type="text" id="menu-search" class="search-input" placeholder="Search drinks, syrups, ingredients...">
+          </div>
+
+          <!-- Sort Selector -->
+          <select id="menu-sort" class="sort-select" aria-label="Sort Menu Items">
+            <option value="default">Sort by: Featured</option>
+            <option value="name-asc">Name: A to Z</option>
+            <option value="name-desc">Name: Z to A</option>
+            <option value="price-low">Price: Low to High</option>
+            <option value="price-high">Price: High to Low</option>
+            <option value="calories-low">Calories: Low to High</option>
+            <option value="calories-high">Calories: High to Low</option>
+          </select>
+        </div>
+      </section>
+  `;
 
   // 1,200+ word copy simulation & FAQ for Category Pages
   const categoryHtml = `<!DOCTYPE html>
 <html lang="en">
-${getHead(info.title + ' | 7 Brew Inspired', info.desc, `/menu/${catKey}`)}
+\${getHead(info.title + ' (2026) | 7 Brew Inspired', info.desc, \`/7brew-menu/\${catKey}\`, categoryFaqSchema)}
 <body>
-  ${getHeader('menu')}
+  \${getHeader('menu')}
   
   <main style="padding-top: 140px; padding-bottom: 80px; min-height: 85vh;">
     <div class="container">
@@ -460,66 +616,73 @@ ${getHead(info.title + ' | 7 Brew Inspired', info.desc, `/menu/${catKey}`)}
       <nav aria-label="breadcrumb" style="margin-bottom: 24px; font-size: 0.9rem; color: var(--text-muted);">
         <a href="/" style="color: var(--color-primary);">Home</a> &gt; 
         <a href="/7brew-menu" style="color: var(--color-primary);">Menu</a> &gt; 
-        <span style="color: var(--text-gray);">${catName}</span>
+        <span style="color: var(--text-gray);">\${info.title}</span>
       </nav>
 
       <div class="section-header" style="text-align: left; margin-bottom: 40px;">
-        <h1 style="font-size: 3rem; margin-bottom: 16px; font-family: var(--font-heading);">${info.title}</h1>
-        <p style="font-size: 1.1rem; line-height: 1.7; max-width: 900px; color: var(--text-gray);">${info.intro}</p>
+        <h1 style="font-size: 3rem; margin-bottom: 16px; font-family: var(--font-heading);">\${info.title}</h1>
+        <p style="font-size: 1.1rem; line-height: 1.7; max-width: 900px; color: var(--text-gray); margin-bottom: 16px;">\${info.intro}</p>
+        <p style="font-size: 0.9rem; color: var(--text-muted);">
+          Last updated: August 2, 2026 | Reviewed by <a href="/editorial-policy" style="color: var(--color-primary); font-weight: 600; text-decoration: underline;">7BrewGuide Editorial Team</a>
+        </p>
       </div>
+
+      \${categoryNavHtml}
 
       <!-- Drink Listings Grid -->
       <section style="margin-bottom: 60px;">
-        <h2 style="font-size: 2rem; font-family: var(--font-heading); margin-bottom: 24px; color: var(--text-white);">Available ${catName} Menu Items</h2>
-        ${gridHtml}
+        <h2 style="font-size: 2rem; font-family: var(--font-heading); margin-bottom: 24px; color: var(--text-white);">Available \${info.title} Items</h2>
+        <div id="menu-sections-container">
+          \${gridHtml}
+        </div>
       </section>
 
       <!-- Category Guide Content (Expanding to 1,200+ words of topical depth) -->
       <section style="background: var(--bg-card); border-radius: var(--border-radius-md); padding: 40px; margin-bottom: 60px; border: 1px solid var(--border-glass); line-height: 1.8; color: var(--text-gray);">
-        <h2 style="font-size: 2rem; font-family: var(--font-heading); color: var(--text-white); margin-bottom: 20px;">The Ultimate Guide to 7 Brew ${catName}</h2>
+        <h2 style="font-size: 2rem; font-family: var(--font-heading); color: var(--text-white); margin-bottom: 20px;">The Ultimate Guide to \${info.title}</h2>
         <p style="margin-bottom: 20px;">
-          When you pull up to a 7 Brew drive-thru stand, the massive board of drink choices can be overwhelming. The ${catName} line represents some of the most dynamic offerings on our entire menu. Whether you are looking for a hot, cozy winter breve, a refreshing summer tea blend, or a customized double-caffeinated energy mix, understanding the structural bases and custom syrups of this category will help you order like a seasoned barista.
+          When you pull up to a 7 Brew drive-thru stand, the massive board of drink choices can be overwhelming. The \${info.title} line represents some of the most dynamic offerings on our entire menu. Whether you are looking for a hot, cozy winter breve, a refreshing summer tea blend, or a customized double-caffeinated energy mix, understanding the structural bases and custom syrups of this category will help you order like a seasoned barista.
         </p>
 
-        <h3 style="font-size: 1.4rem; font-family: var(--font-heading); color: var(--text-white); margin-top: 30px; margin-bottom: 12px;">What Makes ${catName} Unique?</h3>
+        <h3 style="font-size: 1.4rem; font-family: var(--font-heading); color: var(--text-white); margin-top: 30px; margin-bottom: 12px;">What Makes \${info.title} Unique?</h3>
         <p style="margin-bottom: 20px;">
-          Unlike traditional cafes that serve standard drip coffee and lattes, 7 Brew has built its entire reputation on customization and rich flavor profiles. In the ${catName} category, each drink is built from a carefully engineered base—whether that's fresh espresso beans, a premium energy formula, or sparkling water—and layered with Torani and house-special syrups. The density of the dairy, the ratio of ice, and the temperature of the pour are all calibrated to ensure that every sip is consistently bold and sweet.
+          Unlike traditional cafes that serve standard drip coffee and lattes, 7 Brew has built its entire reputation on customization and rich flavor profiles. In the \${info.title} category, each drink is built from a carefully engineered base—whether that's fresh espresso beans, a premium energy formula, or sparkling water—and layered with Torani and house-special syrups. The density of the dairy, the ratio of ice, and the temperature of the pour are all calibrated to ensure that every sip is consistently bold and sweet.
         </p>
 
         <h3 style="font-size: 1.4rem; font-family: var(--font-heading); color: var(--text-white); margin-top: 30px; margin-bottom: 12px;">Calorie & Customization Insights</h3>
         <p style="margin-bottom: 20px;">
-          For health-conscious coffee fans, the ${catName} menu offers incredible versatility. Many of our signature recipes can be customized to be low-calorie, sugar-free, or dairy-free. We offer sugar-free versions of almost all our popular syrups, including vanilla, caramel, irish cream, and chocolate. By substituting whole milk or heavy half-and-half with almond, oat, or coconut milk, you can cut the calorie count of a standard large breve by over 60% while maintaining a rich and satisfying mouthfeel.
+          For health-conscious coffee fans, the \${info.title} menu offers incredible versatility. Many of our signature recipes can be customized to be low-calorie, sugar-free, or dairy-free. We offer sugar-free versions of almost all our popular syrups, including vanilla, caramel, irish cream, and chocolate. By substituting whole milk or heavy half-and-half with almond, oat, or coconut milk, you can cut the calorie count of a standard large breve by over 60% while maintaining a rich and satisfying mouthfeel.
         </p>
 
         <h3 style="font-size: 1.4rem; font-family: var(--font-heading); color: var(--text-white); margin-top: 30px; margin-bottom: 12px;">Barista Order Secrets</h3>
         <p style="margin-bottom: 20px;">
-          To get the perfect balance of flavors, try ordering your drink "half-sweet" if you prefer a stronger coffee flavor, or ask for an "extra shot" of espresso to add a bold, roasted punch that cuts through sweet chocolate and caramel. Don't forget that any drink in the ${catName} category can be served hot, iced, or blended as a frozen chiller. The chiller options feature a pre-blended sweet coffee or energy mix that creates a smoothie-like texture, making it the perfect dessert beverage.
+          To get the perfect balance of flavors, try ordering your drink "half-sweet" if you prefer a stronger coffee flavor, or ask for an "extra shot" of espresso to add a bold, roasted punch that cuts through sweet chocolate and caramel. Don't forget that any drink in the \${info.title} category can be served hot, iced, or blended as a frozen chiller. The chiller options feature a pre-blended sweet coffee or energy mix that creates a smoothie-like texture, making it the perfect dessert beverage.
         </p>
 
         <h3 style="font-size: 1.4rem; font-family: var(--font-heading); color: var(--text-white); margin-top: 30px; margin-bottom: 12px;">Top Related Drink Categories to Explore</h3>
         <ul style="padding-left: 20px; margin-bottom: 20px; list-style-type: square; color: var(--text-white);">
-          ${relatedCats}
+          \${relatedCats}
         </ul>
       </section>
 
       <!-- FAQs -->
       <section style="max-width: 800px; margin: 0 auto 60px auto;">
-        <h2 style="font-size: 2rem; font-family: var(--font-heading); text-align: center; margin-bottom: 30px; color: var(--text-white);">Frequently Asked Questions: ${catName}</h2>
+        <h2 style="font-size: 2rem; font-family: var(--font-heading); text-align: center; margin-bottom: 30px; color: var(--text-white);">Frequently Asked Questions: \${info.title}</h2>
         <div style="display: flex; flex-direction: column; gap: 20px;">
           <div style="background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: var(--border-radius-md); padding: 24px;">
-            <h3 style="font-size: 1.2rem; color: var(--color-primary); margin-bottom: 10px;">Are all drinks in the ${catName} category caffeinated?</h3>
+            <h3 style="font-size: 1.2rem; color: var(--color-primary); margin-bottom: 10px; font-family: var(--font-heading);">Are all drinks in the \${info.title} category caffeinated?</h3>
             <p style="color: var(--text-gray); line-height: 1.6;">
               No. While espresso and energy-based drinks carry substantial caffeine, categories like 7 Fizz, Lemonades, and decaf coffee alternatives are naturally caffeine-free or low-caffeine, making them safe for kids and evening enjoyment.
             </p>
           </div>
           <div style="background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: var(--border-radius-md); padding: 24px;">
-            <h3 style="font-size: 1.2rem; color: var(--color-primary); margin-bottom: 10px;">Can I get these drinks in sugar-free versions?</h3>
+            <h3 style="font-size: 1.2rem; color: var(--color-primary); margin-bottom: 10px; font-family: var(--font-heading);">Can I get these drinks in sugar-free versions?</h3>
             <p style="color: var(--text-gray); line-height: 1.6;">
               Yes! 7 Brew offers a vast library of sugar-free flavor syrups, and you can easily customize your order to utilize sugar-free syrups and low-glycemic milk alternatives to keep calories low.
             </p>
           </div>
           <div style="background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: var(--border-radius-md); padding: 24px;">
-            <h3 style="font-size: 1.2rem; color: var(--color-primary); margin-bottom: 10px;">What is the most popular drink in this category?</h3>
+            <h3 style="font-size: 1.2rem; color: var(--color-primary); margin-bottom: 10px; font-family: var(--font-heading);">What is the most popular drink in this category?</h3>
             <p style="color: var(--text-gray); line-height: 1.6;">
               Popular favorites vary by season, but our signature recipes consistently top the charts. Check out the individual drink detail pages to learn which options are the best-sellers at local drive-thru stands.
             </p>
@@ -529,8 +692,22 @@ ${getHead(info.title + ' | 7 Brew Inspired', info.desc, `/menu/${catKey}`)}
       
     </div>
   </main>
+
+  <!-- DRINK DETAILS MODAL -->
+  <div class="modal" id="drink-modal" aria-hidden="true" role="dialog" aria-label="Drink Details Modal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal()" aria-label="Close Details Modal">&times;</button>
+      <div class="modal-body" id="modal-body-content">
+        <!-- Dynamic details populated from menu.js -->
+      </div>
+    </div>
+  </div>
   
-  ${getFooter()}
+  \${getFooter()}
+  
+  <!-- Scripts -->
+  <script src="/assets/js/main.js"></script>
+  <script src="/assets/js/menu.js?v=1.0.8"></script>
 </body>
 </html>`;
 
@@ -1146,6 +1323,234 @@ ${getHead('7 Brew Coffee Guide | Interactive Menu & Review Directory', 'Find cal
 fs.writeFileSync(indexTemplatePath, indexHtmlContent, 'utf8');
 
 // ----------------------------------------------------
+// STEP 5.5: Generate nutrition.html (Nutrition Facts)
+// ----------------------------------------------------
+console.log('Generating nutrition.html page...');
+const nutritionGrouped = {};
+menu.forEach(item => {
+  if (!nutritionGrouped[item.category]) {
+    nutritionGrouped[item.category] = {
+      minCalories: Infinity,
+      maxCalories: -Infinity,
+      minSugar: Infinity,
+      maxSugar: -Infinity,
+      minCaffeine: Infinity,
+      maxCaffeine: -Infinity,
+      itemsCount: 0
+    };
+  }
+  const catData = nutritionGrouped[item.category];
+  catData.itemsCount++;
+  
+  if (item.sizes) {
+    Object.values(item.sizes).forEach(sz => {
+      if (sz.calories !== undefined) {
+        if (sz.calories < catData.minCalories) catData.minCalories = sz.calories;
+        if (sz.calories > catData.maxCalories) catData.maxCalories = sz.calories;
+      }
+    });
+  }
+
+  const sug = parseInt(item.sugar);
+  if (!isNaN(sug)) {
+    if (sug < catData.minSugar) catData.minSugar = sug;
+    if (sug > catData.maxSugar) catData.maxSugar = sug;
+  }
+
+  const caff = parseInt(item.caffeine);
+  if (!isNaN(caff)) {
+    if (caff < catData.minCaffeine) catData.minCaffeine = caff;
+    if (caff > catData.maxCaffeine) catData.maxCaffeine = caff;
+  }
+});
+
+let nutritionRowsHtml = '';
+categoryOrder.forEach(cat => {
+  const data = nutritionGrouped[cat];
+  if (!data || data.itemsCount === 0) return;
+  
+  const caloriesRange = data.minCalories === Infinity ? 'N/A' : `${data.minCalories} - ${data.maxCalories} Cal`;
+  const sugarRange = data.minSugar === Infinity ? 'N/A' : `${data.minSugar} - ${data.maxSugar}g`;
+  const caffeineRange = data.minCaffeine === Infinity ? 'N/A' : `${data.minCaffeine} - ${data.maxCaffeine}mg`;
+  
+  nutritionRowsHtml += `
+    <tr style="border-bottom: 1px solid var(--border-glass);">
+      <td style="padding: 16px; color: var(--text-white); font-weight: 600;">${cat}</td>
+      <td style="padding: 16px; color: var(--text-gray);">${caloriesRange}</td>
+      <td style="padding: 16px; color: var(--text-gray);">${sugarRange}</td>
+      <td style="padding: 16px; color: var(--text-gray);">${caffeineRange}</td>
+    </tr>
+  `;
+});
+
+const nutritionFaqSchema = `
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the lowest-calorie drink at 7 Brew?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Plain black coffee options like Cold Brew or House Blend are typically the lowest-calorie choices on the 7 Brew menu, since they contain no added milk or syrup."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does 7 Brew have sugar-free options?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. 7 Brew offers sugar-free syrup for most drinks across coffee, energy, tea, and lemonade categories, letting you customize almost any drink to cut added sugar."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How can I lower the calories in my 7 Brew order?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The four biggest levers are: choosing a lower-calorie milk (almond, oat, or skim instead of whole), asking for sugar-free syrup, reducing the number of syrup pumps, and ordering a smaller size."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does 7 Brew publish an official nutrition PDF?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "7 Brew does not currently publish a complete official nutrition PDF covering every drink and customization. This guide is based on publicly available ingredient and sizing information."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How many calories are in a 7 Brew energy drink?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Calories vary by flavor and size, largely depending on how much syrup is used — sugar-free syrup options can significantly reduce the total."
+      }
+    }
+  ]
+}
+</script>
+`;
+
+const nutritionHtml = `<!DOCTYPE html>
+<html lang="en">
+\${getHead('7 Brew Nutrition Facts & Calories Guide (2026)', 'Complete 7 Brew nutrition guide — calories, sugar, and caffeine by drink category. Find low-calorie picks and use our free calculator to check your exact order.', '/7brew-nutrition', nutritionFaqSchema)}
+<body>
+  \${getHeader('calculator')}
+  
+  <main style="padding-top: 140px; padding-bottom: 80px; min-height: 85vh;">
+    <div class="container">
+      <!-- Breadcrumbs -->
+      <nav aria-label="breadcrumb" style="margin-bottom: 24px; font-size: 0.9rem; color: var(--text-muted);">
+        <a href="/" style="color: var(--color-primary);">Home</a> &gt; 
+        <a href="/7brew-calorie-calculator" style="color: var(--color-primary);">Calorie Calculator</a> &gt; 
+        <span style="color: var(--text-gray);">Nutrition Facts</span>
+      </nav>
+
+      <div class="section-header" style="text-align: left; margin-bottom: 40px;">
+        <h1 style="font-size: 3rem; margin-bottom: 16px; font-family: var(--font-heading);">7 Brew Nutrition Facts & Calories</h1>
+        <p style="font-size: 1.1rem; line-height: 1.7; max-width: 900px; color: var(--text-gray); margin-bottom: 16px;">
+          Curious what's actually in your 7 Brew order? Because almost every drink is fully customizable — different bases, milks, syrups, and sizes — calories and sugar can swing a lot from one build to the next. This guide breaks down what affects your drink's nutrition the most, so you can make an informed choice before you pull up to the window. For an exact number based on your specific order, use our free <a href="/7brew-calorie-calculator" style="color: var(--color-primary); font-weight: bold; text-decoration: underline;">7 Brew Calorie Calculator</a>.
+        </p>
+        <p style="font-size: 0.9rem; color: var(--text-muted);">
+          Last updated: August 2, 2026 | Reviewed by <a href="/editorial-policy" style="color: var(--color-primary); font-weight: 600; text-decoration: underline;">7BrewGuide Editorial Team</a>
+        </p>
+      </div>
+
+      <!-- Nutrition table -->
+      <section style="margin-bottom: 50px;">
+        <h2 style="font-size: 2rem; font-family: var(--font-heading); color: var(--text-white); margin-bottom: 20px;">Calories, Sugar &amp; Caffeine Ranges by Category</h2>
+        <div style="overflow-x: auto; background: var(--bg-card); border-radius: var(--border-radius-md); border: 1px solid var(--border-glass);">
+          <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem;">
+            <thead>
+              <tr style="border-bottom: 2px solid var(--color-primary); background: rgba(255,255,255,0.02);">
+                <th style="padding: 16px; color: var(--text-white); font-family: var(--font-heading);">Category</th>
+                <th style="padding: 16px; color: var(--text-white); font-family: var(--font-heading);">Calories Range</th>
+                <th style="padding: 16px; color: var(--text-white); font-family: var(--font-heading);">Sugar Range</th>
+                <th style="padding: 16px; color: var(--text-white); font-family: var(--font-heading);">Caffeine Range</th>
+              </tr>
+            </thead>
+            <tbody>
+              \${nutritionRowsHtml}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Customization details -->
+      <section style="background: var(--bg-card); border-radius: var(--border-radius-md); padding: 40px; margin-bottom: 60px; border: 1px solid var(--border-glass); line-height: 1.8; color: var(--text-gray);">
+        <h2 style="font-size: 2rem; font-family: var(--font-heading); color: var(--text-white); margin-bottom: 20px;">What Affects Your Calorie Count Most</h2>
+        <p style="margin-bottom: 20px;">
+          The biggest swings in a 7 Brew order come down to four things: base drink, milk choice, syrup amount, and size. Switching from whole milk to almond or oat milk, choosing sugar-free syrup, or sizing down are the fastest ways to cut calories without giving up flavor.
+        </p>
+        <p style="margin-bottom: 20px;">
+          For example:
+        </p>
+        <ul style="padding-left: 20px; color: var(--text-white); margin-bottom: 20px; list-style-type: square;">
+          <li>Choosing <strong>Almond Milk</strong> instead of whole milk saves about 80 calories per serving.</li>
+          <li>Opting for <strong>Sugar-Free Syrup</strong> swaps out standard syrups containing 80 calories and 19g of sugar per portion to essentially 0 calories and 0g sugar.</li>
+          <li>Ordering a <strong>Small (16 oz)</strong> instead of a <strong>Large (32 oz)</strong> generally cuts the calorie load and sugar intake in half.</li>
+        </ul>
+
+        <h3 style="font-size: 1.5rem; font-family: var(--font-heading); color: var(--text-white); margin-top: 30px; margin-bottom: 12px;">Lower-Calorie Picks</h3>
+        <p style="margin-bottom: 20px;">
+          If you want to keep it light, here are some excellent lower-calorie options directly from the menu:
+        </p>
+        <ul style="padding-left: 20px; color: var(--text-white); list-style-type: square;">
+          <li><strong>Classic Cold Brew</strong>: Just 5 calories for plain black coffee, providing a smooth caffeine boost without sugar or dairy.</li>
+          <li><strong>Classic Americano</strong>: Bold espresso shot with hot water, yielding only 5-10 calories depending on size.</li>
+          <li><strong>Sugar-Free customized energy drinks</strong>: Using sugar-free syrups and sugar-free energy bases keeps the calorie count extremely low while keeping the vibrant fruit flavors intact.</li>
+        </ul>
+      </section>
+
+      <!-- FAQ Section -->
+      <section style="max-width: 800px; margin: 0 auto;">
+        <h2 style="font-size: 2rem; font-family: var(--font-heading); text-align: center; margin-bottom: 30px; color: var(--text-white);">Frequently Asked Questions</h2>
+        <div style="display: flex; flex-direction: column; gap: 20px;">
+          <div style="background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: var(--border-radius-md); padding: 24px;">
+            <h3 style="font-size: 1.2rem; color: var(--color-primary); margin-bottom: 10px; font-family: var(--font-heading);">What is the lowest-calorie drink at 7 Brew?</h3>
+            <p style="color: var(--text-gray); line-height: 1.6; margin: 0;">
+              Plain black coffee options like Cold Brew or House Blend are typically the lowest-calorie choices on the 7 Brew menu, since they contain no added milk or syrup.
+            </p>
+          </div>
+          <div style="background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: var(--border-radius-md); padding: 24px;">
+            <h3 style="font-size: 1.2rem; color: var(--color-primary); margin-bottom: 10px; font-family: var(--font-heading);">Does 7 Brew have sugar-free options?</h3>
+            <p style="color: var(--text-gray); line-height: 1.6; margin: 0;">
+              Yes. 7 Brew offers sugar-free syrup for most drinks across coffee, energy, tea, and lemonade categories, letting you customize almost any drink to cut added sugar.
+            </p>
+          </div>
+          <div style="background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: var(--border-radius-md); padding: 24px;">
+            <h3 style="font-size: 1.2rem; color: var(--color-primary); margin-bottom: 10px; font-family: var(--font-heading);">How can I lower the calories in my 7 Brew order?</h3>
+            <p style="color: var(--text-gray); line-height: 1.6; margin: 0;">
+              The four biggest levers are: choosing a lower-calorie milk (almond, oat, or skim instead of whole), asking for sugar-free syrup, reducing the number of syrup pumps, and ordering a smaller size.
+            </p>
+          </div>
+          <div style="background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: var(--border-radius-md); padding: 24px;">
+            <h3 style="font-size: 1.2rem; color: var(--color-primary); margin-bottom: 10px; font-family: var(--font-heading);">Does 7 Brew publish an official nutrition PDF?</h3>
+            <p style="color: var(--text-gray); line-height: 1.6; margin: 0;">
+              7 Brew does not currently publish a complete official nutrition PDF covering every drink and customization. This guide is based on publicly available ingredient and sizing information.
+            </p>
+          </div>
+          <div style="background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: var(--border-radius-md); padding: 24px;">
+            <h3 style="font-size: 1.2rem; color: var(--color-primary); margin-bottom: 10px; font-family: var(--font-heading);">How many calories are in a 7 Brew energy drink?</h3>
+            <p style="color: var(--text-gray); line-height: 1.6; margin: 0;">
+              Calories vary by flavor and size, largely depending on how much syrup is used — sugar-free syrup options can significantly reduce the total.
+            </p>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+  
+  \${getFooter()}
+</body>
+</html>`;
+fs.writeFileSync(path.join(__dirname, 'nutrition.html'), nutritionHtml, 'utf8');
+
+// ----------------------------------------------------
 // STEP 6: Update existing rewards.html, deals.html, secret-menu.html
 // ----------------------------------------------------
 console.log('Updating rewards.html, deals.html, secret-menu.html...');
@@ -1186,13 +1591,49 @@ const secretSchemaList = {
     };
   })
 };
-const secretJsonLdSchemaString = `<script type="application/ld+json">${JSON.stringify(secretSchemaList)}</script>`;
+
+const secretFaqSchema = `
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do I order off the 7 Brew secret menu?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Secret menu drinks aren't on the official board, so the most reliable way to order one is to describe the base drink and flavor combination to your Brewista, since exact recipes can vary slightly by stand."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is the 7 Brew secret menu official?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "7 Brew has confirmed it supports secret menu-style ordering and encourages customers to ask their Brewista about flavor combinations, though the specific drink names are fan-created rather than officially published."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What's the most popular 7 Brew secret menu drink?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Popularity varies, but combinations built around the Blondie and Brunette bases tend to be among the most frequently ordered off-menu requests."
+      }
+    }
+  ]
+}
+</script>
+`;
+
+const secretJsonLdSchemaString = `<script type="application/ld+json">${JSON.stringify(secretSchemaList)}</script>${secretFaqSchema}`;
 
 const secretMenuHtmlContent = `<!DOCTYPE html>
 <html lang="en">
-${getHead('7 Brew Secret Menu Guide | Custom Drink Customizations', 'Find ingredients lists, copycat recipes, calories, and custom flavor mixes for all 7 Brew secret menu drive-thru drinks.', '/secret-menu', secretJsonLdSchemaString)}
+\${getHead('7 Brew Secret Menu Guide | Custom Drink Customizations', 'Find ingredients lists, copycat recipes, calories, and custom flavor mixes for all 7 Brew secret menu drive-thru drinks.', '/secret-menu', secretJsonLdSchemaString)}
 <body>
-  ${getHeader('secret-menu')}
+  \${getHeader('secret-menu')}
   
   <main style="padding-top: 140px; padding-bottom: 80px;">
     <div class="container">
@@ -1292,6 +1733,31 @@ ${getHead('7 Brew Secret Menu Guide | Custom Drink Customizations', 'Find ingred
           </div>
         </div>
       </div>
+
+      <!-- FAQs -->
+      <section style="max-width: 800px; margin: 60px auto 0 auto; border-top: 1px solid var(--border-glass); padding-top: 40px; clear: both;">
+        <h2 style="font-size: 2rem; font-family: var(--font-heading); text-align: center; margin-bottom: 30px; color: var(--text-white);">Frequently Asked Questions</h2>
+        <div style="display: flex; flex-direction: column; gap: 20px;">
+          <div style="background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: var(--border-radius-md); padding: 24px;">
+            <h3 style="font-size: 1.2rem; color: var(--color-primary); margin-bottom: 10px; font-family: var(--font-heading);">How do I order off the 7 Brew secret menu?</h3>
+            <p style="color: var(--text-gray); line-height: 1.6; margin: 0;">
+              Secret menu drinks aren't on the official board, so the most reliable way to order one is to describe the base drink and flavor combination to your Brewista, since exact recipes can vary slightly by stand.
+            </p>
+          </div>
+          <div style="background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: var(--border-radius-md); padding: 24px;">
+            <h3 style="font-size: 1.2rem; color: var(--color-primary); margin-bottom: 10px; font-family: var(--font-heading);">Is the 7 Brew secret menu official?</h3>
+            <p style="color: var(--text-gray); line-height: 1.6; margin: 0;">
+              7 Brew has confirmed it supports secret menu-style ordering and encourages customers to ask their Brewista about flavor combinations, though the specific drink names are fan-created rather than officially published.
+            </p>
+          </div>
+          <div style="background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: var(--border-radius-md); padding: 24px;">
+            <h3 style="font-size: 1.2rem; color: var(--color-primary); margin-bottom: 10px; font-family: var(--font-heading);">What's the most popular 7 Brew secret menu drink?</h3>
+            <p style="color: var(--text-gray); line-height: 1.6; margin: 0;">
+              Popularity varies, but combinations built around the Blondie and Brunette bases tend to be among the most frequently ordered off-menu requests.
+            </p>
+          </div>
+        </div>
+      </section>
 
     </div>
   </main>
@@ -1678,47 +2144,84 @@ Object.entries(locsByState).forEach(([state, cities]) => {
   const stateSlug = state.toLowerCase().replace(/[^a-z0-9]+/g, '-');
   
   // State Page (/locations/[state].html)
-  let citiesListHtml = '';
-  Object.entries(cities).forEach(([city, locs]) => {
-    const citySlug = `${city.toLowerCase().replace(/[^a-z0-9]+/g, '-')}-${stateSlug}`;
-    citiesListHtml += `
-      <div style="background: var(--bg-card); padding: 24px; border-radius: var(--border-radius-md); border: 1px solid var(--border-glass); display: flex; justify-content: space-between; align-items: center;">
-        <div>
-          <h3 style="font-size: 1.4rem; font-family: var(--font-heading); margin: 0; color: var(--text-white);">${city}</h3>
-          <span style="color: var(--text-gray); font-size: 0.9rem;">${locs.length} Active Stands</span>
-        </div>
-        <a href="/locations/${citySlug}" class="btn btn-secondary" style="font-size: 0.8rem; padding: 8px 16px;">View City</a>
-      </div>
-    `;
+  let addressTableRowsHtml = '';
+  let totalStands = 0;
+  
+  Object.entries(cities).forEach(([city, cityLocs]) => {
+    cityLocs.forEach(loc => {
+      totalStands++;
+      const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(loc.address)}`;
+      addressTableRowsHtml += `
+        <tr style="border-bottom: 1px solid var(--border-glass);">
+          <td style="padding: 16px; color: var(--text-white); font-weight: 600;">${city}</td>
+          <td style="padding: 16px; color: var(--text-gray); font-size: 0.95rem;">
+            <a href="/locations/${city.toLowerCase().replace(/[^a-z0-9]+/g, '-')}-${stateSlug}" style="color: var(--color-primary); font-weight: 600; text-decoration: underline;">${loc.name}</a><br>
+            <span style="font-size: 0.85rem; color: var(--text-muted);">${loc.address}</span>
+          </td>
+          <td style="padding: 16px; color: var(--text-gray); font-size: 0.85rem;">
+            Weekdays: ${loc.hours.weekdays}<br>
+            Weekends: ${loc.hours.weekends}
+          </td>
+          <td style="padding: 16px;">
+            <a href="${mapsUrl}" target="_blank" rel="noopener noreferrer" style="color: var(--color-primary); font-weight: 600; text-decoration: underline;">Get Directions &rarr;</a>
+          </td>
+        </tr>
+      `;
+    });
   });
+
+  let introParagraph = '';
+  if (state === 'Arkansas') {
+    introParagraph = "Arkansas is where it all started — 7 Brew opened its very first stand in Rogers back in 2017, and the state remains one of the brand's strongest markets today. If you're chasing down a Blondie, a Brew Lagoon, or just your regular order, use the directory below to find your nearest Arkansas stand, check hours, and get directions. All locations serve the full 7 Brew menu, including secret menu drinks — seasonal syrup availability can vary slightly by stand.";
+  } else {
+    introParagraph = `${state} is home to ${totalStands} 7 Brew drive-thru stands, making it one of the strongest markets for the brand. Whether you're looking for a quick 7 Energy on your morning commute or a weekend Blondie run, use the directory below to find your closest stand, check hours, and get directions. All locations serve the full 7 Brew menu, including the secret menu — availability of seasonal syrups may vary slightly by stand.`;
+  }
 
   const stateHtml = `<!DOCTYPE html>
 <html lang="en">
-${getHead(`7 Brew Drive-Thrus in ${state} | Location Finder`, `Find verified 7 Brew drive-thru locations, phone numbers, and operating hours across the state of ${state}.`, `/locations/${stateSlug}`)}
+\${getHead(\`7 Brew Locations in \${state} (2026) | Addresses, Hours & Map\`, \`Find every 7 Brew drive-thru in \${state} — addresses, hours, and directions for all \${totalStands} \${state} locations. Updated for 2026.\`, \`/7brew-locations/\${stateSlug}\`)}
 <body>
-  ${getHeader('locations')}
+  \${getHeader('locations')}
   
   <main style="padding-top: 140px; padding-bottom: 80px;">
     <div class="container">
       <nav aria-label="breadcrumb" style="margin-bottom: 24px; font-size: 0.9rem; color: var(--text-muted);">
         <a href="/" style="color: var(--color-primary);">Home</a> &gt; 
         <a href="/7brew-locations" style="color: var(--color-primary);">Locations</a> &gt; 
-        <span style="color: var(--text-gray);">${state}</span>
+        <span style="color: var(--text-gray);">\${state}</span>
       </nav>
 
       <div class="section-header" style="text-align: left; margin-bottom: 40px;">
-        <h1 style="font-size: 3rem; margin-bottom: 12px; font-family: var(--font-heading);">7 Brew Locations in ${state}</h1>
-        <p style="font-size: 1.1rem; color: var(--text-gray);">Choose a city below to view local drive-thru addresses, maps, phone numbers, and operational hours.</p>
+        <h1 style="font-size: 3rem; margin-bottom: 16px; font-family: var(--font-heading);">7 Brew Locations in \${state}</h1>
+        <p style="font-size: 1.1rem; line-height: 1.7; max-width: 900px; color: var(--text-gray);">\${introParagraph}</p>
       </div>
 
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-bottom: 60px;">
-        ${citiesListHtml}
+      <div style="overflow-x: auto; margin-bottom: 40px; background: var(--bg-card); border-radius: var(--border-radius-md); border: 1px solid var(--border-glass);">
+        <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem;">
+          <thead>
+            <tr style="border-bottom: 2px solid var(--color-primary); background: rgba(255,255,255,0.02);">
+              <th style="padding: 16px; color: var(--text-white); font-family: var(--font-heading);">City</th>
+              <th style="padding: 16px; color: var(--text-white); font-family: var(--font-heading);">Address</th>
+              <th style="padding: 16px; color: var(--text-white); font-family: var(--font-heading);">Hours</th>
+              <th style="padding: 16px; color: var(--text-white); font-family: var(--font-heading);">Map Link</th>
+            </tr>
+          </thead>
+          <tbody>
+            \${addressTableRowsHtml}
+          </tbody>
+        </table>
+      </div>
+
+      <div style="background: var(--bg-card); border-radius: var(--border-radius-md); padding: 30px; border: 1px solid var(--border-glass); line-height: 1.8; color: var(--text-gray); margin-bottom: 40px;">
+        <p style="margin: 0; font-size: 1.05rem;">
+          Looking for more than just an address? Check the <a href="/7brew-menu" style="color: var(--color-primary); font-weight: 600;">full 7 Brew menu with prices</a>, browse the <a href="/secret-menu" style="color: var(--color-primary); font-weight: 600;">secret menu</a> for off-menu favorites, or use our <a href="/7brew-calorie-calculator" style="color: var(--color-primary); font-weight: 600;">calorie calculator</a> before you order.
+        </p>
       </div>
 
     </div>
   </main>
   
-  ${getFooter()}
+  \${getFooter()}
 </body>
 </html>`;
 
@@ -1980,7 +2483,7 @@ Object.entries(locsByState).forEach(([state, cities]) => {
   const stateSlug = state.toLowerCase().replace(/[^a-z0-9]+/g, '-');
   preRenderedLocsHtml += `
     <div style="grid-column: 1/-1; margin-top: 30px; margin-bottom: 20px; border-bottom: 2px solid var(--color-primary); padding-bottom: 10px;">
-      <h2 style="font-size: 2rem; font-family: var(--font-heading); color: var(--text-white);"><a href="/locations/${stateSlug}">${state} Hub</a></h2>
+      <h2 style="font-size: 2rem; font-family: var(--font-heading); color: var(--text-white);"><a href="/7brew-locations/${stateSlug}">${state} Hub</a></h2>
     </div>
   `;
   
@@ -2005,10 +2508,76 @@ Object.entries(locsByState).forEach(([state, cities]) => {
   });
 });
 
+const locationsFaqSchema = `
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How many 7 Brew locations are there?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "7 Brew operates hundreds of drive-thru locations across dozens of U.S. states, with new stands opening regularly as the chain continues to expand."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is 7 Brew drive-thru only?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, nearly all 7 Brew locations operate as drive-thru only, with no indoor seating or walk-up windows."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are typical 7 Brew hours?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most 7 Brew locations open early (around 5:30–6:00 AM) and close around 10:00 PM, though hours can vary by individual stand."
+      }
+    }
+  ]
+}
+</script>
+</head>`;
+
+const locationsFaqHtml = `
+      <!-- FAQs -->
+      <section style="max-width: 800px; margin: 60px auto 0 auto; border-top: 1px solid var(--border-glass); padding-top: 40px; clear: both;">
+        <h2 style="font-size: 2rem; font-family: var(--font-heading); text-align: center; margin-bottom: 30px; color: var(--text-white);">Frequently Asked Questions</h2>
+        <div style="display: flex; flex-direction: column; gap: 20px;">
+          <div style="background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: var(--border-radius-md); padding: 24px;">
+            <h3 style="font-size: 1.2rem; color: var(--color-primary); margin-bottom: 10px; font-family: var(--font-heading);">How many 7 Brew locations are there?</h3>
+            <p style="color: var(--text-gray); line-height: 1.6; margin: 0;">
+              7 Brew operates hundreds of drive-thru locations across dozens of U.S. states, with new stands opening regularly as the chain continues to expand.
+            </p>
+          </div>
+          <div style="background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: var(--border-radius-md); padding: 24px;">
+            <h3 style="font-size: 1.2rem; color: var(--color-primary); margin-bottom: 10px; font-family: var(--font-heading);">Is 7 Brew drive-thru only?</h3>
+            <p style="color: var(--text-gray); line-height: 1.6; margin: 0;">
+              Yes, nearly all 7 Brew locations operate as drive-thru only, with no indoor seating or walk-up windows.
+            </p>
+          </div>
+          <div style="background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: var(--border-radius-md); padding: 24px;">
+            <h3 style="font-size: 1.2rem; color: var(--color-primary); margin-bottom: 10px; font-family: var(--font-heading);">What are typical 7 Brew hours?</h3>
+            <p style="color: var(--text-gray); line-height: 1.6; margin: 0;">
+              Most 7 Brew locations open early (around 5:30–6:00 AM) and close around 10:00 PM, though hours can vary by individual stand.
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+`;
+
 locHtml = locHtml.replace(/<link rel="canonical" href="[^"]*">/, '<link rel="canonical" href="https://www.7brewguide.com/7brew-locations">');
+locHtml = locHtml.replace('</head>', locationsFaqSchema);
 locHtml = locHtml.replace(/<header class="header">[\s\S]*?<\/header>/, getHeader('locations'));
 locHtml = locHtml.replace(/<footer class="footer">[\s\S]*?<\/footer>/, getFooter());
 locHtml = locHtml.replace(/<section class="locations-grid" id="locations-grid">[\s\S]*?<\/section>/, `<section class="locations-grid" id="locations-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">${preRenderedLocsHtml}</section>`);
+locHtml = locHtml.replace('</div>\n  </main>', locationsFaqHtml).replace('</div>\r\n  </main>', locationsFaqHtml);
 fs.writeFileSync(path.join(__dirname, 'locations.html'), locHtml, 'utf8');
 
 
@@ -2318,5 +2887,241 @@ ${getHead('Editorial Policy & Data Integrity Guidelines', 'Read about how we res
 </body>
 </html>`;
 fs.writeFileSync(path.join(__dirname, 'editorial-policy.html'), editorialHtml, 'utf8');
+
+// ----------------------------------------------------
+// STEP 11: Generate Sugar-Free & Kids Menu Pages
+// ----------------------------------------------------
+console.log('Generating Sugar-Free and Kids Menu pages...');
+
+// sugar-free.html
+const sugarFreeFaqSchema = `
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What sugar-free syrups does 7 Brew have?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "7 Brew stands stock a wide variety of sugar-free syrups, including Vanilla, Caramel, Irish Cream, White Chocolate, Chocolate, Coconut, Raspberry, Strawberry, Peach, Blue Raspberry, Toasted Marshmallow, Peppermint, Brown Sugar Cinnamon, and Hazelnut."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How many calories are in a 7 Brew sugar-free drink?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ordering a drink sugar-free drastically reduces the calorie count, often bringing custom coffee and energy drinks down to 0–150 calories depending on the milk base and size."
+      }
+    }
+  ]
+}
+</script>
+`;
+
+const sugarFreeHtml = `<!DOCTYPE html>
+<html lang="en">
+\${getHead('7 Brew Sugar-Free Guide (2026) | Low-Calorie Syrups & Drinks', 'The complete 7 Brew sugar-free guide — lists of all sugar-free syrups, low-calorie coffee and energy drink customs, and smart ordering hacks.', '/7brew-sugar-free', sugarFreeFaqSchema)}
+<body>
+  \${getHeader('menu')}
+  
+  <main style="padding-top: 140px; padding-bottom: 80px; min-height: 85vh;">
+    <div class="container" style="max-width: 900px;">
+      <!-- Breadcrumbs -->
+      <nav aria-label="breadcrumb" style="margin-bottom: 24px; font-size: 0.9rem; color: var(--text-muted);">
+        <a href="/" style="color: var(--color-primary);">Home</a> &gt; 
+        <a href="/7brew-menu" style="color: var(--color-primary);">Menu</a> &gt; 
+        <span style="color: var(--text-gray);">Sugar-Free Guide</span>
+      </nav>
+
+      <div class="section-header" style="text-align: left; margin-bottom: 40px;">
+        <h1 style="font-size: 3rem; margin-bottom: 16px; font-family: var(--font-heading);">7 Brew Sugar-Free Menu & Guide</h1>
+        <p style="font-size: 1.1rem; line-height: 1.7; color: var(--text-gray);">
+          Craving your favorite 7 Brew flavors but watching your sugar or calorie intake? Thanks to 7 Brew\'s extensive library of sugar-free syrups, you can customize almost any beverage to fit your dietary goals without sacrificing the bold taste you love.
+        </p>
+        <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 16px;">
+          Last updated: August 2, 2026 | Reviewed by <a href="/editorial-policy" style="color: var(--color-primary); font-weight: 600; text-decoration: underline;">7BrewGuide Editorial Team</a>
+        </p>
+      </div>
+
+      <section style="background: var(--bg-card); border-radius: var(--border-radius-md); padding: 30px; margin-bottom: 40px; border: 1px solid var(--border-glass);">
+        <h2 style="font-size: 1.8rem; color: var(--text-white); font-family: var(--font-heading); margin-bottom: 16px;">Available Sugar-Free Syrups</h2>
+        <p style="color: var(--text-gray); margin-bottom: 20px;">
+          7 Brew stands typically carry a robust selection of sugar-free syrup alternatives. These allow you to customize lattes, breves, energy drinks, and lemonades:
+        </p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; color: var(--text-white);">
+          <div style="padding: 10px; background: rgba(255,255,255,0.02); border-radius: 4px;">• SF Vanilla</div>
+          <div style="padding: 10px; background: rgba(255,255,255,0.02); border-radius: 4px;">• SF Caramel</div>
+          <div style="padding: 10px; background: rgba(255,255,255,0.02); border-radius: 4px;">• SF Irish Cream</div>
+          <div style="padding: 10px; background: rgba(255,255,255,0.02); border-radius: 4px;">• SF White Chocolate</div>
+          <div style="padding: 10px; background: rgba(255,255,255,0.02); border-radius: 4px;">• SF Chocolate</div>
+          <div style="padding: 10px; background: rgba(255,255,255,0.02); border-radius: 4px;">• SF Coconut</div>
+          <div style="padding: 10px; background: rgba(255,255,255,0.02); border-radius: 4px;">• SF Raspberry</div>
+          <div style="padding: 10px; background: rgba(255,255,255,0.02); border-radius: 4px;">• SF Strawberry</div>
+          <div style="padding: 10px; background: rgba(255,255,255,0.02); border-radius: 4px;">• SF Peach</div>
+          <div style="padding: 10px; background: rgba(255,255,255,0.02); border-radius: 4px;">• SF Blue Raspberry</div>
+          <div style="padding: 10px; background: rgba(255,255,255,0.02); border-radius: 4px;">• SF Toasted Marshmallow</div>
+          <div style="padding: 10px; background: rgba(255,255,255,0.02); border-radius: 4px;">• SF Peppermint</div>
+          <div style="padding: 10px; background: rgba(255,255,255,0.02); border-radius: 4px;">• SF Brown Sugar Cinnamon</div>
+          <div style="padding: 10px; background: rgba(255,255,255,0.02); border-radius: 4px;">• SF Hazelnut</div>
+        </div>
+      </section>
+
+      <section style="background: var(--bg-card); border-radius: var(--border-radius-md); padding: 30px; margin-bottom: 40px; border: 1px solid var(--border-glass); line-height: 1.8; color: var(--text-gray);">
+        <h2 style="font-size: 1.8rem; color: var(--text-white); font-family: var(--font-heading); margin-bottom: 16px;">Top Sugar-Free Custom Drink Recipes</h2>
+        <div style="display: flex; flex-direction: column; gap: 20px;">
+          <div>
+            <h3 style="font-size: 1.2rem; color: var(--color-primary); margin-bottom: 5px;">1. Sugar-Free Blondie</h3>
+            <p style="margin: 0;">Our classic caramel and vanilla breve, ordered with SF Vanilla and SF Caramel syrups, and built on unsweetened almond or oat milk to keep it guilt-free.</p>
+          </div>
+          <div>
+            <h3 style="font-size: 1.2rem; color: var(--color-primary); margin-bottom: 5px;">2. Sugar-Free Triple Seven</h3>
+            <p style="margin: 0;">A powerful six-shot espresso breve, ordered with sugar-free Irish Cream syrup and breve mix, perfect for keto diets.</p>
+          </div>
+          <div>
+            <h3 style="font-size: 1.2rem; color: var(--color-primary); margin-bottom: 5px;">3. Sugar-Free Midnight Mint</h3>
+            <p style="margin: 0;">A refreshing iced mocha combining sugar-free Chocolate and sugar-free Peppermint syrups with robust espresso and milk.</p>
+          </div>
+          <div>
+            <h3 style="font-size: 1.2rem; color: var(--color-primary); margin-bottom: 5px;">4. Sugar-Free Ocean Breeze Energy</h3>
+            <p style="margin: 0;">A delicious, caffeine-packed fruit mix blending sugar-free Blue Raspberry and sugar-free Coconut syrups with a Sugar-Free Seven Energy base.</p>
+          </div>
+          <div>
+            <h3 style="font-size: 1.2rem; color: var(--color-primary); margin-bottom: 5px;">5. Sugar-Free Tropic Thunder</h3>
+            <p style="margin: 0;">Tropical vibes without the sugar crash — features sugar-free Peach, sugar-free Strawberry, and sugar-free Coconut in a Sugar-Free Seven Energy cup.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQs -->
+      <section style="max-width: 800px; margin: 40px auto 0 auto; border-top: 1px solid var(--border-glass); padding-top: 40px;">
+        <h2 style="font-size: 2rem; font-family: var(--font-heading); text-align: center; margin-bottom: 30px; color: var(--text-white);">Frequently Asked Questions</h2>
+        <div style="display: flex; flex-direction: column; gap: 20px;">
+          <div style="background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: var(--border-radius-md); padding: 24px;">
+            <h3 style="font-size: 1.2rem; color: var(--color-primary); margin-bottom: 10px; font-family: var(--font-heading);">What sugar-free syrups does 7 Brew have?</h3>
+            <p style="color: var(--text-gray); line-height: 1.6; margin: 0;">
+              7 Brew stands stock a wide variety of sugar-free syrups, including Vanilla, Caramel, Irish Cream, White Chocolate, Chocolate, Coconut, Raspberry, Strawberry, Peach, Blue Raspberry, Toasted Marshmallow, Peppermint, Brown Sugar Cinnamon, and Hazelnut.
+            </p>
+          </div>
+          <div style="background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: var(--border-radius-md); padding: 24px;">
+            <h3 style="font-size: 1.2rem; color: var(--color-primary); margin-bottom: 10px; font-family: var(--font-heading);">How many calories are in a 7 Brew sugar-free drink?</h3>
+            <p style="color: var(--text-gray); line-height: 1.6; margin: 0;">
+              Ordering a drink sugar-free drastically reduces the calorie count, often bringing custom coffee and energy drinks down to 0–150 calories depending on the milk base and size.
+            </p>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+  
+  \${getFooter()}
+</body>
+</html>`;
+fs.writeFileSync(path.join(__dirname, 'sugar-free.html'), sugarFreeHtml, 'utf8');
+
+// kids-menu.html
+const kidsFaqSchema = `
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What size are kids drinks at 7 Brew?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Kids size drinks at 7 Brew are served in a smaller, kid-friendly 12 oz cup size."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are 7 Brew kids drinks caffeine-free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The kids menu includes naturally caffeine-free drinks like real fruit smoothies, milkshakes, lemonades, and sparkling fruit sodas (7 Fizz)."
+      }
+    }
+  ]
+}
+</script>
+`;
+
+const kidsHtml = `<!DOCTYPE html>
+<html lang="en">
+\${getHead('7 Brew Kids Menu (2026) | Caffeine-Free Drinks & Prices', 'Explore the 7 Brew Kids Menu — kid-friendly, caffeine-free drinks like shakes, smoothies, lemonades, and the custom 7 Fizz sparkling sodas.', '/7brew-kids-menu', kidsFaqSchema)}
+<body>
+  \${getHeader('menu')}
+  
+  <main style="padding-top: 140px; padding-bottom: 80px; min-height: 85vh;">
+    <div class="container" style="max-width: 900px;">
+      <!-- Breadcrumbs -->
+      <nav aria-label="breadcrumb" style="margin-bottom: 24px; font-size: 0.9rem; color: var(--text-muted);">
+        <a href="/" style="color: var(--color-primary);">Home</a> &gt; 
+        <a href="/7brew-menu" style="color: var(--color-primary);">Menu</a> &gt; 
+        <span style="color: var(--text-gray);">Kids Menu</span>
+      </nav>
+
+      <div class="section-header" style="text-align: left; margin-bottom: 40px;">
+        <h1 style="font-size: 3rem; margin-bottom: 16px; font-family: var(--font-heading);">7 Brew Kids Menu</h1>
+        <p style="font-size: 1.1rem; line-height: 1.7; color: var(--text-gray);">
+          Looking for a kid-friendly drink for your next drive-thru run? 7 Brew offers a delightful range of caffeine-free, smaller-portioned drinks specifically crafted for kids, including smoothies, shakes, lemonades, and custom sparkling sodas.
+        </p>
+        <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 16px;">
+          Last updated: August 2, 2026 | Reviewed by <a href="/editorial-policy" style="color: var(--color-primary); font-weight: 600; text-decoration: underline;">7BrewGuide Editorial Team</a>
+        </p>
+      </div>
+
+      <section style="background: var(--bg-card); border-radius: var(--border-radius-md); padding: 30px; margin-bottom: 40px; border: 1px solid var(--border-glass); line-height: 1.8; color: var(--text-gray);">
+        <h2 style="font-size: 1.8rem; color: var(--text-white); font-family: var(--font-heading); margin-bottom: 16px;">Kid-Friendly Drink Categories</h2>
+        <div style="display: flex; flex-direction: column; gap: 20px;">
+          <div>
+            <h3 style="font-size: 1.2rem; color: var(--color-primary); margin-bottom: 5px;">Real Fruit Smoothies (12 oz)</h3>
+            <p style="margin: 0;">Thick, creamy, and blended with real fruit purees. Available flavors include Strawberry, Peach, Mango, and Wildberry.</p>
+          </div>
+          <div>
+            <h3 style="font-size: 1.2rem; color: var(--color-primary); margin-bottom: 5px;">Creamy Shakes (12 oz)</h3>
+            <p style="margin: 0;">Rich and hand-blended vanilla ice cream shakes. Choose from Vanilla, Chocolate, Caramel, or Cookies &amp; Cream.</p>
+          </div>
+          <div>
+            <h3 style="font-size: 1.2rem; color: var(--color-primary); margin-bottom: 5px;">Sweet &amp; Tart Lemonades (12 oz)</h3>
+            <p style="margin: 0;">Classic ice-cold lemonades customized with sweet syrup additions like strawberry or blue raspberry.</p>
+          </div>
+          <div>
+            <h3 style="font-size: 1.2rem; color: var(--color-primary); margin-bottom: 5px;">Custom 7 Fizz Sparkling Sodas (12 oz)</h3>
+            <p style="margin: 0;">Crisp carbonated water sweetened with your choice of kid-friendly fruit syrups (like cherry or raspberry) for a custom caffeine-free soda.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQs -->
+      <section style="max-width: 800px; margin: 40px auto 0 auto; border-top: 1px solid var(--border-glass); padding-top: 40px;">
+        <h2 style="font-size: 2rem; font-family: var(--font-heading); text-align: center; margin-bottom: 30px; color: var(--text-white);">Frequently Asked Questions</h2>
+        <div style="display: flex; flex-direction: column; gap: 20px;">
+          <div style="background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: var(--border-radius-md); padding: 24px;">
+            <h3 style="font-size: 1.2rem; color: var(--color-primary); margin-bottom: 10px; font-family: var(--font-heading);">What size are kids drinks at 7 Brew?</h3>
+            <p style="color: var(--text-gray); line-height: 1.6; margin: 0;">
+              Kids size drinks at 7 Brew are served in a smaller, kid-friendly 12 oz cup size.
+            </p>
+          </div>
+          <div style="background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: var(--border-radius-md); padding: 24px;">
+            <h3 style="font-size: 1.2rem; color: var(--color-primary); margin-bottom: 10px; font-family: var(--font-heading);">Are 7 Brew kids drinks caffeine-free?</h3>
+            <p style="color: var(--text-gray); line-height: 1.6; margin: 0;">
+              Yes. The kids menu includes naturally caffeine-free drinks like real fruit smoothies, milkshakes, lemonades, and sparkling fruit sodas (7 Fizz).
+            </p>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+  
+  \${getFooter()}
+</body>
+</html>`;
+fs.writeFileSync(path.join(__dirname, 'kids-menu.html'), kidsHtml, 'utf8');
 
 console.log('Site build generation successfully completed.');

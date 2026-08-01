@@ -604,11 +604,12 @@ Object.entries(categoryDescriptions).forEach(([catKey, info]) => {
   `;
 
   // 1,200+ word copy simulation & FAQ for Category Pages
+  // 1,200+ word copy simulation & FAQ for Category Pages
   const categoryHtml = `<!DOCTYPE html>
 <html lang="en">
-\${getHead(info.title + ' (2026) | 7 Brew Inspired', info.desc, \`/7brew-menu/\${catKey}\`, categoryFaqSchema)}
+${getHead(info.title + ' (2026) | 7 Brew Inspired', info.desc, `/7brew-menu/${catKey}`, categoryFaqSchema)}
 <body>
-  \${getHeader('menu')}
+  ${getHeader('menu')}
   
   <main style="padding-top: 140px; padding-bottom: 80px; min-height: 85vh;">
     <div class="container">
@@ -616,61 +617,61 @@ Object.entries(categoryDescriptions).forEach(([catKey, info]) => {
       <nav aria-label="breadcrumb" style="margin-bottom: 24px; font-size: 0.9rem; color: var(--text-muted);">
         <a href="/" style="color: var(--color-primary);">Home</a> &gt; 
         <a href="/7brew-menu" style="color: var(--color-primary);">Menu</a> &gt; 
-        <span style="color: var(--text-gray);">\${info.title}</span>
+        <span style="color: var(--text-gray);">${info.title}</span>
       </nav>
 
       <div class="section-header" style="text-align: left; margin-bottom: 40px;">
-        <h1 style="font-size: 3rem; margin-bottom: 16px; font-family: var(--font-heading);">\${info.title}</h1>
-        <p style="font-size: 1.1rem; line-height: 1.7; max-width: 900px; color: var(--text-gray); margin-bottom: 16px;">\${info.intro}</p>
+        <h1 style="font-size: 3rem; margin-bottom: 16px; font-family: var(--font-heading);">${info.title}</h1>
+        <p style="font-size: 1.1rem; line-height: 1.7; max-width: 900px; color: var(--text-gray); margin-bottom: 16px;">${info.intro}</p>
         <p style="font-size: 0.9rem; color: var(--text-muted);">
           Last updated: August 2, 2026 | Reviewed by <a href="/editorial-policy" style="color: var(--color-primary); font-weight: 600; text-decoration: underline;">7BrewGuide Editorial Team</a>
         </p>
       </div>
 
-      \${categoryNavHtml}
+      ${categoryNavHtml}
 
       <!-- Drink Listings Grid -->
       <section style="margin-bottom: 60px;">
-        <h2 style="font-size: 2rem; font-family: var(--font-heading); margin-bottom: 24px; color: var(--text-white);">Available \${info.title} Items</h2>
+        <h2 style="font-size: 2rem; font-family: var(--font-heading); margin-bottom: 24px; color: var(--text-white);">Available ${info.title} Items</h2>
         <div id="menu-sections-container">
-          \${gridHtml}
+          ${gridHtml}
         </div>
       </section>
 
       <!-- Category Guide Content (Expanding to 1,200+ words of topical depth) -->
       <section style="background: var(--bg-card); border-radius: var(--border-radius-md); padding: 40px; margin-bottom: 60px; border: 1px solid var(--border-glass); line-height: 1.8; color: var(--text-gray);">
-        <h2 style="font-size: 2rem; font-family: var(--font-heading); color: var(--text-white); margin-bottom: 20px;">The Ultimate Guide to \${info.title}</h2>
+        <h2 style="font-size: 2rem; font-family: var(--font-heading); color: var(--text-white); margin-bottom: 20px;">The Ultimate Guide to ${info.title}</h2>
         <p style="margin-bottom: 20px;">
-          When you pull up to a 7 Brew drive-thru stand, the massive board of drink choices can be overwhelming. The \${info.title} line represents some of the most dynamic offerings on our entire menu. Whether you are looking for a hot, cozy winter breve, a refreshing summer tea blend, or a customized double-caffeinated energy mix, understanding the structural bases and custom syrups of this category will help you order like a seasoned barista.
+          When you pull up to a 7 Brew drive-thru stand, the massive board of drink choices can be overwhelming. The ${info.title} line represents some of the most dynamic offerings on our entire menu. Whether you are looking for a hot, cozy winter breve, a refreshing summer tea blend, or a customized double-caffeinated energy mix, understanding the structural bases and custom syrups of this category will help you order like a seasoned barista.
         </p>
 
-        <h3 style="font-size: 1.4rem; font-family: var(--font-heading); color: var(--text-white); margin-top: 30px; margin-bottom: 12px;">What Makes \${info.title} Unique?</h3>
+        <h3 style="font-size: 1.4rem; font-family: var(--font-heading); color: var(--text-white); margin-top: 30px; margin-bottom: 12px;">What Makes ${info.title} Unique?</h3>
         <p style="margin-bottom: 20px;">
-          Unlike traditional cafes that serve standard drip coffee and lattes, 7 Brew has built its entire reputation on customization and rich flavor profiles. In the \${info.title} category, each drink is built from a carefully engineered base—whether that's fresh espresso beans, a premium energy formula, or sparkling water—and layered with Torani and house-special syrups. The density of the dairy, the ratio of ice, and the temperature of the pour are all calibrated to ensure that every sip is consistently bold and sweet.
+          Unlike traditional cafes that serve standard drip coffee and lattes, 7 Brew has built its entire reputation on customization and rich flavor profiles. In the ${info.title} category, each drink is built from a carefully engineered base—whether that's fresh espresso beans, a premium energy formula, or sparkling water—and layered with Torani and house-special syrups. The density of the dairy, the ratio of ice, and the temperature of the pour are all calibrated to ensure that every sip is consistently bold and sweet.
         </p>
 
         <h3 style="font-size: 1.4rem; font-family: var(--font-heading); color: var(--text-white); margin-top: 30px; margin-bottom: 12px;">Calorie & Customization Insights</h3>
         <p style="margin-bottom: 20px;">
-          For health-conscious coffee fans, the \${info.title} menu offers incredible versatility. Many of our signature recipes can be customized to be low-calorie, sugar-free, or dairy-free. We offer sugar-free versions of almost all our popular syrups, including vanilla, caramel, irish cream, and chocolate. By substituting whole milk or heavy half-and-half with almond, oat, or coconut milk, you can cut the calorie count of a standard large breve by over 60% while maintaining a rich and satisfying mouthfeel.
+          For health-conscious coffee fans, the ${info.title} menu offers incredible versatility. Many of our signature recipes can be customized to be low-calorie, sugar-free, or dairy-free. We offer sugar-free versions of almost all our popular syrups, including vanilla, caramel, irish cream, and chocolate. By substituting whole milk or heavy half-and-half with almond, oat, or coconut milk, you can cut the calorie count of a standard large breve by over 60% while maintaining a rich and satisfying mouthfeel.
         </p>
 
         <h3 style="font-size: 1.4rem; font-family: var(--font-heading); color: var(--text-white); margin-top: 30px; margin-bottom: 12px;">Barista Order Secrets</h3>
         <p style="margin-bottom: 20px;">
-          To get the perfect balance of flavors, try ordering your drink "half-sweet" if you prefer a stronger coffee flavor, or ask for an "extra shot" of espresso to add a bold, roasted punch that cuts through sweet chocolate and caramel. Don't forget that any drink in the \${info.title} category can be served hot, iced, or blended as a frozen chiller. The chiller options feature a pre-blended sweet coffee or energy mix that creates a smoothie-like texture, making it the perfect dessert beverage.
+          To get the perfect balance of flavors, try ordering your drink "half-sweet" if you prefer a stronger coffee flavor, or ask for an "extra shot" of espresso to add a bold, roasted punch that cuts through sweet chocolate and caramel. Don't forget that any drink in the ${info.title} category can be served hot, iced, or blended as a frozen chiller. The chiller options feature a pre-blended sweet coffee or energy mix that creates a smoothie-like texture, making it the perfect dessert beverage.
         </p>
 
         <h3 style="font-size: 1.4rem; font-family: var(--font-heading); color: var(--text-white); margin-top: 30px; margin-bottom: 12px;">Top Related Drink Categories to Explore</h3>
         <ul style="padding-left: 20px; margin-bottom: 20px; list-style-type: square; color: var(--text-white);">
-          \${relatedCats}
+          ${relatedCats}
         </ul>
       </section>
 
       <!-- FAQs -->
       <section style="max-width: 800px; margin: 0 auto 60px auto;">
-        <h2 style="font-size: 2rem; font-family: var(--font-heading); text-align: center; margin-bottom: 30px; color: var(--text-white);">Frequently Asked Questions: \${info.title}</h2>
+        <h2 style="font-size: 2rem; font-family: var(--font-heading); text-align: center; margin-bottom: 30px; color: var(--text-white);">Frequently Asked Questions: ${info.title}</h2>
         <div style="display: flex; flex-direction: column; gap: 20px;">
           <div style="background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: var(--border-radius-md); padding: 24px;">
-            <h3 style="font-size: 1.2rem; color: var(--color-primary); margin-bottom: 10px; font-family: var(--font-heading);">Are all drinks in the \${info.title} category caffeinated?</h3>
+            <h3 style="font-size: 1.2rem; color: var(--color-primary); margin-bottom: 10px; font-family: var(--font-heading);">Are all drinks in the ${info.title} category caffeinated?</h3>
             <p style="color: var(--text-gray); line-height: 1.6;">
               No. While espresso and energy-based drinks carry substantial caffeine, categories like 7 Fizz, Lemonades, and decaf coffee alternatives are naturally caffeine-free or low-caffeine, making them safe for kids and evening enjoyment.
             </p>
@@ -703,7 +704,7 @@ Object.entries(categoryDescriptions).forEach(([catKey, info]) => {
     </div>
   </div>
   
-  \${getFooter()}
+  ${getFooter()}
   
   <!-- Scripts -->
   <script src="/assets/js/main.js"></script>
@@ -1436,9 +1437,9 @@ const nutritionFaqSchema = `
 
 const nutritionHtml = `<!DOCTYPE html>
 <html lang="en">
-\${getHead('7 Brew Nutrition Facts & Calories Guide (2026)', 'Complete 7 Brew nutrition guide — calories, sugar, and caffeine by drink category. Find low-calorie picks and use our free calculator to check your exact order.', '/7brew-nutrition', nutritionFaqSchema)}
+${getHead('7 Brew Nutrition Facts & Calories Guide (2026)', 'Complete 7 Brew nutrition guide — calories, sugar, and caffeine by drink category. Find low-calorie picks and use our free calculator to check your exact order.', '/7brew-nutrition', nutritionFaqSchema)}
 <body>
-  \${getHeader('calculator')}
+  ${getHeader('calculator')}
   
   <main style="padding-top: 140px; padding-bottom: 80px; min-height: 85vh;">
     <div class="container">
@@ -1473,7 +1474,7 @@ const nutritionHtml = `<!DOCTYPE html>
               </tr>
             </thead>
             <tbody>
-              \${nutritionRowsHtml}
+              ${nutritionRowsHtml}
             </tbody>
           </table>
         </div>
@@ -1545,7 +1546,7 @@ const nutritionHtml = `<!DOCTYPE html>
     </div>
   </main>
   
-  \${getFooter()}
+  ${getFooter()}
 </body>
 </html>`;
 fs.writeFileSync(path.join(__dirname, 'nutrition.html'), nutritionHtml, 'utf8');
@@ -1631,9 +1632,9 @@ const secretJsonLdSchemaString = `<script type="application/ld+json">${JSON.stri
 
 const secretMenuHtmlContent = `<!DOCTYPE html>
 <html lang="en">
-\${getHead('7 Brew Secret Menu Guide | Custom Drink Customizations', 'Find ingredients lists, copycat recipes, calories, and custom flavor mixes for all 7 Brew secret menu drive-thru drinks.', '/secret-menu', secretJsonLdSchemaString)}
+${getHead('7 Brew Secret Menu Guide | Custom Drink Customizations', 'Find ingredients lists, copycat recipes, calories, and custom flavor mixes for all 7 Brew secret menu drive-thru drinks.', '/secret-menu', secretJsonLdSchemaString)}
 <body>
-  \${getHeader('secret-menu')}
+  ${getHeader('secret-menu')}
   
   <main style="padding-top: 140px; padding-bottom: 80px;">
     <div class="container">
@@ -2179,21 +2180,21 @@ Object.entries(locsByState).forEach(([state, cities]) => {
 
   const stateHtml = `<!DOCTYPE html>
 <html lang="en">
-\${getHead(\`7 Brew Locations in \${state} (2026) | Addresses, Hours & Map\`, \`Find every 7 Brew drive-thru in \${state} — addresses, hours, and directions for all \${totalStands} \${state} locations. Updated for 2026.\`, \`/7brew-locations/\${stateSlug}\`)}
+${getHead(`7 Brew Locations in ${state} (2026) | Addresses, Hours & Map`, `Find every 7 Brew drive-thru in ${state} — addresses, hours, and directions for all ${totalStands} ${state} locations. Updated for 2026.`, `/7brew-locations/${stateSlug}`)}
 <body>
-  \${getHeader('locations')}
+  ${getHeader('locations')}
   
   <main style="padding-top: 140px; padding-bottom: 80px;">
     <div class="container">
       <nav aria-label="breadcrumb" style="margin-bottom: 24px; font-size: 0.9rem; color: var(--text-muted);">
         <a href="/" style="color: var(--color-primary);">Home</a> &gt; 
         <a href="/7brew-locations" style="color: var(--color-primary);">Locations</a> &gt; 
-        <span style="color: var(--text-gray);">\${state}</span>
+        <span style="color: var(--text-gray);">${state}</span>
       </nav>
 
       <div class="section-header" style="text-align: left; margin-bottom: 40px;">
-        <h1 style="font-size: 3rem; margin-bottom: 16px; font-family: var(--font-heading);">7 Brew Locations in \${state}</h1>
-        <p style="font-size: 1.1rem; line-height: 1.7; max-width: 900px; color: var(--text-gray);">\${introParagraph}</p>
+        <h1 style="font-size: 3rem; margin-bottom: 16px; font-family: var(--font-heading);">7 Brew Locations in ${state}</h1>
+        <p style="font-size: 1.1rem; line-height: 1.7; max-width: 900px; color: var(--text-gray);">${introParagraph}</p>
       </div>
 
       <div style="overflow-x: auto; margin-bottom: 40px; background: var(--bg-card); border-radius: var(--border-radius-md); border: 1px solid var(--border-glass);">
@@ -2207,7 +2208,7 @@ Object.entries(locsByState).forEach(([state, cities]) => {
             </tr>
           </thead>
           <tbody>
-            \${addressTableRowsHtml}
+            ${addressTableRowsHtml}
           </tbody>
         </table>
       </div>
@@ -2221,7 +2222,7 @@ Object.entries(locsByState).forEach(([state, cities]) => {
     </div>
   </main>
   
-  \${getFooter()}
+  ${getFooter()}
 </body>
 </html>`;
 
@@ -2923,9 +2924,9 @@ const sugarFreeFaqSchema = `
 
 const sugarFreeHtml = `<!DOCTYPE html>
 <html lang="en">
-\${getHead('7 Brew Sugar-Free Guide (2026) | Low-Calorie Syrups & Drinks', 'The complete 7 Brew sugar-free guide — lists of all sugar-free syrups, low-calorie coffee and energy drink customs, and smart ordering hacks.', '/7brew-sugar-free', sugarFreeFaqSchema)}
+${getHead('7 Brew Sugar-Free Guide (2026) | Low-Calorie Syrups & Drinks', 'The complete 7 Brew sugar-free guide — lists of all sugar-free syrups, low-calorie coffee and energy drink customs, and smart ordering hacks.', '/7brew-sugar-free', sugarFreeFaqSchema)}
 <body>
-  \${getHeader('menu')}
+  ${getHeader('menu')}
   
   <main style="padding-top: 140px; padding-bottom: 80px; min-height: 85vh;">
     <div class="container" style="max-width: 900px;">
@@ -3017,7 +3018,7 @@ const sugarFreeHtml = `<!DOCTYPE html>
     </div>
   </main>
   
-  \${getFooter()}
+  ${getFooter()}
 </body>
 </html>`;
 fs.writeFileSync(path.join(__dirname, 'sugar-free.html'), sugarFreeHtml, 'utf8');
@@ -3052,9 +3053,9 @@ const kidsFaqSchema = `
 
 const kidsHtml = `<!DOCTYPE html>
 <html lang="en">
-\${getHead('7 Brew Kids Menu (2026) | Caffeine-Free Drinks & Prices', 'Explore the 7 Brew Kids Menu — kid-friendly, caffeine-free drinks like shakes, smoothies, lemonades, and the custom 7 Fizz sparkling sodas.', '/7brew-kids-menu', kidsFaqSchema)}
+${getHead('7 Brew Kids Menu (2026) | Caffeine-Free Drinks & Prices', 'Explore the 7 Brew Kids Menu — kid-friendly, caffeine-free drinks like shakes, smoothies, lemonades, and the custom 7 Fizz sparkling sodas.', '/7brew-kids-menu', kidsFaqSchema)}
 <body>
-  \${getHeader('menu')}
+  ${getHeader('menu')}
   
   <main style="padding-top: 140px; padding-bottom: 80px; min-height: 85vh;">
     <div class="container" style="max-width: 900px;">
@@ -3119,7 +3120,7 @@ const kidsHtml = `<!DOCTYPE html>
     </div>
   </main>
   
-  \${getFooter()}
+  ${getFooter()}
 </body>
 </html>`;
 fs.writeFileSync(path.join(__dirname, 'kids-menu.html'), kidsHtml, 'utf8');

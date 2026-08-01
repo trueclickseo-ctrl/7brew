@@ -1,20 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
-${getHead(`7 Brew Locations in ${state} (2026) | Addresses, Hours & Map`, `Find every 7 Brew drive-thru in ${state} — addresses, hours, and directions for all ${totalStands} ${state} locations. Updated for 2026.`, `/7brew-locations/${stateSlug}`)}
+
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://www.googletagmanager.com">
+  <link rel="preload" as="style" href="/assets/css/style.css?v=1.0.9">
+  <link rel="preload" as="image" href="/assets/images/logo-header.png" type="image/png">
+  <link rel="alternate" type="text/markdown" href="/llms.txt" title="LLM Text Summary">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>7 Brew Locations in Arkansas (2026) | Addresses, Hours & Map</title>
+  <meta name="description" content="Find every 7 Brew drive-thru in Arkansas — addresses, hours, and directions for all 8 Arkansas locations. Updated for 2026.">
+  <link rel="canonical" href="https://www.7brewguide.com/7brew-locations/arkansas">
+  
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="7 Brew Locations in Arkansas (2026) | Addresses, Hours & Map">
+  <meta property="og:description" content="Find every 7 Brew drive-thru in Arkansas — addresses, hours, and directions for all 8 Arkansas locations. Updated for 2026.">
+  <meta property="og:image" content="/assets/images/og-main.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  
+  <link rel="stylesheet" href="/assets/css/style.css?v=1.0.9">
+  <link rel="icon" type="image/png" href="/favicon.png?v=1.0.2">
+
+  <!-- Defer Analytics for 90+ Mobile PageSpeed -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-8VM681EN3E');
+
+    function loadAnalytics() {
+      if (window.analyticsLoaded) return;
+      window.analyticsLoaded = true;
+      var gtmScript = document.createElement('script');
+      gtmScript.async = true;
+      gtmScript.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-KLFDRK3Q';
+      document.head.appendChild(gtmScript);
+
+      var gtagScript = document.createElement('script');
+      gtagScript.async = true;
+      gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-8VM681EN3E';
+      document.head.appendChild(gtagScript);
+    }
+    if (document.readyState === 'complete') {
+      loadAnalytics();
+    } else {
+      window.addEventListener('load', loadAnalytics, { passive: true });
+      setTimeout(loadAnalytics, 3500);
+    }
+  </script>
+
+  
+</head>
+
 <body>
-  ${getHeader('locations')}
+  
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KLFDRK3Q"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <header class="header">
+    <div class="container nav-container">
+      <a href="/" class="logo" id="nav-logo">
+        <img src="/assets/images/logo-header.png" alt="7 Brew Logo" class="logo-img" width="40" height="40" fetchpriority="high"> 7 Brew Inspired
+      </a>
+      <nav class="nav-menu" id="nav-menu">
+        <a href="/" class="nav-link ">Home</a>
+        <a href="/7brew-menu" class="nav-link ">Menu</a>
+        <a href="/secret-menu" class="nav-link ">Secret Menu</a>
+        <a href="/7brew-calorie-calculator" class="nav-link ">Calculator</a>
+        <a href="/7brew-locations" class="nav-link active">Locations</a>
+        <a href="/7brew-rewards" class="nav-link ">Rewards</a>
+        <a href="/7brew-deals" class="nav-link ">Deals</a>
+        <a href="/7brew-blog" class="nav-link ">Blog</a>
+      </nav>
+      <div class="nav-toggle" id="nav-toggle" aria-label="Toggle Menu">&#9776;</div>
+    </div>
+  </header>
+
   
   <main style="padding-top: 140px; padding-bottom: 80px;">
     <div class="container">
       <nav aria-label="breadcrumb" style="margin-bottom: 24px; font-size: 0.9rem; color: var(--text-muted);">
         <a href="/" style="color: var(--color-primary);">Home</a> &gt; 
         <a href="/7brew-locations" style="color: var(--color-primary);">Locations</a> &gt; 
-        <span style="color: var(--text-gray);">${state}</span>
+        <span style="color: var(--text-gray);">Arkansas</span>
       </nav>
 
       <div class="section-header" style="text-align: left; margin-bottom: 40px;">
-        <h1 style="font-size: 3rem; margin-bottom: 16px; font-family: var(--font-heading);">7 Brew Locations in ${state}</h1>
-        <p style="font-size: 1.1rem; line-height: 1.7; max-width: 900px; color: var(--text-gray);">${introParagraph}</p>
+        <h1 style="font-size: 3rem; margin-bottom: 16px; font-family: var(--font-heading);">7 Brew Locations in Arkansas</h1>
+        <p style="font-size: 1.1rem; line-height: 1.7; max-width: 900px; color: var(--text-gray);">Arkansas is where it all started — 7 Brew opened its very first stand in Rogers back in 2017, and the state remains one of the brand's strongest markets today. If you're chasing down a Blondie, a Brew Lagoon, or just your regular order, use the directory below to find your nearest Arkansas stand, check hours, and get directions. All locations serve the full 7 Brew menu, including secret menu drinks — seasonal syrup availability can vary slightly by stand.</p>
       </div>
 
       <div style="overflow-x: auto; margin-bottom: 40px; background: var(--bg-card); border-radius: var(--border-radius-md); border: 1px solid var(--border-glass);">
@@ -28,7 +105,127 @@ ${getHead(`7 Brew Locations in ${state} (2026) | Addresses, Hours & Map`, `Find 
             </tr>
           </thead>
           <tbody>
-            ${addressTableRowsHtml}
+            
+        <tr style="border-bottom: 1px solid var(--border-glass);">
+          <td style="padding: 16px; color: var(--text-white); font-weight: 600;">Rogers</td>
+          <td style="padding: 16px; color: var(--text-gray); font-size: 0.95rem;">
+            <a href="/locations/rogers-arkansas" style="color: var(--color-primary); font-weight: 600; text-decoration: underline;">Rogers - W Walnut St</a><br>
+            <span style="font-size: 0.85rem; color: var(--text-muted);">4100 W Walnut St, Rogers, AR 72756</span>
+          </td>
+          <td style="padding: 16px; color: var(--text-gray); font-size: 0.85rem;">
+            Weekdays: 5:30 AM - 10:00 PM<br>
+            Weekends: 5:30 AM - 11:00 PM
+          </td>
+          <td style="padding: 16px;">
+            <a href="https://www.google.com/maps/search/?api=1&query=4100%20W%20Walnut%20St%2C%20Rogers%2C%20AR%2072756" target="_blank" rel="noopener noreferrer" style="color: var(--color-primary); font-weight: 600; text-decoration: underline;">Get Directions &rarr;</a>
+          </td>
+        </tr>
+      
+        <tr style="border-bottom: 1px solid var(--border-glass);">
+          <td style="padding: 16px; color: var(--text-white); font-weight: 600;">Rogers</td>
+          <td style="padding: 16px; color: var(--text-gray); font-size: 0.95rem;">
+            <a href="/locations/rogers-arkansas" style="color: var(--color-primary); font-weight: 600; text-decoration: underline;">Rogers - S 52nd St</a><br>
+            <span style="font-size: 0.85rem; color: var(--text-muted);">2101 S 52nd St, Rogers, AR 72758</span>
+          </td>
+          <td style="padding: 16px; color: var(--text-gray); font-size: 0.85rem;">
+            Weekdays: 5:30 AM - 10:00 PM<br>
+            Weekends: 5:30 AM - 11:00 PM
+          </td>
+          <td style="padding: 16px;">
+            <a href="https://www.google.com/maps/search/?api=1&query=2101%20S%2052nd%20St%2C%20Rogers%2C%20AR%2072758" target="_blank" rel="noopener noreferrer" style="color: var(--color-primary); font-weight: 600; text-decoration: underline;">Get Directions &rarr;</a>
+          </td>
+        </tr>
+      
+        <tr style="border-bottom: 1px solid var(--border-glass);">
+          <td style="padding: 16px; color: var(--text-white); font-weight: 600;">Rogers</td>
+          <td style="padding: 16px; color: var(--text-gray); font-size: 0.95rem;">
+            <a href="/locations/rogers-arkansas" style="color: var(--color-primary); font-weight: 600; text-decoration: underline;">Rogers - N 2nd St</a><br>
+            <span style="font-size: 0.85rem; color: var(--text-muted);">2503 N 2nd St, Rogers, AR 72756</span>
+          </td>
+          <td style="padding: 16px; color: var(--text-gray); font-size: 0.85rem;">
+            Weekdays: 5:30 AM - 10:00 PM<br>
+            Weekends: 5:30 AM - 11:00 PM
+          </td>
+          <td style="padding: 16px;">
+            <a href="https://www.google.com/maps/search/?api=1&query=2503%20N%202nd%20St%2C%20Rogers%2C%20AR%2072756" target="_blank" rel="noopener noreferrer" style="color: var(--color-primary); font-weight: 600; text-decoration: underline;">Get Directions &rarr;</a>
+          </td>
+        </tr>
+      
+        <tr style="border-bottom: 1px solid var(--border-glass);">
+          <td style="padding: 16px; color: var(--text-white); font-weight: 600;">Springdale</td>
+          <td style="padding: 16px; color: var(--text-gray); font-size: 0.95rem;">
+            <a href="/locations/springdale-arkansas" style="color: var(--color-primary); font-weight: 600; text-decoration: underline;">Springdale - E Robinson Ave</a><br>
+            <span style="font-size: 0.85rem; color: var(--text-muted);">1360 E Robinson Ave, Springdale, AR 72764</span>
+          </td>
+          <td style="padding: 16px; color: var(--text-gray); font-size: 0.85rem;">
+            Weekdays: 5:30 AM - 10:00 PM<br>
+            Weekends: 5:30 AM - 11:00 PM
+          </td>
+          <td style="padding: 16px;">
+            <a href="https://www.google.com/maps/search/?api=1&query=1360%20E%20Robinson%20Ave%2C%20Springdale%2C%20AR%2072764" target="_blank" rel="noopener noreferrer" style="color: var(--color-primary); font-weight: 600; text-decoration: underline;">Get Directions &rarr;</a>
+          </td>
+        </tr>
+      
+        <tr style="border-bottom: 1px solid var(--border-glass);">
+          <td style="padding: 16px; color: var(--text-white); font-weight: 600;">Springdale</td>
+          <td style="padding: 16px; color: var(--text-gray); font-size: 0.95rem;">
+            <a href="/locations/springdale-arkansas" style="color: var(--color-primary); font-weight: 600; text-decoration: underline;">Springdale - W Sunset Ave</a><br>
+            <span style="font-size: 0.85rem; color: var(--text-muted);">2960 W Sunset Ave, Springdale, AR 72762</span>
+          </td>
+          <td style="padding: 16px; color: var(--text-gray); font-size: 0.85rem;">
+            Weekdays: 5:30 AM - 10:00 PM<br>
+            Weekends: 5:30 AM - 11:00 PM
+          </td>
+          <td style="padding: 16px;">
+            <a href="https://www.google.com/maps/search/?api=1&query=2960%20W%20Sunset%20Ave%2C%20Springdale%2C%20AR%2072762" target="_blank" rel="noopener noreferrer" style="color: var(--color-primary); font-weight: 600; text-decoration: underline;">Get Directions &rarr;</a>
+          </td>
+        </tr>
+      
+        <tr style="border-bottom: 1px solid var(--border-glass);">
+          <td style="padding: 16px; color: var(--text-white); font-weight: 600;">Fayetteville</td>
+          <td style="padding: 16px; color: var(--text-gray); font-size: 0.95rem;">
+            <a href="/locations/fayetteville-arkansas" style="color: var(--color-primary); font-weight: 600; text-decoration: underline;">Fayetteville - N College Ave</a><br>
+            <span style="font-size: 0.85rem; color: var(--text-muted);">3322 N College Ave, Fayetteville, AR 72703</span>
+          </td>
+          <td style="padding: 16px; color: var(--text-gray); font-size: 0.85rem;">
+            Weekdays: 5:30 AM - 10:00 PM<br>
+            Weekends: 5:30 AM - 11:00 PM
+          </td>
+          <td style="padding: 16px;">
+            <a href="https://www.google.com/maps/search/?api=1&query=3322%20N%20College%20Ave%2C%20Fayetteville%2C%20AR%2072703" target="_blank" rel="noopener noreferrer" style="color: var(--color-primary); font-weight: 600; text-decoration: underline;">Get Directions &rarr;</a>
+          </td>
+        </tr>
+      
+        <tr style="border-bottom: 1px solid var(--border-glass);">
+          <td style="padding: 16px; color: var(--text-white); font-weight: 600;">Fayetteville</td>
+          <td style="padding: 16px; color: var(--text-gray); font-size: 0.95rem;">
+            <a href="/locations/fayetteville-arkansas" style="color: var(--color-primary); font-weight: 600; text-decoration: underline;">Fayetteville - W MLK Blvd</a><br>
+            <span style="font-size: 0.85rem; color: var(--text-muted);">1195 W Martin Luther King Blvd, Fayetteville, AR 72701</span>
+          </td>
+          <td style="padding: 16px; color: var(--text-gray); font-size: 0.85rem;">
+            Weekdays: 5:30 AM - 10:00 PM<br>
+            Weekends: 5:30 AM - 11:00 PM
+          </td>
+          <td style="padding: 16px;">
+            <a href="https://www.google.com/maps/search/?api=1&query=1195%20W%20Martin%20Luther%20King%20Blvd%2C%20Fayetteville%2C%20AR%2072701" target="_blank" rel="noopener noreferrer" style="color: var(--color-primary); font-weight: 600; text-decoration: underline;">Get Directions &rarr;</a>
+          </td>
+        </tr>
+      
+        <tr style="border-bottom: 1px solid var(--border-glass);">
+          <td style="padding: 16px; color: var(--text-white); font-weight: 600;">Little Rock</td>
+          <td style="padding: 16px; color: var(--text-gray); font-size: 0.95rem;">
+            <a href="/locations/little-rock-arkansas" style="color: var(--color-primary); font-weight: 600; text-decoration: underline;">Little Rock - W Markham St</a><br>
+            <span style="font-size: 0.85rem; color: var(--text-muted);">11418 W Markham St, Little Rock, AR 72211</span>
+          </td>
+          <td style="padding: 16px; color: var(--text-gray); font-size: 0.85rem;">
+            Weekdays: 5:30 AM - 10:00 PM<br>
+            Weekends: 5:30 AM - 11:00 PM
+          </td>
+          <td style="padding: 16px;">
+            <a href="https://www.google.com/maps/search/?api=1&query=11418%20W%20Markham%20St%2C%20Little%20Rock%2C%20AR%2072211" target="_blank" rel="noopener noreferrer" style="color: var(--color-primary); font-weight: 600; text-decoration: underline;">Get Directions &rarr;</a>
+          </td>
+        </tr>
+      
           </tbody>
         </table>
       </div>
@@ -42,6 +239,55 @@ ${getHead(`7 Brew Locations in ${state} (2026) | Addresses, Hours & Map`, `Find 
     </div>
   </main>
   
-  ${getFooter()}
+  
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <h3>⚡ 7 Brew Inspired</h3>
+        <p>Your ultimate independent fan guide to custom menu creations, caffeine calculations, and secret barista hacks.</p>
+      </div>
+      <div>
+        <h4 class="footer-links-title">Menu & Guide</h4>
+        <ul class="footer-links">
+          <li><a href="/7brew-menu">Full Menu</a></li>
+          <li><a href="/secret-menu">Secret Menu</a></li>
+          <li><a href="/menu/caffeine-and-allergens">Caffeine & Allergens</a></li>
+          <li><a href="/7brew-calorie-calculator">Calorie Calculator</a></li>
+          <li><a href="/7brew-sugar-free">Sugar-Free Guide</a></li>
+          <li><a href="/7brew-kids-menu">Kids Menu</a></li>
+          <li><a href="/recipe-maker">Recipe Maker</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-links-title">Stand Info</h4>
+        <ul class="footer-links">
+          <li><a href="/7brew-locations">Find Locations</a></li>
+          <li><a href="/7brew-rewards">Rewards Program</a></li>
+          <li><a href="/rewards/sign-up">Sign Up Guide</a></li>
+          <li><a href="/7brew-deals">Current Deals</a></li>
+          <li><a href="/7-brew-vs-starbucks">7 Brew vs Starbucks</a></li>
+          <li><a href="/7-brew-vs-dutch-bros">7 Brew vs Dutch Bros</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-links-title">About Fan Site</h4>
+        <ul class="footer-links">
+          <li><a href="/about">About Us</a></li>
+          <li><a href="/editorial-policy">Editorial Policy</a></li>
+          <li><a href="/contact">Contact</a></li>
+          <li><a href="/privacy-policy">Privacy Policy</a></li>
+          <li><a href="/terms">Terms & Conditions</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>&copy; 2026 7 Brew Coffee Inspired Fan Site. All Rights Reserved. Crafted for high-energy coffee fans.</p>
+      <p style="font-size: 0.75rem; margin-top: 10px; opacity: 0.6; max-width: 800px; margin-left: auto; margin-right: auto; line-height: 1.4;">
+        Independent blog and fan site for 7 Brew enthusiasts. This website is not affiliated with, authorized, endorsed by, or sponsored by 7 Brew Coffee or its parent companies. All trademarks, logos, and brand names are the property of their respective owners.
+      </p>
+      <p>SSL Secured | Static Hosting Ready</p>
+    </div>
+  </footer>
+
 </body>
 </html>

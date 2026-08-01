@@ -413,7 +413,7 @@ menuHtml = menuHtml.replace(/<link rel="canonical" href="[^"]*">/, '<link rel="c
 menuHtml = menuHtml.replace('</head>', menuFaqSchema);
 menuHtml = menuHtml.replace(/<header class="header">[\s\S]*?<\/header>/, getHeader('menu'));
 menuHtml = menuHtml.replace(/<footer class="footer">[\s\S]*?<\/footer>/, getFooter());
-menuHtml = menuHtml.replace(/<div id="menu-sections-container">[\s\S]*?<\/div>\s*<\/div>/, `<div id="menu-sections-container">${preRenderedMenuHtml}${menuFaqHtml}</div></div>`);
+menuHtml = menuHtml.replace(/<div id="menu-sections-container">[\s\S]*?<\/main>/, `<div id="menu-sections-container">${preRenderedMenuHtml}${menuFaqHtml}</div></div></main>`);
 fs.writeFileSync(menuTemplatePath, menuHtml, 'utf8');
 
 // ----------------------------------------------------

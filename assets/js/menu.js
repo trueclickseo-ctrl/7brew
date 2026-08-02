@@ -219,7 +219,7 @@ window.toggleFavorite = function(name, btnElement) {
 window.openDrinkModal = function(name) {
   const slug = slugMap[name];
   if (slug) {
-    window.location.href = slug + '.html';
+    window.location.href = '/' + slug;
     return;
   }
   const item = menuData.find(d => d.name === name);

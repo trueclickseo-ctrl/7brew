@@ -1354,3 +1354,41 @@ button, input, select, textarea {
     gap: 12px;
   }
 }
+
+/* --- CATEGORY NAVIGATION BUTTONS --- */
+.category-buttons-grid a {
+  background: #121026 !important;
+  border-radius: 30px !important;
+  padding: 14px 20px !important;
+  font-weight: 800 !important;
+  font-size: 1rem !important;
+  text-transform: uppercase !important;
+  text-align: center !important;
+  text-decoration: none !important;
+  display: block !important;
+  font-style: italic !important;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+  letter-spacing: 0.05em !important;
+}
+.category-buttons-grid a:nth-child(odd) {
+  border: 2px solid #00f2fe !important;
+  color: #00f2fe !important;
+  box-shadow: 0 4px 15px rgba(0, 242, 254, 0.15) !important;
+}
+.category-buttons-grid a:nth-child(even) {
+  border: 2px solid #ff007f !important;
+  color: #ff007f !important;
+  box-shadow: 0 4px 15px rgba(255, 0, 127, 0.15) !important;
+}
+.category-buttons-grid a:nth-child(odd):hover {
+  background: #00f2fe !important;
+  color: #121026 !important;
+  box-shadow: 0 0 25px rgba(0, 242, 254, 0.8) !important;
+  transform: translateY(-4px) scale(1.02) !important;
+}
+.category-buttons-grid a:nth-child(even):hover {
+  background: #ff007f !important;
+  color: #121026 !important;
+  box-shadow: 0 0 25px rgba(255, 0, 127, 0.8) !important;
+  transform: translateY(-4px) scale(1.02) !important;
+}

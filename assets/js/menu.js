@@ -72,6 +72,7 @@ async function fetchMenu() {
       activeCategory = '7 Fizz';
     }
     
+    console.log('Path:', path, 'Active Category:', activeCategory);
     renderCategoryFilterTags();
     applyFilters();
     
@@ -272,6 +273,7 @@ function applyFilters() {
     }
   }
 
+  console.log('Filtered items count:', filtered.length);
   renderMenu(filtered);
 }
 

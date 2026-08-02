@@ -137,13 +137,13 @@
         <h2 style="font-size: 2.2rem; font-family: var(--font-heading); margin-bottom: 10px; color: var(--text-white);">7 Brew Menu Drinks Categories</h2>
         <p style="color: var(--text-gray); margin-bottom: 24px;">Browse category-specific offerings and menus.</p>
         <div class="category-buttons-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; max-width: 1000px; margin: 0 auto;">
-          <a href="/7brew-menu/coffee" style="${catKey === 'coffee' ? 'background: var(--color-primary); color: #fff;' : ''}">Coffee</a>
-          <a href="/7brew-menu/energy-drinks" style="${catKey === 'energy-drinks' ? 'background: var(--color-primary); color: #fff;' : ''}">Energy Drinks</a>
-          <a href="/7brew-menu/smoothies" style="${catKey === 'smoothies' ? 'background: var(--color-primary); color: #fff;' : ''}">Smoothies</a>
-          <a href="/7brew-menu/teas-and-chai" style="${catKey === 'teas-and-chai' ? 'background: var(--color-primary); color: #fff;' : ''}">Teas & Chai</a>
-          <a href="/7brew-menu/lemonades" style="${catKey === 'lemonades' ? 'background: var(--color-primary); color: #fff;' : ''}">Lemonades</a>
-          <a href="/7brew-menu/shakes" style="${catKey === 'shakes' ? 'background: var(--color-primary); color: #fff;' : ''}">Shakes</a>
-          <a href="/7brew-menu/fizz" style="${catKey === 'fizz' ? 'background: var(--color-primary); color: #fff;' : ''}">Fizz</a>
+          <a href="/7brew-menu/coffee" style="background: var(--color-primary); color: #fff;">Coffee</a>
+          <a href="/7brew-menu/energy-drinks" style="">Energy Drinks</a>
+          <a href="/7brew-menu/smoothies" style="">Smoothies</a>
+          <a href="/7brew-menu/teas-and-chai" style="">Teas & Chai</a>
+          <a href="/7brew-menu/lemonades" style="">Lemonades</a>
+          <a href="/7brew-menu/shakes" style="">Shakes</a>
+          <a href="/7brew-menu/fizz" style="">Fizz</a>
         </div>
       </section>
 
@@ -176,26 +176,232 @@
         <div id="menu-sections-container">
           
       <div class="menu-grid">
-        ${catItems.map(item => {
-          const defaultPrice = item.sizes.medium ? item.sizes.medium.price : (item.sizes.small ? item.sizes.small.price : 0);
-          const slug = getSlug(item.name);
-          return `
-            <article class="drink-card" data-name="${item.name.replace(/"/g, '&quot;')}">
+        
+            <article class="drink-card" data-name="Blondie">
               <div class="drink-image-wrap">
-                <img src="${getImageUrl(item)}" alt="${item.name}" width="200" height="200" decoding="async" onerror="this.src='https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=600&auto=format&fit=crop';" loading="lazy">
+                <img src="/assets/images/blondie.webp" alt="Blondie" width="200" height="200" decoding="async" onerror="this.src='https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=600&auto=format&fit=crop';" loading="lazy">
               </div>
               <div class="drink-info">
-                <span class="drink-category-label">${item.category}</span>
-                <h3 class="drink-title"><a href="/${slug}">${item.name}</a></h3>
-                <p class="drink-description">${item.description}</p>
+                <span class="drink-category-label">7 Originals</span>
+                <h3 class="drink-title"><a href="/7-brew-blondie">Blondie</a></h3>
+                <p class="drink-description">Our famous caramel and vanilla breve. Rich, creamy, and perfectly sweet.</p>
                 <div class="drink-meta-row">
-                  <span class="drink-price">$${defaultPrice.toFixed(2)}</span>
-                  <a href="/${slug}" class="btn btn-secondary" style="padding: 6px 16px; font-size: 0.75rem;">View Details</a>
+                  <span class="drink-price">$5.49</span>
+                  <a href="/7-brew-blondie" class="btn btn-secondary" style="padding: 6px 16px; font-size: 0.75rem;">View Details</a>
                 </div>
               </div>
             </article>
-          `;
-        }).join('')}
+          
+            <article class="drink-card" data-name="Brunette">
+              <div class="drink-image-wrap">
+                <img src="/assets/images/brunette.webp" alt="Brunette" width="200" height="200" decoding="async" onerror="this.src='https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=600&auto=format&fit=crop';" loading="lazy">
+              </div>
+              <div class="drink-info">
+                <span class="drink-category-label">7 Originals</span>
+                <h3 class="drink-title"><a href="/7-brew-brunette">Brunette</a></h3>
+                <p class="drink-description">A delicious hazelnut and caramel mocha. Decadently sweet and bold.</p>
+                <div class="drink-meta-row">
+                  <span class="drink-price">$5.49</span>
+                  <a href="/7-brew-brunette" class="btn btn-secondary" style="padding: 6px 16px; font-size: 0.75rem;">View Details</a>
+                </div>
+              </div>
+            </article>
+          
+            <article class="drink-card" data-name="Smooth 7">
+              <div class="drink-image-wrap">
+                <img src="/assets/images/smooth-7.webp" alt="Smooth 7" width="200" height="200" decoding="async" onerror="this.src='https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=600&auto=format&fit=crop';" loading="lazy">
+              </div>
+              <div class="drink-info">
+                <span class="drink-category-label">7 Originals</span>
+                <h3 class="drink-title"><a href="/7-brew-smooth-7">Smooth 7</a></h3>
+                <p class="drink-description">Irish cream and white chocolate breve. The ultimate smooth pick-me-up.</p>
+                <div class="drink-meta-row">
+                  <span class="drink-price">$5.65</span>
+                  <a href="/7-brew-smooth-7" class="btn btn-secondary" style="padding: 6px 16px; font-size: 0.75rem;">View Details</a>
+                </div>
+              </div>
+            </article>
+          
+            <article class="drink-card" data-name="Cinnamon Roll">
+              <div class="drink-image-wrap">
+                <img src="/assets/images/cinnamon-roll.webp" alt="Cinnamon Roll" width="200" height="200" decoding="async" onerror="this.src='https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=600&auto=format&fit=crop';" loading="lazy">
+              </div>
+              <div class="drink-info">
+                <span class="drink-category-label">7 Originals</span>
+                <h3 class="drink-title"><a href="/7-brew-cinnamon-roll">Cinnamon Roll</a></h3>
+                <p class="drink-description">Brown sugar cinnamon and white chocolate breve. Tastes just like a fresh pastry.</p>
+                <div class="drink-meta-row">
+                  <span class="drink-price">$5.49</span>
+                  <a href="/7-brew-cinnamon-roll" class="btn btn-secondary" style="padding: 6px 16px; font-size: 0.75rem;">View Details</a>
+                </div>
+              </div>
+            </article>
+          
+            <article class="drink-card" data-name="White Mac">
+              <div class="drink-image-wrap">
+                <img src="/assets/images/white-mac.webp" alt="White Mac" width="200" height="200" decoding="async" onerror="this.src='https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=600&auto=format&fit=crop';" loading="lazy">
+              </div>
+              <div class="drink-info">
+                <span class="drink-category-label">7 Originals</span>
+                <h3 class="drink-title"><a href="/7-brew-white-mac">White Mac</a></h3>
+                <p class="drink-description">White chocolate and macadamia nut breve. Nutty, sweet, and velvety.</p>
+                <div class="drink-meta-row">
+                  <span class="drink-price">$5.49</span>
+                  <a href="/7-brew-white-mac" class="btn btn-secondary" style="padding: 6px 16px; font-size: 0.75rem;">View Details</a>
+                </div>
+              </div>
+            </article>
+          
+            <article class="drink-card" data-name="German Chocolate">
+              <div class="drink-image-wrap">
+                <img src="/assets/images/german-chocolate.webp" alt="German Chocolate" width="200" height="200" decoding="async" onerror="this.src='https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=600&auto=format&fit=crop';" loading="lazy">
+              </div>
+              <div class="drink-info">
+                <span class="drink-category-label">7 Originals</span>
+                <h3 class="drink-title"><a href="/7-brew-german-chocolate">German Chocolate</a></h3>
+                <p class="drink-description">Coconut and caramel mocha. A rich dessert-like coffee experience.</p>
+                <div class="drink-meta-row">
+                  <span class="drink-price">$5.75</span>
+                  <a href="/7-brew-german-chocolate" class="btn btn-secondary" style="padding: 6px 16px; font-size: 0.75rem;">View Details</a>
+                </div>
+              </div>
+            </article>
+          
+            <article class="drink-card" data-name="Snickerz">
+              <div class="drink-image-wrap">
+                <img src="/assets/images/snickerz.webp" alt="Snickerz" width="200" height="200" decoding="async" onerror="this.src='https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=600&auto=format&fit=crop';" loading="lazy">
+              </div>
+              <div class="drink-info">
+                <span class="drink-category-label">7 Originals</span>
+                <h3 class="drink-title"><a href="/7-brew-snickerz">Snickerz</a></h3>
+                <p class="drink-description">An official 7 Original mocha flavored with hazelnut and caramel, finished with caramel drizzle.</p>
+                <div class="drink-meta-row">
+                  <span class="drink-price">$5.95</span>
+                  <a href="/7-brew-snickerz" class="btn btn-secondary" style="padding: 6px 16px; font-size: 0.75rem;">View Details</a>
+                </div>
+              </div>
+            </article>
+          
+            <article class="drink-card" data-name="Triple Seven">
+              <div class="drink-image-wrap">
+                <img src="/assets/images/triple_seven.jpg" alt="Triple Seven" width="200" height="200" decoding="async" onerror="this.src='https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=600&auto=format&fit=crop';" loading="lazy">
+              </div>
+              <div class="drink-info">
+                <span class="drink-category-label">7 Originals</span>
+                <h3 class="drink-title"><a href="/7-brew-triple-seven">Triple Seven</a></h3>
+                <p class="drink-description">Our classic Blondie recipe but with an extra shot of espresso to kickstart your day.</p>
+                <div class="drink-meta-row">
+                  <span class="drink-price">$6.49</span>
+                  <a href="/7-brew-triple-seven" class="btn btn-secondary" style="padding: 6px 16px; font-size: 0.75rem;">View Details</a>
+                </div>
+              </div>
+            </article>
+          
+            <article class="drink-card" data-name="Classic Latte">
+              <div class="drink-image-wrap">
+                <img src="/assets/images/classic_latte.png" alt="Classic Latte" width="200" height="200" decoding="async" onerror="this.src='https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=600&auto=format&fit=crop';" loading="lazy">
+              </div>
+              <div class="drink-info">
+                <span class="drink-category-label">7 Classics</span>
+                <h3 class="drink-title"><a href="/7-brew-classic-latte">Classic Latte</a></h3>
+                <p class="drink-description">Rich espresso combined with steamed milk and a light layer of foam.</p>
+                <div class="drink-meta-row">
+                  <span class="drink-price">$4.75</span>
+                  <a href="/7-brew-classic-latte" class="btn btn-secondary" style="padding: 6px 16px; font-size: 0.75rem;">View Details</a>
+                </div>
+              </div>
+            </article>
+          
+            <article class="drink-card" data-name="Classic Mocha">
+              <div class="drink-image-wrap">
+                <img src="/assets/images/classic_mocha.png" alt="Classic Mocha" width="200" height="200" decoding="async" onerror="this.src='https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=600&auto=format&fit=crop';" loading="lazy">
+              </div>
+              <div class="drink-info">
+                <span class="drink-category-label">7 Classics</span>
+                <h3 class="drink-title"><a href="/7-brew-classic-mocha">Classic Mocha</a></h3>
+                <p class="drink-description">Rich espresso shots combined with sweet chocolate milk.</p>
+                <div class="drink-meta-row">
+                  <span class="drink-price">$4.99</span>
+                  <a href="/7-brew-classic-mocha" class="btn btn-secondary" style="padding: 6px 16px; font-size: 0.75rem;">View Details</a>
+                </div>
+              </div>
+            </article>
+          
+            <article class="drink-card" data-name="Classic Macchiato">
+              <div class="drink-image-wrap">
+                <img src="/assets/images/classic_macchiato.jpg" alt="Classic Macchiato" width="200" height="200" decoding="async" onerror="this.src='https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=600&auto=format&fit=crop';" loading="lazy">
+              </div>
+              <div class="drink-info">
+                <span class="drink-category-label">7 Classics</span>
+                <h3 class="drink-title"><a href="/7-brew-classic-macchiato">Classic Macchiato</a></h3>
+                <p class="drink-description">Delicious layered espresso over milk with a sweet caramel drizzle.</p>
+                <div class="drink-meta-row">
+                  <span class="drink-price">$4.99</span>
+                  <a href="/7-brew-classic-macchiato" class="btn btn-secondary" style="padding: 6px 16px; font-size: 0.75rem;">View Details</a>
+                </div>
+              </div>
+            </article>
+          
+            <article class="drink-card" data-name="Classic Breve">
+              <div class="drink-image-wrap">
+                <img src="/assets/images/classic_breve.jpg" alt="Classic Breve" width="200" height="200" decoding="async" onerror="this.src='https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=600&auto=format&fit=crop';" loading="lazy">
+              </div>
+              <div class="drink-info">
+                <span class="drink-category-label">7 Classics</span>
+                <h3 class="drink-title"><a href="/7-brew-classic-breve">Classic Breve</a></h3>
+                <p class="drink-description">Traditional espresso coffee crafted with steamed half-and-half.</p>
+                <div class="drink-meta-row">
+                  <span class="drink-price">$4.99</span>
+                  <a href="/7-brew-classic-breve" class="btn btn-secondary" style="padding: 6px 16px; font-size: 0.75rem;">View Details</a>
+                </div>
+              </div>
+            </article>
+          
+            <article class="drink-card" data-name="Classic Cappuccino">
+              <div class="drink-image-wrap">
+                <img src="/assets/images/classic_cappuccino.jpg" alt="Classic Cappuccino" width="200" height="200" decoding="async" onerror="this.src='https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=600&auto=format&fit=crop';" loading="lazy">
+              </div>
+              <div class="drink-info">
+                <span class="drink-category-label">7 Classics</span>
+                <h3 class="drink-title"><a href="/7-brew-classic-cappuccino">Classic Cappuccino</a></h3>
+                <p class="drink-description">Espresso with equal parts steamed milk and deep velvety milk foam.</p>
+                <div class="drink-meta-row">
+                  <span class="drink-price">$4.75</span>
+                  <a href="/7-brew-classic-cappuccino" class="btn btn-secondary" style="padding: 6px 16px; font-size: 0.75rem;">View Details</a>
+                </div>
+              </div>
+            </article>
+          
+            <article class="drink-card" data-name="Classic Americano">
+              <div class="drink-image-wrap">
+                <img src="/assets/images/classic_americano.jpg" alt="Classic Americano" width="200" height="200" decoding="async" onerror="this.src='https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=600&auto=format&fit=crop';" loading="lazy">
+              </div>
+              <div class="drink-info">
+                <span class="drink-category-label">7 Classics</span>
+                <h3 class="drink-title"><a href="/7-brew-classic-americano">Classic Americano</a></h3>
+                <p class="drink-description">Espresso shots combined with hot water for a bold drip-style alternative.</p>
+                <div class="drink-meta-row">
+                  <span class="drink-price">$4.00</span>
+                  <a href="/7-brew-classic-americano" class="btn btn-secondary" style="padding: 6px 16px; font-size: 0.75rem;">View Details</a>
+                </div>
+              </div>
+            </article>
+          
+            <article class="drink-card" data-name="Classic Cold Brew">
+              <div class="drink-image-wrap">
+                <img src="/assets/images/classic_cold_brew.png" alt="Classic Cold Brew" width="200" height="200" decoding="async" onerror="this.src='https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=600&auto=format&fit=crop';" loading="lazy">
+              </div>
+              <div class="drink-info">
+                <span class="drink-category-label">7 Classics</span>
+                <h3 class="drink-title"><a href="/7-brew-classic-cold-brew">Classic Cold Brew</a></h3>
+                <p class="drink-description">Steeped slowly for 20 hours, creating an incredibly smooth and low-acid iced coffee.</p>
+                <div class="drink-meta-row">
+                  <span class="drink-price">$5.25</span>
+                  <a href="/7-brew-classic-cold-brew" class="btn btn-secondary" style="padding: 6px 16px; font-size: 0.75rem;">View Details</a>
+                </div>
+              </div>
+            </article>
+          
       </div>
     
         </div>

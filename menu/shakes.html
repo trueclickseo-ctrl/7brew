@@ -137,13 +137,13 @@
         <h2 style="font-size: 2.2rem; font-family: var(--font-heading); margin-bottom: 10px; color: var(--text-white);">7 Brew Menu Drinks Categories</h2>
         <p style="color: var(--text-gray); margin-bottom: 24px;">Browse category-specific offerings and menus.</p>
         <div class="category-buttons-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; max-width: 1000px; margin: 0 auto;">
-          <a href="/7brew-menu/coffee" style="${catKey === 'coffee' ? 'background: var(--color-primary); color: #fff;' : ''}">Coffee</a>
-          <a href="/7brew-menu/energy-drinks" style="${catKey === 'energy-drinks' ? 'background: var(--color-primary); color: #fff;' : ''}">Energy Drinks</a>
-          <a href="/7brew-menu/smoothies" style="${catKey === 'smoothies' ? 'background: var(--color-primary); color: #fff;' : ''}">Smoothies</a>
-          <a href="/7brew-menu/teas-and-chai" style="${catKey === 'teas-and-chai' ? 'background: var(--color-primary); color: #fff;' : ''}">Teas & Chai</a>
-          <a href="/7brew-menu/lemonades" style="${catKey === 'lemonades' ? 'background: var(--color-primary); color: #fff;' : ''}">Lemonades</a>
-          <a href="/7brew-menu/shakes" style="${catKey === 'shakes' ? 'background: var(--color-primary); color: #fff;' : ''}">Shakes</a>
-          <a href="/7brew-menu/fizz" style="${catKey === 'fizz' ? 'background: var(--color-primary); color: #fff;' : ''}">Fizz</a>
+          <a href="/7brew-menu/coffee" style="">Coffee</a>
+          <a href="/7brew-menu/energy-drinks" style="">Energy Drinks</a>
+          <a href="/7brew-menu/smoothies" style="">Smoothies</a>
+          <a href="/7brew-menu/teas-and-chai" style="">Teas & Chai</a>
+          <a href="/7brew-menu/lemonades" style="">Lemonades</a>
+          <a href="/7brew-menu/shakes" style="background: var(--color-primary); color: #fff;">Shakes</a>
+          <a href="/7brew-menu/fizz" style="">Fizz</a>
         </div>
       </section>
 
@@ -176,26 +176,82 @@
         <div id="menu-sections-container">
           
       <div class="menu-grid">
-        ${catItems.map(item => {
-          const defaultPrice = item.sizes.medium ? item.sizes.medium.price : (item.sizes.small ? item.sizes.small.price : 0);
-          const slug = getSlug(item.name);
-          return `
-            <article class="drink-card" data-name="${item.name.replace(/"/g, '&quot;')}">
+        
+            <article class="drink-card" data-name="Strawberry Cake Shake">
               <div class="drink-image-wrap">
-                <img src="${getImageUrl(item)}" alt="${item.name}" width="200" height="200" decoding="async" onerror="this.src='https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=600&auto=format&fit=crop';" loading="lazy">
+                <img src="https://images.unsplash.com/photo-1579954115545-a95591f28bfc?q=80&w=600&auto=format&fit=crop" alt="Strawberry Cake Shake" width="200" height="200" decoding="async" onerror="this.src='https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=600&auto=format&fit=crop';" loading="lazy">
               </div>
               <div class="drink-info">
-                <span class="drink-category-label">${item.category}</span>
-                <h3 class="drink-title"><a href="/${slug}">${item.name}</a></h3>
-                <p class="drink-description">${item.description}</p>
+                <span class="drink-category-label">Shakes</span>
+                <h3 class="drink-title"><a href="/7-brew-strawberry-cake-shake">Strawberry Cake Shake</a></h3>
+                <p class="drink-description">Creamy strawberry milkshake blended with rich vanilla bean cake flavor.</p>
                 <div class="drink-meta-row">
-                  <span class="drink-price">$${defaultPrice.toFixed(2)}</span>
-                  <a href="/${slug}" class="btn btn-secondary" style="padding: 6px 16px; font-size: 0.75rem;">View Details</a>
+                  <span class="drink-price">$5.99</span>
+                  <a href="/7-brew-strawberry-cake-shake" class="btn btn-secondary" style="padding: 6px 16px; font-size: 0.75rem;">View Details</a>
                 </div>
               </div>
             </article>
-          `;
-        }).join('')}
+          
+            <article class="drink-card" data-name="Cookies & Cream Shake">
+              <div class="drink-image-wrap">
+                <img src="https://images.unsplash.com/photo-1579954115545-a95591f28bfc?q=80&w=600&auto=format&fit=crop" alt="Cookies & Cream Shake" width="200" height="200" decoding="async" onerror="this.src='https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=600&auto=format&fit=crop';" loading="lazy">
+              </div>
+              <div class="drink-info">
+                <span class="drink-category-label">Shakes</span>
+                <h3 class="drink-title"><a href="/7-brew-cookies-cream-shake">Cookies & Cream Shake</a></h3>
+                <p class="drink-description">Creamy, decadent vanilla shake loaded with blended cookie crumbles and dark chocolate sauce.</p>
+                <div class="drink-meta-row">
+                  <span class="drink-price">$5.99</span>
+                  <a href="/7-brew-cookies-cream-shake" class="btn btn-secondary" style="padding: 6px 16px; font-size: 0.75rem;">View Details</a>
+                </div>
+              </div>
+            </article>
+          
+            <article class="drink-card" data-name="Caramel Drizzle Shake">
+              <div class="drink-image-wrap">
+                <img src="https://images.unsplash.com/photo-1579954115545-a95591f28bfc?q=80&w=600&auto=format&fit=crop" alt="Caramel Drizzle Shake" width="200" height="200" decoding="async" onerror="this.src='https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=600&auto=format&fit=crop';" loading="lazy">
+              </div>
+              <div class="drink-info">
+                <span class="drink-category-label">Shakes</span>
+                <h3 class="drink-title"><a href="/7-brew-caramel-drizzle-shake">Caramel Drizzle Shake</a></h3>
+                <p class="drink-description">Classic sweet vanilla shake base heavily loaded and layered with rich caramel sauce.</p>
+                <div class="drink-meta-row">
+                  <span class="drink-price">$5.99</span>
+                  <a href="/7-brew-caramel-drizzle-shake" class="btn btn-secondary" style="padding: 6px 16px; font-size: 0.75rem;">View Details</a>
+                </div>
+              </div>
+            </article>
+          
+            <article class="drink-card" data-name="Chocolate Dream Shake">
+              <div class="drink-image-wrap">
+                <img src="https://images.unsplash.com/photo-1579954115545-a95591f28bfc?q=80&w=600&auto=format&fit=crop" alt="Chocolate Dream Shake" width="200" height="200" decoding="async" onerror="this.src='https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=600&auto=format&fit=crop';" loading="lazy">
+              </div>
+              <div class="drink-info">
+                <span class="drink-category-label">Shakes</span>
+                <h3 class="drink-title"><a href="/7-brew-chocolate-dream-shake">Chocolate Dream Shake</a></h3>
+                <p class="drink-description">Decadent dark chocolate shake hand-blended and topped with chocolate curls.</p>
+                <div class="drink-meta-row">
+                  <span class="drink-price">$5.99</span>
+                  <a href="/7-brew-chocolate-dream-shake" class="btn btn-secondary" style="padding: 6px 16px; font-size: 0.75rem;">View Details</a>
+                </div>
+              </div>
+            </article>
+          
+            <article class="drink-card" data-name="Vanilla Bean Shake">
+              <div class="drink-image-wrap">
+                <img src="https://images.unsplash.com/photo-1579954115545-a95591f28bfc?q=80&w=600&auto=format&fit=crop" alt="Vanilla Bean Shake" width="200" height="200" decoding="async" onerror="this.src='https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=600&auto=format&fit=crop';" loading="lazy">
+              </div>
+              <div class="drink-info">
+                <span class="drink-category-label">Shakes</span>
+                <h3 class="drink-title"><a href="/7-brew-vanilla-bean-shake">Vanilla Bean Shake</a></h3>
+                <p class="drink-description">A classic, velvety-smooth shake featuring real vanilla bean seeds and whipped cream.</p>
+                <div class="drink-meta-row">
+                  <span class="drink-price">$5.99</span>
+                  <a href="/7-brew-vanilla-bean-shake" class="btn btn-secondary" style="padding: 6px 16px; font-size: 0.75rem;">View Details</a>
+                </div>
+              </div>
+            </article>
+          
       </div>
     
         </div>

@@ -263,74 +263,77 @@ const categoryOrder = [
   'Snacks / Food'
 ];
 
-const menuGrouped = {};
-menu.forEach(item => {
-  if (!menuGrouped[item.category]) menuGrouped[item.category] = [];
-  menuGrouped[item.category].push(item);
-});
-
-const catToSubpageSlug = {
-  '7 Originals': 'coffee',
-  '7 Classics': 'coffee',
-  '7 Energy': 'energy-drinks',
-  '7 Fizz': 'fizz',
-  'Teas, Chai & Matcha': 'teas-and-chai',
-  'Lemonades': 'lemonades',
-  'Smoothies': 'smoothies',
-  'Shakes': 'shakes',
-  'Kids Drinks': '../7brew-kids-menu',
-  'Secret Menu': '../secret-menu'
-};
-
-let preRenderedMenuHtml = '';
-categoryOrder.forEach(cat => {
-  const catItems = menuGrouped[cat];
-  if (!catItems || catItems.length === 0) return;
-  const sectionId = categoryIdMap[cat] || cat.toLowerCase().replace(/[^a-z0-9]+/g, '-');
-  
-  // Show only top 3 items to avoid a massive page height
-  const displayedItems = catItems.slice(0, 3);
-  
-  const subpageSlug = catToSubpageSlug[cat];
-  let subpageButtonHtml = '';
-  if (subpageSlug) {
-    const targetUrl = subpageSlug.startsWith('..') ? subpageSlug.substring(2) : `/7brew-menu/${subpageSlug}`;
-    subpageButtonHtml = `
-      <div style="text-align: center; margin-top: 30px;">
-        <a href="${targetUrl}" class="btn btn-primary" style="padding: 12px 30px; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; display: inline-block;">View Full ${cat} Menu &rarr;</a>
-      </div>
-    `;
+const hubCategories = [
+  {
+    title: 'Coffee Menu',
+    icon: '☕',
+    desc: 'Indulge in 7 Brew\'s famous lattes, cold brews, Americanos, and signature breves like the Blondie and Brunette. Fully customizable and available hot, iced, or blended.',
+    link: '/7brew-menu/coffee'
+  },
+  {
+    title: '7 Energy Drinks',
+    icon: '⚡',
+    desc: 'High-energy, syrup-infused fruit flavor combinations with clean caffeine. Try popular signature recipes like Tiger\'s Blood, Ocean Breeze, or customize your own.',
+    link: '/7brew-menu/energy-drinks'
+  },
+  {
+    title: 'Smoothies',
+    icon: '🍓',
+    desc: 'Thick, premium real fruit purees blended to ice-cold perfection. Available in classic flavors including Strawberry, Wildberry, Mango, and Peach.',
+    link: '/7brew-menu/smoothies'
+  },
+  {
+    title: 'Teas & Chai',
+    icon: '🍵',
+    desc: 'Refreshing iced green and black teas, premium stone-ground matcha, and aromatic spiced chai lattes. Perfectly custom sweetened to your preference.',
+    link: '/7brew-menu/teas-and-chai'
+  },
+  {
+    title: 'Lemonades',
+    icon: '🍋',
+    desc: 'A sweet and tart standard lemonade base, served over ice or blended as a chiller. Infuse any fruit syrup flavor from our library for a custom splash.',
+    link: '/7brew-menu/lemonades'
+  },
+  {
+    title: 'Shakes',
+    icon: '🥤',
+    desc: 'Rich, creamy vanilla soft serve ice cream base blended with dessert syrups, whipped cream, and custom drizzles. Perfect for satisfying any sweet tooth.',
+    link: '/7brew-menu/shakes'
+  },
+  {
+    title: '7 Fizz',
+    icon: '🫧',
+    desc: 'Naturally caffeine-free carbonated water combined with your choice of Torani syrup combinations. A bubbly, refreshing soda alternative.',
+    link: '/7brew-menu/fizz'
+  },
+  {
+    title: 'Secret Menu',
+    icon: '🤫',
+    desc: 'Explore custom off-menu barista creations, secret flavor combinations, and fan-favorite recipes not found on the main board.',
+    link: '/secret-menu'
+  },
+  {
+    title: 'Kids Menu',
+    icon: '🎈',
+    desc: 'Caffeine-free, smaller-portioned 12 oz treats including fruit smoothies, milkshakes, lemonades, and custom sparkling sodas.',
+    link: '/7brew-kids-menu'
   }
+];
 
-  preRenderedMenuHtml += `
-    <section class="menu-category-section" id="${sectionId}" style="margin-bottom: 60px; scroll-margin-top: 120px;">
-      <h2 style="font-size: 2.2rem; font-family: var(--font-heading); margin-bottom: 24px; padding-bottom: 10px; border-bottom: 2px solid var(--color-primary); color: var(--text-white);">${cat} Preview</h2>
-      <div class="menu-grid">
-        ${displayedItems.map(item => {
-          const defaultPrice = item.sizes.medium ? item.sizes.medium.price : (item.sizes.small ? item.sizes.small.price : 0);
-          const slug = getSlug(item.name);
-          return `
-            <article class="drink-card" data-name="${item.name.replace(/"/g, '&quot;')}">
-              <div class="drink-image-wrap">
-                <img src="${getImageUrl(item)}" alt="${item.name}" width="200" height="200" decoding="async" onerror="this.src='https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=600&auto=format&fit=crop';" loading="lazy">
-              </div>
-              <div class="drink-info">
-                <span class="drink-category-label">${item.category}</span>
-                <h3 class="drink-title"><a href="/${slug}">${item.name}</a></h3>
-                <p class="drink-description">${item.description}</p>
-                <div class="drink-meta-row">
-                  <span class="drink-price">$${defaultPrice.toFixed(2)}</span>
-                  <a href="/${slug}" class="btn btn-secondary" style="padding: 6px 16px; font-size: 0.75rem;">View Details</a>
-                </div>
-              </div>
-            </article>
-          `;
-        }).join('')}
+let preRenderedMenuHtml = `
+  <div class="category-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-bottom: 60px; clear: both; text-align: left;">
+    ${hubCategories.map(cat => `
+      <div class="category-card" style="background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: var(--border-radius-lg); padding: 30px; box-shadow: var(--shadow-card); transition: transform 0.3s ease; display: flex; flex-direction: column; justify-content: space-between;">
+        <div>
+          <span style="font-size: 2.5rem; display: block; margin-bottom: 15px;">${cat.icon}</span>
+          <h2 style="font-size: 1.8rem; font-family: var(--font-heading); color: var(--text-white); margin-bottom: 12px;">${cat.title}</h2>
+          <p style="color: var(--text-gray); line-height: 1.6; margin-bottom: 20px; font-size: 0.95rem;">${cat.desc}</p>
+        </div>
+        <a href="${cat.link}" class="btn btn-primary" style="align-self: flex-start; text-decoration: none; font-weight: bold; text-transform: uppercase; font-size: 0.85rem; padding: 10px 20px; letter-spacing: 0.05em; display: inline-block;">View Full Menu &rarr;</a>
       </div>
-      ${subpageButtonHtml}
-    </section>
-  `;
-});
+    `).join('')}
+  </div>
+`;
 
 // Clean canonical, replace nav and footer, inject menu HTML
 const menuFaqHtml = `
@@ -413,6 +416,7 @@ menuHtml = menuHtml.replace(/<link rel="canonical" href="[^"]*">/, '<link rel="c
 menuHtml = menuHtml.replace('</head>', menuFaqSchema);
 menuHtml = menuHtml.replace(/<header class="header">[\s\S]*?<\/header>/, getHeader('menu'));
 menuHtml = menuHtml.replace(/<footer class="footer">[\s\S]*?<\/footer>/, getFooter());
+menuHtml = menuHtml.replace('<section class="menu-controls">', '<section class="menu-controls" style="display: none;">');
 menuHtml = menuHtml.replace(/<div id="menu-sections-container">[\s\S]*?<\/main>/, `<div id="menu-sections-container">${preRenderedMenuHtml}${menuFaqHtml}</div></div></main>`);
 fs.writeFileSync(menuTemplatePath, menuHtml, 'utf8');
 
@@ -522,25 +526,25 @@ Object.entries(categoryDescriptions).forEach(([catKey, info]) => {
   if (catItems && catItems.length > 0) {
     gridHtml = `
       <div class="menu-grid">
-        \${catItems.map(item => {
+        ${catItems.map(item => {
           const defaultPrice = item.sizes.medium ? item.sizes.medium.price : (item.sizes.small ? item.sizes.small.price : 0);
           const slug = getSlug(item.name);
-          return \`
-            <article class="drink-card" data-name="\${item.name.replace(/"/g, '&quot;')}">
+          return `
+            <article class="drink-card" data-name="${item.name.replace(/"/g, '&quot;')}">
               <div class="drink-image-wrap">
-                <img src="\${getImageUrl(item)}" alt="\${item.name}" width="200" height="200" decoding="async" onerror="this.src='https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=600&auto=format&fit=crop';" loading="lazy">
+                <img src="${getImageUrl(item)}" alt="${item.name}" width="200" height="200" decoding="async" onerror="this.src='https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=600&auto=format&fit=crop';" loading="lazy">
               </div>
               <div class="drink-info">
-                <span class="drink-category-label">\${item.category}</span>
-                <h3 class="drink-title"><a href="/\${slug}">\${item.name}</a></h3>
-                <p class="drink-description">\${item.description}</p>
+                <span class="drink-category-label">${item.category}</span>
+                <h3 class="drink-title"><a href="/${slug}">${item.name}</a></h3>
+                <p class="drink-description">${item.description}</p>
                 <div class="drink-meta-row">
-                  <span class="drink-price">$\${defaultPrice.toFixed(2)}</span>
-                  <a href="/\${slug}" class="btn btn-secondary" style="padding: 6px 16px; font-size: 0.75rem;">View Details</a>
+                  <span class="drink-price">$${defaultPrice.toFixed(2)}</span>
+                  <a href="/${slug}" class="btn btn-secondary" style="padding: 6px 16px; font-size: 0.75rem;">View Details</a>
                 </div>
               </div>
             </article>
-          \`;
+          `;
         }).join('')}
       </div>
     `;
@@ -598,13 +602,13 @@ Object.entries(categoryDescriptions).forEach(([catKey, info]) => {
         <h2 style="font-size: 2.2rem; font-family: var(--font-heading); margin-bottom: 10px; color: var(--text-white);">7 Brew Menu Drinks Categories</h2>
         <p style="color: var(--text-gray); margin-bottom: 24px;">Browse category-specific offerings and menus.</p>
         <div class="category-buttons-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; max-width: 1000px; margin: 0 auto;">
-          <a href="/7brew-menu/coffee" style="\${catKey === 'coffee' ? 'background: var(--color-primary); color: #fff;' : ''}">Coffee</a>
-          <a href="/7brew-menu/energy-drinks" style="\${catKey === 'energy-drinks' ? 'background: var(--color-primary); color: #fff;' : ''}">Energy Drinks</a>
-          <a href="/7brew-menu/smoothies" style="\${catKey === 'smoothies' ? 'background: var(--color-primary); color: #fff;' : ''}">Smoothies</a>
-          <a href="/7brew-menu/teas-and-chai" style="\${catKey === 'teas-and-chai' ? 'background: var(--color-primary); color: #fff;' : ''}">Teas & Chai</a>
-          <a href="/7brew-menu/lemonades" style="\${catKey === 'lemonades' ? 'background: var(--color-primary); color: #fff;' : ''}">Lemonades</a>
-          <a href="/7brew-menu/shakes" style="\${catKey === 'shakes' ? 'background: var(--color-primary); color: #fff;' : ''}">Shakes</a>
-          <a href="/7brew-menu/fizz" style="\${catKey === 'fizz' ? 'background: var(--color-primary); color: #fff;' : ''}">Fizz</a>
+          <a href="/7brew-menu/coffee" style="${catKey === 'coffee' ? 'background: var(--color-primary); color: #fff;' : ''}">Coffee</a>
+          <a href="/7brew-menu/energy-drinks" style="${catKey === 'energy-drinks' ? 'background: var(--color-primary); color: #fff;' : ''}">Energy Drinks</a>
+          <a href="/7brew-menu/smoothies" style="${catKey === 'smoothies' ? 'background: var(--color-primary); color: #fff;' : ''}">Smoothies</a>
+          <a href="/7brew-menu/teas-and-chai" style="${catKey === 'teas-and-chai' ? 'background: var(--color-primary); color: #fff;' : ''}">Teas & Chai</a>
+          <a href="/7brew-menu/lemonades" style="${catKey === 'lemonades' ? 'background: var(--color-primary); color: #fff;' : ''}">Lemonades</a>
+          <a href="/7brew-menu/shakes" style="${catKey === 'shakes' ? 'background: var(--color-primary); color: #fff;' : ''}">Shakes</a>
+          <a href="/7brew-menu/fizz" style="${catKey === 'fizz' ? 'background: var(--color-primary); color: #fff;' : ''}">Fizz</a>
         </div>
       </section>
 

@@ -208,6 +208,7 @@ function renderMenu(items) {
     `;
   });
 
+  console.log('Generated HTML length:', html.length);
   container.innerHTML = html;
 }
 

@@ -185,7 +185,7 @@ const getHead = (title, description, canonicalPath, extraSchema = '') => `
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://www.googletagmanager.com">
-  <link rel="preload" as="style" href="/assets/css/style.css?v=1.0.9">
+  <link rel="preload" as="style" href="/assets/css/style.css?v=1.1.0">
   <link rel="preload" as="image" href="/assets/images/logo-header.png" type="image/png">
   <link rel="alternate" type="text/markdown" href="/llms.txt" title="LLM Text Summary">
 
@@ -201,7 +201,7 @@ const getHead = (title, description, canonicalPath, extraSchema = '') => `
   <meta property="og:image" content="/assets/images/og-main.jpg">
   <meta name="twitter:card" content="summary_large_image">
   
-  <link rel="stylesheet" href="/assets/css/style.css?v=1.0.9">
+  <link rel="stylesheet" href="/assets/css/style.css?v=1.1.0">
   <link rel="icon" type="image/png" href="/favicon.png?v=1.0.2">
 
   <!-- Defer Analytics for 90+ Mobile PageSpeed -->
@@ -740,7 +740,7 @@ ${getHead(info.title + ' (2026) | 7 Brew Inspired', info.desc, `/7brew-menu/${ca
   
   <!-- Scripts -->
   <script src="/assets/js/main.js"></script>
-  <script src="/assets/js/menu.js?v=1.0.8"></script>
+  <script src="/assets/js/menu.js?v=1.1.0"></script>
 </body>
 </html>`;
 

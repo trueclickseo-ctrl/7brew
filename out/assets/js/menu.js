@@ -215,76 +215,12 @@ window.toggleFavorite = function(name, btnElement) {
   }
 };
 
-// Open Drink Details Modal Popup
+// Open Drink Details Page
 window.openDrinkModal = function(name) {
-  const slug = slugMap[name];
-  if (slug) {
-    window.location.href = '/' + slug;
-    return;
-  }
-  const item = menuData.find(d => d.name === name);
-  if (!item) return;
-
-  const modal = document.getElementById('drink-modal');
-  const modalBody = document.getElementById('modal-body-content');
-  if (!modal || !modalBody) return;
-
-  const isFav = window.FavoritesManager.isFav(item.name);
-
-  let sizesHtml = '';
-  for (const [size, details] of Object.entries(item.sizes)) {
-    sizesHtml += `
-      <div style="background: var(--bg-primary); padding: 12px; border-radius: var(--border-radius-sm); border: 1px solid var(--border-glass);">
-        <strong style="text-transform: capitalize; color: var(--color-primary);">${size}</strong><br>
-        Price: $${details.price.toFixed(2)}<br>
-        Calories: ${details.calories}
-      </div>
-    `;
-  }
-
-  modalBody.innerHTML = `
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: start;">
-      <div>
-        <img src="${item.image}" alt="${item.name}" style="border-radius: var(--border-radius-md); width: 100%; object-fit: cover;" onerror="this.src='https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=600&auto=format&fit=crop';">
-      </div>
-      <div>
-        <span style="color: var(--color-secondary); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em;">${item.category}</span>
-        <h2 style="font-size: 2.2rem; margin: 8px 0 16px 0;">${item.name}</h2>
-        <p style="color: var(--text-gray); margin-bottom: 24px;">${item.description}</p>
-        
-        <h4 style="margin-bottom: 10px; color: var(--text-white);">Sizes & Pricing</h4>
-        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 24px;">
-          ${sizesHtml}
-        </div>
-
-        <h4 style="margin-bottom: 10px; color: var(--text-white);">Ingredients</h4>
-        <p style="color: var(--text-gray); margin-bottom: 24px;">${item.ingredients.join(', ')}</p>
-
-        <h4 style="margin-bottom: 10px; color: var(--text-white);">Nutrition Facts</h4>
-        <ul style="list-style: none; display: flex; gap: 20px; color: var(--text-gray); padding: 0;">
-          <li><strong>Caffeine:</strong> ${item.caffeine}</li>
-          <li><strong>Sugar:</strong> ${item.sugar}</li>
-        </ul>
-
-        <div style="margin-top: 30px; display: flex; gap: 16px;">
-          <button class="btn btn-primary" onclick="toggleFavorite('${item.name}', this); this.innerHTML = window.FavoritesManager.isFav('${item.name}') ? 'Favorited &#9829;' : 'Favorite Drink';">
-            ${isFav ? 'Favorited &#9829;' : 'Favorite Drink'}
-          </button>
-        </div>
-      </div>
-    </div>
-  `;
-
-  modal.classList.add('active');
-  document.body.style.overflow = 'hidden';
-};
-
-// Close Modal Callback
-window.closeModal = function() {
-  const modal = document.getElementById('drink-modal');
-  if (modal) modal.classList.remove('active');
-  document.body.style.overflow = '';
-};
+  const slug = slugMap[name] || '7-brew-' + name.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+  window.location.href = '/' + slug;
+  return;
+}
 
 // Filter, Search, and Sort Logic combined
 function applyFilters() {

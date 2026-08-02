@@ -26,7 +26,11 @@ try {
         $filePath = Join-Path $PSScriptRoot $urlPath.TrimStart('/')
         if (-not (Test-Path $filePath -PathType Leaf)) {
             # Apply HTACCESS mappings
-            if ($urlPath -eq "/7brew-menu") { $urlPath = "/menu.html" }
+            if ($urlPath.StartsWith("/7brew-menu/")) {
+                $cat = $urlPath.Substring(12)
+                $urlPath = "/menu/$cat.html"
+            }
+            elseif ($urlPath -eq "/7brew-menu") { $urlPath = "/menu.html" }
             elseif ($urlPath -eq "/7brew-locations") { $urlPath = "/locations.html" }
             elseif ($urlPath -eq "/7brew-blog") { $urlPath = "/blog.html" }
             elseif ($urlPath -eq "/7brew-calorie-calculator") { $urlPath = "/calorie-calculator.html" }

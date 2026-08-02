@@ -31,6 +31,11 @@ const categoryIdMap = {
 };
 
 document.addEventListener('DOMContentLoaded', () => {
+  const path = window.location.pathname.toLowerCase().replace(/\/$/, '');
+  if (path.endsWith('/7brew-menu') || path === '/menu.html' || path === '/menu') {
+    console.log('Category directory page detected. Client-side menu rendering disabled.');
+    return;
+  }
   fetchMenu();
   setupEventListeners();
 });

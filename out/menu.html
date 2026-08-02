@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://www.googletagmanager.com">
+  <link rel="preload" as="style" href="/assets/css/style.css?v=1.0.9">
+  <link rel="preload" as="image" href="/assets/images/logo-header.png" type="image/png">
+  <link rel="alternate" type="text/markdown" href="/llms.txt" title="LLM Text Summary">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Coffee & Beverage Menu | 7 Brew Inspired</title>
+  <meta name="description" content="Browse our complete interactive menu of signature breves, custom energy mixes, real fruit smoothies, lemonades, and sparkling fizz drinks. Filter by calories, sugar, and caffeine.">
+  <link rel="canonical" href="https://www.7brewguide.com/7brew-menu">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Customize & Filter Our Complete Menu | 7 Brew Inspired">
+  <meta property="og:description" content="View ingredients, sizes, calories, caffeine metrics, and pricing for every beverage. Filter and find your favorite combination.">
+  <meta property="og:image" content="/assets/images/og-menu.jpg">
+
+  <link rel="stylesheet" href="/assets/css/style.css?v=1.0.9">
+
+  <!-- Menu Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Menu",
+    "@id": "https://www.7brewguide.com/7brew-menu#menu",
+    "name": "7 Brew Coffee Inspired Menu",
+    "description": "Complete interactive menu of custom coffee breves, mochas, customized energy drinks, shakes, and fizz.",
+    "hasMenuSection": [
+      {
+        "@type": "MenuSection",
+        "name": "The Original 7 Signature Breves & Mochas",
+        "hasMenuItem": [
+          {
+            "@type": "MenuItem",
+            "name": "The Blondie",
+            "description": "7 Brew's signature Caramel and Vanilla Breve (espresso and half-and-half).",
+            "offers": {
+              "@type": "Offer",
+              "price": "5.25",
+              "priceCurrency": "USD"
+            }
+          },
+          {
+            "@type": "MenuItem",
+            "name": "The Brunette",
+            "description": "Indulgent Hazelnut and Caramel Mocha.",
+            "offers": {
+              "@type": "Offer",
+              "price": "5.25",
+              "priceCurrency": "USD"
+            }
+          },
+          {
+            "@type": "MenuItem",
+            "name": "Smooth 7",
+            "description": "Creamy White Chocolate and Irish Cream Breve.",
+            "offers": {
+              "@type": "Offer",
+              "price": "5.25",
+              "priceCurrency": "USD"
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+  <style>
+    .category-buttons-grid a {
+      background: #121026 !important;
+      border-radius: 30px !important;
+      padding: 14px 20px !important;
+      font-weight: 800 !important;
+      font-size: 1rem !important;
+      text-transform: uppercase !important;
+      text-align: center !important;
+      text-decoration: none !important;
+      display: block !important;
+      font-style: italic !important;
+      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+      letter-spacing: 0.05em !important;
+    }
+    .category-buttons-grid a:nth-child(odd) {
+      border: 2px solid #00f2fe !important;
+      color: #00f2fe !important;
+      box-shadow: 0 4px 15px rgba(0, 242, 254, 0.15) !important;
+    }
+    .category-buttons-grid a:nth-child(even) {
+      border: 2px solid #ff007f !important;
+      color: #ff007f !important;
+      box-shadow: 0 4px 15px rgba(255, 0, 127, 0.15) !important;
+    }
+    .category-buttons-grid a:nth-child(odd):hover {
+      background: #00f2fe !important;
+      color: #121026 !important;
+      box-shadow: 0 0 25px rgba(0, 242, 254, 0.8) !important;
+      transform: translateY(-4px) scale(1.02) !important;
+    }
+    .category-buttons-grid a:nth-child(even):hover {
+      background: #ff007f !important;
+      color: #121026 !important;
+      box-shadow: 0 0 25px rgba(255, 0, 127, 0.8) !important;
+      transform: translateY(-4px) scale(1.02) !important;
+    }
+  </style>
+  <link rel="icon" type="image/png" href="/favicon.png?v=1.0.2">
+  <!-- Defer Analytics for 90+ Mobile PageSpeed -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-8VM681EN3E');
+
+    function loadAnalytics() {
+      if (window.analyticsLoaded) return;
+      window.analyticsLoaded = true;
+      var gtmScript = document.createElement('script');
+      gtmScript.async = true;
+      gtmScript.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-KLFDRK3Q';
+      document.head.appendChild(gtmScript);
+
+      var gtagScript = document.createElement('script');
+      gtagScript.async = true;
+      gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-8VM681EN3E';
+      document.head.appendChild(gtagScript);
+    }
+    if (document.readyState === 'complete') {
+      loadAnalytics();
+    } else {
+      window.addEventListener('load', loadAnalytics, { passive: true });
+      setTimeout(loadAnalytics, 3500);
+    }
+  </script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How many drink combinations does 7 Brew offer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "7 Brew's menu supports over 20,000 possible drink combinations once you factor in bases, milks, syrups, and sizes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What sizes does 7 Brew offer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "7 Brew drinks typically come in Small, Medium, and Large, with prices increasing by size across most categories."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I customize any drink at 7 Brew?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — nearly every drink on the 7 Brew menu can be customized with your choice of milk, syrup flavor, sweetness level, and size."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does 7 Brew have dairy-free options?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, 7 Brew offers several non-dairy milk alternatives, including almond, oat, and coconut milk."
+      }
+    }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How many drink combinations does 7 Brew offer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "7 Brew's menu supports over 20,000 possible drink combinations once you factor in bases, milks, syrups, and sizes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What sizes does 7 Brew offer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "7 Brew drinks typically come in Small, Medium, and Large, with prices increasing by size across most categories."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I customize any drink at 7 Brew?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — nearly every drink on the 7 Brew menu can be customized with your choice of milk, syrup flavor, sweetness level, and size."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does 7 Brew have dairy-free options?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, 7 Brew offers several non-dairy milk alternatives, including almond, oat, and coconut milk."
+      }
+    }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How many drink combinations does 7 Brew offer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "7 Brew's menu supports over 20,000 possible drink combinations once you factor in bases, milks, syrups, and sizes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What sizes does 7 Brew offer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "7 Brew drinks typically come in Small, Medium, and Large, with prices increasing by size across most categories."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I customize any drink at 7 Brew?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — nearly every drink on the 7 Brew menu can be customized with your choice of milk, syrup flavor, sweetness level, and size."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does 7 Brew have dairy-free options?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, 7 Brew offers several non-dairy milk alternatives, including almond, oat, and coconut milk."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KLFDRK3Q"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+  <!-- HEADER -->
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KLFDRK3Q"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KLFDRK3Q"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KLFDRK3Q"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KLFDRK3Q"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KLFDRK3Q"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KLFDRK3Q"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KLFDRK3Q"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KLFDRK3Q"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KLFDRK3Q"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KLFDRK3Q"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <header class="header">
+    <div class="container nav-container">
+      <a href="/" class="logo" id="nav-logo">
+        <img src="/assets/images/logo-header.png" alt="7 Brew Logo" class="logo-img" width="40" height="40" fetchpriority="high"> 7 Brew Inspired
+      </a>
+      <nav class="nav-menu" id="nav-menu">
+        <a href="/" class="nav-link ">Home</a>
+        <a href="/7brew-menu" class="nav-link active">Menu</a>
+        <a href="/secret-menu" class="nav-link ">Secret Menu</a>
+        <a href="/7brew-calorie-calculator" class="nav-link ">Calculator</a>
+        <a href="/7brew-locations" class="nav-link ">Locations</a>
+        <a href="/7brew-rewards" class="nav-link ">Rewards</a>
+        <a href="/7brew-deals" class="nav-link ">Deals</a>
+        <a href="/7brew-blog" class="nav-link ">Blog</a>
+      </nav>
+      <div class="nav-toggle" id="nav-toggle" aria-label="Toggle Menu">&#9776;</div>
+    </div>
+  </header>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- PAGE HERO -->
+  <main style="padding-top: 140px; padding-bottom: 80px;">
+    <div class="container">
+      <div class="section-header">
+        <h1 style="font-size: 3rem; margin-bottom: 12px; font-family: var(--font-heading);">Our Complete Menu</h1>
+        <p>Choose your base, pick your size, select your milk, and add custom syrups to create the perfect drink.</p>
+      </div>
+
+      <!-- CATEGORY SCROLL BUTTONS PANEL -->
+      <section class="category-panel-section" style="background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: var(--border-radius-lg); padding: 30px; margin-bottom: 45px; text-align: center; box-shadow: var(--shadow-neon-pink); clear: both;">
+        <h2 style="font-size: 2.2rem; font-family: var(--font-heading); margin-bottom: 10px; color: var(--text-white);">7 Brew Menu Drinks Categories</h2>
+        <p style="color: var(--text-gray); margin-bottom: 24px;">Browse category-specific offerings and menus.</p>
+        <div class="category-buttons-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; max-width: 1000px; margin: 0 auto;">
+          <a href="/7brew-menu/coffee">Coffee</a>
+          <a href="/7brew-menu/energy-drinks">Energy Drinks</a>
+          <a href="/7brew-menu/smoothies">Smoothies</a>
+          <a href="/7brew-menu/teas-and-chai">Teas & Chai</a>
+          <a href="/7brew-menu/lemonades">Lemonades</a>
+          <a href="/7brew-menu/shakes">Shakes</a>
+          <a href="/7brew-menu/fizz">Fizz</a>
+          <a href="/7brew-kids-menu">Kids Menu</a>
+        </div>
+      </section>
+
+      <!-- FILTER CONTROLS -->
+      <section class="menu-controls" style="display: none;">
+        <div class="search-filter-row">
+          <!-- Live Search -->
+          <div class="search-input-wrapper">
+            <span class="search-icon-inside">&#128269;</span>
+            <input type="text" id="menu-search" class="search-input" placeholder="Search drinks, syrups, ingredients...">
+          </div>
+
+          <!-- Sort Selector -->
+          <select id="menu-sort" class="sort-select" aria-label="Sort Menu Items">
+            <option value="default">Sort by: Featured</option>
+            <option value="name-asc">Name: A to Z</option>
+            <option value="name-desc">Name: Z to A</option>
+            <option value="price-low">Price: Low to High</option>
+            <option value="price-high">Price: High to Low</option>
+            <option value="calories-low">Calories: Low to High</option>
+            <option value="calories-high">Calories: High to Low</option>
+          </select>
+        </div>
+      </section>
+
+      <!-- DYNAMIC DRINK SECTIONS -->
+      <div id="menu-sections-container">
+  <div class="category-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-bottom: 60px; clear: both; text-align: left;">
+    
+      <div class="category-card" style="background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: var(--border-radius-lg); padding: 30px; box-shadow: var(--shadow-card); transition: transform 0.3s ease; display: flex; flex-direction: column; justify-content: space-between;">
+        <div>
+          <span style="font-size: 2.5rem; display: block; margin-bottom: 15px;">☕</span>
+          <h2 style="font-size: 1.8rem; font-family: var(--font-heading); color: var(--text-white); margin-bottom: 12px;">Coffee Menu</h2>
+          <p style="color: var(--text-gray); line-height: 1.6; margin-bottom: 20px; font-size: 0.95rem;">Indulge in 7 Brew's famous lattes, cold brews, Americanos, and signature breves like the Blondie and Brunette. Fully customizable and available hot, iced, or blended.</p>
+        </div>
+        <a href="/7brew-menu/coffee" class="btn btn-primary" style="align-self: flex-start; text-decoration: none; font-weight: bold; text-transform: uppercase; font-size: 0.85rem; padding: 10px 20px; letter-spacing: 0.05em; display: inline-block;">View Full Menu &rarr;</a>
+      </div>
+    
+      <div class="category-card" style="background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: var(--border-radius-lg); padding: 30px; box-shadow: var(--shadow-card); transition: transform 0.3s ease; display: flex; flex-direction: column; justify-content: space-between;">
+        <div>
+          <span style="font-size: 2.5rem; display: block; margin-bottom: 15px;">⚡</span>
+          <h2 style="font-size: 1.8rem; font-family: var(--font-heading); color: var(--text-white); margin-bottom: 12px;">7 Energy Drinks</h2>
+          <p style="color: var(--text-gray); line-height: 1.6; margin-bottom: 20px; font-size: 0.95rem;">High-energy, syrup-infused fruit flavor combinations with clean caffeine. Try popular signature recipes like Tiger's Blood, Ocean Breeze, or customize your own.</p>
+        </div>
+        <a href="/7brew-menu/energy-drinks" class="btn btn-primary" style="align-self: flex-start; text-decoration: none; font-weight: bold; text-transform: uppercase; font-size: 0.85rem; padding: 10px 20px; letter-spacing: 0.05em; display: inline-block;">View Full Menu &rarr;</a>
+      </div>
+    
+      <div class="category-card" style="background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: var(--border-radius-lg); padding: 30px; box-shadow: var(--shadow-card); transition: transform 0.3s ease; display: flex; flex-direction: column; justify-content: space-between;">
+        <div>
+          <span style="font-size: 2.5rem; display: block; margin-bottom: 15px;">🍓</span>
+          <h2 style="font-size: 1.8rem; font-family: var(--font-heading); color: var(--text-white); margin-bottom: 12px;">Smoothies</h2>
+          <p style="color: var(--text-gray); line-height: 1.6; margin-bottom: 20px; font-size: 0.95rem;">Thick, premium real fruit purees blended to ice-cold perfection. Available in classic flavors including Strawberry, Wildberry, Mango, and Peach.</p>
+        </div>
+        <a href="/7brew-menu/smoothies" class="btn btn-primary" style="align-self: flex-start; text-decoration: none; font-weight: bold; text-transform: uppercase; font-size: 0.85rem; padding: 10px 20px; letter-spacing: 0.05em; display: inline-block;">View Full Menu &rarr;</a>
+      </div>
+    
+      <div class="category-card" style="background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: var(--border-radius-lg); padding: 30px; box-shadow: var(--shadow-card); transition: transform 0.3s ease; display: flex; flex-direction: column; justify-content: space-between;">
+        <div>
+          <span style="font-size: 2.5rem; display: block; margin-bottom: 15px;">🍵</span>
+          <h2 style="font-size: 1.8rem; font-family: var(--font-heading); color: var(--text-white); margin-bottom: 12px;">Teas & Chai</h2>
+          <p style="color: var(--text-gray); line-height: 1.6; margin-bottom: 20px; font-size: 0.95rem;">Refreshing iced green and black teas, premium stone-ground matcha, and aromatic spiced chai lattes. Perfectly custom sweetened to your preference.</p>
+        </div>
+        <a href="/7brew-menu/teas-and-chai" class="btn btn-primary" style="align-self: flex-start; text-decoration: none; font-weight: bold; text-transform: uppercase; font-size: 0.85rem; padding: 10px 20px; letter-spacing: 0.05em; display: inline-block;">View Full Menu &rarr;</a>
+      </div>
+    
+      <div class="category-card" style="background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: var(--border-radius-lg); padding: 30px; box-shadow: var(--shadow-card); transition: transform 0.3s ease; display: flex; flex-direction: column; justify-content: space-between;">
+        <div>
+          <span style="font-size: 2.5rem; display: block; margin-bottom: 15px;">🍋</span>
+          <h2 style="font-size: 1.8rem; font-family: var(--font-heading); color: var(--text-white); margin-bottom: 12px;">Lemonades</h2>
+          <p style="color: var(--text-gray); line-height: 1.6; margin-bottom: 20px; font-size: 0.95rem;">A sweet and tart standard lemonade base, served over ice or blended as a chiller. Infuse any fruit syrup flavor from our library for a custom splash.</p>
+        </div>
+        <a href="/7brew-menu/lemonades" class="btn btn-primary" style="align-self: flex-start; text-decoration: none; font-weight: bold; text-transform: uppercase; font-size: 0.85rem; padding: 10px 20px; letter-spacing: 0.05em; display: inline-block;">View Full Menu &rarr;</a>
+      </div>
+    
+      <div class="category-card" style="background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: var(--border-radius-lg); padding: 30px; box-shadow: var(--shadow-card); transition: transform 0.3s ease; display: flex; flex-direction: column; justify-content: space-between;">
+        <div>
+          <span style="font-size: 2.5rem; display: block; margin-bottom: 15px;">🥤</span>
+          <h2 style="font-size: 1.8rem; font-family: var(--font-heading); color: var(--text-white); margin-bottom: 12px;">Shakes</h2>
+          <p style="color: var(--text-gray); line-height: 1.6; margin-bottom: 20px; font-size: 0.95rem;">Rich, creamy vanilla soft serve ice cream base blended with dessert syrups, whipped cream, and custom drizzles. Perfect for satisfying any sweet tooth.</p>
+        </div>
+        <a href="/7brew-menu/shakes" class="btn btn-primary" style="align-self: flex-start; text-decoration: none; font-weight: bold; text-transform: uppercase; font-size: 0.85rem; padding: 10px 20px; letter-spacing: 0.05em; display: inline-block;">View Full Menu &rarr;</a>
+      </div>
+    
+      <div class="category-card" style="background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: var(--border-radius-lg); padding: 30px; box-shadow: var(--shadow-card); transition: transform 0.3s ease; display: flex; flex-direction: column; justify-content: space-between;">
+        <div>
+          <span style="font-size: 2.5rem; display: block; margin-bottom: 15px;">🫧</span>
+          <h2 style="font-size: 1.8rem; font-family: var(--font-heading); color: var(--text-white); margin-bottom: 12px;">7 Fizz</h2>
+          <p style="color: var(--text-gray); line-height: 1.6; margin-bottom: 20px; font-size: 0.95rem;">Naturally caffeine-free carbonated water combined with your choice of Torani syrup combinations. A bubbly, refreshing soda alternative.</p>
+        </div>
+        <a href="/7brew-menu/fizz" class="btn btn-primary" style="align-self: flex-start; text-decoration: none; font-weight: bold; text-transform: uppercase; font-size: 0.85rem; padding: 10px 20px; letter-spacing: 0.05em; display: inline-block;">View Full Menu &rarr;</a>
+      </div>
+    
+      <div class="category-card" style="background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: var(--border-radius-lg); padding: 30px; box-shadow: var(--shadow-card); transition: transform 0.3s ease; display: flex; flex-direction: column; justify-content: space-between;">
+        <div>
+          <span style="font-size: 2.5rem; display: block; margin-bottom: 15px;">🤫</span>
+          <h2 style="font-size: 1.8rem; font-family: var(--font-heading); color: var(--text-white); margin-bottom: 12px;">Secret Menu</h2>
+          <p style="color: var(--text-gray); line-height: 1.6; margin-bottom: 20px; font-size: 0.95rem;">Explore custom off-menu barista creations, secret flavor combinations, and fan-favorite recipes not found on the main board.</p>
+        </div>
+        <a href="/secret-menu" class="btn btn-primary" style="align-self: flex-start; text-decoration: none; font-weight: bold; text-transform: uppercase; font-size: 0.85rem; padding: 10px 20px; letter-spacing: 0.05em; display: inline-block;">View Full Menu &rarr;</a>
+      </div>
+    
+      <div class="category-card" style="background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: var(--border-radius-lg); padding: 30px; box-shadow: var(--shadow-card); transition: transform 0.3s ease; display: flex; flex-direction: column; justify-content: space-between;">
+        <div>
+          <span style="font-size: 2.5rem; display: block; margin-bottom: 15px;">🎈</span>
+          <h2 style="font-size: 1.8rem; font-family: var(--font-heading); color: var(--text-white); margin-bottom: 12px;">Kids Menu</h2>
+          <p style="color: var(--text-gray); line-height: 1.6; margin-bottom: 20px; font-size: 0.95rem;">Caffeine-free, smaller-portioned 12 oz treats including fruit smoothies, milkshakes, lemonades, and custom sparkling sodas.</p>
+        </div>
+        <a href="/7brew-kids-menu" class="btn btn-primary" style="align-self: flex-start; text-decoration: none; font-weight: bold; text-transform: uppercase; font-size: 0.85rem; padding: 10px 20px; letter-spacing: 0.05em; display: inline-block;">View Full Menu &rarr;</a>
+      </div>
+    
+  </div>
+
+  <!-- FAQs -->
+  <section style="max-width: 800px; margin: 60px auto 0 auto; border-top: 1px solid var(--border-glass); padding-top: 40px; clear: both;">
+    <h2 style="font-size: 2rem; font-family: var(--font-heading); text-align: center; margin-bottom: 30px; color: var(--text-white);">Frequently Asked Questions</h2>
+    <div style="display: flex; flex-direction: column; gap: 20px;">
+      <div style="background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: var(--border-radius-md); padding: 24px;">
+        <h3 style="font-size: 1.2rem; color: var(--color-primary); margin-bottom: 10px; font-family: var(--font-heading);">How many drink combinations does 7 Brew offer?</h3>
+        <p style="color: var(--text-gray); line-height: 1.6; margin: 0;">
+          7 Brew's menu supports over 20,000 possible drink combinations once you factor in bases, milks, syrups, and sizes.
+        </p>
+      </div>
+      <div style="background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: var(--border-radius-md); padding: 24px;">
+        <h3 style="font-size: 1.2rem; color: var(--color-primary); margin-bottom: 10px; font-family: var(--font-heading);">What sizes does 7 Brew offer?</h3>
+        <p style="color: var(--text-gray); line-height: 1.6; margin: 0;">
+          7 Brew drinks typically come in Small, Medium, and Large, with prices increasing by size across most categories.
+        </p>
+      </div>
+      <div style="background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: var(--border-radius-md); padding: 24px;">
+        <h3 style="font-size: 1.2rem; color: var(--color-primary); margin-bottom: 10px; font-family: var(--font-heading);">Can I customize any drink at 7 Brew?</h3>
+        <p style="color: var(--text-gray); line-height: 1.6; margin: 0;">
+          Yes — nearly every drink on the 7 Brew menu can be customized with your choice of milk, syrup flavor, sweetness level, and size.
+        </p>
+      </div>
+      <div style="background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: var(--border-radius-md); padding: 24px;">
+        <h3 style="font-size: 1.2rem; color: var(--color-primary); margin-bottom: 10px; font-family: var(--font-heading);">Does 7 Brew have dairy-free options?</h3>
+        <p style="color: var(--text-gray); line-height: 1.6; margin: 0;">
+          Yes, 7 Brew offers several non-dairy milk alternatives, including almond, oat, and coconut milk.
+        </p>
+      </div>
+    </div>
+  </section>
+</div></div></main>
+
+  <!-- DRINK DETAILS MODAL -->
+  <div class="modal" id="drink-modal" aria-hidden="true" role="dialog" aria-label="Drink Details Modal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal()" aria-label="Close Details Modal">&times;</button>
+      <div class="modal-body" id="modal-body-content">
+        <!-- Dynamic details populated from menu.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <h3>⚡ 7 Brew Inspired</h3>
+        <p>Your ultimate independent fan guide to custom menu creations, caffeine calculations, and secret barista hacks.</p>
+      </div>
+      <div>
+        <h4 class="footer-links-title">Menu & Guide</h4>
+        <ul class="footer-links">
+          <li><a href="/7brew-menu">Full Menu</a></li>
+          <li><a href="/secret-menu">Secret Menu</a></li>
+          <li><a href="/menu/caffeine-and-allergens">Caffeine & Allergens</a></li>
+          <li><a href="/7brew-calorie-calculator">Calorie Calculator</a></li>
+          <li><a href="/7brew-sugar-free">Sugar-Free Guide</a></li>
+          <li><a href="/7brew-kids-menu">Kids Menu</a></li>
+          <li><a href="/recipe-maker">Recipe Maker</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-links-title">Stand Info</h4>
+        <ul class="footer-links">
+          <li><a href="/7brew-locations">Find Locations</a></li>
+          <li><a href="/7brew-rewards">Rewards Program</a></li>
+          <li><a href="/rewards/sign-up">Sign Up Guide</a></li>
+          <li><a href="/7brew-deals">Current Deals</a></li>
+          <li><a href="/7-brew-vs-starbucks">7 Brew vs Starbucks</a></li>
+          <li><a href="/7-brew-vs-dutch-bros">7 Brew vs Dutch Bros</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-links-title">About Fan Site</h4>
+        <ul class="footer-links">
+          <li><a href="/about">About Us</a></li>
+          <li><a href="/editorial-policy">Editorial Policy</a></li>
+          <li><a href="/contact">Contact</a></li>
+          <li><a href="/privacy-policy">Privacy Policy</a></li>
+          <li><a href="/terms">Terms & Conditions</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>&copy; 2026 7 Brew Coffee Inspired Fan Site. All Rights Reserved. Crafted for high-energy coffee fans.</p>
+      <p style="font-size: 0.75rem; margin-top: 10px; opacity: 0.6; max-width: 800px; margin-left: auto; margin-right: auto; line-height: 1.4;">
+        Independent blog and fan site for 7 Brew enthusiasts. This website is not affiliated with, authorized, endorsed by, or sponsored by 7 Brew Coffee or its parent companies. All trademarks, logos, and brand names are the property of their respective owners.
+      </p>
+      <p>SSL Secured | Static Hosting Ready</p>
+    </div>
+  </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Scripts -->
+  <script src="/assets/js/main.js"></script>
+  <script src="/assets/js/menu.js?v=1.0.8"></script>
+</body>
+</html>
